@@ -100,7 +100,7 @@ export default function SocialResponsibilityPage() {
 
                 {/* Project Grid */}
                 <section className="mb-32">
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                         {projects.map((project, idx) => (
                             <motion.div
                                 key={project.title}
@@ -108,28 +108,39 @@ export default function SocialResponsibilityPage() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: idx * 0.1 }}
-                                className="group flex flex-col gap-8"
+                                className="group bg-surface border border-border-brand rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
                             >
-                                <div className="relative aspect-[4/5] overflow-hidden border border-white/5">
+                                <div className="relative aspect-[16/10] overflow-hidden">
                                     {project.image_url ? (
                                         <Image
                                             src={project.image_url}
                                             alt={project.title}
                                             fill
-                                            className="object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 opacity-60 group-hover:opacity-100"
+                                            className="object-cover group-hover:scale-110 transition-transform duration-700"
                                         />
                                     ) : (
-                                        <div className="w-full h-full bg-white/5 flex items-center justify-center">
-                                            <p className="text-primary/60 text-xs">NO IMAGE</p>
+                                        <div className="w-full h-full bg-primary/10 flex items-center justify-center">
+                                            <Globe className="text-primary/40" size={48} />
                                         </div>
                                     )}
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
+                                    <div className="absolute top-4 left-4">
+                                        <span className="bg-primary text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-lg">
+                                            {project.category}
+                                        </span>
+                                    </div>
                                 </div>
-                                <div>
-                                    <span className="text-primary font-black text-[10px] tracking-[0.4em] uppercase mb-4 block">{project.category}</span>
-                                    <h3 className="text-2xl font-black uppercase tracking-tighter mb-4 group-hover:text-primary transition-colors">{project.title}</h3>
-                                    <p className="text-primary font-black text-[9px] tracking-[0.2em] uppercase mb-4 block">{project.location}</p>
-                                    <p className="text-text-secondary font-medium leading-relaxed uppercase tracking-widest text-xs">{project.description}</p>
+                                <div className="p-6">
+                                    <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
+                                        {project.title}
+                                    </h3>
+                                    {project.location && (
+                                        <p className="text-primary text-sm font-semibold mb-3 flex items-center gap-2">
+                                            <span>📍</span> {project.location}
+                                        </p>
+                                    )}
+                                    <p className="text-text-secondary text-sm leading-relaxed line-clamp-3">
+                                        {project.description}
+                                    </p>
                                 </div>
                             </motion.div>
                         ))}
