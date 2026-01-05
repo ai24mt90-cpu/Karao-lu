@@ -1,8 +1,10 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Heart, School, GraduationCap, Users, HandHelping, Trophy, Globe } from "lucide-react";
+import { supabase } from "@/lib/supabase";
 
 /**
  * SOCIAL RESPONSIBILITY PAGE
@@ -17,31 +19,39 @@ const impactMetrics = [
     { icon: <Trophy size={28} />, value: "Vanspor", label: "Spora Destek", description: "Sporun birleştirici gücüne inanarak Vanspor'un yanındayız." }
 ];
 
-const projects = [
-    {
-        category: "Eğitim Yatırımlarımız",
-        title: "Anadolu Lisesi Bağışı",
-        location: "Sivas, 2022",
-        description: "24 derslikli, spor salonu ve laboratuvarları tam donanımlı okul projemiz eğitime kazandırıldı.",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDbcyhifZbpSgvyiXW09ZLaG6ZTAfuwGut1eaAfWhMtwXsI2AkjddTNbSRCxvQ9GaC1ywJJLuv5mwBvjg-OdEu7q3Pn8Ssox_vRbe4kiKFVyhJj96RS_Kv9ab3CiWLum_1ur5cg8UNkA2Ka0luYWkS5f7BoDPwN-GPoGBTDR5I2nA91WObLOK7QlA8bWmk4BkO4TxoNdA4hbN6hHnm3GVCMhUCqt9UfsXR60-s8U1WzoaTU6DywtagjJYmeutuJtBxwf1y1GS4OKB2Y"
-    },
-    {
-        category: "Spora Desteklerimiz",
-        title: "Vanspor Kulüp Sponsorluğu",
-        location: "Van, Devam Ediyor",
-        description: "Şehrin spor kültürünü geliştirmek ve genç yetenekleri desteklemek amacıyla Vanspor'a kurumsal bağış desteği sağlıyoruz.",
-        image: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&q=80&w=1280"
-    },
-    {
-        category: "Toplumsal Katkılarımız",
-        title: "Geleceğin Sessiz Kahramanları",
-        location: "Türkiye Geneli",
-        description: "Sosyal yardım ve toplumsal dayanışma projeleriyle dezavantajlı grupların yanında yer alıyoruz.",
-        image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=1280"
-    }
-];
+interface SocialProgram {
+    id: string;
+    title: string;
+    category: string;
+    location?: string;
+    date?: string;
+    image_url?: string;
+    description?: string;
+}
 
 export default function SocialResponsibilityPage() {
+    const [projects, setProjects] = useState<SocialProgram[]>([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        fetchProjects();
+    }, []);
+
+    const fetchProjects = async () => {
+        setLoading(true);
+        const { data, error } = await supabase
+            .from("social_responsibility")
+            .select("*")
+            .order("created_at", { ascending: false });
+
+        if (error) {
+            console.error("Error fetching social programs:", error);
+        } else {
+            setProjects(data || []);
+        }
+        setLoading(false);
+    };
+
     return (
         <div className="flex flex-col py-20 bg-black">
             <div className="layout-container">
@@ -101,12 +111,18 @@ export default function SocialResponsibilityPage() {
                                 className="group flex flex-col gap-8"
                             >
                                 <div className="relative aspect-[4/5] overflow-hidden border border-white/5">
-                                    <Image
-                                        src={project.image}
-                                        alt={project.title}
-                                        fill
-                                        className="object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 opacity-60 group-hover:opacity-100"
-                                    />
+                                    {project.image_url ? (
+                                        <Image
+                                            src={project.image_url}
+                                            alt={project.title}
+                                            fill
+                                            className="object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 opacity-60 group-hover:opacity-100"
+                                        />
+                                    ) : (
+                                        <div className="w-full h-full bg-white/5 flex items-center justify-center">
+                                            <p className="text-white/20 text-xs">NO IMAGE</p>
+                                        </div>
+                                    )}
                                     <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
                                 </div>
                                 <div>

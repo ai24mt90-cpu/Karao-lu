@@ -1,35 +1,42 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus, Minus, Search, HelpCircle } from "lucide-react";
+import { supabase } from "@/lib/supabase";
 
-const faqs = [
-    {
-        question: "Karaoğlu Universal Mühendislik hangi alanlarda faaliyet gösterir?",
-        answer: "Firmamız temel olarak evrensel standartlarda kamu altyapı projeleri, sağlık tesisleri, eğitim binaları ve sosyal sorumluluk projeleri (Karaoğlu Vakfı) alanlarında faaliyet göstermektedir."
-    },
-    {
-        question: "Projelerinizde hangi kalite ve çevre standartlarını uyguluyorsunuz?",
-        answer: "Projelerimizde ISO 9001 ve ISO 14001 standartlarını temel alıyoruz. Sürdürülebilirlik ilkelerimiz çerçevesinde, her yapıda minimum karbon ayak izi ve maksimum mühendislik bütünlüğü hedefliyoruz."
-    },
-    {
-        question: "Vakıf çalışmalarınıza nasıl destek olabilirim?",
-        answer: "Karaoğlu Vakfı aracılığıyla yürüttüğümüz eğitim bursu ve okul projelerimize kurumsal veya bireysel olarak destek olabilirsiniz. Detaylı bilgi için 'Hayırseverlik' sayfamızı ziyaret edebilirsiniz."
-    },
-    {
-        question: "Kariyer olanakları ve iş başvuruları süreci nasıl?",
-        answer: "Genel başvurular için özgeçmişinizi hr@karaoglu.com adresine iletebilirsiniz. Mühendislik ve mimari ekiplerimiz için teknik değerlendirme içeren bir mülakat süreci yürütülmektedir."
-    },
-    {
-        question: "Tamamlanan projelerin teknik detaylarına nasıl ulaşabilirim?",
-        answer: "Projeler sayfamızda yer alan her projenin detay kartında geniş teknik bilgiler ve uygulama görselleri bulunmaktadır."
-    }
-];
+interface FAQ {
+    id: string;
+    question: string;
+    answer: string;
+    category: string;
+    order_index: number;
+}
 
 export default function FAQPage() {
     const [openIndex, setOpenIndex] = useState<number | null>(0);
     const [searchQuery, setSearchQuery] = useState("");
+    const [faqs, setFaqs] = useState<FAQ[]>([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        fetchFaqs();
+    }, []);
+
+    const fetchFaqs = async () => {
+        setLoading(true);
+        const { data, error } = await supabase
+            .from("faqs")
+            .select("*")
+            .order("order_index", { ascending: true });
+
+        if (error) {
+            console.error("Error fetching FAQs:", error);
+        } else {
+            setFaqs(data || []);
+        }
+        setLoading(false);
+    };
 
     const filteredFaqs = faqs.filter(faq =>
         faq.question.toLowerCase().includes(searchQuery.toLowerCase()) ||
