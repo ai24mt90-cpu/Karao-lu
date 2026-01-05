@@ -101,7 +101,7 @@ export default function ProjectsPage() {
                                 animate={{ opacity: 1, y: 0 }}
                                 exit={{ opacity: 0, scale: 0.95 }}
                                 transition={{ duration: 0.5 }}
-                                className="group relative flex flex-col bg-surface border border-white/5 overflow-hidden"
+                                className="group relative flex flex-col bg-surface border border-border-brand shadow-md overflow-hidden"
                             >
                                 <div className="relative aspect-[21/9] overflow-hidden">
                                     {project.image_url ? (

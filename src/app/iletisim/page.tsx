@@ -81,7 +81,7 @@ export default function ContactPage() {
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
-                            className="p-12 bg-surface border border-white/5"
+                            className="p-12 bg-surface border border-border-brand shadow-md"
                         >
                             {formState === "success" ? (
                                 <div className="flex flex-col items-center justify-center py-20 text-center gap-8">

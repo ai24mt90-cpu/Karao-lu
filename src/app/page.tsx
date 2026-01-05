@@ -192,7 +192,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="group relative flex flex-col bg-surface border border-white/5"
+                className="group relative flex flex-col bg-surface border border-border-brand shadow-md"
               >
                 <div className="relative aspect-[16/10] w-full overflow-hidden">
                   <Image
