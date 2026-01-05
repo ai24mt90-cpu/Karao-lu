@@ -51,7 +51,7 @@ export default function ProjectsPage() {
     });
 
     return (
-        <div className="flex flex-col py-20 bg-white min-h-screen">
+        <div className="flex flex-col py-20 bg-background min-h-screen">
             <div className="layout-container">
                 {/* Header */}
                 <div className="mb-20 text-center">

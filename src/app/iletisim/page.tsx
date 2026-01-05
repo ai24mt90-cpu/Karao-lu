@@ -14,7 +14,7 @@ export default function ContactPage() {
     };
 
     return (
-        <div className="flex flex-col py-24 bg-white min-h-screen">
+        <div className="flex flex-col py-20 bg-background min-h-screen">
             <div className="layout-container">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-24">
 

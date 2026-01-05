@@ -50,7 +50,7 @@ const recentWorks = [
 
 export default function Home() {
   return (
-    <div className="flex flex-col bg-white">
+    <div className="flex flex-col bg-background">
       {/* Hero Section */}
       <section className="relative w-full py-10">
         <div className="layout-container">
