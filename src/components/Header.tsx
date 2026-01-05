@@ -18,7 +18,7 @@ export default function Header() {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-black/80 backdrop-blur-md">
+        <header className="sticky top-0 z-50 w-full border-b border-border-brand bg-white/95 backdrop-blur-md shadow-sm">
             <div className="layout-container flex h-32 items-center justify-between">
                 <Link href="/" className="flex items-center gap-6 text-white group">
                     <div className="transition-transform group-hover:scale-105">
@@ -67,7 +67,7 @@ export default function Header() {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: "auto" }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="md:hidden border-t border-white/10 bg-black"
+                        className="md:hidden border-t border-border-brand bg-surface"
                     >
                         <div className="flex flex-col gap-6 p-8">
                             {navLinks.map((link) => (

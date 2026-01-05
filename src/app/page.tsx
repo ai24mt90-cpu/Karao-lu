@@ -50,7 +50,7 @@ const recentWorks = [
 
 export default function Home() {
   return (
-    <div className="flex flex-col bg-black">
+    <div className="flex flex-col bg-background">
       {/* Hero Section */}
       <section className="relative w-full py-10">
         <div className="layout-container">
@@ -234,7 +234,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="group relative aspect-[4/5] overflow-hidden bg-black cursor-pointer border border-white/5"
+                className="group relative aspect-[4/5] overflow-hidden bg-background cursor-pointer border border-white/5"
               >
                 <Image
                   src={work.image}
