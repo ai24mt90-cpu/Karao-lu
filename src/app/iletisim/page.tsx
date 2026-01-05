@@ -50,7 +50,7 @@ export default function ContactPage() {
                                 </div>
                                 <div>
                                     <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-foreground mb-2">Telefon</h4>
-                                    <p className="text-text-secondary text-xs uppercase tracking-widest font-medium">+90 (212) 555 00 00</p>
+                                    <p className="text-text-secondary text-xs uppercase tracking-widest font-medium">0432 216 56 36</p>
                                 </div>
                             </div>
 
@@ -60,7 +60,7 @@ export default function ContactPage() {
                                 </div>
                                 <div>
                                     <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-foreground mb-2">E-Posta</h4>
-                                    <p className="text-text-secondary text-xs uppercase tracking-widest font-medium">info@karaoglu.com</p>
+                                    <p className="text-text-secondary text-xs uppercase tracking-widest font-medium">karaogluuniversal@gmail.com</p>
                                 </div>
                             </div>
 

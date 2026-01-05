@@ -45,11 +45,11 @@ export default function Footer() {
                     <div className="flex flex-col gap-6">
                         <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-white">İletişim</h4>
                         <div className="flex flex-col gap-4">
-                            <a href="mailto:info@karaoglu.com" className="flex items-center gap-3 text-[10px] font-black uppercase tracking-widest text-text-secondary hover:text-primary transition-colors">
-                                <Mail size={14} className="opacity-40" /> info@karaoglu.com
+                            <a href="mailto:karaogluuniversal@gmail.com" className="flex items-center gap-3 text-[10px] font-black uppercase tracking-widest text-text-secondary hover:text-primary transition-colors">
+                                <Mail size={14} className="opacity-40" /> karaogluuniversal@gmail.com
                             </a>
-                            <a href="tel:+902125550000" className="flex items-center gap-3 text-[10px] font-black uppercase tracking-widest text-text-secondary hover:text-primary transition-colors">
-                                <Phone size={14} className="opacity-40" /> +90 212 555 0000
+                            <a href="tel:+904322165636" className="flex items-center gap-3 text-[10px] font-black uppercase tracking-widest text-text-secondary hover:text-primary transition-colors">
+                                <Phone size={14} className="opacity-40" /> 0432 216 56 36
                             </a>
                             <div className="flex items-start gap-3 text-[10px] font-black uppercase tracking-widest text-text-secondary">
                                 <MapPin size={14} className="mt-0.5 flex-shrink-0 opacity-40" />
