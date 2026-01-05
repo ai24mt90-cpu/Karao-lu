@@ -44,7 +44,7 @@ export default function AboutPage() {
     const [isBoardOpen, setIsBoardOpen] = useState(false);
 
     return (
-        <div className="flex flex-col bg-background">
+        <div className="flex flex-col bg-black">
             {/* Hero Section */}
             <section className="relative overflow-hidden py-32 border-b border-white/5">
                 <div className="layout-container">
@@ -202,7 +202,7 @@ export default function AboutPage() {
                                 viewport={{ once: true }}
                                 className="mb-24 ml-12 relative"
                             >
-                                <div className="absolute -left-[61px] top-0 flex size-12 items-center justify-center rounded-none bg-background border border-white/20 text-xl font-black">
+                                <div className="absolute -left-[61px] top-0 flex size-12 items-center justify-center rounded-none bg-black border border-white/20 text-xl font-black">
                                     {item.year.slice(-2)}
                                 </div>
                                 <div className="flex flex-col gap-4">

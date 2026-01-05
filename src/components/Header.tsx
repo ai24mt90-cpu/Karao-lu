@@ -1,24 +1,23 @@
 "use client";
 
-import Link from "next/link";
 import { useState } from "react";
+import Link from "next/link";
 import { Menu, X } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import Logo from "./Logo";
 
 const navLinks = [
-    { href: "/", label: "Ana Sayfa" },
     { href: "/projeler", label: "Projeler" },
-    { href: "/hayirseverlik", label: "Sosyal Sorumluluk" },
     { href: "/hakkimizda", label: "Hakkımızda" },
-    { href: "/iletisim", label: "İletişim" },
+    { href: "/hayirseverlik", label: "Hayırseverlik" },
+    { href: "/sss", label: "SSS" },
 ];
 
 export default function Header() {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <header className="sticky top-0 z-50 w-full border-b border-primary-dark bg-primary backdrop-blur-md shadow-lg">
+        <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-black/95 backdrop-blur-md">
             <div className="layout-container flex h-32 items-center justify-between">
                 <Link href="/" className="flex items-center gap-6 text-white group">
                     <div className="transition-transform group-hover:scale-105">
@@ -26,7 +25,7 @@ export default function Header() {
                     </div>
                     <div className="flex flex-col">
                         <span className="text-2xl font-black uppercase tracking-tighter leading-none">Karaoğlu</span>
-                        <span className="text-[10px] font-medium uppercase tracking-[0.3em] text-white/80">Universal Mühendislik</span>
+                        <span className="text-[10px] font-medium uppercase tracking-[0.3em] text-text-secondary">Universal Mühendislik</span>
                     </div>
                 </Link>
 
@@ -37,7 +36,7 @@ export default function Header() {
                             <Link
                                 key={link.href}
                                 href={link.href}
-                                className="text-[10px] font-black uppercase tracking-[0.2em] text-white/80 hover:text-white transition-colors"
+                                className="text-[10px] font-black uppercase tracking-[0.2em] text-text-secondary hover:text-primary transition-colors"
                             >
                                 {link.label}
                             </Link>
@@ -45,29 +44,30 @@ export default function Header() {
                     </div>
                     <Link
                         href="/iletisim"
-                        className="flex h-12 items-center justify-center bg-white px-8 text-[10px] font-black uppercase tracking-[0.2em] text-primary transition-all hover:bg-white/90 active:scale-95 shadow-lg"
+                        className="flex h-12 items-center justify-center bg-primary px-8 text-[10px] font-black uppercase tracking-[0.2em] text-white transition-all hover:bg-primary-dark active:scale-95"
                     >
                         Bize Ulaşın
                     </Link>
                 </nav>
 
-                {/* Mobile Menu Toggle */}
+                {/* Mobile Menu Button */}
                 <button
-                    className="flex md:hidden text-white p-2"
                     onClick={() => setIsOpen(!isOpen)}
+                    className="md:hidden text-white"
+                    aria-label="Toggle menu"
                 >
-                    {isOpen ? <X size={28} /> : <Menu size={28} />}
+                    {isOpen ? <X size={24} /> : <Menu size={24} />}
                 </button>
             </div>
 
-            {/* Mobile Navigation */}
+            {/* Mobile Menu */}
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: "auto" }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="md:hidden border-t border-primary-dark bg-primary"
+                        className="md:hidden border-t border-white/10 bg-black"
                     >
                         <div className="flex flex-col gap-6 p-8">
                             {navLinks.map((link) => (
@@ -75,7 +75,7 @@ export default function Header() {
                                     key={link.href}
                                     href={link.href}
                                     onClick={() => setIsOpen(false)}
-                                    className="text-xs font-black uppercase tracking-[0.3em] text-text-secondary hover:text-primary transition-colors"
+                                    className="text-sm font-black uppercase tracking-[0.2em] text-text-secondary hover:text-primary transition-colors"
                                 >
                                     {link.label}
                                 </Link>
@@ -83,7 +83,7 @@ export default function Header() {
                             <Link
                                 href="/iletisim"
                                 onClick={() => setIsOpen(false)}
-                                className="flex h-16 items-center justify-center bg-white text-xs font-black uppercase tracking-[0.3em] text-black transition-all"
+                                className="flex h-12 items-center justify-center bg-primary text-xs font-black uppercase tracking-[0.2em] text-white"
                             >
                                 Bize Ulaşın
                             </Link>

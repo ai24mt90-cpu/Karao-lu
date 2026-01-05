@@ -50,7 +50,7 @@ const recentWorks = [
 
 export default function Home() {
   return (
-    <div className="flex flex-col bg-background">
+    <div className="flex flex-col bg-black">
       {/* Hero Section */}
       <section className="relative w-full py-10">
         <div className="layout-container">
@@ -58,16 +58,16 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            className="relative h-[750px] w-full overflow-hidden rounded-lg border-2 border-primary/30 shadow-2xl"
+            className="relative h-[750px] w-full overflow-hidden border border-white/10"
           >
             <Image
-              src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=2000"
-              alt="Modern construction and engineering"
+              src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000"
+              alt="Modern architecture"
               fill
               className="object-cover"
               priority
             />
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/70 to-primary-dark/90" />
+            <div className="absolute inset-0 bg-black/70" />
             <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center">
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -75,7 +75,7 @@ export default function Home() {
                 transition={{ delay: 0.2 }}
                 className="mb-12"
               >
-                <Logo size={120} className="text-white drop-shadow-2xl" />
+                <Logo size={120} className="text-white" />
               </motion.div>
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
@@ -84,13 +84,13 @@ export default function Home() {
                 className="mb-8 text-5xl font-black md:text-7xl lg:text-9xl leading-none uppercase tracking-tighter text-white"
               >
                 İnşa Edin. <br />
-                <span className="text-white/70">Çözüm Üretin.</span>
+                <span className="text-primary">Çözüm Üretin.</span>
               </motion.h1>
               <motion.p
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.6 }}
-                className="max-w-2xl text-lg text-white/90 md:text-xl uppercase tracking-[0.4em] font-medium"
+                className="max-w-2xl text-lg text-white/80 md:text-xl uppercase tracking-[0.4em] font-medium"
               >
                 Karaoğlu Universal Mühendislik
               </motion.p>
@@ -100,10 +100,10 @@ export default function Home() {
                 transition={{ delay: 0.8 }}
                 className="mt-16 flex flex-wrap justify-center gap-8"
               >
-                <Link href="/projeler" className="flex h-16 items-center justify-center bg-white px-12 text-xs font-black uppercase tracking-[0.3em] text-primary transition-all hover:bg-white/90 active:scale-95 shadow-2xl">
+                <Link href="/projeler" className="flex h-16 items-center justify-center bg-primary px-12 text-xs font-black uppercase tracking-[0.3em] text-white transition-all hover:bg-primary-dark active:scale-95">
                   Projelerimiz
                 </Link>
-                <Link href="/hakkimizda" className="flex h-16 items-center justify-center border-2 border-white bg-transparent px-12 text-xs font-black uppercase tracking-[0.3em] text-white backdrop-blur-sm transition-all hover:bg-white/10">
+                <Link href="/hakkimizda" className="flex h-16 items-center justify-center border border-white/20 bg-white/5 px-12 text-xs font-black uppercase tracking-[0.3em] text-white backdrop-blur-sm transition-all hover:bg-white/10">
                   Kurumsal
                 </Link>
               </motion.div>
@@ -235,7 +235,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="group relative aspect-[4/5] overflow-hidden bg-background cursor-pointer border border-white/5"
+                className="group relative aspect-[4/5] overflow-hidden bg-black cursor-pointer border border-white/5"
               >
                 <Image
                   src={work.image}

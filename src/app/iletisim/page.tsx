@@ -14,7 +14,7 @@ export default function ContactPage() {
     };
 
     return (
-        <div className="flex flex-col py-24 bg-background min-h-screen">
+        <div className="flex flex-col py-24 bg-black min-h-screen">
             <div className="layout-container">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-24">
 
@@ -121,10 +121,10 @@ export default function ContactPage() {
                                     <div className="flex flex-col gap-3">
                                         <label className="text-[10px] font-black text-text-secondary uppercase tracking-[0.3em]">Konu</label>
                                         <select className="w-full h-14 bg-transparent border-b border-white/20 focus:border-white outline-none transition-all text-sm uppercase tracking-widest font-medium appearance-none cursor-pointer">
-                                            <option className="bg-background">Proje Bilgi Talebi</option>
-                                            <option className="bg-background">İş Birliği Teklifi</option>
-                                            <option className="bg-background">Kariyer</option>
-                                            <option className="bg-background">Vakıf Destek</option>
+                                            <option className="bg-black">Proje Bilgi Talebi</option>
+                                            <option className="bg-black">İş Birliği Teklifi</option>
+                                            <option className="bg-black">Kariyer</option>
+                                            <option className="bg-black">Vakıf Destek</option>
                                         </select>
                                     </div>
 
