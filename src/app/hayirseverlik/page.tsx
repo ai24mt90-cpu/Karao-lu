@@ -85,12 +85,12 @@ export default function SocialResponsibilityPage() {
                                 transition={{ delay: idx * 0.1 }}
                                 className={`flex flex-col gap-6 p-12 text-center ${idx !== 2 ? "md:border-r border-white/10" : ""}`}
                             >
-                                <div className="mx-auto text-white opacity-40">
+                                <div className="mx-auto text-foreground opacity-40">
                                     {metric.icon}
                                 </div>
                                 <div>
                                     <h3 className="text-5xl font-black mb-4 tracking-tighter">{metric.value}</h3>
-                                    <p className="font-black text-white uppercase tracking-[0.3em] text-[10px] mb-6">{metric.label}</p>
+                                    <p className="font-black text-foreground uppercase tracking-[0.3em] text-[10px] mb-6">{metric.label}</p>
                                     <p className="text-text-secondary text-xs font-medium leading-relaxed uppercase tracking-wider">{metric.description}</p>
                                 </div>
                             </motion.div>

@@ -123,7 +123,7 @@ export default function AboutPage() {
                             onClick={() => setIsBoardOpen(!isBoardOpen)}
                             className="flex flex-col items-center gap-4 group"
                         >
-                            <span className="text-[10px] font-black uppercase tracking-[0.5em] text-white group-hover:text-primary/60 transition-colors">
+                            <span className="text-[10px] font-black uppercase tracking-[0.5em] text-foreground group-hover:text-primary/60 transition-colors">
                                 {isBoardOpen ? "Kurulu Gizle" : "Diğer Üyeleri Gör"}
                             </span>
                             <motion.div
@@ -206,7 +206,7 @@ export default function AboutPage() {
                                     {item.year.slice(-2)}
                                 </div>
                                 <div className="flex flex-col gap-4">
-                                    <span className="text-white font-black text-2xl uppercase tracking-tighter">{item.year} — {item.title}</span>
+                                    <span className="text-foreground font-black text-2xl uppercase tracking-tighter">{item.year} — {item.title}</span>
                                     <p className="text-text-secondary text-[11px] uppercase tracking-widest leading-loose font-medium max-w-2xl">{item.description}</p>
                                 </div>
                             </motion.div>

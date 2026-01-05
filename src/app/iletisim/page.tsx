@@ -39,7 +39,7 @@ export default function ContactPage() {
                                     <MapPin size={24} />
                                 </div>
                                 <div>
-                                    <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-white mb-2">Merkez Ofis</h4>
+                                    <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-foreground mb-2">Merkez Ofis</h4>
                                     <p className="text-text-secondary text-xs uppercase tracking-widest leading-relaxed font-medium">Maslak Mah. Büyükdere Cad. No:1 <br />Spine Tower, İstanbul</p>
                                 </div>
                             </div>
@@ -49,7 +49,7 @@ export default function ContactPage() {
                                     <Phone size={24} />
                                 </div>
                                 <div>
-                                    <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-white mb-2">Telefon</h4>
+                                    <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-foreground mb-2">Telefon</h4>
                                     <p className="text-text-secondary text-xs uppercase tracking-widest font-medium">+90 (212) 555 00 00</p>
                                 </div>
                             </div>
@@ -59,7 +59,7 @@ export default function ContactPage() {
                                     <Mail size={24} />
                                 </div>
                                 <div>
-                                    <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-white mb-2">E-Posta</h4>
+                                    <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-foreground mb-2">E-Posta</h4>
                                     <p className="text-text-secondary text-xs uppercase tracking-widest font-medium">info@karaoglu.com</p>
                                 </div>
                             </div>
@@ -69,7 +69,7 @@ export default function ContactPage() {
                                     <Clock size={24} />
                                 </div>
                                 <div>
-                                    <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-white mb-2">Mesai</h4>
+                                    <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-foreground mb-2">Mesai</h4>
                                     <p className="text-text-secondary text-xs uppercase tracking-widest font-medium">Pazartesi - Cuma: 09:00 - 18:00</p>
                                 </div>
                             </div>
@@ -85,7 +85,7 @@ export default function ContactPage() {
                         >
                             {formState === "success" ? (
                                 <div className="flex flex-col items-center justify-center py-20 text-center gap-8">
-                                    <div className="size-20 bg-primary text-white flex items-center justify-center rounded-full">
+                                    <div className="size-20 bg-primary text-foreground flex items-center justify-center rounded-full">
                                         <Send size={32} />
                                     </div>
                                     <h3 className="text-3xl font-black uppercase tracking-tighter">İletildi</h3>
@@ -139,7 +139,7 @@ export default function ContactPage() {
 
                                     <button
                                         disabled={formState === "submitting"}
-                                        className="w-full h-16 bg-primary text-white font-black uppercase tracking-[0.3em] text-xs hover:bg-white/80 transition-all disabled:opacity-50"
+                                        className="w-full h-16 bg-primary text-foreground font-black uppercase tracking-[0.3em] text-xs hover:bg-white/80 transition-all disabled:opacity-50"
                                     >
                                         {formState === "submitting" ? "Gönderiliyor..." : "Mesajı Gönder"}
                                     </button>

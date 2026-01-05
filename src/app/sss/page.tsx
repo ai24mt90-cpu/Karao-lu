@@ -123,7 +123,7 @@ export default function FAQPage() {
                 <div className="mt-32 p-12 bg-surface text-center border border-white/5">
                     <h3 className="text-2xl font-black uppercase tracking-tighter mb-6">Detaylı Bilgi İçin</h3>
                     <p className="text-xs uppercase tracking-widest text-text-secondary mb-10 leading-loose">Ekiplerimiz her türlü teknik soru için yardıma hazırdır.</p>
-                    <button className="h-14 px-12 bg-primary text-white text-[10px] font-black uppercase tracking-[0.3em] hover:bg-white/80 transition-all">
+                    <button className="h-14 px-12 bg-primary text-foreground text-[10px] font-black uppercase tracking-[0.3em] hover:bg-white/80 transition-all">
                         İletişime Geçin
                     </button>
                 </div>

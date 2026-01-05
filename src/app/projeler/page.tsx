@@ -69,7 +69,7 @@ export default function ProjectsPage() {
                                 key={cat}
                                 onClick={() => setSelectedCategory(cat)}
                                 className={`h-11 px-8 text-[10px] font-black uppercase tracking-[0.2em] transition-all border ${selectedCategory === cat
-                                    ? "bg-primary text-white border-white"
+                                    ? "bg-primary text-foreground border-white"
                                     : "bg-transparent border-white/10 text-text-secondary hover:border-white/40 hover:text-primary"
                                     }`}
                             >
@@ -136,7 +136,7 @@ export default function ProjectsPage() {
                                             </div>
                                         </div>
                                     </div>
-                                    <button className="size-16 flex items-center justify-center bg-primary text-white transition-all hover:scale-105">
+                                    <button className="size-16 flex items-center justify-center bg-primary text-foreground transition-all hover:scale-105">
                                         <ArrowUpRight size={24} />
                                     </button>
                                 </div>

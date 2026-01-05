@@ -75,7 +75,7 @@ export default function Home() {
                 transition={{ delay: 0.2 }}
                 className="mb-12"
               >
-                <Logo size={120} className="text-white drop-shadow-2xl" />
+                <Logo size={120} className="text-foreground drop-shadow-2xl" />
               </motion.div>
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
@@ -103,7 +103,7 @@ export default function Home() {
                 <Link href="/projeler" className="flex h-16 items-center justify-center bg-white px-12 text-xs font-black uppercase tracking-[0.3em] text-primary transition-all hover:bg-white/90 active:scale-95 shadow-2xl">
                   Projelerimiz
                 </Link>
-                <Link href="/hakkimizda" className="flex h-16 items-center justify-center border-2 border-white bg-transparent px-12 text-xs font-black uppercase tracking-[0.3em] text-white backdrop-blur-sm transition-all hover:bg-white/10">
+                <Link href="/hakkimizda" className="flex h-16 items-center justify-center border-2 border-white bg-transparent px-12 text-xs font-black uppercase tracking-[0.3em] text-foreground backdrop-blur-sm transition-all hover:bg-white/10">
                   Kurumsal
                 </Link>
               </motion.div>
@@ -181,7 +181,7 @@ export default function Home() {
                 Mühendislik ve Sosyal Sorumlulukta Evrensel Standartlar.
               </p>
             </div>
-            <Link href="/hakkimizda" className="flex items-center gap-3 text-white font-black uppercase tracking-[0.3em] text-[10px] border-b-2 border-white pb-2 transition-transform hover:translate-x-2">
+            <Link href="/hakkimizda" className="flex items-center gap-3 text-foreground font-black uppercase tracking-[0.3em] text-[10px] border-b-2 border-white pb-2 transition-transform hover:translate-x-2">
               Detaylar <ArrowRight size={18} />
             </Link>
           </div>
@@ -202,14 +202,14 @@ export default function Home() {
                     fill
                     className="object-cover transition-transform duration-1000 group-hover:scale-105 grayscale brightness-50 group-hover:brightness-75"
                   />
-                  <div className="absolute top-10 left-10 flex size-16 items-center justify-center bg-primary text-white text-2xl">
+                  <div className="absolute top-10 left-10 flex size-16 items-center justify-center bg-primary text-foreground text-2xl">
                     {pillar.icon}
                   </div>
                 </div>
                 <div className="p-12">
                   <h3 className="text-4xl font-black mb-6 uppercase tracking-tighter">{pillar.title}</h3>
                   <p className="text-text-secondary mb-10 leading-relaxed text-sm uppercase tracking-widest font-medium">{pillar.description}</p>
-                  <Link href={pillar.link} className="inline-flex items-center justify-center h-14 bg-white/5 border border-white/20 px-10 text-[10px] font-black uppercase tracking-[0.3em] text-white hover:bg-white hover:text-black transition-all">
+                  <Link href={pillar.link} className="inline-flex items-center justify-center h-14 bg-white/5 border border-white/20 px-10 text-[10px] font-black uppercase tracking-[0.3em] text-foreground hover:bg-white hover:text-black transition-all">
                     İncele
                   </Link>
                 </div>
@@ -246,7 +246,7 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
                 <div className="absolute bottom-0 left-0 w-full p-12 transform translate-y-6 group-hover:translate-y-0 transition-transform duration-500">
                   <span className="text-[10px] font-black uppercase tracking-[0.5em] text-white/40 mb-4 block group-hover:text-primary transition-colors">{work.category}</span>
-                  <h4 className="text-3xl font-black text-white uppercase tracking-tighter leading-tight border-l-4 border-white pl-6">{work.title}</h4>
+                  <h4 className="text-3xl font-black text-foreground uppercase tracking-tighter leading-tight border-l-4 border-white pl-6">{work.title}</h4>
                 </div>
               </motion.div>
             ))}
