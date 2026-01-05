@@ -220,35 +220,31 @@ export default function Home() {
       </section>
 
       {/* Recent Works */}
-      <section className="py-40 bg-white/[0.02] border-t border-white/5">
+      <section className="py-40 bg-surface border-t border-border-brand">
         <div className="layout-container">
           <div className="flex items-center gap-10 mb-20">
             <h2 className="text-5xl font-black tracking-tighter uppercase">Son Çalışmalarımız</h2>
-            <div className="h-[1px] flex-1 bg-white/10" />
+            <div className="h-[1px] flex-1 bg-border-brand" />
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
-            {recentWorks.map((work, index) => (
-              <motion.div
+            {recentWorks.map((work) => (
+              <div
                 key={work.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="group relative aspect-[4/5] overflow-hidden bg-white cursor-pointer border border-white/5"
+                className="group relative aspect-[4/5] overflow-hidden bg-surface cursor-pointer border border-border-brand shadow-lg hover:shadow-xl transition-shadow"
               >
                 <Image
                   src={work.image}
                   alt={work.title}
                   fill
-                  className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700 opacity-30 group-hover:opacity-100"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
-                <div className="absolute bottom-0 left-0 w-full p-12 transform translate-y-6 group-hover:translate-y-0 transition-transform duration-500">
-                  <span className="text-[10px] font-black uppercase tracking-[0.5em] text-primary mb-4 block group-hover:text-primary transition-colors">{work.category}</span>
-                  <h4 className="text-3xl font-black text-foreground uppercase tracking-tighter leading-tight border-l-4 border-white pl-6">{work.title}</h4>
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent" />
+                <div className="absolute bottom-0 left-0 w-full p-12">
+                  <span className="text-[10px] font-black uppercase tracking-[0.5em] text-primary mb-4 block">{work.category}</span>
+                  <h4 className="text-3xl font-black text-white uppercase tracking-tighter leading-tight border-l-4 border-primary pl-6">{work.title}</h4>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>

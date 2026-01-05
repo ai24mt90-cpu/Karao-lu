@@ -50,7 +50,7 @@ export default function FAQPage() {
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
-                        className="inline-flex items-center gap-2 px-6 py-2 border border-white/10 rounded-full mb-8"
+                        className="inline-flex items-center gap-2 px-6 py-2 border border-border-brand rounded-full mb-8"
                     >
                         <HelpCircle size={14} />
                         <span className="text-[10px] font-black uppercase tracking-[0.3em]">Destek & Bilgi</span>
@@ -69,7 +69,7 @@ export default function FAQPage() {
                     <input
                         type="text"
                         placeholder="ARAMA YAPIN..."
-                        className="w-full h-16 pl-16 pr-6 bg-transparent border-y border-white/10 focus:border-white outline-none text-xs font-black uppercase tracking-[0.4em] transition-all"
+                        className="w-full h-16 pl-16 pr-6 bg-surface border border-border-brand focus:border-primary outline-none text-xs font-black uppercase tracking-[0.4em] transition-all"
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
                     />
@@ -84,7 +84,7 @@ export default function FAQPage() {
                                 initial={{ opacity: 0, y: 10 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: idx * 0.05 }}
-                                className={`overflow-hidden border-b border-white/10 transition-all ${openIndex === idx ? "border-white" : ""
+                                className={`overflow-hidden border-b border-border-brand transition-all ${openIndex === idx ? "border-primary" : ""
                                     }`}
                             >
                                 <button
@@ -113,14 +113,14 @@ export default function FAQPage() {
                             </motion.div>
                         ))
                     ) : (
-                        <div className="text-center py-20 border border-dashed border-white/10">
+                        <div className="text-center py-20 border border-dashed border-border-brand bg-surface">
                             <p className="text-text-secondary text-[10px] font-black uppercase tracking-widest">Sonuç bulunamadı.</p>
                         </div>
                     )}
                 </div>
 
                 {/* Contact CTA */}
-                <div className="mt-32 p-12 bg-surface text-center border border-white/5">
+                <div className="mt-32 p-12 bg-surface text-center border border-border-brand shadow-md">
                     <h3 className="text-2xl font-black uppercase tracking-tighter mb-6">Detaylı Bilgi İçin</h3>
                     <p className="text-xs uppercase tracking-widest text-text-secondary mb-10 leading-loose">Ekiplerimiz her türlü teknik soru için yardıma hazırdır.</p>
                     <button className="h-14 px-12 bg-primary text-foreground text-[10px] font-black uppercase tracking-[0.3em] hover:bg-white/80 transition-all">
