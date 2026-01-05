@@ -1,10 +1,19 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Building2, School, BookOpen, ArrowRight, HardHat, Construction } from "lucide-react";
 import Logo from "@/components/Logo";
+import { supabase } from "@/lib/supabase";
+
+interface Work {
+  id: string;
+  title: string;
+  category: string;
+  image_url: string;
+}
 
 const stats = [
   { icon: <Building2 className="text-white" />, label: "Tamamlanan Proje", value: "150+" },
@@ -30,25 +39,24 @@ const pillars = [
   }
 ];
 
-const recentWorks = [
-  {
-    category: "Sağlık",
-    title: "Merkez Hastanesi Projesi",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuD9Q8994vL6Z-dsApRROUsa9Bxq9xfoBViyhxHG2Il0tGcHB7vrwkjfY0eMUNiCRS57lK1H9ldJST06gtEgoa6PXPxWaxMzk6C2DLFjur6J-odHFJLRZB8MIJmBsVRp-f2roPrhBCImiRXRkG7FVtSw1GjKcdvw_99icL2xUowq2tztgokb1PEPGp43ZLyG3V0hUR_m291H52ALbcqrMVjKk9rDKrM0enPdidNyl6DAfRCFz56zSewnWLEQX751073y8kfTXXVSMao7"
-  },
-  {
-    category: "Eğitim",
-    title: "Anadolu Lisesi Bağışı",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDbcyhifZbpSgvyiXW09ZLaG6ZTAfuwGut1eaAfWhMtwXsI2AkjddTNbSRCxvQ9GaC1ywJJLuv5mwBvjg-OdEu7q3Pn8Ssox_vRbe4kiKFVyhJj96RS_Kv9ab3CiWLum_1ur5cg8UNkA2Ka0luYWkS5f7BoDPwN-GPoGBTDR5I2nA91WObLOK7QlA8bWmk4BkO4TxoNdA4hbN6hHnm3GVCMhUCqt9UfsXR60-s8U1WzoaTU6DywtagjJYmeutuJtBxwf1y1GS4OKB2Y"
-  },
-  {
-    category: "Altyapı",
-    title: "Şehir Köprüsü Yapımı",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDFPkVqupZRKxhC7a3pFgxUMDsMBXcQ_z4gHTpe6pRHCQJ5PJel7cK08uSHVFDjqkHMXLPOew-c4sp-10sCHTgZA2tw9T_ytFNd_WSz5cr4DOFIzem7Kk337500hrNsqNFVr4akDQpOWay-Nz3xpywIrLSvLRyqRLl-ruZnfC7B2FIOMkLWYrHz7NDK22466r1DQpFaLatVEpHC96C7d1YVff1yIrvrjHN9zZPnX4FWr-atXuRF5KB880dui7clKqEF6_Kono2iPTiJ"
-  }
-];
-
 export default function Home() {
+  const [recentWorks, setRecentWorks] = useState<Work[]>([]);
+
+  useEffect(() => {
+    const fetchWorks = async () => {
+      const { data, error } = await supabase
+        .from("works")
+        .select("*")
+        .order("order_index", { ascending: true })
+        .limit(6);
+
+      if (!error && data) {
+        setRecentWorks(data);
+      }
+    };
+    fetchWorks();
+  }, []);
+
   return (
     <div className="flex flex-col bg-background">
       {/* Hero Section */}
@@ -234,7 +242,7 @@ export default function Home() {
                 className="group relative aspect-[4/5] overflow-hidden bg-surface cursor-pointer border border-border-brand shadow-lg hover:shadow-xl transition-shadow"
               >
                 <Image
-                  src={work.image}
+                  src={work.image_url || "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab"}
                   alt={work.title}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
