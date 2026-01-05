@@ -1,54 +1,48 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, MapPin, Calendar, ArrowUpRight } from "lucide-react";
+import { supabase } from "@/lib/supabase";
 
-const categories = ["Hepsi", "Altyapı", "Sağlık", "Eğitim", "Konut"];
+const categories = ["Hepsi", "Altyapı", "Sağlık", "Eğitim", "Konut", "Spor", "Endüstriyel"];
 
-const projects = [
-    {
-        id: 1,
-        title: "Şehir Köprüsü Yapımı",
-        category: "Altyapı",
-        location: "İstanbul",
-        year: "2023",
-        status: "Tamamlandı",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDFPkVqupZRKxhC7a3pFgxUMDsMBXcQ_z4gHTpe6pRHCQJ5PJel7cK08uSHVFDjqkHMXLPOew-c4sp-10sCHTgZA2tw9T_ytFNd_WSz5cr4DOFIzem7Kk337500hrNsqNFVr4akDQpOWay-Nz3xpywIrLSvLRyqRLl-ruZnfC7B2FIOMkLWYrHz7NDK22466r1DQpFaLatVEpHC96C7d1YVff1yIrvrjHN9zZPnX4FWr-atXuRF5KB880dui7clKqEF6_Kono2iPTiJ"
-    },
-    {
-        id: 2,
-        title: "Merkez Hastanesi Projesi",
-        category: "Sağlık",
-        location: "Ankara",
-        year: "2024",
-        status: "Devam Ediyor",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuD9Q8994vL6Z-dsApRROUsa9Bxq9xfoBViyhxHG2Il0tGcHB7vrwkjfY0eMUNiCRS57lK1H9ldJST06gtEgoa6PXPxWaxMzk6C2DLFjur6J-odHFJLRZB8MIJmBsVRp-f2roPrhBCImiRXRkG7FVtSw1GjKcdvw_99icL2xUowq2tztgokb1PEPGp43ZLyG3V0hUR_m291H52ALbcqrMVjKk9rDKrM0enPdidNyl6DAfRCFz56zSewnWLEQX751073y8kfTXXVSMao7"
-    },
-    {
-        id: 3,
-        title: "Anadolu Lisesi Bağışı",
-        category: "Eğitim",
-        location: "İzmir",
-        year: "2022",
-        status: "Tamamlandı",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDbcyhifZbpSgvyiXW09ZLaG6ZTAfuwGut1eaAfWhMtwXsI2AkjddTNbSRCxvQ9GaC1ywJJLuv5mwBvjg-OdEu7q3Pn8Ssox_vRbe4kiKFVyhJj96RS_Kv9ab3CiWLum_1ur5cg8UNkA2Ka0luYWkS5f7BoDPwN-GPoGBTDR5I2nA91WObLOK7QlA8bWmk4BkO4TxoNdA4hbN6hHnm3GVCMhUCqt9UfsXR60-s8U1WzoaTU6DywtagjJYmeutuJtBxwf1y1GS4OKB2Y"
-    },
-    {
-        id: 4,
-        title: "Modern Yaşam Konutları",
-        category: "Konut",
-        location: "Antalya",
-        year: "2023",
-        status: "Tamamlandı",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBEdGREEIEIgZIt3Ca6KJloVUS5uZ7599iWQ4tm1H7CGEvSQh62cykeMIQdxCYTWoClGtkTEYi61CgAAEZXeys5h6TfhnBdKOkP15MUSl9VRraWkcU7_JJ44yOpDkC7wXR-CiiLzjpk3n0zIxGzdhKS5DhHwUnoWLE3Ctw4aKBfj-TIvrS0AVJ1brJgbbrDeevGt5lImWTkagKrz7-4WF03xerdfXLYKsz1GtTf1owpamaTBKPDbycR6tT_j7HD0Nm0FtgurzXAvw6h"
-    }
-];
+interface Project {
+    id: string;
+    title: string;
+    category: string;
+    location: string;
+    year: string;
+    status: string;
+    image_url?: string;
+    description?: string;
+}
 
 export default function ProjectsPage() {
     const [selectedCategory, setSelectedCategory] = useState("Hepsi");
     const [searchQuery, setSearchQuery] = useState("");
+    const [projects, setProjects] = useState<Project[]>([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        fetchProjects();
+    }, []);
+
+    const fetchProjects = async () => {
+        setLoading(true);
+        const { data, error } = await supabase
+            .from("projects")
+            .select("*")
+            .order("created_at", { ascending: false });
+
+        if (error) {
+            console.error("Error fetching projects:", error);
+        } else {
+            setProjects(data || []);
+        }
+        setLoading(false);
+    };
 
     const filteredProjects = projects.filter(project => {
         const matchesCategory = selectedCategory === "Hepsi" || project.category === selectedCategory;
@@ -75,8 +69,8 @@ export default function ProjectsPage() {
                                 key={cat}
                                 onClick={() => setSelectedCategory(cat)}
                                 className={`h-11 px-8 text-[10px] font-black uppercase tracking-[0.2em] transition-all border ${selectedCategory === cat
-                                        ? "bg-white text-black border-white"
-                                        : "bg-transparent border-white/10 text-text-secondary hover:border-white/40 hover:text-white"
+                                    ? "bg-white text-black border-white"
+                                    : "bg-transparent border-white/10 text-text-secondary hover:border-white/40 hover:text-white"
                                     }`}
                             >
                                 {cat}
@@ -110,12 +104,18 @@ export default function ProjectsPage() {
                                 className="group relative flex flex-col bg-surface border border-white/5 overflow-hidden"
                             >
                                 <div className="relative aspect-[21/9] overflow-hidden">
-                                    <Image
-                                        src={project.image}
-                                        alt={project.title}
-                                        fill
-                                        className="object-cover transition-transform duration-1000 group-hover:scale-110 grayscale brightness-50 group-hover:brightness-75"
-                                    />
+                                    {project.image_url ? (
+                                        <Image
+                                            src={project.image_url}
+                                            alt={project.title}
+                                            fill
+                                            className="object-cover transition-transform duration-1000 group-hover:scale-110 grayscale brightness-50 group-hover:brightness-75"
+                                        />
+                                    ) : (
+                                        <div className="w-full h-full bg-white/5 flex items-center justify-center">
+                                            <p className="text-white/20 text-xs">NO IMAGE</p>
+                                        </div>
+                                    )}
                                     <div className="absolute top-6 right-6 px-4 py-2 bg-black/80 backdrop-blur-md text-[10px] font-black uppercase tracking-widest border border-white/20">
                                         {project.status}
                                     </div>
