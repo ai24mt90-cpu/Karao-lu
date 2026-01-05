@@ -22,8 +22,8 @@ const pillars = [
     icon: <Construction size={24} />
   },
   {
-    title: "Hayırseverlik Yatırımları",
-    description: "Toplum merkezleri, burslar ve sosyal yardımlarla geleceğe yatırım yapıyor, fırsat eşitliği yaratıyoruz.",
+    title: "Sosyal Sorumluluk",
+    description: "Eğitim, spor ve toplumsal projelerle geleceğe yatırım yapıyor, toplumsal fayda sağlıyoruz.",
     image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=1280",
     link: "/hayirseverlik",
     icon: <BookOpen size={24} />
@@ -140,7 +140,7 @@ export default function Home() {
             <div className="max-w-2xl">
               <h2 className="text-5xl md:text-8xl font-black mb-8 tracking-tighter uppercase leading-none">Faaliyet <br /> Alanlarımız</h2>
               <p className="text-sm uppercase tracking-[0.4em] text-text-secondary leading-loose font-medium">
-                Mühendislik ve Hayırseverlikte Evrensel Standartlar.
+                Mühendislik ve Sosyal Sorumlulukta Evrensel Standartlar.
               </p>
             </div>
             <Link href="/hakkimizda" className="flex items-center gap-3 text-white font-black uppercase tracking-[0.3em] text-[10px] border-b-2 border-white pb-2 transition-transform hover:translate-x-2">
