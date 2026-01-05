@@ -53,7 +53,7 @@ export default function SocialResponsibilityPage() {
     };
 
     return (
-        <div className="flex flex-col py-20 bg-black">
+        <div className="flex flex-col py-20 bg-white">
             <div className="layout-container">
                 {/* Header Section */}
                 <section className="relative mb-32 text-center">

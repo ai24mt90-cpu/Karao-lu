@@ -44,7 +44,7 @@ export default function FAQPage() {
     );
 
     return (
-        <div className="flex flex-col py-24 bg-black min-h-screen">
+        <div className="flex flex-col py-24 bg-white min-h-screen">
             <div className="layout-container max-w-3xl">
                 <div className="text-center mb-24">
                     <motion.div

@@ -51,7 +51,7 @@ export default function ProjectsPage() {
     });
 
     return (
-        <div className="flex flex-col py-20 bg-black min-h-screen">
+        <div className="flex flex-col py-20 bg-white min-h-screen">
             <div className="layout-container">
                 {/* Header */}
                 <div className="mb-20 text-center">
@@ -116,7 +116,7 @@ export default function ProjectsPage() {
                                             <p className="text-white/20 text-xs">NO IMAGE</p>
                                         </div>
                                     )}
-                                    <div className="absolute top-6 right-6 px-4 py-2 bg-black/80 backdrop-blur-md text-[10px] font-black uppercase tracking-widest border border-white/20">
+                                    <div className="absolute top-6 right-6 px-4 py-2 bg-white/80 backdrop-blur-md text-[10px] font-black uppercase tracking-widest border border-white/20">
                                         {project.status}
                                     </div>
                                 </div>
