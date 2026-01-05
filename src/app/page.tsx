@@ -133,6 +133,43 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Vision & Mission Section */}
+      <section className="py-40 bg-white/[0.01]">
+        <div className="layout-container">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-32">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="flex flex-col gap-8"
+            >
+              <h3 className="text-sm font-black uppercase tracking-[0.5em] text-white/40">Vizyonumuz</h3>
+              <p className="text-3xl md:text-5xl font-black uppercase tracking-tighter leading-tight">
+                Mühendislikte <br /> <span className="text-white/40">Evrensel Bir İz</span> Bırakmak.
+              </p>
+              <p className="text-text-secondary text-sm uppercase tracking-widest leading-loose font-medium max-w-lg">
+                Geleceğin şehirlerini inşa ederken, mühendislik çözümlerimizi global standartların üzerine taşıyarak dünya çapında referans alınan bir marka olmayı hedefliyoruz.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="flex flex-col gap-8"
+            >
+              <h3 className="text-sm font-black uppercase tracking-[0.5em] text-white/40">Misyonumuz</h3>
+              <p className="text-3xl md:text-5xl font-black uppercase tracking-tighter leading-tight">
+                Topluma <br /> <span className="text-white/40">Değer Katan</span> Yapılar.
+              </p>
+              <p className="text-text-secondary text-sm uppercase tracking-widest leading-loose font-medium max-w-lg">
+                Sadece binalar değil, yaşam alanları ve toplumsal fayda üreten projeler geliştiriyoruz. Her bir tuğlada güveni, estetiği ve sürdürülebilirliği merkeze alıyoruz.
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Pillars Section */}
       <section className="py-40">
         <div className="layout-container">
