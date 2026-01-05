@@ -22,7 +22,7 @@ export default function Header() {
             <div className="layout-container flex h-24 items-center justify-between">
                 <Link href="/" className="flex items-center gap-4 text-white group">
                     <div className="transition-transform group-hover:scale-105">
-                        <Logo size={60} className="text-white" />
+                        <Logo size={80} className="text-white" />
                     </div>
                     <div className="flex flex-col">
                         <span className="text-2xl font-black uppercase tracking-tighter leading-none">Karaoğlu</span>

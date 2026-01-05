@@ -10,7 +10,7 @@ export default function Footer() {
                     {/* Brand Section */}
                     <div className="flex flex-col gap-8">
                         <div className="flex items-center gap-4 text-white">
-                            <Logo size={50} className="text-white" />
+                            <Logo size={70} className="text-white" />
                             <div className="flex flex-col text-left">
                                 <span className="text-xl font-black uppercase tracking-tighter leading-none">Karaoğlu</span>
                                 <span className="text-[8px] font-medium uppercase tracking-[0.2em] text-text-secondary">Universal Mühendislik</span>
