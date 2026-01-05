@@ -58,15 +58,16 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            className="relative h-[750px] w-full overflow-hidden rounded-none border border-primary/20"
+            className="relative h-[750px] w-full overflow-hidden rounded-lg border-2 border-primary/30 shadow-2xl"
           >
             <Image
-              src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000"
-              alt="Skyscraper architectural photo"
+              src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=2000"
+              alt="Modern construction and engineering"
               fill
-              className="object-cover grayscale brightness-[0.2]"
+              className="object-cover"
               priority
             />
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/70 to-primary-dark/90" />
             <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center">
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -74,22 +75,22 @@ export default function Home() {
                 transition={{ delay: 0.2 }}
                 className="mb-12"
               >
-                <Logo size={120} className="text-primary" />
+                <Logo size={120} className="text-white drop-shadow-2xl" />
               </motion.div>
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
-                className="mb-8 text-5xl font-black md:text-7xl lg:text-9xl leading-none uppercase tracking-tighter"
+                className="mb-8 text-5xl font-black md:text-7xl lg:text-9xl leading-none uppercase tracking-tighter text-white"
               >
                 İnşa Edin. <br />
-                <span className="text-primary/60">Mükemmele Ulaşın.</span>
+                <span className="text-white/70">Çözüm Üretin.</span>
               </motion.h1>
               <motion.p
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.6 }}
-                className="max-w-2xl text-lg text-text-secondary md:text-xl uppercase tracking-[0.4em] font-medium"
+                className="max-w-2xl text-lg text-white/90 md:text-xl uppercase tracking-[0.4em] font-medium"
               >
                 Karaoğlu Universal Mühendislik
               </motion.p>
@@ -99,10 +100,10 @@ export default function Home() {
                 transition={{ delay: 0.8 }}
                 className="mt-16 flex flex-wrap justify-center gap-8"
               >
-                <Link href="/projeler" className="flex h-16 items-center justify-center bg-primary px-12 text-xs font-black uppercase tracking-[0.3em] text-white transition-all hover:bg-primary-dark active:scale-95 shadow-lg shadow-primary/30">
+                <Link href="/projeler" className="flex h-16 items-center justify-center bg-white px-12 text-xs font-black uppercase tracking-[0.3em] text-primary transition-all hover:bg-white/90 active:scale-95 shadow-2xl">
                   Projelerimiz
                 </Link>
-                <Link href="/hakkimizda" className="flex h-16 items-center justify-center border border-primary/30 bg-primary/5 px-12 text-xs font-black uppercase tracking-[0.3em] text-primary backdrop-blur-sm transition-all hover:bg-primary/10 hover:border-primary/50">
+                <Link href="/hakkimizda" className="flex h-16 items-center justify-center border-2 border-white bg-transparent px-12 text-xs font-black uppercase tracking-[0.3em] text-white backdrop-blur-sm transition-all hover:bg-white/10">
                   Kurumsal
                 </Link>
               </motion.div>
