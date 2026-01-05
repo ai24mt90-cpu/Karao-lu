@@ -66,7 +66,7 @@ export default function SocialResponsibilityPage() {
                         <span className="text-[10px] font-black uppercase tracking-[0.3em]">Kurumsal Sosyal Sorumluluk</span>
                     </motion.div>
                     <h1 className="text-5xl md:text-8xl font-black mb-8 tracking-tighter uppercase leading-none">
-                        Sosyal <br /> <span className="text-white/40">Sorumluluk</span>
+                        Sosyal <br /> <span className="text-primary">Sorumluluk</span>
                     </h1>
                     <p className="max-w-3xl mx-auto text-lg text-text-secondary uppercase tracking-widest leading-loose font-medium">
                         Karaoğlu Universal Mühendislik olarak, kazancımızı toplum için kalıcı ve sürdürülebilir yatırımlara dönüştürüyoruz.
@@ -120,15 +120,15 @@ export default function SocialResponsibilityPage() {
                                         />
                                     ) : (
                                         <div className="w-full h-full bg-white/5 flex items-center justify-center">
-                                            <p className="text-white/20 text-xs">NO IMAGE</p>
+                                            <p className="text-primary/60 text-xs">NO IMAGE</p>
                                         </div>
                                     )}
                                     <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
                                 </div>
                                 <div>
-                                    <span className="text-white/40 font-black text-[10px] tracking-[0.4em] uppercase mb-4 block">{project.category}</span>
+                                    <span className="text-primary font-black text-[10px] tracking-[0.4em] uppercase mb-4 block">{project.category}</span>
                                     <h3 className="text-2xl font-black uppercase tracking-tighter mb-4 group-hover:text-primary transition-colors">{project.title}</h3>
-                                    <p className="text-white/40 font-black text-[9px] tracking-[0.2em] uppercase mb-4 block">{project.location}</p>
+                                    <p className="text-primary font-black text-[9px] tracking-[0.2em] uppercase mb-4 block">{project.location}</p>
                                     <p className="text-text-secondary font-medium leading-relaxed uppercase tracking-widest text-xs">{project.description}</p>
                                 </div>
                             </motion.div>

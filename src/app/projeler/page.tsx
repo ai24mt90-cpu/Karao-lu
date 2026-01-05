@@ -113,7 +113,7 @@ export default function ProjectsPage() {
                                         />
                                     ) : (
                                         <div className="w-full h-full bg-white/5 flex items-center justify-center">
-                                            <p className="text-white/20 text-xs">NO IMAGE</p>
+                                            <p className="text-primary/60 text-xs">NO IMAGE</p>
                                         </div>
                                     )}
                                     <div className="absolute top-6 right-6 px-4 py-2 bg-white/80 backdrop-blur-md text-[10px] font-black uppercase tracking-widest border border-white/20">
@@ -122,7 +122,7 @@ export default function ProjectsPage() {
                                 </div>
                                 <div className="p-10 flex flex-col md:flex-row gap-8 justify-between items-end">
                                     <div className="flex-1">
-                                        <div className="text-white/40 text-[10px] font-black uppercase tracking-[0.4em] mb-3">
+                                        <div className="text-primary text-[10px] font-black uppercase tracking-[0.4em] mb-3">
                                             {project.category}
                                         </div>
                                         <h3 className="text-3xl font-black uppercase tracking-tighter leading-none mb-6 group-hover:text-primary transition-colors">{project.title}</h3>

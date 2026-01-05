@@ -144,9 +144,9 @@ export default function Home() {
               viewport={{ once: true }}
               className="flex flex-col gap-8"
             >
-              <h3 className="text-sm font-black uppercase tracking-[0.5em] text-white/40">Vizyonumuz</h3>
+              <h3 className="text-sm font-black uppercase tracking-[0.5em] text-primary">Vizyonumuz</h3>
               <p className="text-3xl md:text-5xl font-black uppercase tracking-tighter leading-tight">
-                Mühendislikte <br /> <span className="text-white/40">Evrensel Bir İz</span> Bırakmak.
+                Mühendislikte <br /> <span className="text-primary">Evrensel Bir İz</span> Bırakmak.
               </p>
               <p className="text-text-secondary text-sm uppercase tracking-widest leading-loose font-medium max-w-lg">
                 Geleceğin şehirlerini inşa ederken, mühendislik çözümlerimizi global standartların üzerine taşıyarak dünya çapında referans alınan bir marka olmayı hedefliyoruz.
@@ -159,9 +159,9 @@ export default function Home() {
               viewport={{ once: true }}
               className="flex flex-col gap-8"
             >
-              <h3 className="text-sm font-black uppercase tracking-[0.5em] text-white/40">Misyonumuz</h3>
+              <h3 className="text-sm font-black uppercase tracking-[0.5em] text-primary">Misyonumuz</h3>
               <p className="text-3xl md:text-5xl font-black uppercase tracking-tighter leading-tight">
-                Topluma <br /> <span className="text-white/40">Değer Katan</span> Yapılar.
+                Topluma <br /> <span className="text-primary">Değer Katan</span> Yapılar.
               </p>
               <p className="text-text-secondary text-sm uppercase tracking-widest leading-loose font-medium max-w-lg">
                 Sadece binalar değil, yaşam alanları ve toplumsal fayda üreten projeler geliştiriyoruz. Her bir tuğlada güveni, estetiği ve sürdürülebilirliği merkeze alıyoruz.
@@ -245,7 +245,7 @@ export default function Home() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
                 <div className="absolute bottom-0 left-0 w-full p-12 transform translate-y-6 group-hover:translate-y-0 transition-transform duration-500">
-                  <span className="text-[10px] font-black uppercase tracking-[0.5em] text-white/40 mb-4 block group-hover:text-primary transition-colors">{work.category}</span>
+                  <span className="text-[10px] font-black uppercase tracking-[0.5em] text-primary mb-4 block group-hover:text-primary transition-colors">{work.category}</span>
                   <h4 className="text-3xl font-black text-foreground uppercase tracking-tighter leading-tight border-l-4 border-white pl-6">{work.title}</h4>
                 </div>
               </motion.div>

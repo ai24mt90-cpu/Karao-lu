@@ -26,7 +26,7 @@ export default function ContactPage() {
                                 animate={{ opacity: 1, x: 0 }}
                                 className="text-5xl md:text-7xl font-black uppercase tracking-tighter mb-8"
                             >
-                                İrtibar <br /><span className="text-white/40 leading-none">Kurun</span>
+                                İrtibar <br /><span className="text-primary leading-none">Kurun</span>
                             </motion.h1>
                             <p className="text-sm font-medium uppercase tracking-[0.2em] text-text-secondary leading-loose">
                                 Evrensel mühendislik çözümleri ve vakıf çalışmalarımız için bizimle iletişime geçin.

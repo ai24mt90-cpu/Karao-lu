@@ -58,7 +58,7 @@ export default function AboutPage() {
                             <span className="text-[10px] font-black uppercase tracking-[0.3em]">Kurumsal Bilgi</span>
                         </motion.div>
                         <h1 className="text-5xl md:text-9xl font-black tracking-tighter uppercase leading-none">
-                            Temellerimiz <br /> <span className="text-white/40">Geleceğimiz</span>
+                            Temellerimiz <br /> <span className="text-primary">Geleceğimiz</span>
                         </h1>
                         <p className="max-w-3xl text-sm md:text-lg text-text-secondary uppercase tracking-[0.4em] leading-loose font-medium">
                             1993'ten beri mühendislik disiplini ve toplumsal fayda odaklı yapılar inşa ediyoruz.
@@ -72,7 +72,7 @@ export default function AboutPage() {
                 <div className="layout-container">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-32 items-center">
                         <div className="flex flex-col gap-10">
-                            <h2 className="text-4xl md:text-6xl font-black tracking-tighter uppercase">İnşa Etmekten <br /><span className="text-white/40">Daha Fazlası</span></h2>
+                            <h2 className="text-4xl md:text-6xl font-black tracking-tighter uppercase">İnşa Etmekten <br /><span className="text-primary">Daha Fazlası</span></h2>
                             <p className="text-xs uppercase tracking-[0.3em] text-text-secondary leading-loose font-medium">
                                 Karaoğlu Universal Mühendislik olarak, sadece beton ve demiri bir araya getirmiyoruz; yaşam alanları ve toplumsal fayda üreten projelerle geleceği şekillendiriyoruz. 30 yılı aşkın süredir kamu projelerinde güvenin simgesi olduk.
                             </p>
@@ -84,7 +84,7 @@ export default function AboutPage() {
                             {stats.map((stat, idx) => (
                                 <div key={stat.label} className="flex flex-col gap-4 p-12 border border-white/5 bg-white/[0.02]">
                                     <span className="text-5xl font-black tracking-tighter ">{stat.value}</span>
-                                    <span className="text-[9px] font-black text-white/40 uppercase tracking-[0.4em]">{stat.label}</span>
+                                    <span className="text-[9px] font-black text-primary uppercase tracking-[0.4em]">{stat.label}</span>
                                 </div>
                             ))}
                         </div>
@@ -114,7 +114,7 @@ export default function AboutPage() {
                             </div>
                             <div className="mt-8 text-center">
                                 <h3 className="text-2xl font-black uppercase tracking-tighter">{chairman.name}</h3>
-                                <p className="text-[10px] font-black uppercase tracking-[0.3em] text-white/40 mt-2">{chairman.role}</p>
+                                <p className="text-[10px] font-black uppercase tracking-[0.3em] text-primary mt-2">{chairman.role}</p>
                             </div>
                         </motion.div>
 
@@ -156,7 +156,7 @@ export default function AboutPage() {
                                             </div>
                                             <div className="text-center">
                                                 <h3 className="text-xl font-black uppercase tracking-tighter">{m.name}</h3>
-                                                <p className="text-[9px] font-black uppercase tracking-[0.2em] text-white/40 mt-2">{m.role}</p>
+                                                <p className="text-[9px] font-black uppercase tracking-[0.2em] text-primary mt-2">{m.role}</p>
                                             </div>
                                         </motion.div>
                                     ))}

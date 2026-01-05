@@ -55,7 +55,7 @@ export default function FAQPage() {
                         <HelpCircle size={14} />
                         <span className="text-[10px] font-black uppercase tracking-[0.3em]">Destek & Bilgi</span>
                     </motion.div>
-                    <h1 className="text-5xl md:text-7xl font-black tracking-tighter uppercase mb-6 leading-none">Sorular & <br /> <span className="text-white/40">Yanıtlar</span></h1>
+                    <h1 className="text-5xl md:text-7xl font-black tracking-tighter uppercase mb-6 leading-none">Sorular & <br /> <span className="text-primary">Yanıtlar</span></h1>
                     <p className="text-xs uppercase tracking-[0.3em] text-text-secondary leading-loose font-medium">
                         Merak ettikleriniz için evrensel yanıtlar.
                     </p>
