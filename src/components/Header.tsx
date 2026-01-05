@@ -19,10 +19,10 @@ export default function Header() {
 
     return (
         <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-black/80 backdrop-blur-md">
-            <div className="layout-container flex h-24 items-center justify-between">
-                <Link href="/" className="flex items-center gap-4 text-white group">
+            <div className="layout-container flex h-32 items-center justify-between">
+                <Link href="/" className="flex items-center gap-6 text-white group">
                     <div className="transition-transform group-hover:scale-105">
-                        <Logo size={80} className="text-white" />
+                        <Logo size={120} className="text-white" />
                     </div>
                     <div className="flex flex-col">
                         <span className="text-2xl font-black uppercase tracking-tighter leading-none">Karaoğlu</span>
