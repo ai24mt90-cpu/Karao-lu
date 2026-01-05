@@ -123,7 +123,7 @@ export default function AboutPage() {
                             onClick={() => setIsBoardOpen(!isBoardOpen)}
                             className="flex flex-col items-center gap-4 group"
                         >
-                            <span className="text-[10px] font-black uppercase tracking-[0.5em] text-white group-hover:text-white/60 transition-colors">
+                            <span className="text-[10px] font-black uppercase tracking-[0.5em] text-white group-hover:text-primary/60 transition-colors">
                                 {isBoardOpen ? "Kurulu Gizle" : "Diğer Üyeleri Gör"}
                             </span>
                             <motion.div

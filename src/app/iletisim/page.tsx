@@ -85,7 +85,7 @@ export default function ContactPage() {
                         >
                             {formState === "success" ? (
                                 <div className="flex flex-col items-center justify-center py-20 text-center gap-8">
-                                    <div className="size-20 bg-white text-black flex items-center justify-center rounded-full">
+                                    <div className="size-20 bg-primary text-white flex items-center justify-center rounded-full">
                                         <Send size={32} />
                                     </div>
                                     <h3 className="text-3xl font-black uppercase tracking-tighter">İletildi</h3>
@@ -139,7 +139,7 @@ export default function ContactPage() {
 
                                     <button
                                         disabled={formState === "submitting"}
-                                        className="w-full h-16 bg-white text-black font-black uppercase tracking-[0.3em] text-xs hover:bg-white/80 transition-all disabled:opacity-50"
+                                        className="w-full h-16 bg-primary text-white font-black uppercase tracking-[0.3em] text-xs hover:bg-white/80 transition-all disabled:opacity-50"
                                     >
                                         {formState === "submitting" ? "Gönderiliyor..." : "Mesajı Gönder"}
                                     </button>

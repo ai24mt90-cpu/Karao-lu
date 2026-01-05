@@ -20,9 +20,9 @@ export default function Header() {
     return (
         <header className="sticky top-0 z-50 w-full border-b border-border-brand bg-white/95 backdrop-blur-md shadow-sm">
             <div className="layout-container flex h-32 items-center justify-between">
-                <Link href="/" className="flex items-center gap-6 text-white group">
+                <Link href="/" className="flex items-center gap-6 text-primary group">
                     <div className="transition-transform group-hover:scale-105">
-                        <Logo size={120} className="text-white" />
+                        <Logo size={120} className="text-primary" />
                     </div>
                     <div className="flex flex-col">
                         <span className="text-2xl font-black uppercase tracking-tighter leading-none">Karaoğlu</span>
@@ -37,7 +37,7 @@ export default function Header() {
                             <Link
                                 key={link.href}
                                 href={link.href}
-                                className="text-[10px] font-black uppercase tracking-[0.2em] text-text-secondary hover:text-white transition-colors"
+                                className="text-[10px] font-black uppercase tracking-[0.2em] text-text-secondary hover:text-primary transition-colors"
                             >
                                 {link.label}
                             </Link>
@@ -45,7 +45,7 @@ export default function Header() {
                     </div>
                     <Link
                         href="/iletisim"
-                        className="flex h-12 items-center justify-center bg-white px-8 text-[10px] font-black uppercase tracking-[0.2em] text-black transition-all hover:bg-white/90 active:scale-95"
+                        className="flex h-12 items-center justify-center bg-primary px-8 text-[10px] font-black uppercase tracking-[0.2em] text-white transition-all hover:bg-primary-dark active:scale-95 shadow-lg shadow-primary/20"
                     >
                         Bize Ulaşın
                     </Link>
@@ -75,7 +75,7 @@ export default function Header() {
                                     key={link.href}
                                     href={link.href}
                                     onClick={() => setIsOpen(false)}
-                                    className="text-xs font-black uppercase tracking-[0.3em] text-text-secondary hover:text-white transition-colors"
+                                    className="text-xs font-black uppercase tracking-[0.3em] text-text-secondary hover:text-primary transition-colors"
                                 >
                                     {link.label}
                                 </Link>

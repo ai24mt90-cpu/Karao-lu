@@ -25,9 +25,9 @@ export default function Footer() {
                     <div className="flex flex-col gap-6">
                         <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-white">Kurumsal</h4>
                         <nav className="flex flex-col gap-3">
-                            <Link href="/hakkimizda" className="text-[10px] font-black uppercase tracking-widest text-text-secondary hover:text-white transition-colors">Hakkımızda</Link>
-                            <Link href="/hakkimizda#yonetim" className="text-[10px] font-black uppercase tracking-widest text-text-secondary hover:text-white transition-colors">Yönetim Kurulu</Link>
-                            <Link href="/kariyer" className="text-[10px] font-black uppercase tracking-widest text-text-secondary hover:text-white transition-colors">Kariyer</Link>
+                            <Link href="/hakkimizda" className="text-[10px] font-black uppercase tracking-widest text-text-secondary hover:text-primary transition-colors">Hakkımızda</Link>
+                            <Link href="/hakkimizda#yonetim" className="text-[10px] font-black uppercase tracking-widest text-text-secondary hover:text-primary transition-colors">Yönetim Kurulu</Link>
+                            <Link href="/kariyer" className="text-[10px] font-black uppercase tracking-widest text-text-secondary hover:text-primary transition-colors">Kariyer</Link>
                         </nav>
                     </div>
 
@@ -35,9 +35,9 @@ export default function Footer() {
                     <div className="flex flex-col gap-6">
                         <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-white">Projeler</h4>
                         <nav className="flex flex-col gap-3">
-                            <Link href="/projeler?status=tamamlanan" className="text-[10px] font-black uppercase tracking-widest text-text-secondary hover:text-white transition-colors">Tamamlananlar</Link>
-                            <Link href="/projeler?status=devam-eden" className="text-[10px] font-black uppercase tracking-widest text-text-secondary hover:text-white transition-colors">Devam Edenler</Link>
-                            <Link href="/hayirseverlik" className="text-[10px] font-black uppercase tracking-widest text-text-secondary hover:text-white transition-colors">Sosyal Sorumluluk</Link>
+                            <Link href="/projeler?status=tamamlanan" className="text-[10px] font-black uppercase tracking-widest text-text-secondary hover:text-primary transition-colors">Tamamlananlar</Link>
+                            <Link href="/projeler?status=devam-eden" className="text-[10px] font-black uppercase tracking-widest text-text-secondary hover:text-primary transition-colors">Devam Edenler</Link>
+                            <Link href="/hayirseverlik" className="text-[10px] font-black uppercase tracking-widest text-text-secondary hover:text-primary transition-colors">Sosyal Sorumluluk</Link>
                         </nav>
                     </div>
 
@@ -45,10 +45,10 @@ export default function Footer() {
                     <div className="flex flex-col gap-6">
                         <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-white">İletişim</h4>
                         <div className="flex flex-col gap-4">
-                            <a href="mailto:info@karaoglu.com" className="flex items-center gap-3 text-[10px] font-black uppercase tracking-widest text-text-secondary hover:text-white transition-colors">
+                            <a href="mailto:info@karaoglu.com" className="flex items-center gap-3 text-[10px] font-black uppercase tracking-widest text-text-secondary hover:text-primary transition-colors">
                                 <Mail size={14} className="opacity-40" /> info@karaoglu.com
                             </a>
-                            <a href="tel:+902125550000" className="flex items-center gap-3 text-[10px] font-black uppercase tracking-widest text-text-secondary hover:text-white transition-colors">
+                            <a href="tel:+902125550000" className="flex items-center gap-3 text-[10px] font-black uppercase tracking-widest text-text-secondary hover:text-primary transition-colors">
                                 <Phone size={14} className="opacity-40" /> +90 212 555 0000
                             </a>
                             <div className="flex items-start gap-3 text-[10px] font-black uppercase tracking-widest text-text-secondary">

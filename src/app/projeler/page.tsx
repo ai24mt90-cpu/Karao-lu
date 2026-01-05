@@ -69,8 +69,8 @@ export default function ProjectsPage() {
                                 key={cat}
                                 onClick={() => setSelectedCategory(cat)}
                                 className={`h-11 px-8 text-[10px] font-black uppercase tracking-[0.2em] transition-all border ${selectedCategory === cat
-                                    ? "bg-white text-black border-white"
-                                    : "bg-transparent border-white/10 text-text-secondary hover:border-white/40 hover:text-white"
+                                    ? "bg-primary text-white border-white"
+                                    : "bg-transparent border-white/10 text-text-secondary hover:border-white/40 hover:text-primary"
                                     }`}
                             >
                                 {cat}
@@ -125,7 +125,7 @@ export default function ProjectsPage() {
                                         <div className="text-white/40 text-[10px] font-black uppercase tracking-[0.4em] mb-3">
                                             {project.category}
                                         </div>
-                                        <h3 className="text-3xl font-black uppercase tracking-tighter leading-none mb-6 group-hover:text-white transition-colors">{project.title}</h3>
+                                        <h3 className="text-3xl font-black uppercase tracking-tighter leading-none mb-6 group-hover:text-primary transition-colors">{project.title}</h3>
 
                                         <div className="flex flex-wrap gap-6 items-center">
                                             <div className="flex items-center gap-2 text-text-secondary text-[10px] font-black uppercase tracking-widest">
@@ -136,7 +136,7 @@ export default function ProjectsPage() {
                                             </div>
                                         </div>
                                     </div>
-                                    <button className="size-16 flex items-center justify-center bg-white text-black transition-all hover:scale-105">
+                                    <button className="size-16 flex items-center justify-center bg-primary text-white transition-all hover:scale-105">
                                         <ArrowUpRight size={24} />
                                     </button>
                                 </div>

@@ -127,7 +127,7 @@ export default function SocialResponsibilityPage() {
                                 </div>
                                 <div>
                                     <span className="text-white/40 font-black text-[10px] tracking-[0.4em] uppercase mb-4 block">{project.category}</span>
-                                    <h3 className="text-2xl font-black uppercase tracking-tighter mb-4 group-hover:text-white transition-colors">{project.title}</h3>
+                                    <h3 className="text-2xl font-black uppercase tracking-tighter mb-4 group-hover:text-primary transition-colors">{project.title}</h3>
                                     <p className="text-white/40 font-black text-[9px] tracking-[0.2em] uppercase mb-4 block">{project.location}</p>
                                     <p className="text-text-secondary font-medium leading-relaxed uppercase tracking-widest text-xs">{project.description}</p>
                                 </div>
