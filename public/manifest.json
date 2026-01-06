@@ -1,0 +1,27 @@
+{
+    "name": "Karaoğlu Universal Mühendislik",
+    "short_name": "Karaoğlu",
+    "description": "Van merkezli kamu müteahhidi. Altyapı, üstyapı ve mühendislik projelerinde güvenilir çözüm ortağınız.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#1F3960",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "/logo.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/logo.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "lang": "tr",
+    "categories": [
+        "business",
+        "construction"
+    ]
+}
