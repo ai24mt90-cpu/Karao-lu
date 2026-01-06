@@ -40,7 +40,7 @@ export default function ContactPage() {
                                 </div>
                                 <div>
                                     <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-foreground mb-2">Merkez Ofis</h4>
-                                    <p className="text-text-secondary text-xs uppercase tracking-widest leading-relaxed font-medium">Maslak Mah. Büyükdere Cad. No:1 <br />Spine Tower, İstanbul</p>
+                                    <p className="text-text-secondary text-xs uppercase tracking-widest leading-relaxed font-medium">2 Nisan Cad. Zerrin Taç Sitesi Karşısı <br />No:65 İpekyolu/Van</p>
                                 </div>
                             </div>
 
@@ -60,7 +60,7 @@ export default function ContactPage() {
                                 </div>
                                 <div>
                                     <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-foreground mb-2">E-Posta</h4>
-                                    <p className="text-text-secondary text-xs uppercase tracking-widest font-medium">karaogluuniversal@gmail.com</p>
+                                    <p className="text-text-secondary text-xs tracking-widest font-medium">karaogluuniversal@gmail.com</p>
                                 </div>
                             </div>
 

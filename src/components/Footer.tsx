@@ -45,7 +45,7 @@ export default function Footer() {
                     <div className="flex flex-col gap-6">
                         <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-white">İletişim</h4>
                         <div className="flex flex-col gap-4">
-                            <a href="mailto:karaogluuniversal@gmail.com" className="flex items-center gap-3 text-[10px] font-black uppercase tracking-widest text-text-secondary hover:text-primary transition-colors">
+                            <a href="mailto:karaogluuniversal@gmail.com" className="flex items-center gap-3 text-[10px] font-black tracking-widest text-text-secondary hover:text-primary transition-colors">
                                 <Mail size={14} className="opacity-40" /> karaogluuniversal@gmail.com
                             </a>
                             <a href="tel:+904322165636" className="flex items-center gap-3 text-[10px] font-black uppercase tracking-widest text-text-secondary hover:text-primary transition-colors">
@@ -53,7 +53,7 @@ export default function Footer() {
                             </a>
                             <div className="flex items-start gap-3 text-[10px] font-black uppercase tracking-widest text-text-secondary">
                                 <MapPin size={14} className="mt-0.5 flex-shrink-0 opacity-40" />
-                                <span>Maslak Mah. Büyükdere Cad. No:1, İstanbul</span>
+                                <span>2 Nisan Cad. Zerrin Taç Sitesi Karşısı No:65, İpekyolu/Van</span>
                             </div>
                         </div>
                     </div>
