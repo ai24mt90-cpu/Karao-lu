@@ -79,6 +79,66 @@ export default function AboutPage() {
                 </div>
             </section>
 
+            {/* Başkanın Mesajı */}
+            <section className="py-20 bg-surface-secondary">
+                <div className="layout-container">
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
+                        <div className="lg:col-span-1">
+                            <div className="sticky top-32">
+                                <div className="relative h-[400px] rounded overflow-hidden shadow-xl mb-6">
+                                    <Image
+                                        src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=600"
+                                        alt="Özcan Kara"
+                                        fill
+                                        className="object-cover"
+                                    />
+                                </div>
+                                <div className="text-center">
+                                    <h4 className="text-xl font-bold text-foreground">Özcan Kara</h4>
+                                    <p className="text-primary font-medium">Yönetim Kurulu Başkanı</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="lg:col-span-2">
+                            <h2 className="text-primary text-sm font-semibold uppercase tracking-wider mb-4">Kurumsal</h2>
+                            <h3 className="text-4xl font-bold text-foreground mb-8">BAŞKANIN MESAJI</h3>
+                            <div className="prose prose-lg max-w-none">
+                                <p className="text-text-secondary leading-relaxed mb-6">
+                                    2014 yılında bu şirketi kurarken elimizde büyük imkânlar değil, büyük bir inanç ve sorumluluk duygusu vardı.
+                                    Zor bir dönemde, belirsizliklerin ve ağır şartların içinde çıktığımız bu yolda; vazgeçmemeyi, yük taşımayı
+                                    ve dimdik durmayı kendimize ilke edindik.
+                                </p>
+                                <p className="text-text-secondary leading-relaxed mb-6">
+                                    İnşaat, enerji ve güvenlik gibi yüksek sorumluluk gerektiren alanlarda faaliyet göstermek; yalnızca teknik
+                                    bilgi değil, sabır, cesaret ve ahlaklı bir duruş da ister. Biz bu yolda çoğu zaman zorlandık, kimi zaman
+                                    yükümüz ağırlaştı; ancak hiçbir zaman işimizin onurundan ve emeğin değerinden ödün vermedik.
+                                </p>
+                                <p className="text-text-secondary leading-relaxed mb-6">
+                                    Kamu projelerinde görev alırken şunu hiç unutmadık: Ortaya koyduğumuz her iş, yalnızca bir yapı ya da
+                                    sistem değil; insanların güveni, emeği ve geleceğidir. Bu bilinçle hareket ettik, şartlar ne olursa olsun
+                                    sorumluluğumuzdan kaçmadık.
+                                </p>
+                                <p className="text-text-secondary leading-relaxed mb-6">
+                                    Bugün geldiğimiz noktada, yaşanan tüm zorlukların bizi daha güçlü, daha dikkatli ve daha kararlı kıldığını
+                                    biliyoruz. Yolumuzdan döndürmeyen bu tecrübeler, yarınlara olan inancımızın en büyük teminatıdır.
+                                </p>
+                                <p className="text-text-secondary leading-relaxed mb-6">
+                                    Bize güvenen tüm kurumlara, bu zor yolda birlikte yürüdüğümüz çalışma arkadaşlarımıza ve emeğini ortaya
+                                    koyan herkese gönülden teşekkür ediyorum.
+                                </p>
+                                <p className="text-primary font-semibold text-lg italic mb-8">
+                                    "Yük taşımayı bilenlerin, yarını inşa edeceğine inanıyoruz."
+                                </p>
+                                <div className="border-t border-gray-200 pt-6">
+                                    <p className="text-foreground font-bold">Özcan Kara</p>
+                                    <p className="text-text-secondary text-sm">Yönetim Kurulu Başkanı</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* Values */}
             <section className="py-20 bg-surface-secondary">
                 <div className="layout-container">
