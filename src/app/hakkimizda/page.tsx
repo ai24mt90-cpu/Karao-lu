@@ -88,13 +88,13 @@ export default function AboutPage() {
                                 <div className="relative h-[400px] rounded overflow-hidden shadow-xl mb-6">
                                     <Image
                                         src="/ozcan-kara.jpg"
-                                        alt="Özcan Kara"
+                                        alt="Özcan KARA"
                                         fill
                                         className="object-cover"
                                     />
                                 </div>
                                 <div className="text-center">
-                                    <h4 className="text-xl font-bold text-foreground">Özcan Kara</h4>
+                                    <h4 className="text-xl font-bold text-foreground">Özcan KARA</h4>
                                     <p className="text-primary font-medium">Yönetim Kurulu Başkanı</p>
                                 </div>
                             </div>
@@ -130,7 +130,7 @@ export default function AboutPage() {
                                     "Yük taşımayı bilenlerin, yarını inşa edeceğine inanıyoruz."
                                 </p>
                                 <div className="border-t border-gray-200 pt-6">
-                                    <p className="text-foreground font-bold">Özcan Kara</p>
+                                    <p className="text-foreground font-bold">Özcan KARA</p>
                                     <p className="text-text-secondary text-sm">Yönetim Kurulu Başkanı</p>
                                 </div>
                             </div>
