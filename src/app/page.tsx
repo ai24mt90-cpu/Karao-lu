@@ -69,13 +69,13 @@ export default function Home() {
             className="relative h-[750px] w-full overflow-hidden rounded-xl shadow-2xl"
           >
             <Image
-              src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000"
+              src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=2000"
               alt="Modern architecture"
               fill
               className="object-cover"
               priority
             />
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/95 via-primary/85 to-primary-dark/95" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/40" />
             <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center">
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
