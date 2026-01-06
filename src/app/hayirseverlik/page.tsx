@@ -4,7 +4,6 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { supabase } from "@/lib/supabase";
-import { Globe, Heart, School, Users } from "lucide-react";
 
 interface Project {
     id: string;
@@ -14,13 +13,6 @@ interface Project {
     description?: string;
     image_url?: string;
 }
-
-const stats = [
-    { icon: <School size={32} />, value: "12", label: "Bağışlanan Okul" },
-    { icon: <Users size={32} />, value: "500+", label: "Eğitim Bursu" },
-    { icon: <Heart size={32} />, value: "50+", label: "Sosyal Proje" },
-    { icon: <Globe size={32} />, value: "15+", label: "İl Genelinde" },
-];
 
 export default function SocialResponsibilityPage() {
     const [projects, setProjects] = useState<Project[]>([]);
@@ -44,7 +36,7 @@ export default function SocialResponsibilityPage() {
             {/* Hero Banner */}
             <section className="relative h-[400px]">
                 <Image
-                    src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=2000"
+                    src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&q=80&w=2000"
                     alt="Sosyal Sorumluluk"
                     fill
                     className="object-cover"
@@ -63,18 +55,12 @@ export default function SocialResponsibilityPage() {
                 </div>
             </section>
 
-            {/* Stats */}
+            {/* Inspiring Quote */}
             <section className="py-16 bg-primary">
-                <div className="layout-container">
-                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-                        {stats.map((stat) => (
-                            <div key={stat.label} className="text-center text-white">
-                                <div className="mb-4 flex justify-center text-white/60">{stat.icon}</div>
-                                <div className="text-4xl font-bold mb-2">{stat.value}</div>
-                                <div className="text-white/70 text-sm">{stat.label}</div>
-                            </div>
-                        ))}
-                    </div>
+                <div className="layout-container text-center">
+                    <p className="text-2xl md:text-3xl font-bold text-white leading-relaxed max-w-4xl mx-auto">
+                        "Bugünü İnşa Ediyor, Geleceğe Değer Katıyoruz."
+                    </p>
                 </div>
             </section>
 
@@ -87,17 +73,18 @@ export default function SocialResponsibilityPage() {
                             <h3 className="text-4xl font-bold text-foreground mb-6">TOPLUMA DEĞER KATIYORUZ</h3>
                             <p className="text-text-secondary leading-relaxed mb-6">
                                 Karaoğlu Universal Mühendislik olarak, sadece yapılar inşa etmiyoruz; aynı zamanda geleceğe
-                                yatırım yapıyoruz. Eğitim, spor ve sosyal alanlarda gerçekleştirdiğimiz projelerle
+                                yatırım yapıyoruz. Eğitim tesisleri, parklar ve sosyal alanlarda gerçekleştirdiğimiz projelerle
                                 toplumsal faydayı ön planda tutuyoruz.
                             </p>
                             <p className="text-text-secondary leading-relaxed">
-                                Bugüne kadar onlarca okul, spor tesisi ve sosyal proje ile binlerce öğrenciye destek olduk.
+                                Yaşam alanlarını güzelleştiren, toplumun ihtiyaçlarına cevap veren projelerle
+                                bölgemize değer katmaya devam ediyoruz.
                             </p>
                         </div>
                         <div className="relative h-[400px] rounded overflow-hidden shadow-xl">
                             <Image
-                                src="https://images.unsplash.com/photo-1497486751825-1233686d5d80?auto=format&fit=crop&q=80&w=800"
-                                alt="Sosyal Sorumluluk"
+                                src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&q=80&w=800"
+                                alt="Okul Binası"
                                 fill
                                 className="object-cover"
                             />
@@ -128,7 +115,7 @@ export default function SocialResponsibilityPage() {
                                             />
                                         ) : (
                                             <div className="w-full h-full bg-primary/10 flex items-center justify-center">
-                                                <Heart className="text-primary/40" size={48} />
+                                                <span className="text-primary/40 text-sm">Görsel Yok</span>
                                             </div>
                                         )}
                                         <div className="absolute top-4 left-4">
@@ -154,9 +141,27 @@ export default function SocialResponsibilityPage() {
                     ) : (
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                             {[
-                                { title: "Okul Bağışı", category: "Eğitim", location: "Van", description: "İhtiyaç sahiplerinin eğitimine destek", image: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&q=80&w=600" },
-                                { title: "Spor Tesisi", category: "Spor", location: "İpekyolu", description: "Gençlerin spor yapabilmesi için tesis", image: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&q=80&w=600" },
-                                { title: "Burs Programı", category: "Eğitim", location: "Van", description: "Başarılı öğrencilere eğitim bursu", image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=600" },
+                                {
+                                    title: "Okul İnşaatı",
+                                    category: "Eğitim",
+                                    location: "Van",
+                                    description: "Modern eğitim tesisleri inşa ediyoruz",
+                                    image: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&q=80&w=600"
+                                },
+                                {
+                                    title: "Park ve Yeşil Alan",
+                                    category: "Çevre",
+                                    location: "İpekyolu",
+                                    description: "Bahçeli park alanları düzenliyoruz",
+                                    image: "https://images.unsplash.com/photo-1588714477688-cf28a50e94f7?auto=format&fit=crop&q=80&w=600"
+                                },
+                                {
+                                    title: "Eğitim Kampüsü",
+                                    category: "Eğitim",
+                                    location: "Van",
+                                    description: "Kapsamlı eğitim kampüsleri projesi",
+                                    image: "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&q=80&w=600"
+                                },
                             ].map((project) => (
                                 <div key={project.title} className="bg-white overflow-hidden shadow-sm hover:shadow-xl transition-all group">
                                     <div className="relative h-56 overflow-hidden">
