@@ -27,7 +27,6 @@ export default function Footer() {
                         <nav className="flex flex-col gap-3">
                             <Link href="/hakkimizda" className="text-sm text-white/70 hover:text-white transition-colors">Hakkımızda</Link>
                             <Link href="/hakkimizda#yonetim" className="text-sm text-white/70 hover:text-white transition-colors">Yönetim Kurulu</Link>
-                            <Link href="/kariyer" className="text-sm text-white/70 hover:text-white transition-colors">Kariyer</Link>
                         </nav>
                     </div>
 
