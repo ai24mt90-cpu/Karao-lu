@@ -141,7 +141,6 @@ export default function AboutPage() {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
                         {/* Misyon */}
                         <div className="bg-white p-10 shadow-lg">
-                            <h2 className="text-primary text-sm font-semibold uppercase tracking-wider mb-4">Karaoğlu Universal Mühendislik</h2>
                             <h3 className="text-3xl font-bold text-foreground mb-6">MİSYONUMUZ</h3>
                             <div className="space-y-4 text-text-secondary leading-relaxed">
                                 <p>
@@ -168,7 +167,6 @@ export default function AboutPage() {
 
                         {/* Vizyon */}
                         <div className="bg-white p-10 shadow-lg">
-                            <h2 className="text-primary text-sm font-semibold uppercase tracking-wider mb-4">Karaoğlu Universal Mühendislik</h2>
                             <h3 className="text-3xl font-bold text-foreground mb-6">VİZYONUMUZ</h3>
                             <div className="space-y-4 text-text-secondary leading-relaxed">
                                 <p>
