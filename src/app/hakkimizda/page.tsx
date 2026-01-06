@@ -20,7 +20,7 @@ const stats = [
 ];
 
 const timeline = [
-    { year: "1993", title: "Kuruluş", description: "İstanbul'da, üç mühendis arkadaşın vizyonuyla küçük bir ofiste temellerimiz atıldı. İlk yıllarda konut projelerine odaklandık.", icon: "🏢" },
+    { year: "2014", title: "Kuruluş", description: "İstanbul'da, üç mühendis arkadaşın vizyonuyla küçük bir ofiste temellerimiz atıldı. İlk yıllarda konut projelerine odaklandık.", icon: "🏢" },
     { year: "2005", title: "İlk Kamu Projesi", description: "Sektördeki güvenilirliğimiz, Ankara Devlet Hastanesi inşası ile taçlandı. Kamu projelerindeki başarımız bu noktadan sonra ivme kazandı.", icon: "🏥" },
     { year: "2015", title: "Uluslararası Açılım", description: "Sınırlarımızı aştık. Balkanlar ve Orta Asya'da köprü, otoyol ve altyapı projeleri üstlenerek global bir marka olma yolunda ilerledik.", icon: "🌍" },
     { year: "2023", title: "Sürdürülebilirlik Ödülü", description: "Yeşil bina sertifikalı projelerimizle 'Yılın En Çevreci İnşaat Firması' ödülüne layık görüldük. Karbon ayak izimizi %40 azalttık.", icon: "🌱" },
@@ -61,7 +61,7 @@ export default function AboutPage() {
                             Temellerimiz <br /> <span className="text-primary">Geleceğimiz</span>
                         </h1>
                         <p className="max-w-3xl text-sm md:text-lg text-text-secondary uppercase tracking-[0.4em] leading-loose font-medium">
-                            1993'ten beri mühendislik disiplini ve toplumsal fayda odaklı yapılar inşa ediyoruz.
+                            2014'ten beri mühendislik disiplini ve toplumsal fayda odaklı yapılar inşa ediyoruz.
                         </p>
                     </div>
                 </div>

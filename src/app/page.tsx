@@ -34,7 +34,7 @@ const pillars = [
     title: "Sosyal Sorumluluk",
     description: "Eğitim, spor ve toplumsal projelerle geleceğe yatırım yapıyor, toplumsal fayda sağlıyoruz.",
     image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=1280",
-    link: "/hayirseverlik",
+    link: "/sosyal-sorumluluk",
     icon: <BookOpen size={24} />
   }
 ];
@@ -111,7 +111,7 @@ export default function Home() {
                 <Link href="/projeler" className="flex h-16 items-center justify-center bg-white px-12 text-xs font-black uppercase tracking-[0.3em] text-primary transition-all hover:bg-white/90 active:scale-95 shadow-2xl">
                   Projelerimiz
                 </Link>
-                <Link href="/hakkimizda" className="flex h-16 items-center justify-center border-2 border-white bg-transparent px-12 text-xs font-black uppercase tracking-[0.3em] text-foreground backdrop-blur-sm transition-all hover:bg-white/10">
+                <Link href="/hakkimizda" className="flex h-16 items-center justify-center border-2 border-white bg-white/10 px-12 text-xs font-black uppercase tracking-[0.3em] text-white backdrop-blur-sm transition-all hover:bg-white/20">
                   Kurumsal
                 </Link>
               </motion.div>
