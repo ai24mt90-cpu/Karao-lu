@@ -179,8 +179,8 @@ export default function Home() {
               key={idx}
               onClick={() => setCurrentSlide(idx)}
               className={`text-right px-4 py-2 text-sm transition-all ${idx === currentSlide
-                  ? "text-white bg-primary font-semibold"
-                  : "text-white/60 hover:text-white"
+                ? "text-white bg-primary font-semibold"
+                : "text-white/60 hover:text-white"
                 }`}
             >
               {slide.title}
@@ -220,17 +220,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-16 bg-primary">
-        <div className="layout-container">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {stats.map((stat) => (
-              <div key={stat.label} className="text-center text-white">
-                <div className="text-4xl md:text-5xl font-bold mb-2">{stat.value}</div>
-                <div className="text-white/70 text-sm">{stat.label}</div>
-              </div>
-            ))}
-          </div>
+      {/* Inspiring Quote Section */}
+      <section className="py-20 bg-primary">
+        <div className="layout-container text-center">
+          <p className="text-2xl md:text-4xl font-bold text-white leading-relaxed max-w-4xl mx-auto">
+            "Bugünü İnşa Ediyor, Geleceğe Değer Katıyoruz."
+          </p>
         </div>
       </section>
 
