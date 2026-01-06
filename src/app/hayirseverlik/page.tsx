@@ -1,161 +1,190 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Heart, School, GraduationCap, Users, HandHelping, Trophy, Globe } from "lucide-react";
+import { useState, useEffect } from "react";
 import { supabase } from "@/lib/supabase";
+import { Globe, Heart, School, Users } from "lucide-react";
 
-/**
- * SOCIAL RESPONSIBILITY PAGE
- * - Education Investments
- * - Support for Sports
- * - Social Contributions
- */
-
-const impactMetrics = [
-    { icon: <School size={28} />, value: "12", label: "Bağışlanan Okul", description: "Türkiye genelinde inşa edilen modern eğitim tesisleri." },
-    { icon: <GraduationCap size={28} />, value: "500+", label: "Aktif Burs", description: "Üniversite öğrencilerine sağlanan aylık eğitim desteği." },
-    { icon: <Trophy size={28} />, value: "Vanspor", label: "Spora Destek", description: "Sporun birleştirici gücüne inanarak Vanspor'un yanındayız." }
-];
-
-interface SocialProgram {
+interface Project {
     id: string;
     title: string;
     category: string;
-    location?: string;
-    date?: string;
-    image_url?: string;
+    location: string;
     description?: string;
+    image_url?: string;
 }
 
+const stats = [
+    { icon: <School size={32} />, value: "12", label: "Bağışlanan Okul" },
+    { icon: <Users size={32} />, value: "500+", label: "Eğitim Bursu" },
+    { icon: <Heart size={32} />, value: "50+", label: "Sosyal Proje" },
+    { icon: <Globe size={32} />, value: "15+", label: "İl Genelinde" },
+];
+
 export default function SocialResponsibilityPage() {
-    const [projects, setProjects] = useState<SocialProgram[]>([]);
-    const [loading, setLoading] = useState(true);
+    const [projects, setProjects] = useState<Project[]>([]);
 
     useEffect(() => {
+        const fetchProjects = async () => {
+            const { data, error } = await supabase
+                .from("social_projects")
+                .select("*")
+                .order("created_at", { ascending: false });
+
+            if (!error && data) {
+                setProjects(data);
+            }
+        };
         fetchProjects();
     }, []);
 
-    const fetchProjects = async () => {
-        setLoading(true);
-        const { data, error } = await supabase
-            .from("social_responsibility")
-            .select("*")
-            .order("created_at", { ascending: false });
-
-        if (error) {
-            console.error("Error fetching social programs:", error);
-        } else {
-            setProjects(data || []);
-        }
-        setLoading(false);
-    };
-
     return (
-        <div className="flex flex-col py-20 bg-background">
-            <div className="layout-container">
-                {/* Header Section */}
-                <section className="relative mb-32 text-center">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        className="inline-flex items-center gap-2 px-6 py-2 border border-white/10 rounded-full mb-8"
-                    >
-                        <Heart size={14} className="text-white" />
-                        <span className="text-[10px] font-black uppercase tracking-[0.3em]">Kurumsal Sosyal Sorumluluk</span>
-                    </motion.div>
-                    <h1 className="text-5xl md:text-8xl font-black mb-8 tracking-tighter uppercase leading-none">
-                        Sosyal <br /> <span className="text-primary">Sorumluluk</span>
-                    </h1>
-                    <p className="max-w-3xl mx-auto text-lg text-text-secondary uppercase tracking-widest leading-loose font-medium">
-                        Karaoğlu Universal Mühendislik olarak, kazancımızı toplum için kalıcı ve sürdürülebilir yatırımlara dönüştürüyoruz.
-                    </p>
-                </section>
+        <div className="flex flex-col bg-background">
+            {/* Hero Banner */}
+            <section className="relative h-[400px]">
+                <Image
+                    src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=2000"
+                    alt="Sosyal Sorumluluk"
+                    fill
+                    className="object-cover"
+                />
+                <div className="absolute inset-0 bg-primary/80" />
+                <div className="absolute inset-0 flex items-center">
+                    <div className="layout-container">
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                        >
+                            <h1 className="text-5xl font-bold text-white mb-4">SÜRDÜRÜLEBİLİRLİK</h1>
+                            <p className="text-white/80 text-lg">Toplumsal fayda odaklı projelerimiz</p>
+                        </motion.div>
+                    </div>
+                </div>
+            </section>
 
-                {/* Impact Metrics */}
-                <section className="mb-40">
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-white/10">
-                        {impactMetrics.map((metric, idx) => (
-                            <motion.div
-                                key={metric.label}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: idx * 0.1 }}
-                                className={`flex flex-col gap-6 p-12 text-center ${idx !== 2 ? "md:border-r border-white/10" : ""}`}
-                            >
-                                <div className="mx-auto text-foreground opacity-40">
-                                    {metric.icon}
-                                </div>
-                                <div>
-                                    <h3 className="text-5xl font-black mb-4 tracking-tighter">{metric.value}</h3>
-                                    <p className="font-black text-foreground uppercase tracking-[0.3em] text-[10px] mb-6">{metric.label}</p>
-                                    <p className="text-text-secondary text-xs font-medium leading-relaxed uppercase tracking-wider">{metric.description}</p>
-                                </div>
-                            </motion.div>
+            {/* Stats */}
+            <section className="py-16 bg-primary">
+                <div className="layout-container">
+                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+                        {stats.map((stat) => (
+                            <div key={stat.label} className="text-center text-white">
+                                <div className="mb-4 flex justify-center text-white/60">{stat.icon}</div>
+                                <div className="text-4xl font-bold mb-2">{stat.value}</div>
+                                <div className="text-white/70 text-sm">{stat.label}</div>
+                            </div>
                         ))}
                     </div>
-                </section>
+                </div>
+            </section>
 
-                {/* Project Grid */}
-                <section className="mb-32">
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                        {projects.map((project, idx) => (
-                            <motion.div
-                                key={project.title}
-                                initial={{ opacity: 0, y: 40 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: idx * 0.1 }}
-                                className="group bg-surface border border-border-brand rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
-                            >
-                                <div className="relative aspect-[16/10] overflow-hidden">
-                                    {project.image_url ? (
-                                        <Image
-                                            src={project.image_url}
-                                            alt={project.title}
-                                            fill
-                                            className="object-cover group-hover:scale-110 transition-transform duration-700"
-                                        />
-                                    ) : (
-                                        <div className="w-full h-full bg-primary/10 flex items-center justify-center">
-                                            <Globe className="text-primary/40" size={48} />
+            {/* About Section */}
+            <section className="py-20 bg-white">
+                <div className="layout-container">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                        <div>
+                            <h2 className="text-primary text-sm font-semibold uppercase tracking-wider mb-4">Sosyal Sorumluluk</h2>
+                            <h3 className="text-4xl font-bold text-foreground mb-6">TOPLUMA DEĞER KATIYORUZ</h3>
+                            <p className="text-text-secondary leading-relaxed mb-6">
+                                Karaoğlu Universal Mühendislik olarak, sadece yapılar inşa etmiyoruz; aynı zamanda geleceğe
+                                yatırım yapıyoruz. Eğitim, spor ve sosyal alanlarda gerçekleştirdiğimiz projelerle
+                                toplumsal faydayı ön planda tutuyoruz.
+                            </p>
+                            <p className="text-text-secondary leading-relaxed">
+                                Bugüne kadar onlarca okul, spor tesisi ve sosyal proje ile binlerce öğrenciye destek olduk.
+                            </p>
+                        </div>
+                        <div className="relative h-[400px] rounded overflow-hidden shadow-xl">
+                            <Image
+                                src="https://images.unsplash.com/photo-1497486751825-1233686d5d80?auto=format&fit=crop&q=80&w=800"
+                                alt="Sosyal Sorumluluk"
+                                fill
+                                className="object-cover"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Projects Grid */}
+            <section className="py-20 bg-surface-secondary">
+                <div className="layout-container">
+                    <div className="text-center mb-12">
+                        <h2 className="text-primary text-sm font-semibold uppercase tracking-wider mb-4">Projelerimiz</h2>
+                        <h3 className="text-4xl font-bold text-foreground">SOSYAL PROJELER</h3>
+                    </div>
+
+                    {projects.length > 0 ? (
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            {projects.map((project) => (
+                                <div key={project.id} className="bg-white overflow-hidden shadow-sm hover:shadow-xl transition-all group">
+                                    <div className="relative h-56 overflow-hidden">
+                                        {project.image_url ? (
+                                            <Image
+                                                src={project.image_url}
+                                                alt={project.title}
+                                                fill
+                                                className="object-cover group-hover:scale-105 transition-transform duration-500"
+                                            />
+                                        ) : (
+                                            <div className="w-full h-full bg-primary/10 flex items-center justify-center">
+                                                <Heart className="text-primary/40" size={48} />
+                                            </div>
+                                        )}
+                                        <div className="absolute top-4 left-4">
+                                            <span className="bg-primary text-white text-xs font-semibold px-3 py-1">
+                                                {project.category}
+                                            </span>
                                         </div>
-                                    )}
-                                    <div className="absolute top-4 left-4">
-                                        <span className="bg-primary text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-lg">
-                                            {project.category}
-                                        </span>
+                                    </div>
+                                    <div className="p-6">
+                                        <h4 className="text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
+                                            {project.title}
+                                        </h4>
+                                        {project.location && (
+                                            <p className="text-primary text-sm mb-2">{project.location}</p>
+                                        )}
+                                        {project.description && (
+                                            <p className="text-text-secondary text-sm line-clamp-2">{project.description}</p>
+                                        )}
                                     </div>
                                 </div>
-                                <div className="p-6">
-                                    <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
-                                        {project.title}
-                                    </h3>
-                                    {project.location && (
-                                        <p className="text-primary text-sm font-semibold mb-3 flex items-center gap-2">
-                                            <span>📍</span> {project.location}
-                                        </p>
-                                    )}
-                                    <p className="text-text-secondary text-sm leading-relaxed line-clamp-3">
-                                        {project.description}
-                                    </p>
+                            ))}
+                        </div>
+                    ) : (
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            {[
+                                { title: "Okul Bağışı", category: "Eğitim", location: "Van", description: "İhtiyaç sahiplerinin eğitimine destek", image: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&q=80&w=600" },
+                                { title: "Spor Tesisi", category: "Spor", location: "İpekyolu", description: "Gençlerin spor yapabilmesi için tesis", image: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&q=80&w=600" },
+                                { title: "Burs Programı", category: "Eğitim", location: "Van", description: "Başarılı öğrencilere eğitim bursu", image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=600" },
+                            ].map((project) => (
+                                <div key={project.title} className="bg-white overflow-hidden shadow-sm hover:shadow-xl transition-all group">
+                                    <div className="relative h-56 overflow-hidden">
+                                        <Image
+                                            src={project.image}
+                                            alt={project.title}
+                                            fill
+                                            className="object-cover group-hover:scale-105 transition-transform duration-500"
+                                        />
+                                        <div className="absolute top-4 left-4">
+                                            <span className="bg-primary text-white text-xs font-semibold px-3 py-1">
+                                                {project.category}
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div className="p-6">
+                                        <h4 className="text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
+                                            {project.title}
+                                        </h4>
+                                        <p className="text-primary text-sm mb-2">{project.location}</p>
+                                        <p className="text-text-secondary text-sm">{project.description}</p>
+                                    </div>
                                 </div>
-                            </motion.div>
-                        ))}
-                    </div>
-                </section>
-
-                {/* Footer CTA */}
-                <section className="py-32 border-y border-white/10 text-center">
-                    <Globe className="mx-auto mb-10 size-12 opacity-40" />
-                    <h2 className="text-4xl md:text-7xl font-black mb-10 tracking-tighter uppercase leading-tight">Yarınlara <br /> Değer Katıyoruz</h2>
-                    <p className="text-sm uppercase tracking-[0.4em] text-text-secondary max-w-2xl mx-auto mb-16 leading-loose">
-                        Eğitim ve spor yatırımlarımızla, toplumun her kesimine ulaşarak geleceği birlikte inşa ediyoruz.
-                    </p>
-                </section>
-            </div>
+                            ))}
+                        </div>
+                    )}
+                </div>
+            </section>
         </div>
     );
 }
