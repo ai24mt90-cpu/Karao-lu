@@ -1,8 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
-import { Building2, Users, Award, Target } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
+import { ChevronDown } from "lucide-react";
 
 const timeline = [
     { year: "2014", title: "Kuruluş", description: "Van'da küçük bir ofiste temellerimiz atıldı." },
@@ -12,13 +13,6 @@ const timeline = [
     { year: "2024", title: "Liderlik", description: "Bölgede lider mühendislik firması konumuna ulaştık." },
 ];
 
-const values = [
-    { icon: <Target size={32} />, title: "Vizyon", description: "Mühendislikte bölgesel lider olmak" },
-    { icon: <Award size={32} />, title: "Kalite", description: "Her projede en yüksek standartları sağlamak" },
-    { icon: <Users size={32} />, title: "Ekip", description: "Uzman ve deneyimli kadro ile çalışmak" },
-    { icon: <Building2 size={32} />, title: "Güven", description: "Müşteri memnuniyetini ön planda tutmak" },
-];
-
 const team = [
     { name: "Yönetim Kurulu Başkanı", role: "Genel Müdür", image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400" },
     { name: "Teknik Müdür", role: "Mühendislik", image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=400" },
@@ -26,6 +20,8 @@ const team = [
 ];
 
 export default function AboutPage() {
+    const [showTeam, setShowTeam] = useState(false);
+
     return (
         <div className="flex flex-col bg-background">
             {/* Hero Banner */}
@@ -225,31 +221,54 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            {/* Team */}
+            {/* Team - Accordion */}
             <section id="yonetim" className="py-20 bg-surface-secondary">
                 <div className="layout-container">
-                    <div className="text-center mb-12">
+                    <button
+                        onClick={() => setShowTeam(!showTeam)}
+                        className="w-full text-center mb-8 cursor-pointer group"
+                    >
                         <h2 className="text-primary text-sm font-semibold uppercase tracking-wider mb-4">Ekibimiz</h2>
-                        <h3 className="text-4xl font-bold text-foreground">YÖNETİM KURULU</h3>
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {team.map((member) => (
-                            <div key={member.name} className="bg-white overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
-                                <div className="relative h-64">
-                                    <Image
-                                        src={member.image}
-                                        alt={member.name}
-                                        fill
-                                        className="object-cover"
-                                    />
+                        <div className="flex items-center justify-center gap-4">
+                            <h3 className="text-4xl font-bold text-foreground group-hover:text-primary transition-colors">YÖNETİM KURULU</h3>
+                            <ChevronDown
+                                size={32}
+                                className={`text-primary transition-transform duration-300 ${showTeam ? "rotate-180" : ""}`}
+                            />
+                        </div>
+                        <p className="text-text-secondary mt-4">Görüntülemek için tıklayın</p>
+                    </button>
+
+                    <AnimatePresence>
+                        {showTeam && (
+                            <motion.div
+                                initial={{ opacity: 0, height: 0 }}
+                                animate={{ opacity: 1, height: "auto" }}
+                                exit={{ opacity: 0, height: 0 }}
+                                transition={{ duration: 0.3 }}
+                                className="overflow-hidden"
+                            >
+                                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-8">
+                                    {team.map((member) => (
+                                        <div key={member.name} className="bg-white overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+                                            <div className="relative h-64">
+                                                <Image
+                                                    src={member.image}
+                                                    alt={member.name}
+                                                    fill
+                                                    className="object-cover"
+                                                />
+                                            </div>
+                                            <div className="p-6 text-center">
+                                                <h4 className="font-bold text-foreground mb-1">{member.name}</h4>
+                                                <p className="text-primary text-sm">{member.role}</p>
+                                            </div>
+                                        </div>
+                                    ))}
                                 </div>
-                                <div className="p-6 text-center">
-                                    <h4 className="font-bold text-foreground mb-1">{member.name}</h4>
-                                    <p className="text-primary text-sm">{member.role}</p>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
                 </div>
             </section>
         </div>
