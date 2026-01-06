@@ -61,7 +61,7 @@ export default function Footer() {
 
                 <div className="border-t border-white/10 pt-10 text-center">
                     <p className="text-white/70/40 text-[9px] font-black uppercase tracking-[0.5em]">
-                        © {new Date().getFullYear()} Karaoğlu Universal Mühendislik A.Ş. Tüm hakları saklıdır.
+                        © {new Date().getFullYear()} Karaoğlu Universal Mühendislik Ltd. Şti. Tüm hakları saklıdır.
                     </p>
                 </div>
             </div>
