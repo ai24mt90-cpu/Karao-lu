@@ -17,7 +17,7 @@ export default function Footer() {
                             </div>
                         </div>
                         <p className="text-white/70 text-[11px] font-medium uppercase tracking-widest leading-loose max-w-xs">
-                            Mühendislikte mükemmellik ve toplumsal sorumluluk ilkesiyle, 1985'ten beri güven inşa ediyoruz.
+                            Mühendislikte mükemmellik ve toplumsal sorumluluk ilkesiyle, 2014'ten beri güven inşa ediyoruz.
                         </p>
                     </div>
 
