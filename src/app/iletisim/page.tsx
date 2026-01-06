@@ -40,7 +40,7 @@ export default function ContactPage() {
                                 </div>
                                 <div>
                                     <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-foreground mb-2">Merkez Ofis</h4>
-                                    <p className="text-text-secondary text-xs uppercase tracking-widest leading-relaxed font-medium">2 Nisan Cad. Zerrin Taç Sitesi Karşısı <br />No:65 İpekyolu/Van</p>
+                                    <p className="text-text-secondary text-xs uppercase tracking-widest leading-relaxed font-medium">Hafiziye Mah. Umman 1. Sk. <br />Fergul Insaat No: 2/20</p>
                                 </div>
                             </div>
 
