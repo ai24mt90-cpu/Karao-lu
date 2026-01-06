@@ -87,7 +87,7 @@ export default function AboutPage() {
                             <div className="sticky top-32">
                                 <div className="relative h-[400px] rounded overflow-hidden shadow-xl mb-6">
                                     <Image
-                                        src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=600"
+                                        src="/ozcan-kara.jpg"
                                         alt="Özcan Kara"
                                         fill
                                         className="object-cover"
