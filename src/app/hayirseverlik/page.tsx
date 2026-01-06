@@ -56,7 +56,7 @@ export default function SocialResponsibilityPage() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                         >
-                            <h1 className="text-5xl font-bold text-white mb-4">SÜRDÜRÜLEBİLİRLİK</h1>
+                            <h1 className="text-5xl font-bold text-white mb-4">SOSYAL SORUMLULUK</h1>
                             <p className="text-white/80 text-lg">Toplumsal fayda odaklı projelerimiz</p>
                         </motion.div>
                     </div>
