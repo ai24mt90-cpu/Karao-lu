@@ -139,21 +139,58 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            {/* Values */}
+            {/* Misyon ve Vizyon */}
             <section className="py-20 bg-surface-secondary">
                 <div className="layout-container">
-                    <div className="text-center mb-12">
-                        <h2 className="text-primary text-sm font-semibold uppercase tracking-wider mb-4">Değerlerimiz</h2>
-                        <h3 className="text-4xl font-bold text-foreground">KURUMSAL KÜLTÜR</h3>
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                        {values.map((value) => (
-                            <div key={value.title} className="bg-white p-8 text-center shadow-sm hover:shadow-lg transition-shadow">
-                                <div className="text-primary mb-4 flex justify-center">{value.icon}</div>
-                                <h4 className="font-bold text-foreground mb-2">{value.title}</h4>
-                                <p className="text-text-secondary text-sm">{value.description}</p>
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                        {/* Misyon */}
+                        <div className="bg-white p-10 shadow-lg">
+                            <h2 className="text-primary text-sm font-semibold uppercase tracking-wider mb-4">Karaoğlu Universal Mühendislik</h2>
+                            <h3 className="text-3xl font-bold text-foreground mb-6">MİSYONUMUZ</h3>
+                            <div className="space-y-4 text-text-secondary leading-relaxed">
+                                <p>
+                                    Karaoğlu Universal Mühendislik olarak, 2014 yılından bu yana kamu müteahhidi kimliğimizle;
+                                    kamu kurum ve kuruluşları için yürüttüğümüz altyapı, üstyapı ve mühendislik projelerinde,
+                                    mevzuata tam uyumlu, kaliteli ve sürdürülebilir yapılar inşa etmek temel misyonumuzdur.
+                                </p>
+                                <p>
+                                    Kamu ihale mevzuatı, teknik şartnameler ve sözleşme hükümleri doğrultusunda; planlama,
+                                    uygulama ve teslim süreçlerinin tamamında şeffaflık, hesap verebilirlik ve kamu yararını
+                                    esas alarak hareket ederiz.
+                                </p>
+                                <p>
+                                    Zamanında ve eksiksiz iş teslimi anlayışıyla, kamu kaynaklarının etkin ve verimli
+                                    kullanılmasını öncelikli sorumluluğumuz olarak görürüz.
+                                </p>
+                                <p>
+                                    Alanında uzman teknik kadromuz, deneyimli saha ekiplerimiz ve güçlü organizasyon yapımızla;
+                                    kamu projelerinde güvenilir bir çözüm ortağı olmayı, ülkemizin altyapı ve üstyapı gelişimine
+                                    kalıcı değerler kazandırmayı hedefleriz.
+                                </p>
                             </div>
-                        ))}
+                        </div>
+
+                        {/* Vizyon */}
+                        <div className="bg-white p-10 shadow-lg">
+                            <h2 className="text-primary text-sm font-semibold uppercase tracking-wider mb-4">Karaoğlu Universal Mühendislik</h2>
+                            <h3 className="text-3xl font-bold text-foreground mb-6">VİZYONUMUZ</h3>
+                            <div className="space-y-4 text-text-secondary leading-relaxed">
+                                <p>
+                                    Ulusal ölçekte kamu müteahhitliği alanında; güvenilirliği, teknik yeterliliği ve iş
+                                    disiplinine bağlılığıyla öne çıkan, kamu kurumları tarafından tercih edilen ve referans
+                                    gösterilen bir mühendislik ve taahhüt firması olmak.
+                                </p>
+                                <p>
+                                    Gelişen mühendislik teknolojilerini, güncel mevzuatı ve kalite standartlarını yakından
+                                    takip ederek; çevreye duyarlı, uzun ömürlü ve yüksek teknik standartlara sahip projeler üretmek.
+                                </p>
+                                <p>
+                                    Kurumsal yapısını sürekli geliştiren, insan kaynağına ve kalite yönetim sistemlerine
+                                    yatırım yapan bir anlayışla; geleceğin kamu projelerinde sürdürülebilir ve istikrarlı
+                                    bir şekilde büyümek.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
