@@ -4,8 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Building2, School, BookOpen, ArrowRight, HardHat, Construction } from "lucide-react";
-import Logo from "@/components/Logo";
+import { Building2, School, BookOpen, ArrowRight, HardHat, Construction, ChevronRight } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 
 interface Work {
@@ -16,27 +15,31 @@ interface Work {
 }
 
 const stats = [
-  { icon: <Building2 className="text-white" />, label: "Tamamlanan Proje", value: "150+" },
-  { icon: <HardHat className="text-white" />, label: "İstihdam", value: "2500+" },
-  { icon: <School className="text-white" />, label: "Bağışlanan Okul", value: "12" },
-  { icon: <BookOpen className="text-white" />, label: "Eğitim Bursu", value: "500+" },
+  { icon: <Building2 size={32} />, label: "Tamamlanan Proje", value: "150+" },
+  { icon: <HardHat size={32} />, label: "İstihdam", value: "2500+" },
+  { icon: <School size={32} />, label: "Bağışlanan Okul", value: "12" },
+  { icon: <BookOpen size={32} />, label: "Eğitim Bursu", value: "500+" },
 ];
 
-const pillars = [
+const sectors = [
   {
     title: "Kamu Projeleri",
-    description: "Yollar, hastaneler ve kamu binaları ile altyapıyı güçlendiriyor, şehirlerin yaşam kalitesini artırıyoruz.",
-    image: "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=1280",
+    description: "Yollar, hastaneler ve kamu binaları ile altyapıyı güçlendiriyoruz.",
+    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=800",
     link: "/projeler",
-    icon: <Construction size={24} />
+  },
+  {
+    title: "Konut Projeleri",
+    description: "Modern ve güvenli yaşam alanları inşa ediyoruz.",
+    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800",
+    link: "/projeler",
   },
   {
     title: "Sosyal Sorumluluk",
-    description: "Eğitim, spor ve toplumsal projelerle geleceğe yatırım yapıyor, toplumsal fayda sağlıyoruz.",
-    image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=1280",
-    link: "/sosyal-sorumluluk",
-    icon: <BookOpen size={24} />
-  }
+    description: "Eğitim ve spor yatırımlarıyla topluma değer katıyoruz.",
+    image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=800",
+    link: "/hayirseverlik",
+  },
 ];
 
 export default function Home() {
@@ -59,71 +62,54 @@ export default function Home() {
 
   return (
     <div className="flex flex-col bg-background">
-      {/* Hero Section */}
-      <section className="relative w-full py-10">
-        <div className="layout-container">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-            className="relative h-[750px] w-full overflow-hidden rounded-xl shadow-2xl"
-          >
-            <Image
-              src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=2000"
-              alt="Modern architecture"
-              fill
-              className="object-cover"
-              priority
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/40" />
-            <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.2 }}
-                className="mb-12"
-              >
-                <Logo size={120} className="text-foreground drop-shadow-2xl" />
-              </motion.div>
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 }}
-                className="mb-8 text-5xl font-black md:text-7xl lg:text-9xl leading-none uppercase tracking-tighter text-white"
-              >
-                İnşa Edin. <br />
-                <span className="text-white/90">Çözüm Üretin.</span>
-              </motion.h1>
-              <motion.p
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.6 }}
-                className="max-w-2xl text-lg text-white/90 md:text-xl uppercase tracking-[0.4em] font-medium"
-              >
-                Karaoğlu Universal Mühendislik
-              </motion.p>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.8 }}
-                className="mt-16 flex flex-wrap justify-center gap-8"
-              >
-                <Link href="/projeler" className="flex h-16 items-center justify-center bg-white px-12 text-xs font-black uppercase tracking-[0.3em] text-primary transition-all hover:bg-white/90 active:scale-95 shadow-2xl">
-                  Projelerimiz
+      {/* Hero Section - Full Width */}
+      <section className="relative w-full h-[85vh] min-h-[600px]">
+        <Image
+          src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=2000"
+          alt="İnşaat Projesi"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
+        <div className="absolute inset-0 flex items-center">
+          <div className="layout-container">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="max-w-2xl"
+            >
+              <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+                Hayallerimiz <br />
+                <span className="text-white/90">Hedefimizdir</span>
+              </h1>
+              <p className="text-xl text-white/80 mb-10 leading-relaxed">
+                Karaoğlu Universal Mühendislik olarak, mükemmellik ve toplumsal fayda odaklı projeler üretiyoruz.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <Link
+                  href="/projeler"
+                  className="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark px-8 py-4 text-white font-semibold transition-colors"
+                >
+                  Projelerimiz <ChevronRight size={20} />
                 </Link>
-                <Link href="/hakkimizda" className="flex h-16 items-center justify-center border-2 border-white bg-white/10 px-12 text-xs font-black uppercase tracking-[0.3em] text-white backdrop-blur-sm transition-all hover:bg-white/20">
-                  Kurumsal
+                <Link
+                  href="/hakkimizda"
+                  className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 px-8 py-4 text-white font-semibold transition-colors"
+                >
+                  Hakkımızda
                 </Link>
-              </motion.div>
-            </div>
-          </motion.div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Stats Section */}
-      <section className="py-24 border-b border-white/5">
+      <section className="py-20 bg-primary">
         <div className="layout-container">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-16">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
               <motion.div
                 key={stat.label}
@@ -131,94 +117,90 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="flex flex-col gap-6 text-center"
+                className="flex flex-col items-center text-center text-white"
               >
-                <div className="mx-auto text-4xl opacity-30">{stat.icon}</div>
-                <div className="text-[10px] font-black uppercase tracking-[0.4em] text-text-secondary">{stat.label}</div>
-                <div className="text-6xl font-black tracking-tighter">{stat.value}</div>
+                <div className="mb-4 text-white/60">{stat.icon}</div>
+                <div className="text-4xl md:text-5xl font-bold mb-2">{stat.value}</div>
+                <div className="text-sm text-white/70">{stat.label}</div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Vision & Mission Section */}
-      <section className="py-40 bg-white/[0.01]">
+      {/* About Section */}
+      <section className="py-24 bg-surface-secondary">
         <div className="layout-container">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-32">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
+              initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="flex flex-col gap-8"
             >
-              <h3 className="text-sm font-black uppercase tracking-[0.5em] text-primary">Vizyonumuz</h3>
-              <p className="text-3xl md:text-5xl font-black uppercase tracking-tighter leading-tight">
-                Mühendislikte <br /> <span className="text-primary">Evrensel Bir İz</span> Bırakmak.
+              <h2 className="text-sm font-semibold text-primary uppercase tracking-wider mb-4">Hakkımızda</h2>
+              <h3 className="text-4xl font-bold text-foreground mb-6">2014'ten Beri Güven İnşa Ediyoruz</h3>
+              <p className="text-text-secondary leading-relaxed mb-8">
+                Karaoğlu Universal Mühendislik, mühendislikte mükemmellik ve toplumsal sorumluluk ilkeleriyle hareket eden,
+                Van merkezli bir inşaat ve mühendislik firmasıdır. Kamu projeleri, konut projeleri ve sosyal sorumluluk
+                alanlarında fark yaratan işler ortaya koyuyoruz.
               </p>
-              <p className="text-text-secondary text-sm uppercase tracking-widest leading-loose font-medium max-w-lg">
-                Geleceğin şehirlerini inşa ederken, mühendislik çözümlerimizi global standartların üzerine taşıyarak dünya çapında referans alınan bir marka olmayı hedefliyoruz.
-              </p>
+              <Link
+                href="/hakkimizda"
+                className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all"
+              >
+                Daha Fazla Bilgi <ArrowRight size={18} />
+              </Link>
             </motion.div>
-
             <motion.div
-              initial={{ opacity: 0, x: 20 }}
+              initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="flex flex-col gap-8"
+              className="relative h-[400px] rounded-lg overflow-hidden shadow-2xl"
             >
-              <h3 className="text-sm font-black uppercase tracking-[0.5em] text-primary">Misyonumuz</h3>
-              <p className="text-3xl md:text-5xl font-black uppercase tracking-tighter leading-tight">
-                Topluma <br /> <span className="text-primary">Değer Katan</span> Yapılar.
-              </p>
-              <p className="text-text-secondary text-sm uppercase tracking-widest leading-loose font-medium max-w-lg">
-                Sadece binalar değil, yaşam alanları ve toplumsal fayda üreten projeler geliştiriyoruz. Her bir tuğlada güveni, estetiği ve sürdürülebilirliği merkeze alıyoruz.
-              </p>
+              <Image
+                src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=800"
+                alt="Mühendislik Ekibi"
+                fill
+                className="object-cover"
+              />
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Pillars Section */}
-      <section className="py-40">
+      {/* Sectors Section */}
+      <section className="py-24">
         <div className="layout-container">
-          <div className="flex flex-col md:flex-row items-end justify-between gap-12 mb-24">
-            <div className="max-w-2xl">
-              <h2 className="text-5xl md:text-8xl font-black mb-8 tracking-tighter uppercase leading-none">Faaliyet <br /> Alanlarımız</h2>
-              <p className="text-sm uppercase tracking-[0.4em] text-text-secondary leading-loose font-medium">
-                Mühendislik ve Sosyal Sorumlulukta Evrensel Standartlar.
-              </p>
-            </div>
-            <Link href="/hakkimizda" className="flex items-center gap-3 text-foreground font-black uppercase tracking-[0.3em] text-[10px] border-b-2 border-white pb-2 transition-transform hover:translate-x-2">
-              Detaylar <ArrowRight size={18} />
-            </Link>
+          <div className="text-center mb-16">
+            <h2 className="text-sm font-semibold text-primary uppercase tracking-wider mb-4">Faaliyet Alanlarımız</h2>
+            <h3 className="text-4xl font-bold text-foreground">Sektörler</h3>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-            {pillars.map((pillar, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {sectors.map((sector, index) => (
               <motion.div
-                key={pillar.title}
-                initial={{ opacity: 0, y: 40 }}
+                key={sector.title}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="group relative flex flex-col bg-surface border border-border-brand shadow-md"
+                transition={{ delay: index * 0.1 }}
+                className="group bg-white border border-border rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-shadow"
               >
-                <div className="relative aspect-[16/10] w-full overflow-hidden">
+                <div className="relative h-56 overflow-hidden">
                   <Image
-                    src={pillar.image}
-                    alt={pillar.title}
+                    src={sector.image}
+                    alt={sector.title}
                     fill
-                    className="object-cover transition-transform duration-1000 group-hover:scale-105 grayscale brightness-50 group-hover:brightness-75"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute top-10 left-10 flex size-16 items-center justify-center bg-primary text-foreground text-2xl">
-                    {pillar.icon}
-                  </div>
                 </div>
-                <div className="p-12">
-                  <h3 className="text-4xl font-black mb-6 uppercase tracking-tighter">{pillar.title}</h3>
-                  <p className="text-text-secondary mb-10 leading-relaxed text-sm uppercase tracking-widest font-medium">{pillar.description}</p>
-                  <Link href={pillar.link} className="inline-flex items-center justify-center h-14 bg-white/5 border border-white/20 px-10 text-[10px] font-black uppercase tracking-[0.3em] text-foreground hover:bg-white hover:text-black transition-all">
-                    İncele
+                <div className="p-6">
+                  <h4 className="text-xl font-bold text-foreground mb-3">{sector.title}</h4>
+                  <p className="text-text-secondary text-sm mb-4">{sector.description}</p>
+                  <Link
+                    href={sector.link}
+                    className="inline-flex items-center gap-2 text-primary font-semibold text-sm hover:gap-3 transition-all"
+                  >
+                    İncele <ArrowRight size={16} />
                   </Link>
                 </div>
               </motion.div>
@@ -228,33 +210,76 @@ export default function Home() {
       </section>
 
       {/* Recent Works */}
-      <section className="py-40 bg-surface border-t border-border-brand">
-        <div className="layout-container">
-          <div className="flex items-center gap-10 mb-20">
-            <h2 className="text-5xl font-black tracking-tighter uppercase">Son Çalışmalarımız</h2>
-            <div className="h-[1px] flex-1 bg-border-brand" />
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
-            {recentWorks.map((work) => (
-              <div
-                key={work.title}
-                className="group relative aspect-[4/5] overflow-hidden bg-surface cursor-pointer border border-border-brand shadow-lg hover:shadow-xl transition-shadow"
-              >
-                <Image
-                  src={work.image_url || "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab"}
-                  alt={work.title}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent" />
-                <div className="absolute bottom-0 left-0 w-full p-12">
-                  <span className="text-[10px] font-black uppercase tracking-[0.5em] text-primary mb-4 block">{work.category}</span>
-                  <h4 className="text-3xl font-black text-white uppercase tracking-tighter leading-tight border-l-4 border-primary pl-6">{work.title}</h4>
-                </div>
+      {recentWorks.length > 0 && (
+        <section className="py-24 bg-surface-secondary">
+          <div className="layout-container">
+            <div className="flex items-center justify-between mb-12">
+              <div>
+                <h2 className="text-sm font-semibold text-primary uppercase tracking-wider mb-4">Son Projeler</h2>
+                <h3 className="text-4xl font-bold text-foreground">Çalışmalarımız</h3>
               </div>
-            ))}
+              <Link
+                href="/projeler"
+                className="hidden md:inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all"
+              >
+                Tümünü Gör <ArrowRight size={18} />
+              </Link>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {recentWorks.map((work) => (
+                <motion.div
+                  key={work.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-shadow"
+                >
+                  <div className="relative h-64 overflow-hidden">
+                    <Image
+                      src={work.image_url || "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab"}
+                      alt={work.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute top-4 left-4">
+                      <span className="bg-primary text-white text-xs font-semibold px-3 py-1 rounded">
+                        {work.category}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <h4 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors">
+                      {work.title}
+                    </h4>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+            <div className="mt-8 text-center md:hidden">
+              <Link
+                href="/projeler"
+                className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 font-semibold"
+              >
+                Tümünü Gör <ArrowRight size={18} />
+              </Link>
+            </div>
           </div>
+        </section>
+      )}
+
+      {/* CTA Section */}
+      <section className="py-24 bg-primary">
+        <div className="layout-container text-center">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Projeniz için Bizimle İletişime Geçin</h2>
+          <p className="text-white/80 max-w-2xl mx-auto mb-10">
+            Mühendislik projeleriniz için profesyonel destek almak ister misiniz? Uzman ekibimizle tanışın.
+          </p>
+          <Link
+            href="/iletisim"
+            className="inline-flex items-center gap-2 bg-white text-primary px-8 py-4 font-semibold hover:bg-white/90 transition-colors"
+          >
+            İletişime Geç <ChevronRight size={20} />
+          </Link>
         </div>
       </section>
     </div>
