@@ -12,6 +12,7 @@ const navLinks = [
         label: "Hakkımızda",
         submenu: [
             { href: "/hakkimizda", label: "Kurumsal" },
+            { href: "/hakkimizda#baskanin-mesaji", label: "Başkanın Mesajı" },
             { href: "/hakkimizda#yonetim", label: "Yönetim Kurulu" },
         ]
     },
