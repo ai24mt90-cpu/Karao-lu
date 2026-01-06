@@ -13,6 +13,10 @@ const publicSans = Public_Sans({
 export const metadata: Metadata = {
   title: "Karaoğlu Universal Mühendislik - Geleceği İnşa Ediyor, Toplumu Güçlendiriyoruz",
   description: "Mühendislik bütünlüğü ve insani değerlerle şekillenen, sürdürülebilir bir gelecek vizyonu.",
+  icons: {
+    icon: "/logo.png",
+    apple: "/logo.png",
+  },
 };
 
 export default function RootLayout({
