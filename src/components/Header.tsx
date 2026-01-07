@@ -64,7 +64,9 @@ export default function Header() {
             <div className="bg-white border-b border-gray-200">
                 <div className="layout-container flex h-20 items-center justify-between">
                     <Link href="/" className="flex items-center gap-3 group">
-                        <Logo size={60} className="text-primary" />
+                        <div className="bg-black p-2 rounded-lg">
+                            <Logo size={48} className="text-white" />
+                        </div>
                         <div className="flex flex-col">
                             <span className="text-xl font-bold tracking-tight text-foreground">KARAOĞLU</span>
                             <span className="text-[9px] font-medium uppercase tracking-[0.15em] text-text-secondary">Universal Mühendislik</span>
