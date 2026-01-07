@@ -66,7 +66,7 @@ export default function Header() {
                     <Link href="/" className="flex items-center group relative z-10">
                         <div className="absolute left-0 top-0 bottom-0 w-[calc(100%+100vw)] -translate-x-[100vw] bg-black" style={{ marginLeft: '-100vw', width: 'calc(100% + 100vw)' }} />
                         <div className="flex items-center gap-3 bg-black h-20 pl-4 pr-8 rounded-r-full relative">
-                            <Logo size={50} className="text-white" />
+                            <Logo size={60} className="text-white" />
                             <div className="flex flex-col">
                                 <span className="text-lg font-bold tracking-tight text-white">KARAOĞLU</span>
                                 <span className="text-[9px] font-medium uppercase tracking-[0.15em] text-white/70">Universal Mühendislik</span>
