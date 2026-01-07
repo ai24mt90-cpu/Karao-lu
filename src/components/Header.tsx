@@ -63,8 +63,8 @@ export default function Header() {
             {/* Main Header */}
             <div className="bg-white border-b border-gray-200">
                 <div className="layout-container flex h-20 items-center justify-between">
-                    <Link href="/" className="flex items-center group">
-                        <div className="flex items-center gap-3 bg-black/90 pl-3 pr-5 py-2 rounded-r-full">
+                    <Link href="/" className="flex items-center group -ml-8">
+                        <div className="flex items-center gap-3 bg-black pl-8 pr-6 py-2 rounded-r-full">
                             <Logo size={50} className="text-white" />
                             <div className="flex flex-col">
                                 <span className="text-lg font-bold tracking-tight text-white">KARAOĞLU</span>
