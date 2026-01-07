@@ -60,12 +60,6 @@ const sectors = [
     image: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&q=80&w=600",
     link: "/projeler?category=altyapi",
   },
-  {
-    title: "Sosyal Sorumluluk",
-    description: "Eğitim ve toplumsal projeler",
-    image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=600",
-    link: "/hayirseverlik",
-  },
 ];
 
 export default function Home() {
