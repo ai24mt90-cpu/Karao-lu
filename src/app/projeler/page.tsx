@@ -2,10 +2,10 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { supabase } from "@/lib/supabase";
-import { MapPin, Filter } from "lucide-react";
+import { MapPin, Filter, Loader2 } from "lucide-react";
 
 interface Project {
     id: string;
@@ -45,7 +45,7 @@ const defaultProjects = [
     { id: "6", title: "Kaymakamlık Binası", category: "kamu", location: "Erciş", year: "2022", status: "Tamamlandı", image: "https://images.unsplash.com/photo-1464938050520-ef2571a0eb7b?auto=format&fit=crop&q=80&w=600" },
 ];
 
-export default function ProjectsPage() {
+function ProjectsContent() {
     const searchParams = useSearchParams();
     const categoryParam = searchParams.get("category");
 
@@ -54,7 +54,6 @@ export default function ProjectsPage() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        // Update active category when URL changes
         if (categoryParam) {
             setActiveCategory(categoryParam);
         }
@@ -78,7 +77,6 @@ export default function ProjectsPage() {
 
     const handleCategoryChange = (categoryKey: string) => {
         setActiveCategory(categoryKey);
-        // Update URL without reload
         const url = new URL(window.location.href);
         if (categoryKey === "Tümü") {
             url.searchParams.delete("category");
@@ -99,7 +97,7 @@ export default function ProjectsPage() {
     const pageTitle = categoryTitles[activeCategory] || "PROJELER";
 
     return (
-        <div className="flex flex-col bg-background">
+        <>
             {/* Hero Banner */}
             <section className="relative h-[400px]">
                 <Image
@@ -249,6 +247,26 @@ export default function ProjectsPage() {
                     )}
                 </div>
             </section>
+        </>
+    );
+}
+
+function LoadingFallback() {
+    return (
+        <div className="flex flex-col bg-background min-h-screen">
+            <div className="flex items-center justify-center flex-1">
+                <Loader2 className="animate-spin text-primary" size={40} />
+            </div>
+        </div>
+    );
+}
+
+export default function ProjectsPage() {
+    return (
+        <div className="flex flex-col bg-background">
+            <Suspense fallback={<LoadingFallback />}>
+                <ProjectsContent />
+            </Suspense>
         </div>
     );
 }
