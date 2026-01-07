@@ -61,10 +61,11 @@ export default function Header() {
             </div>
 
             {/* Main Header */}
-            <div className="bg-white border-b border-gray-200">
+            <div className="bg-white border-b border-gray-200 relative">
                 <div className="layout-container flex h-20 items-center justify-between">
-                    <Link href="/" className="flex items-center group -ml-20">
-                        <div className="flex items-center gap-3 bg-black pl-20 pr-6 py-3 rounded-r-full">
+                    <Link href="/" className="flex items-center group relative z-10">
+                        <div className="absolute left-0 top-0 bottom-0 w-[calc(100%+100vw)] -translate-x-[100vw] bg-black" style={{ marginLeft: '-100vw', width: 'calc(100% + 100vw)' }} />
+                        <div className="flex items-center gap-3 bg-black h-20 pl-4 pr-8 rounded-r-full relative">
                             <Logo size={50} className="text-white" />
                             <div className="flex flex-col">
                                 <span className="text-lg font-bold tracking-tight text-white">KARAOĞLU</span>
