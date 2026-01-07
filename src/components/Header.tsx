@@ -61,19 +61,13 @@ export default function Header() {
             </div>
 
             {/* Main Header */}
-            <div className="bg-white border-b border-gray-200 relative overflow-hidden">
-                {/* Black background extending from left edge */}
-                <div className="absolute left-0 top-0 bottom-0 bg-black" style={{ width: '350px' }}>
-                    <div className="absolute right-0 top-0 bottom-0 w-12 bg-black rounded-r-full translate-x-6" />
-                </div>
-                <div className="layout-container flex h-20 items-center justify-between relative z-10">
-                    <Link href="/" className="flex items-center group">
-                        <div className="flex items-center gap-3 h-20 pr-4">
-                            <Logo size={60} className="text-white" />
-                            <div className="flex flex-col">
-                                <span className="text-lg font-bold tracking-tight text-white">KARAOĞLU</span>
-                                <span className="text-[9px] font-medium uppercase tracking-[0.15em] text-white/70">Universal Mühendislik</span>
-                            </div>
+            <div className="bg-white border-b border-gray-200">
+                <div className="layout-container flex h-20 items-center justify-between">
+                    <Link href="/" className="flex items-center gap-3 group">
+                        <Logo size={60} className="text-primary" />
+                        <div className="flex flex-col">
+                            <span className="text-xl font-bold tracking-tight text-foreground">KARAOĞLU</span>
+                            <span className="text-[9px] font-medium uppercase tracking-[0.15em] text-text-secondary">Universal Mühendislik</span>
                         </div>
                     </Link>
 
