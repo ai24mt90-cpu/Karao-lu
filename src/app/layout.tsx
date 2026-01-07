@@ -10,7 +10,7 @@ const roboto = Roboto({
   weight: ["400", "500", "700", "900"],
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.karaoglu.com.tr";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://karaoglumuhendislik.com.tr";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -83,10 +83,9 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  verification: {
-    google: "YOUR_GOOGLE_VERIFICATION_CODE",
-    // yandex: "YOUR_YANDEX_VERIFICATION_CODE",
-  },
+  // verification: {
+  //   google: "YOUR_GOOGLE_VERIFICATION_CODE", // Search Console'dan alınacak
+  // },
   alternates: {
     canonical: siteUrl,
     languages: {
