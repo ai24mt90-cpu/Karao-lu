@@ -80,26 +80,36 @@ export default function Header() {
                                 onMouseEnter={() => link.submenu && setActiveDropdown(link.label)}
                                 onMouseLeave={() => setActiveDropdown(null)}
                             >
-                                <Link
-                                    href={link.href}
-                                    className="flex items-center gap-1 px-4 py-6 text-sm font-medium text-foreground hover:text-primary transition-colors"
-                                >
-                                    {link.label}
-                                    {link.submenu && <ChevronDown size={14} />}
-                                </Link>
+                                {link.submenu ? (
+                                    <button
+                                        onClick={() => setActiveDropdown(activeDropdown === link.label ? null : link.label)}
+                                        className="flex items-center gap-1 px-4 py-6 text-sm font-medium text-foreground hover:text-primary transition-colors"
+                                    >
+                                        {link.label}
+                                        <ChevronDown size={14} className={`transition-transform ${activeDropdown === link.label ? 'rotate-180' : ''}`} />
+                                    </button>
+                                ) : (
+                                    <Link
+                                        href={link.href}
+                                        className="flex items-center gap-1 px-4 py-6 text-sm font-medium text-foreground hover:text-primary transition-colors"
+                                    >
+                                        {link.label}
+                                    </Link>
+                                )}
 
                                 {/* Dropdown Menu */}
                                 {link.submenu && activeDropdown === link.label && (
                                     <motion.div
                                         initial={{ opacity: 0, y: 10 }}
                                         animate={{ opacity: 1, y: 0 }}
-                                        className="absolute top-full left-0 bg-white shadow-lg border border-gray-100 min-w-[200px]"
+                                        className="absolute top-full left-0 bg-white shadow-lg border border-gray-100 min-w-[200px] z-50"
                                     >
                                         {link.submenu.map((sub) => (
                                             <Link
                                                 key={sub.href}
                                                 href={sub.href}
                                                 className="block px-5 py-3 text-sm text-foreground hover:bg-primary hover:text-white transition-colors"
+                                                onClick={() => setActiveDropdown(null)}
                                             >
                                                 {sub.label}
                                             </Link>
