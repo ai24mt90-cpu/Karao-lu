@@ -46,8 +46,8 @@ export default function Footer() {
                     <div className="flex flex-col gap-4">
                         <h4 className="text-sm font-bold text-white mb-2">İletişim</h4>
                         <div className="flex flex-col gap-3">
-                            <a href="mailto:karaogluuniversal@gmail.com" className="flex items-center gap-3 text-sm text-white/70 hover:text-white transition-colors">
-                                <Mail size={16} /> karaogluuniversal@gmail.com
+                            <a href="mailto:info@karaoglumuhendislik.com.tr" className="flex items-center gap-3 text-sm text-white/70 hover:text-white transition-colors">
+                                <Mail size={16} /> info@karaoglumuhendislik.com.tr
                             </a>
                             <a href="tel:+904322165636" className="flex items-center gap-3 text-sm text-white/70 hover:text-white transition-colors">
                                 <Phone size={16} /> 0432 216 56 36
