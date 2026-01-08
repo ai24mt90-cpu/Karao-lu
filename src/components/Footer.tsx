@@ -54,7 +54,7 @@ export default function Footer() {
                             </a>
                             <div className="flex items-start gap-3 text-sm text-white/70">
                                 <MapPin size={16} className="mt-0.5 flex-shrink-0" />
-                                <span>Hafiziye Mah. Umman 1. Sk. Fergul Insaat No: 2/20</span>
+                                <span>Hafiziye Mah. Umman 1. Sk. Fergül İş Merkezi No: 2, Kat: 3, D: 16, İpekyolu/Van</span>
                             </div>
                         </div>
                     </div>
