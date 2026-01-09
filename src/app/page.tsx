@@ -15,6 +15,17 @@ interface Work {
   description?: string;
 }
 
+interface FeaturedProject {
+  id: string;
+  title: string;
+  category: string;
+  location: string;
+  year: string;
+  status: string;
+  image_url?: string;
+  description?: string;
+}
+
 // Hero Slider Data
 const heroSlides = [
   {
@@ -65,6 +76,7 @@ const sectors = [
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [recentWorks, setRecentWorks] = useState<Work[]>([]);
+  const [featuredProjects, setFeaturedProjects] = useState<FeaturedProject[]>([]);
 
   // Auto-slide
   useEffect(() => {
@@ -88,6 +100,23 @@ export default function Home() {
       }
     };
     fetchWorks();
+  }, []);
+
+  // Fetch featured projects from Supabase
+  useEffect(() => {
+    const fetchFeaturedProjects = async () => {
+      const { data, error } = await supabase
+        .from("projects")
+        .select("*")
+        .eq("is_featured", true)
+        .order("created_at", { ascending: false })
+        .limit(6);
+
+      if (!error && data) {
+        setFeaturedProjects(data);
+      }
+    };
+    fetchFeaturedProjects();
   }, []);
 
   const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
@@ -261,7 +290,7 @@ export default function Home() {
         <div className="layout-container">
           <div className="flex items-center justify-between mb-12">
             <div>
-              <h2 className="text-primary text-sm font-semibold uppercase tracking-wider mb-4">Son Projeler</h2>
+              <h2 className="text-primary text-sm font-semibold uppercase tracking-wider mb-4">Öne Çıkan Projeler</h2>
               <h3 className="text-4xl font-bold text-foreground">PROJELER</h3>
             </div>
             <Link
@@ -272,7 +301,36 @@ export default function Home() {
             </Link>
           </div>
 
-          {recentWorks.length > 0 ? (
+          {featuredProjects.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {featuredProjects.map((project) => (
+                <div key={project.id} className="group bg-white border border-gray-100 overflow-hidden shadow-sm hover:shadow-xl transition-all">
+                  <div className="relative h-56 overflow-hidden">
+                    <Image
+                      src={project.image_url || "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=600"}
+                      alt={project.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute top-4 left-4">
+                      <span className="bg-primary text-white text-xs font-semibold px-3 py-1">
+                        {project.category}
+                      </span>
+                    </div>
+                    <div className="absolute top-4 right-4">
+                      <span className={`text-xs font-semibold px-3 py-1 ${project.status === "Tamamlandı" ? "bg-green-500" : "bg-yellow-500"} text-white`}>
+                        {project.status}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="p-5">
+                    <h4 className="font-bold text-foreground group-hover:text-primary transition-colors">{project.title}</h4>
+                    <p className="text-sm text-text-secondary mt-1">{project.location} • {project.year}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : recentWorks.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {recentWorks.map((work) => (
                 <div key={work.id} className="group bg-white border border-gray-100 overflow-hidden shadow-sm hover:shadow-xl transition-all">
