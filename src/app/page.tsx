@@ -303,11 +303,11 @@ export default function Home() {
 
           {featuredProjects.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {featuredProjects.map((project) => (
+              {featuredProjects.filter(p => p.image_url).map((project) => (
                 <div key={project.id} className="group bg-white border border-gray-100 overflow-hidden shadow-sm hover:shadow-xl transition-all">
                   <div className="relative h-56 overflow-hidden">
                     <Image
-                      src={project.image_url || "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=600"}
+                      src={project.image_url!}
                       alt={project.title}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
