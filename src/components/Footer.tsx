@@ -60,8 +60,11 @@ export default function Footer() {
                     </div>
                 </div>
 
-                <div className="border-t border-white/20 pt-8 text-center">
-                    <p className="text-white/50 text-sm">
+                <div className="border-t border-white/20 pt-8">
+                    <p className="text-white/70 text-sm text-center mb-2">
+                        <strong>Van Mühendislik Firması</strong> – Hafiziye Mah. Umman 1. Sk. Fergül İş Merkezi No: 2, Kat: 3, D: 16, İpekyolu/Van
+                    </p>
+                    <p className="text-white/50 text-sm text-center">
                         © {new Date().getFullYear()} Karaoğlu Universal Mühendislik Ltd. Şti. Tüm hakları saklıdır.
                     </p>
                 </div>
