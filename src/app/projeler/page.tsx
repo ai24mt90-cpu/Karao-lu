@@ -5,7 +5,14 @@ import { motion } from "framer-motion";
 import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { supabase } from "@/lib/supabase";
-import { MapPin, Filter, Loader2 } from "lucide-react";
+import { MapPin, Filter, Loader2, Camera } from "lucide-react";
+import ProjectGalleryModal from "@/components/ProjectGalleryModal";
+
+interface ProjectImage {
+    id: string;
+    image_url: string;
+    is_cover: boolean;
+}
 
 interface Project {
     id: string;
@@ -52,6 +59,31 @@ function ProjectsContent() {
     const [projects, setProjects] = useState<Project[]>([]);
     const [activeCategory, setActiveCategory] = useState(categoryParam || "Tümü");
     const [loading, setLoading] = useState(true);
+
+    // Gallery Modal State
+    const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+    const [projectImages, setProjectImages] = useState<ProjectImage[]>([]);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const handleProjectClick = async (project: Project) => {
+        setSelectedProject(project);
+        setIsModalOpen(true);
+
+        // Fetch project images
+        const { data } = await supabase
+            .from("project_images")
+            .select("*")
+            .eq("project_id", project.id)
+            .order("order_index", { ascending: true });
+
+        setProjectImages(data || []);
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+        setSelectedProject(null);
+        setProjectImages([]);
+    };
 
     useEffect(() => {
         if (categoryParam) {
@@ -154,7 +186,8 @@ function ProjectsContent() {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ delay: idx * 0.05 }}
-                                    className="bg-white overflow-hidden shadow-sm hover:shadow-xl transition-all group"
+                                    className="bg-white overflow-hidden shadow-sm hover:shadow-xl transition-all group cursor-pointer"
+                                    onClick={() => handleProjectClick(project)}
                                 >
                                     <div className="relative h-56 overflow-hidden">
                                         {project.image_url ? (
@@ -247,6 +280,14 @@ function ProjectsContent() {
                     )}
                 </div>
             </section>
+
+            {/* Gallery Modal */}
+            <ProjectGalleryModal
+                project={selectedProject}
+                images={projectImages}
+                isOpen={isModalOpen}
+                onClose={closeModal}
+            />
         </>
     );
 }
