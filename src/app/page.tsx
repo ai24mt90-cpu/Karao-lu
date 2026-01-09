@@ -259,12 +259,12 @@ export default function Home() {
             <h2 className="text-primary text-sm font-semibold uppercase tracking-wider mb-4">Faaliyet Alanlarımız</h2>
             <h3 className="text-4xl font-bold text-foreground">SEKTÖRLER</h3>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="flex flex-wrap justify-center gap-6">
             {sectors.map((sector) => (
               <Link
                 key={sector.title}
                 href={sector.link}
-                className="group bg-white overflow-hidden shadow-sm hover:shadow-xl transition-all"
+                className="group bg-white overflow-hidden shadow-sm hover:shadow-xl transition-all w-full md:w-72"
               >
                 <div className="relative h-48 overflow-hidden">
                   <Image
