@@ -27,6 +27,8 @@ interface Project {
 
 const categories = [
     { key: "Tümü", label: "Tümü" },
+    { key: "tamamlandi", label: "Tamamlandı", isStatus: true },
+    { key: "devam", label: "Devam Eden", isStatus: true },
     { key: "kamu", label: "Kamu" },
     { key: "konut", label: "Konut" },
     { key: "altyapi", label: "Altyapı" },
@@ -36,6 +38,8 @@ const categories = [
 
 const categoryTitles: Record<string, string> = {
     "Tümü": "TÜM PROJELER",
+    "tamamlandi": "TAMAMLANAN PROJELER",
+    "devam": "DEVAM EDEN PROJELER",
     "kamu": "KAMU PROJELERİ",
     "konut": "KONUT PROJELERİ",
     "altyapi": "ALTYAPI PROJELERİ",
@@ -118,13 +122,19 @@ function ProjectsContent() {
         window.history.pushState({}, "", url.toString());
     };
 
-    const filteredProjects = activeCategory === "Tümü"
-        ? projects
-        : projects.filter(p => p.category.toLowerCase() === activeCategory.toLowerCase());
+    const filteredProjects = (() => {
+        if (activeCategory === "Tümü") return projects;
+        if (activeCategory === "tamamlandi") return projects.filter(p => p.status === "Tamamlandı");
+        if (activeCategory === "devam") return projects.filter(p => p.status === "Devam Ediyor");
+        return projects.filter(p => p.category.toLowerCase() === activeCategory.toLowerCase());
+    })();
 
-    const filteredDefaultProjects = activeCategory === "Tümü"
-        ? defaultProjects
-        : defaultProjects.filter(p => p.category === activeCategory);
+    const filteredDefaultProjects = (() => {
+        if (activeCategory === "Tümü") return defaultProjects;
+        if (activeCategory === "tamamlandi") return defaultProjects.filter(p => p.status === "Tamamlandı");
+        if (activeCategory === "devam") return defaultProjects.filter(p => p.status === "Devam Ediyor");
+        return defaultProjects.filter(p => p.category === activeCategory);
+    })();
 
     const pageTitle = categoryTitles[activeCategory] || "PROJELER";
 
