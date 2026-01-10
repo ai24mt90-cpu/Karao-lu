@@ -252,38 +252,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Sectors Section */}
-      <section className="py-20 bg-surface-secondary">
-        <div className="layout-container">
-          <div className="text-center mb-12">
-            <h2 className="text-primary text-sm font-semibold uppercase tracking-wider mb-4">Faaliyet Alanlarımız</h2>
-            <h3 className="text-4xl font-bold text-foreground">SEKTÖRLER</h3>
-          </div>
-          <div className="flex flex-wrap justify-center gap-6">
-            {sectors.map((sector) => (
-              <Link
-                key={sector.title}
-                href={sector.link}
-                className="group bg-white overflow-hidden shadow-sm hover:shadow-xl transition-all w-full md:w-72"
-              >
-                <div className="relative h-48 overflow-hidden">
-                  <Image
-                    src={sector.image}
-                    alt={sector.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/20 transition-colors" />
-                </div>
-                <div className="p-5">
-                  <h4 className="font-bold text-foreground mb-1 group-hover:text-primary transition-colors">{sector.title}</h4>
-                  <p className="text-text-secondary text-sm">{sector.description}</p>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Projects Section */}
       <section className="py-20 bg-white">
