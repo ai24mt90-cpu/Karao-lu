@@ -347,7 +347,7 @@ export default function Home() {
           {featuredProjects.length === 0 && (
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
-                { kurum: "VAN YATIRIM İZLEME VE KOORDİNASYON BAŞKANLIĞI", is: "VAN BEDESTEN ÇARŞISI VE ÇEVRE DÜZENLEME", yil: "2024", durum: "Devam Ediyor", lokasyon: "VAN" },
+                { kurum: "VAN YATIRIM İZLEME VE KOORDİNASYON BAŞKANLIĞI", is: "VAN BEDESTEN ÇARŞISI VE ÇEVRE DÜZENLEME", yil: "2024", durum: "Tamamlandı", lokasyon: "VAN" },
                 { kurum: "T.C. ÇEVRE VE ŞEHİRCİLİK BAKANLIĞI TOKİ", is: "ÇATAK 89 ADET KONUT İNŞAATI VE ALTYAPI", yil: "2022", durum: "Tamamlandı", lokasyon: "VAN" },
                 { kurum: "İPEKYOLU BELEDİYESİ", is: "SAHİL BANDI 1. ETAP YAPIM", yil: "2022", durum: "Tamamlandı", lokasyon: "VAN" },
               ].map((project, idx) => (
