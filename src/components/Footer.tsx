@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, Instagram, Linkedin, Facebook } from "lucide-react";
 import Logo from "./Logo";
 
 export default function Footer() {
@@ -19,8 +19,20 @@ export default function Footer() {
                             </div>
                         </div>
                         <p className="text-white/70 text-sm leading-relaxed">
-                            Mühendislikte mükemmellik ve toplumsal sorumluluk ilkesiyle, 2014'ten beri güven inşa ediyoruz.
+                            Van merkezli mühendislik firması. 2014&apos;ten beri altyapı, üstyapı ve kamu projelerinde güvenilir çözüm ortağınız.
                         </p>
+                        {/* Social Media Links */}
+                        <div className="flex items-center gap-4">
+                            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors" aria-label="Instagram">
+                                <Instagram size={18} />
+                            </a>
+                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors" aria-label="LinkedIn">
+                                <Linkedin size={18} />
+                            </a>
+                            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors" aria-label="Facebook">
+                                <Facebook size={18} />
+                            </a>
+                        </div>
                     </div>
 
                     {/* Quick Links */}
@@ -29,6 +41,7 @@ export default function Footer() {
                         <nav className="flex flex-col gap-3">
                             <Link href="/hakkimizda" className="text-sm text-white/70 hover:text-white transition-colors">Hakkımızda</Link>
                             <Link href="/hakkimizda#yonetim" className="text-sm text-white/70 hover:text-white transition-colors">Yönetim Kurulu</Link>
+                            <Link href="/iletisim" className="text-sm text-white/70 hover:text-white transition-colors">İletişim</Link>
                         </nav>
                     </div>
 
@@ -36,8 +49,8 @@ export default function Footer() {
                     <div className="flex flex-col gap-4">
                         <h4 className="text-sm font-bold text-white mb-2">Projeler</h4>
                         <nav className="flex flex-col gap-3">
-                            <Link href="/projeler?status=tamamlanan" className="text-sm text-white/70 hover:text-white transition-colors">Tamamlananlar</Link>
-                            <Link href="/projeler?status=devam-eden" className="text-sm text-white/70 hover:text-white transition-colors">Devam Edenler</Link>
+                            <Link href="/projeler?category=tamamlandi" className="text-sm text-white/70 hover:text-white transition-colors">Tamamlanan Projeler</Link>
+                            <Link href="/projeler?category=devam" className="text-sm text-white/70 hover:text-white transition-colors">Devam Eden Projeler</Link>
                             <Link href="/hayirseverlik" className="text-sm text-white/70 hover:text-white transition-colors">Sosyal Sorumluluk</Link>
                         </nav>
                     </div>
@@ -60,7 +73,13 @@ export default function Footer() {
                     </div>
                 </div>
 
+                {/* Legal Links */}
                 <div className="border-t border-white/20 pt-8">
+                    <div className="flex flex-wrap justify-center gap-6 mb-4">
+                        <Link href="/kvkk" className="text-sm text-white/60 hover:text-white transition-colors">KVKK Aydınlatma Metni</Link>
+                        <Link href="/gizlilik" className="text-sm text-white/60 hover:text-white transition-colors">Gizlilik Politikası</Link>
+                        <Link href="/iletisim" className="text-sm text-white/60 hover:text-white transition-colors">İletişim</Link>
+                    </div>
                     <p className="text-white/70 text-sm text-center mb-2">
                         <strong>Van Mühendislik Firması</strong> – Hafiziye Mah. Umman 1. Sk. Fergül İş Merkezi No: 2, Kat: 3, D: 16, İpekyolu/Van
                     </p>

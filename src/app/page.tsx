@@ -30,18 +30,18 @@ interface FeaturedProject {
 const heroSlides = [
   {
     image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=2000",
-    title: "Kamu Projeleri",
-    subtitle: "Altyapı ve üstyapı projelerimizle şehirleri dönüştürüyoruz",
+    title: "Van'ın Güvenilir Mühendislik Ortağı",
+    subtitle: "2014'ten bu yana Van ve çevresinde altyapı, üstyapı ve kamu projelerinde kaliteli hizmet",
   },
   {
     image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000",
-    title: "Konut Projeleri",
-    subtitle: "Modern ve güvenli yaşam alanları inşa ediyoruz",
+    title: "150+ Tamamlanan Proje",
+    subtitle: "Hastane, okul, konut ve altyapı projelerinde kanıtlanmış başarı",
   },
   {
     image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=2000",
-    title: "Altyapı Yatırımları",
-    subtitle: "Sürdürülebilir altyapı çözümleri sunuyoruz",
+    title: "Sürdürülebilir Altyapı Çözümleri",
+    subtitle: "Geleceğe yatırım yapan mühendislik yaklaşımı",
   },
 ];
 
