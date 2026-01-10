@@ -3,15 +3,51 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { Mail, Phone, MapPin, Clock, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, Send, Loader2 } from "lucide-react";
+import { supabase } from "@/lib/supabase";
+
+interface FormData {
+    name: string;
+    email: string;
+    phone: string;
+    subject: string;
+    message: string;
+}
 
 export default function ContactPage() {
-    const [formState, setFormState] = useState<"idle" | "submitting" | "success">("idle");
+    const [formState, setFormState] = useState<"idle" | "submitting" | "success" | "error">("idle");
+    const [formData, setFormData] = useState<FormData>({
+        name: "",
+        email: "",
+        phone: "",
+        subject: "Proje Bilgi Talebi",
+        message: ""
+    });
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+        setFormData(prev => ({
+            ...prev,
+            [e.target.name]: e.target.value
+        }));
+    };
+
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setFormState("submitting");
-        setTimeout(() => setFormState("success"), 2000);
+
+        try {
+            const { error } = await supabase
+                .from("contact_messages")
+                .insert([formData]);
+
+            if (error) throw error;
+
+            setFormState("success");
+            setFormData({ name: "", email: "", phone: "", subject: "Proje Bilgi Talebi", message: "" });
+        } catch (err) {
+            console.error("Form submission error:", err);
+            setFormState("error");
+        }
     };
 
     return (
@@ -114,12 +150,20 @@ export default function ContactPage() {
                             </motion.div>
                         ) : (
                             <form onSubmit={handleSubmit} className="bg-white p-8 shadow-lg">
+                                {formState === "error" && (
+                                    <div className="bg-red-50 text-red-600 p-4 mb-6 text-sm">
+                                        Mesaj gönderilirken bir hata oluştu. Lütfen tekrar deneyin.
+                                    </div>
+                                )}
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                                     <div>
                                         <label className="block text-sm font-medium text-foreground mb-2">Ad Soyad *</label>
                                         <input
                                             required
                                             type="text"
+                                            name="name"
+                                            value={formData.name}
+                                            onChange={handleChange}
                                             className="w-full h-12 px-4 border border-gray-200 focus:border-primary focus:outline-none transition-colors"
                                         />
                                     </div>
@@ -128,6 +172,9 @@ export default function ContactPage() {
                                         <input
                                             required
                                             type="email"
+                                            name="email"
+                                            value={formData.email}
+                                            onChange={handleChange}
                                             className="w-full h-12 px-4 border border-gray-200 focus:border-primary focus:outline-none transition-colors"
                                         />
                                     </div>
@@ -136,12 +183,20 @@ export default function ContactPage() {
                                     <label className="block text-sm font-medium text-foreground mb-2">Telefon</label>
                                     <input
                                         type="tel"
+                                        name="phone"
+                                        value={formData.phone}
+                                        onChange={handleChange}
                                         className="w-full h-12 px-4 border border-gray-200 focus:border-primary focus:outline-none transition-colors"
                                     />
                                 </div>
                                 <div className="mb-6">
                                     <label className="block text-sm font-medium text-foreground mb-2">Konu *</label>
-                                    <select className="w-full h-12 px-4 border border-gray-200 focus:border-primary focus:outline-none transition-colors bg-white">
+                                    <select
+                                        name="subject"
+                                        value={formData.subject}
+                                        onChange={handleChange}
+                                        className="w-full h-12 px-4 border border-gray-200 focus:border-primary focus:outline-none transition-colors bg-white"
+                                    >
                                         <option>Proje Bilgi Talebi</option>
                                         <option>İş Birliği Teklifi</option>
                                         <option>Kariyer</option>
@@ -152,6 +207,9 @@ export default function ContactPage() {
                                     <label className="block text-sm font-medium text-foreground mb-2">Mesajınız *</label>
                                     <textarea
                                         required
+                                        name="message"
+                                        value={formData.message}
+                                        onChange={handleChange}
                                         rows={5}
                                         className="w-full px-4 py-3 border border-gray-200 focus:border-primary focus:outline-none transition-colors resize-none"
                                     />
@@ -159,9 +217,16 @@ export default function ContactPage() {
                                 <button
                                     type="submit"
                                     disabled={formState === "submitting"}
-                                    className="w-full h-14 bg-primary text-white font-semibold hover:bg-primary-dark transition-colors disabled:opacity-50"
+                                    className="w-full h-14 bg-primary text-white font-semibold hover:bg-primary-dark transition-colors disabled:opacity-50 flex items-center justify-center gap-2"
                                 >
-                                    {formState === "submitting" ? "Gönderiliyor..." : "Gönder"}
+                                    {formState === "submitting" ? (
+                                        <>
+                                            <Loader2 className="animate-spin" size={20} />
+                                            Gönderiliyor...
+                                        </>
+                                    ) : (
+                                        "Gönder"
+                                    )}
                                 </button>
                             </form>
                         )}
