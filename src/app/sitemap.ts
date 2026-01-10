@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next'
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.karaoglu.com.tr'
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://karaoglumuhendislik.com.tr'
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const routes = [
