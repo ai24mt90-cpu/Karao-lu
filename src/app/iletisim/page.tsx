@@ -237,7 +237,7 @@ export default function ContactPage() {
             {/* Map Section */}
             <section className="h-[400px] bg-gray-200">
                 <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3085.5!2d43.3575!3d38.4942!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40752d6e5d28a6e5%3A0x8f0d0c8d0e0c0c0c!2sHafiziye%2C%20Van!5e0!3m2!1str!2str!4v1704628542000!5m2!1str!2str"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1542.5!2d43.3642!3d38.4925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzjCsDI5JzMzLjAiTiA0M8KwMjEnNTEuMSJF!5e0!3m2!1str!2str!4v1704628542000!5m2!1str!2str"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
