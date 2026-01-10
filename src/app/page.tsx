@@ -286,17 +286,6 @@ export default function Home() {
                 </ul>
               </div>
 
-              {/* İşveren Kurumlar */}
-              <div className="bg-surface-secondary p-6">
-                <h4 className="font-bold text-lg mb-4 text-foreground">İŞVEREN KURUMLAR</h4>
-                <div className="flex flex-wrap gap-2">
-                  {["Valilik", "Belediyeler", "İl Özel İdaresi", "TOKİ", "Sağlık Bakanlığı", "MEB", "VEDAŞ"].map((kurum) => (
-                    <span key={kurum} className="bg-white px-3 py-1 text-sm text-text-secondary border border-gray-200">
-                      {kurum}
-                    </span>
-                  ))}
-                </div>
-              </div>
             </div>
           </div>
         </div>
