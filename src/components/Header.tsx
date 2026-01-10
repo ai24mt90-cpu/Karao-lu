@@ -72,8 +72,9 @@ export default function Header() {
 
             {/* Main Header */}
             <div className="bg-white border-b border-gray-200">
-                <div className="layout-container flex h-20 items-center justify-between">
-                    <Link href="/" className="flex items-center gap-4 group -ml-4">
+                <div className="flex h-20 items-center">
+                    {/* Logo - Absolute left edge */}
+                    <Link href="/" className="flex items-center gap-4 group pl-4 md:pl-6 lg:pl-8">
                         <div className="bg-black p-2.5 rounded-lg">
                             <Logo size={64} className="text-white" />
                         </div>
@@ -83,62 +84,69 @@ export default function Header() {
                         </div>
                     </Link>
 
-                    {/* Desktop Navigation */}
-                    <nav className="hidden lg:flex items-center">
-                        {navLinks.map((link) => (
-                            <div
-                                key={link.href + link.label}
-                                className="relative"
-                                onMouseEnter={() => link.submenu && setActiveDropdown(link.label)}
-                                onMouseLeave={() => setActiveDropdown(null)}
-                            >
-                                {link.submenu ? (
-                                    <button
-                                        onClick={() => setActiveDropdown(activeDropdown === link.label ? null : link.label)}
-                                        className="flex items-center gap-1 px-4 py-6 text-sm font-medium text-foreground hover:text-primary transition-colors"
-                                    >
-                                        {link.label}
-                                        <ChevronDown size={14} className={`transition-transform ${activeDropdown === link.label ? 'rotate-180' : ''}`} />
-                                    </button>
-                                ) : (
-                                    <Link
-                                        href={link.href}
-                                        className="flex items-center gap-1 px-4 py-6 text-sm font-medium text-foreground hover:text-primary transition-colors"
-                                    >
-                                        {link.label}
-                                    </Link>
-                                )}
+                    {/* Spacer */}
+                    <div className="flex-1" />
 
-                                {/* Dropdown Menu */}
-                                {link.submenu && activeDropdown === link.label && (
-                                    <motion.div
-                                        initial={{ opacity: 0, y: 10 }}
-                                        animate={{ opacity: 1, y: 0 }}
-                                        className="absolute top-full left-0 bg-white shadow-lg border border-gray-100 min-w-[200px] z-50"
-                                    >
-                                        {link.submenu.map((sub) => (
-                                            <Link
-                                                key={sub.href}
-                                                href={sub.href}
-                                                className="block px-5 py-3 text-sm text-foreground hover:bg-primary hover:text-white transition-colors"
-                                                onClick={() => setActiveDropdown(null)}
-                                            >
-                                                {sub.label}
-                                            </Link>
-                                        ))}
-                                    </motion.div>
-                                )}
-                            </div>
-                        ))}
-                    </nav>
+                    {/* Right section with container padding */}
+                    <div className="layout-container !pl-0 flex items-center justify-end">
 
-                    {/* Mobile Menu Button */}
-                    <button
-                        className="lg:hidden p-2 text-foreground"
-                        onClick={() => setIsOpen(!isOpen)}
-                    >
-                        {isOpen ? <X size={24} /> : <Menu size={24} />}
-                    </button>
+                        {/* Desktop Navigation */}
+                        <nav className="hidden lg:flex items-center">
+                            {navLinks.map((link) => (
+                                <div
+                                    key={link.href + link.label}
+                                    className="relative"
+                                    onMouseEnter={() => link.submenu && setActiveDropdown(link.label)}
+                                    onMouseLeave={() => setActiveDropdown(null)}
+                                >
+                                    {link.submenu ? (
+                                        <button
+                                            onClick={() => setActiveDropdown(activeDropdown === link.label ? null : link.label)}
+                                            className="flex items-center gap-1 px-4 py-6 text-sm font-medium text-foreground hover:text-primary transition-colors"
+                                        >
+                                            {link.label}
+                                            <ChevronDown size={14} className={`transition-transform ${activeDropdown === link.label ? 'rotate-180' : ''}`} />
+                                        </button>
+                                    ) : (
+                                        <Link
+                                            href={link.href}
+                                            className="flex items-center gap-1 px-4 py-6 text-sm font-medium text-foreground hover:text-primary transition-colors"
+                                        >
+                                            {link.label}
+                                        </Link>
+                                    )}
+
+                                    {/* Dropdown Menu */}
+                                    {link.submenu && activeDropdown === link.label && (
+                                        <motion.div
+                                            initial={{ opacity: 0, y: 10 }}
+                                            animate={{ opacity: 1, y: 0 }}
+                                            className="absolute top-full left-0 bg-white shadow-lg border border-gray-100 min-w-[200px] z-50"
+                                        >
+                                            {link.submenu.map((sub) => (
+                                                <Link
+                                                    key={sub.href}
+                                                    href={sub.href}
+                                                    className="block px-5 py-3 text-sm text-foreground hover:bg-primary hover:text-white transition-colors"
+                                                    onClick={() => setActiveDropdown(null)}
+                                                >
+                                                    {sub.label}
+                                                </Link>
+                                            ))}
+                                        </motion.div>
+                                    )}
+                                </div>
+                            ))}
+                        </nav>
+
+                        {/* Mobile Menu Button */}
+                        <button
+                            className="lg:hidden p-2 text-foreground"
+                            onClick={() => setIsOpen(!isOpen)}
+                        >
+                            {isOpen ? <X size={24} /> : <Menu size={24} />}
+                        </button>
+                    </div>
                 </div>
             </div>
 
