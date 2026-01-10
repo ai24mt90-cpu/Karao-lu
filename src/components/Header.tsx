@@ -152,6 +152,14 @@ export default function Header() {
                         className="lg:hidden border-b border-gray-200 bg-white"
                     >
                         <div className="flex flex-col p-4">
+                            {/* Ana Sayfa - Mobil */}
+                            <Link
+                                href="/"
+                                onClick={() => setIsOpen(false)}
+                                className="py-3 text-sm font-bold text-primary border-b border-gray-100"
+                            >
+                                🏠 Ana Sayfa
+                            </Link>
                             {navLinks.map((link) => (
                                 <Link
                                     key={link.href + link.label}
