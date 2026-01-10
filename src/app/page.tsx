@@ -77,13 +77,32 @@ export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [recentWorks, setRecentWorks] = useState<Work[]>([]);
   const [featuredProjects, setFeaturedProjects] = useState<FeaturedProject[]>([]);
+  const [heroImages, setHeroImages] = useState<{ image: string, title: string, subtitle: string }[]>(heroSlides);
 
-  // Auto-slide
+  // Fetch featured projects from Supabase
   useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
-    }, 5000);
-    return () => clearInterval(timer);
+    const fetchFeaturedProjects = async () => {
+      const { data, error } = await supabase
+        .from("projects")
+        .select("*")
+        .not("image_url", "is", null)
+        .order("created_at", { ascending: false })
+        .limit(5);
+
+      if (!error && data && data.length > 0) {
+        setFeaturedProjects(data);
+        // Create dynamic hero slides from projects with images
+        const dynamicSlides = data.map((project, index) => ({
+          image: project.image_url!,
+          title: index === 0 ? "Van'ın Güvenilir Mühendislik Ortağı" : project.title,
+          subtitle: index === 0
+            ? "2014'ten bu yana Van ve çevresinde altyapı, üstyapı ve kamu projelerinde kaliteli hizmet"
+            : project.description || `${project.location} - ${project.year}`,
+        }));
+        setHeroImages(dynamicSlides);
+      }
+    };
+    fetchFeaturedProjects();
   }, []);
 
   // Fetch works from Supabase
@@ -102,25 +121,17 @@ export default function Home() {
     fetchWorks();
   }, []);
 
-  // Fetch featured projects from Supabase
+  // Auto-slide
   useEffect(() => {
-    const fetchFeaturedProjects = async () => {
-      const { data, error } = await supabase
-        .from("projects")
-        .select("*")
-        .eq("is_featured", true)
-        .order("created_at", { ascending: false })
-        .limit(6);
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroImages.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [heroImages.length]);
 
-      if (!error && data) {
-        setFeaturedProjects(data);
-      }
-    };
-    fetchFeaturedProjects();
-  }, []);
+  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % heroImages.length);
+  const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + heroImages.length) % heroImages.length);
 
-  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
-  const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
 
   return (
     <div className="flex flex-col bg-background">
@@ -136,8 +147,8 @@ export default function Home() {
             className="absolute inset-0"
           >
             <Image
-              src={heroSlides[currentSlide].image}
-              alt={heroSlides[currentSlide].title}
+              src={heroImages[currentSlide]?.image || heroSlides[0].image}
+              alt={heroImages[currentSlide]?.title || heroSlides[0].title}
               fill
               className="object-cover"
               priority
@@ -159,10 +170,10 @@ export default function Home() {
                 className="max-w-2xl"
               >
                 <h1 className="text-5xl md:text-7xl font-bold text-white mb-4">
-                  {heroSlides[currentSlide].title}
+                  {heroImages[currentSlide]?.title || heroSlides[0].title}
                 </h1>
                 <p className="text-xl text-white/80 mb-8">
-                  {heroSlides[currentSlide].subtitle}
+                  {heroImages[currentSlide]?.subtitle || heroSlides[0].subtitle}
                 </p>
                 <Link
                   href="/projeler"
@@ -181,7 +192,7 @@ export default function Home() {
             <ChevronLeft size={24} />
           </button>
           <div className="flex gap-2">
-            {heroSlides.map((_, idx) => (
+            {heroImages.map((_, idx) => (
               <button
                 key={idx}
                 onClick={() => setCurrentSlide(idx)}
@@ -197,7 +208,7 @@ export default function Home() {
 
         {/* Project Names on Right Side */}
         <div className="absolute right-8 top-1/2 -translate-y-1/2 hidden lg:flex flex-col gap-2">
-          {heroSlides.map((slide, idx) => (
+          {heroImages.map((slide, idx) => (
             <button
               key={idx}
               onClick={() => setCurrentSlide(idx)}
