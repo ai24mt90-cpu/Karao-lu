@@ -35,7 +35,7 @@ const heroSlides = [
   },
   {
     image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000",
-    title: "150+ Tamamlanan Proje",
+    title: "64+ Tamamlanan Proje",
     subtitle: "Hastane, okul, konut ve altyapı projelerinde kanıtlanmış başarı",
   },
   {
@@ -45,39 +45,12 @@ const heroSlides = [
   },
 ];
 
-const stats = [
-  { label: "Tamamlanan Proje", value: "150+" },
-  { label: "Yıllık Deneyim", value: "10+" },
-  { label: "Çalışan Sayısı", value: "2500+" },
-  { label: "İl Genelinde Proje", value: "15+" },
-];
-
-const sectors = [
-  {
-    title: "Kamu Projeleri",
-    description: "Hastaneler, okullar ve kamu binaları",
-    image: "https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?auto=format&fit=crop&q=80&w=600",
-    link: "/sektorler#kamu",
-  },
-  {
-    title: "Konut",
-    description: "TOKİ ve toplu konut projeleri",
-    image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80&w=600",
-    link: "/sektorler#konut",
-  },
-  {
-    title: "Altyapı",
-    description: "Yol, köprü ve altyapı işleri",
-    image: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&q=80&w=600",
-    link: "/sektorler#altyapi",
-  },
-];
-
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [recentWorks, setRecentWorks] = useState<Work[]>([]);
   const [featuredProjects, setFeaturedProjects] = useState<FeaturedProject[]>([]);
   const [heroImages, setHeroImages] = useState<{ image: string, title: string, subtitle: string }[]>(heroSlides);
+  const [projectCount, setProjectCount] = useState(64);
 
   // Fetch featured projects from Supabase
   useEffect(() => {
@@ -119,6 +92,20 @@ export default function Home() {
       }
     };
     fetchWorks();
+  }, []);
+
+  // Fetch total project count
+  useEffect(() => {
+    const fetchProjectCount = async () => {
+      const { count } = await supabase
+        .from("projects")
+        .select("*", { count: "exact", head: true });
+
+      if (count) {
+        setProjectCount(count);
+      }
+    };
+    fetchProjectCount();
   }, []);
 
   // Auto-slide
