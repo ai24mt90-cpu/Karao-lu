@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { Building2, School, BookOpen, ArrowRight, HardHat, ChevronRight, ChevronLeft } from "lucide-react";
+import { Building2, School, BookOpen, ArrowRight, HardHat, ChevronRight, ChevronLeft, MapPin } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 
 interface Work {
@@ -26,22 +26,22 @@ interface FeaturedProject {
   description?: string;
 }
 
-// Hero Slider Data
+// Hero Slider Data - Kurumsal / Kamu Odaklı
 const heroSlides = [
   {
     image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=2000",
-    title: "Van'ın Güvenilir Mühendislik Ortağı",
-    subtitle: "2014'ten bu yana Van ve çevresinde altyapı, üstyapı ve kamu projelerinde kaliteli hizmet",
+    title: "Kamu Kurumları İçin Mühendislik Çözümleri",
+    subtitle: "4734 sayılı Kamu İhale Kanunu'na uygun altyapı, üstyapı ve teknik taahhüt hizmetleri",
   },
   {
     image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000",
-    title: "64+ Tamamlanan Proje",
-    subtitle: "Hastane, okul, konut ve altyapı projelerinde kanıtlanmış başarı",
+    title: "64+ Tamamlanan Kamu Projesi",
+    subtitle: "Valilik, belediye, hastane ve eğitim kurumları için referanslarımız",
   },
   {
     image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=2000",
-    title: "Sürdürülebilir Altyapı Çözümleri",
-    subtitle: "Geleceğe yatırım yapan mühendislik yaklaşımı",
+    title: "Teknik Yeterlilik ve Deneyim",
+    subtitle: "2014'ten bu yana Van ve çevresinde ihaleden teslime kadar tam yetkinlik",
   },
 ];
 
@@ -251,62 +251,72 @@ export default function Home() {
       </section>
 
 
-      {/* Projects Section */}
+      {/* Projects Section - Kurumsal Referans Kartları */}
       <section className="py-20 bg-white">
         <div className="layout-container">
           <div className="flex items-center justify-between mb-12">
             <div>
-              <h2 className="text-primary text-sm font-semibold uppercase tracking-wider mb-4">Öne Çıkan Projeler</h2>
-              <h3 className="text-4xl font-bold text-foreground">PROJELER</h3>
+              <h2 className="text-primary text-sm font-semibold uppercase tracking-wider mb-4">Kamu Referansları</h2>
+              <h3 className="text-4xl font-bold text-foreground">TAMAMLANAN PROJELER</h3>
             </div>
-            <Link
-              href="/projeler"
-              className="hidden md:inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all"
-            >
-              Tüm Projeleri Gör <ArrowRight size={18} />
-            </Link>
+            <div className="hidden md:flex gap-4">
+              <Link
+                href="/projeler"
+                className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 font-semibold hover:bg-primary-dark transition-colors"
+              >
+                Tüm Projeler <ArrowRight size={18} />
+              </Link>
+            </div>
           </div>
 
-          {featuredProjects.filter(p => p.image_url).length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {featuredProjects.filter(p => p.image_url).slice(0, 6).map((project) => (
-                <Link href="/projeler" key={project.id} className="group block bg-white border border-gray-100 overflow-hidden shadow-sm hover:shadow-xl transition-all">
-                  <div className="relative h-64 overflow-hidden">
-                    <Image
-                      src={project.image_url!}
-                      alt={project.title}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                    <div className="absolute bottom-0 left-0 right-0 p-5">
-                      <h4 className="font-bold text-white text-lg">{project.title}</h4>
-                    </div>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          ) : (
+          {/* Kurumsal Proje Kartları */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {featuredProjects.slice(0, 6).map((project) => (
+              <div key={project.id} className="bg-surface-secondary border-l-4 border-primary p-6 hover:shadow-lg transition-shadow">
+                <div className="flex items-start justify-between mb-4">
+                  <span className={`text-xs font-bold px-3 py-1 rounded ${project.status === 'Tamamlandı'
+                    ? 'bg-green-100 text-green-700'
+                    : 'bg-yellow-100 text-yellow-700'
+                    }`}>
+                    {project.status}
+                  </span>
+                  <span className="text-sm font-bold text-primary">{project.year}</span>
+                </div>
+                <h4 className="font-bold text-foreground text-lg mb-2 line-clamp-2">{project.title}</h4>
+                <p className="text-text-secondary text-sm mb-4 line-clamp-2">{project.description}</p>
+                <div className="flex items-center gap-2 text-xs text-text-secondary">
+                  <MapPin size={14} />
+                  <span>{project.location}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Fallback - DB'de proje yoksa */}
+          {featuredProjects.length === 0 && (
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
-                { title: "Van Bölge Eğitim Araştırma Hastanesi", image: "https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?auto=format&fit=crop&q=80&w=600" },
-                { title: "TOKİ Çatak 89 Konut Projesi", image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80&w=600" },
-                { title: "İpekyolu Sahil Bandı Projesi", image: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&q=80&w=600" },
-              ].map((project) => (
-                <Link href="/projeler" key={project.title} className="group block bg-white border border-gray-100 overflow-hidden shadow-sm hover:shadow-xl transition-all">
-                  <div className="relative h-64 overflow-hidden">
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                    <div className="absolute bottom-0 left-0 right-0 p-5">
-                      <h4 className="font-bold text-white text-lg">{project.title}</h4>
-                    </div>
+                { kurum: "VAN YATIRIM İZLEME VE KOORDİNASYON BAŞKANLIĞI", is: "VAN BEDESTEN ÇARŞISI VE ÇEVRE DÜZENLEME", yil: "2024", durum: "Devam Ediyor", lokasyon: "VAN" },
+                { kurum: "T.C. ÇEVRE VE ŞEHİRCİLİK BAKANLIĞI TOKİ", is: "ÇATAK 89 ADET KONUT İNŞAATI VE ALTYAPI", yil: "2022", durum: "Tamamlandı", lokasyon: "VAN" },
+                { kurum: "İPEKYOLU BELEDİYESİ", is: "SAHİL BANDI 1. ETAP YAPIM", yil: "2022", durum: "Tamamlandı", lokasyon: "VAN" },
+              ].map((project, idx) => (
+                <div key={idx} className="bg-surface-secondary border-l-4 border-primary p-6 hover:shadow-lg transition-shadow">
+                  <div className="flex items-start justify-between mb-4">
+                    <span className={`text-xs font-bold px-3 py-1 rounded ${project.durum === 'Tamamlandı'
+                      ? 'bg-green-100 text-green-700'
+                      : 'bg-yellow-100 text-yellow-700'
+                      }`}>
+                      {project.durum}
+                    </span>
+                    <span className="text-sm font-bold text-primary">{project.yil}</span>
                   </div>
-                </Link>
+                  <h4 className="font-bold text-foreground text-lg mb-2 line-clamp-2">{project.kurum}</h4>
+                  <p className="text-text-secondary text-sm mb-4 line-clamp-2">{project.is}</p>
+                  <div className="flex items-center gap-2 text-xs text-text-secondary">
+                    <MapPin size={14} />
+                    <span>{project.lokasyon}</span>
+                  </div>
+                </div>
               ))}
             </div>
           )}
@@ -314,7 +324,7 @@ export default function Home() {
           <div className="text-center mt-8 md:hidden">
             <Link
               href="/projeler"
-              className="inline-flex items-center gap-2 text-primary font-semibold"
+              className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 font-semibold"
             >
               Tüm Projeleri Gör <ArrowRight size={18} />
             </Link>
