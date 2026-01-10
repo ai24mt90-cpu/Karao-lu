@@ -8,10 +8,6 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
     {
-        href: "/",
-        label: "Ana Sayfa",
-    },
-    {
         href: "/hakkimizda",
         label: "Hakkımızda",
         submenu: [

@@ -3,6 +3,7 @@ import { Roboto } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import FloatingHomeButton from "@/components/FloatingHomeButton";
 
 const roboto = Roboto({
   variable: "--font-roboto",
@@ -206,6 +207,7 @@ export default function RootLayout({
         <main className="min-h-screen">
           {children}
         </main>
+        <FloatingHomeButton />
         <Footer />
       </body>
     </html>
