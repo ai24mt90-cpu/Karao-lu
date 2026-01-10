@@ -27,7 +27,15 @@ const navLinks = [
             { href: "/sektorler#altyapi", label: "Altyapı" },
         ]
     },
-    { href: "/projeler", label: "Projeler" },
+    {
+        href: "/projeler",
+        label: "Projeler",
+        submenu: [
+            { href: "/projeler", label: "Tüm Projeler" },
+            { href: "/projeler?category=tamamlandi", label: "Tamamlanan Projeler" },
+            { href: "/projeler?category=devam", label: "Devam Eden Projeler" },
+        ]
+    },
     { href: "/sosyal-sorumluluk", label: "Sosyal Sorumluluk" },
     {
         href: "/haberler",
