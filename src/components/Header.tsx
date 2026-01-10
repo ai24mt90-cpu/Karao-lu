@@ -73,7 +73,7 @@ export default function Header() {
             {/* Main Header */}
             <div className="bg-white border-b border-gray-200">
                 <div className="layout-container flex h-20 items-center justify-between">
-                    <Link href="/" className="flex items-center gap-4 group -ml-2">
+                    <Link href="/" className="flex items-center gap-4 group -ml-4">
                         <div className="bg-black p-2.5 rounded-lg">
                             <Logo size={64} className="text-white" />
                         </div>

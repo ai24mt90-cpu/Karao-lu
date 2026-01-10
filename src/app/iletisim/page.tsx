@@ -84,9 +84,9 @@ export default function ContactPage() {
                             </div>
                             <h3 className="font-bold text-foreground mb-2">Adres</h3>
                             <p className="text-text-secondary text-sm">
-                                Hafiziye Mah. Umman 1. Sk.<br />
-                                Fergül İş Merkezi No: 2<br />
-                                Kat: 3, D: 16, İpekyolu/Van
+                                Hafiziye Mah. Umman 1. Sokak<br />
+                                No: 38, Kat: 3, D: 16<br />
+                                65130 İpekyolu/Van
                             </p>
                         </div>
                         <div className="bg-surface-secondary p-8 text-center hover:shadow-lg transition-shadow">

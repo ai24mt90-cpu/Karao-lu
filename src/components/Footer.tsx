@@ -67,7 +67,7 @@ export default function Footer() {
                             </a>
                             <div className="flex items-start gap-3 text-sm text-white/70">
                                 <MapPin size={16} className="mt-0.5 flex-shrink-0" />
-                                <span>Hafiziye Mah. Umman 1. Sk. Fergül İş Merkezi No: 2, Kat: 3, D: 16, İpekyolu/Van</span>
+                                <span>Hafiziye Mah. Umman 1. Sokak No: 38, Kat: 3, D: 16, 65130 İpekyolu/Van</span>
                             </div>
                         </div>
                     </div>
@@ -81,7 +81,7 @@ export default function Footer() {
                         <Link href="/iletisim" className="text-sm text-white/60 hover:text-white transition-colors">İletişim</Link>
                     </div>
                     <p className="text-white/70 text-sm text-center mb-2">
-                        <strong>Van Mühendislik Firması</strong> – Hafiziye Mah. Umman 1. Sk. Fergül İş Merkezi No: 2, Kat: 3, D: 16, İpekyolu/Van
+                        <strong>Van Mühendislik Firması</strong> – Hafiziye Mah. Umman 1. Sokak No: 38, Kat: 3, D: 16, 65130 İpekyolu/Van
                     </p>
                     <p className="text-white/50 text-sm text-center">
                         © {new Date().getFullYear()} Karaoğlu Universal Mühendislik Ltd. Şti. Tüm hakları saklıdır.

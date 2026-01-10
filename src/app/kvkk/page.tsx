@@ -28,7 +28,7 @@ export default function KVKKPage() {
                             Karaoğlu Universal Mühendislik Ltd. Şti. olarak, 6698 sayılı Kişisel Verilerin Korunması Kanunu ("KVKK") kapsamında veri sorumlusu sıfatıyla kişisel verilerinizi işlemekteyiz.
                         </p>
                         <p className="text-text-secondary mb-6">
-                            <strong>Adres:</strong> Hafiziye Mah. Umman 1. Sk. Fergül İş Merkezi No: 2, Kat: 3, D: 16, İpekyolu/Van<br />
+                            <strong>Adres:</strong> Hafiziye Mah. Umman 1. Sokak No: 38, Kat: 3, D: 16, 65130 İpekyolu/Van<br />
                             <strong>E-posta:</strong> info@karaoglumuhendislik.com.tr<br />
                             <strong>Telefon:</strong> 0432 216 56 36
                         </p>

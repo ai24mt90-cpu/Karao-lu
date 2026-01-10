@@ -109,10 +109,10 @@ const jsonLd = {
   foundingDate: "2014",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Halilağa Mahallesi, Zübeyde Hanım Caddesi",
+    streetAddress: "Hafiziye Mahallesi, Umman 1. Sokak No: 38, Kat: 3, Daire: 16",
     addressLocality: "İpekyolu",
     addressRegion: "Van",
-    postalCode: "65100",
+    postalCode: "65130",
     addressCountry: "TR",
   },
   contactPoint: {
@@ -152,10 +152,10 @@ const localBusinessJsonLd = {
   priceRange: "$$$$",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Halilağa Mahallesi, Zübeyde Hanım Caddesi",
-    addressLocality: "Van",
+    streetAddress: "Hafiziye Mahallesi, Umman 1. Sokak No: 38, Kat: 3, Daire: 16",
+    addressLocality: "İpekyolu",
     addressRegion: "Van",
-    postalCode: "65100",
+    postalCode: "65130",
     addressCountry: "TR",
   },
   geo: {
