@@ -158,7 +158,7 @@ export default function Header() {
                                 onClick={() => setIsOpen(false)}
                                 className="py-3 text-sm font-bold text-primary border-b border-gray-100"
                             >
-                                🏠 Ana Sayfa
+                                Ana Sayfa
                             </Link>
                             {navLinks.map((link) => (
                                 <Link
