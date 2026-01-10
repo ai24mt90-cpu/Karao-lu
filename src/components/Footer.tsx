@@ -51,7 +51,7 @@ export default function Footer() {
                         <nav className="flex flex-col gap-3">
                             <Link href="/projeler?category=tamamlandi" className="text-sm text-white/70 hover:text-white transition-colors">Tamamlanan Projeler</Link>
                             <Link href="/projeler?category=devam" className="text-sm text-white/70 hover:text-white transition-colors">Devam Eden Projeler</Link>
-                            <Link href="/hayirseverlik" className="text-sm text-white/70 hover:text-white transition-colors">Sosyal Sorumluluk</Link>
+                            <Link href="/sosyal-sorumluluk" className="text-sm text-white/70 hover:text-white transition-colors">Sosyal Sorumluluk</Link>
                         </nav>
                     </div>
 

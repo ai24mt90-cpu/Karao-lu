@@ -26,7 +26,7 @@ const navLinks = [
         ]
     },
     { href: "/projeler", label: "Projeler" },
-    { href: "/hayirseverlik", label: "Sosyal Sorumluluk" },
+    { href: "/sosyal-sorumluluk", label: "Sosyal Sorumluluk" },
     {
         href: "/haberler",
         label: "Basın Odası",
