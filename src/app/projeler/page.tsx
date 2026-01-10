@@ -5,14 +5,7 @@ import { motion } from "framer-motion";
 import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { supabase } from "@/lib/supabase";
-import { MapPin, Filter, Loader2, Camera } from "lucide-react";
-import ProjectGalleryModal from "@/components/ProjectGalleryModal";
-
-interface ProjectImage {
-    id: string;
-    image_url: string;
-    is_cover: boolean;
-}
+import { MapPin, Filter, Loader2, Calendar, Building2 } from "lucide-react";
 
 interface Project {
     id: string;
@@ -29,32 +22,13 @@ const categories = [
     { key: "Tümü", label: "Tümü" },
     { key: "tamamlandi", label: "Tamamlandı", isStatus: true },
     { key: "devam", label: "Devam Eden", isStatus: true },
-    { key: "kamu", label: "Kamu" },
-    { key: "konut", label: "Konut" },
-    { key: "altyapi", label: "Altyapı" },
-    { key: "saglik", label: "Sağlık" },
-    { key: "egitim", label: "Eğitim" },
 ];
 
 const categoryTitles: Record<string, string> = {
     "Tümü": "TÜM PROJELER",
     "tamamlandi": "TAMAMLANAN PROJELER",
     "devam": "DEVAM EDEN PROJELER",
-    "kamu": "KAMU PROJELERİ",
-    "konut": "KONUT PROJELERİ",
-    "altyapi": "ALTYAPI PROJELERİ",
-    "saglik": "SAĞLIK PROJELERİ",
-    "egitim": "EĞİTİM PROJELERİ",
 };
-
-const defaultProjects = [
-    { id: "1", title: "Belediye Hizmet Binası", category: "kamu", location: "Van", year: "2024", status: "Tamamlandı", image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=600" },
-    { id: "2", title: "Konut Kompleksi", category: "konut", location: "İpekyolu", year: "2023", status: "Tamamlandı", image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80&w=600" },
-    { id: "3", title: "Kanalizasyon Hattı", category: "altyapi", location: "Van", year: "2023", status: "Tamamlandı", image: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&q=80&w=600" },
-    { id: "4", title: "Devlet Hastanesi Ek Bina", category: "saglik", location: "Edremit", year: "2024", status: "Devam Ediyor", image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=600" },
-    { id: "5", title: "İlkokul İnşaatı", category: "egitim", location: "Tuşba", year: "2023", status: "Tamamlandı", image: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&q=80&w=600" },
-    { id: "6", title: "Kaymakamlık Binası", category: "kamu", location: "Erciş", year: "2022", status: "Tamamlandı", image: "https://images.unsplash.com/photo-1464938050520-ef2571a0eb7b?auto=format&fit=crop&q=80&w=600" },
-];
 
 function ProjectsContent() {
     const searchParams = useSearchParams();
@@ -63,31 +37,6 @@ function ProjectsContent() {
     const [projects, setProjects] = useState<Project[]>([]);
     const [activeCategory, setActiveCategory] = useState(categoryParam || "Tümü");
     const [loading, setLoading] = useState(true);
-
-    // Gallery Modal State
-    const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-    const [projectImages, setProjectImages] = useState<ProjectImage[]>([]);
-    const [isModalOpen, setIsModalOpen] = useState(false);
-
-    const handleProjectClick = async (project: Project) => {
-        setSelectedProject(project);
-        setIsModalOpen(true);
-
-        // Fetch project images
-        const { data } = await supabase
-            .from("project_images")
-            .select("*")
-            .eq("project_id", project.id)
-            .order("order_index", { ascending: true });
-
-        setProjectImages(data || []);
-    };
-
-    const closeModal = () => {
-        setIsModalOpen(false);
-        setSelectedProject(null);
-        setProjectImages([]);
-    };
 
     useEffect(() => {
         if (categoryParam) {
@@ -101,7 +50,7 @@ function ProjectsContent() {
             const { data, error } = await supabase
                 .from("projects")
                 .select("*")
-                .order("created_at", { ascending: false });
+                .order("year", { ascending: false });
 
             if (!error && data) {
                 setProjects(data);
@@ -126,22 +75,27 @@ function ProjectsContent() {
         if (activeCategory === "Tümü") return projects;
         if (activeCategory === "tamamlandi") return projects.filter(p => p.status === "Tamamlandı");
         if (activeCategory === "devam") return projects.filter(p => p.status === "Devam Ediyor");
-        return projects.filter(p => p.category.toLowerCase() === activeCategory.toLowerCase());
-    })();
-
-    const filteredDefaultProjects = (() => {
-        if (activeCategory === "Tümü") return defaultProjects;
-        if (activeCategory === "tamamlandi") return defaultProjects.filter(p => p.status === "Tamamlandı");
-        if (activeCategory === "devam") return defaultProjects.filter(p => p.status === "Devam Ediyor");
-        return defaultProjects.filter(p => p.category === activeCategory);
+        return projects;
     })();
 
     const pageTitle = categoryTitles[activeCategory] || "PROJELER";
 
+    // Group projects by year
+    const projectsByYear = filteredProjects.reduce((acc, project) => {
+        const year = project.year;
+        if (!acc[year]) {
+            acc[year] = [];
+        }
+        acc[year].push(project);
+        return acc;
+    }, {} as Record<string, Project[]>);
+
+    const sortedYears = Object.keys(projectsByYear).sort((a, b) => parseInt(b) - parseInt(a));
+
     return (
         <>
             {/* Hero Banner */}
-            <section className="relative h-[400px]">
+            <section className="relative h-[350px]">
                 <Image
                     src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=2000"
                     alt="Projeler"
@@ -157,147 +111,138 @@ function ProjectsContent() {
                             key={activeCategory}
                         >
                             <h1 className="text-5xl font-bold text-white mb-4">{pageTitle}</h1>
-                            <p className="text-white/80 text-lg">Tamamlanan ve devam eden projelerimiz</p>
+                            <p className="text-white/80 text-lg">Van ve çevresinde tamamladığımız mühendislik projeleri</p>
                         </motion.div>
                     </div>
                 </div>
             </section>
 
             {/* Filter Bar */}
-            <section className="py-8 bg-white border-b border-gray-200">
+            <section className="py-6 bg-white border-b border-gray-200 sticky top-0 z-10">
                 <div className="layout-container">
-                    <div className="flex items-center gap-4 overflow-x-auto">
+                    <div className="flex items-center gap-4">
                         <Filter size={20} className="text-text-secondary flex-shrink-0" />
                         {categories.map((cat) => (
                             <button
                                 key={cat.key}
                                 onClick={() => handleCategoryChange(cat.key)}
-                                className={`px-4 py-2 text-sm font-medium whitespace-nowrap transition-colors ${activeCategory === cat.key
+                                className={`px-5 py-2.5 text-sm font-medium whitespace-nowrap transition-colors rounded-lg ${activeCategory === cat.key
                                     ? "bg-primary text-white"
                                     : "bg-gray-100 text-text-secondary hover:bg-gray-200"
                                     }`}
                             >
                                 {cat.label}
+                                {cat.key !== "Tümü" && (
+                                    <span className="ml-2 text-xs opacity-70">
+                                        ({cat.key === "tamamlandi"
+                                            ? projects.filter(p => p.status === "Tamamlandı").length
+                                            : projects.filter(p => p.status === "Devam Ediyor").length
+                                        })
+                                    </span>
+                                )}
                             </button>
                         ))}
                     </div>
                 </div>
             </section>
 
-            {/* Projects Grid */}
-            <section className="py-16 bg-surface-secondary">
+            {/* Projects List */}
+            <section className="py-12 bg-surface-secondary min-h-[60vh]">
                 <div className="layout-container">
-                    {projects.length > 0 ? (
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                            {filteredProjects.map((project, idx) => (
-                                <motion.div
-                                    key={project.id}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: idx * 0.05 }}
-                                    className="bg-white overflow-hidden shadow-sm hover:shadow-xl transition-all group cursor-pointer"
-                                    onClick={() => handleProjectClick(project)}
-                                >
-                                    <div className="relative h-56 overflow-hidden">
-                                        {project.image_url ? (
-                                            <Image
-                                                src={project.image_url}
-                                                alt={project.title}
-                                                fill
-                                                className="object-cover group-hover:scale-105 transition-transform duration-500"
-                                            />
-                                        ) : (
-                                            <div className="w-full h-full bg-primary/10" />
-                                        )}
-                                        <div className="absolute top-4 left-4">
-                                            <span className="bg-primary text-white text-xs font-semibold px-3 py-1">
-                                                {project.category}
-                                            </span>
-                                        </div>
-                                        <div className="absolute top-4 right-4">
-                                            <span className={`text-xs font-semibold px-3 py-1 ${project.status === "Tamamlandı" ? "bg-green-500" : "bg-yellow-500"} text-white`}>
-                                                {project.status}
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div className="p-6">
-                                        <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
-                                            {project.title}
-                                        </h3>
-                                        <div className="flex items-center gap-2 text-text-secondary text-sm mb-2">
-                                            <MapPin size={14} />
-                                            <span>{project.location}</span>
-                                            <span className="text-gray-300">|</span>
-                                            <span>{project.year}</span>
-                                        </div>
-                                        {project.description && (
-                                            <p className="text-text-secondary text-sm line-clamp-2">{project.description}</p>
-                                        )}
-                                    </div>
-                                </motion.div>
-                            ))}
+                    {loading ? (
+                        <div className="flex items-center justify-center py-20">
+                            <Loader2 className="animate-spin text-primary" size={40} />
+                        </div>
+                    ) : filteredProjects.length === 0 ? (
+                        <div className="text-center py-20 text-text-secondary">
+                            Bu kategoride henüz proje bulunmuyor.
                         </div>
                     ) : (
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                            {filteredDefaultProjects.map((project, idx) => (
-                                <motion.div
-                                    key={project.id}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: idx * 0.05 }}
-                                    className="bg-white overflow-hidden shadow-sm hover:shadow-xl transition-all group"
-                                >
-                                    <div className="relative h-56 overflow-hidden">
-                                        <Image
-                                            src={project.image}
-                                            alt={project.title}
-                                            fill
-                                            className="object-cover group-hover:scale-105 transition-transform duration-500"
-                                        />
-                                        <div className="absolute top-4 left-4">
-                                            <span className="bg-primary text-white text-xs font-semibold px-3 py-1">
-                                                {categories.find(c => c.key === project.category)?.label || project.category}
-                                            </span>
-                                        </div>
-                                        <div className="absolute top-4 right-4">
-                                            <span className={`text-xs font-semibold px-3 py-1 ${project.status === "Tamamlandı" ? "bg-green-500" : "bg-yellow-500"} text-white`}>
-                                                {project.status}
-                                            </span>
-                                        </div>
+                        <div className="space-y-10">
+                            {sortedYears.map((year) => (
+                                <div key={year}>
+                                    <div className="flex items-center gap-3 mb-4">
+                                        <Calendar size={20} className="text-primary" />
+                                        <h2 className="text-2xl font-bold text-foreground">{year}</h2>
+                                        <span className="text-sm text-text-secondary">({projectsByYear[year].length} proje)</span>
                                     </div>
-                                    <div className="p-6">
-                                        <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
-                                            {project.title}
-                                        </h3>
-                                        <div className="flex items-center gap-2 text-text-secondary text-sm">
-                                            <MapPin size={14} />
-                                            <span>{project.location}</span>
-                                            <span className="text-gray-300">|</span>
-                                            <span>{project.year}</span>
-                                        </div>
+
+                                    <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+                                        <table className="w-full">
+                                            <thead className="bg-gray-50 border-b border-gray-200">
+                                                <tr>
+                                                    <th className="text-left px-6 py-4 text-sm font-semibold text-foreground">Kurum / İşveren</th>
+                                                    <th className="text-left px-6 py-4 text-sm font-semibold text-foreground">İşin Adı</th>
+                                                    <th className="text-left px-6 py-4 text-sm font-semibold text-foreground hidden md:table-cell">Lokasyon</th>
+                                                    <th className="text-center px-6 py-4 text-sm font-semibold text-foreground hidden lg:table-cell">Durum</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody className="divide-y divide-gray-100">
+                                                {projectsByYear[year].map((project, idx) => (
+                                                    <motion.tr
+                                                        key={project.id}
+                                                        initial={{ opacity: 0, x: -10 }}
+                                                        whileInView={{ opacity: 1, x: 0 }}
+                                                        viewport={{ once: true }}
+                                                        transition={{ delay: idx * 0.02 }}
+                                                        className="hover:bg-gray-50 transition-colors"
+                                                    >
+                                                        <td className="px-6 py-4">
+                                                            <div className="flex items-center gap-3">
+                                                                <Building2 size={16} className="text-primary flex-shrink-0" />
+                                                                <span className="font-medium text-foreground text-sm">{project.title}</span>
+                                                            </div>
+                                                        </td>
+                                                        <td className="px-6 py-4">
+                                                            <span className="text-text-secondary text-sm">{project.description || "-"}</span>
+                                                        </td>
+                                                        <td className="px-6 py-4 hidden md:table-cell">
+                                                            <div className="flex items-center gap-2 text-text-secondary text-sm">
+                                                                <MapPin size={14} />
+                                                                <span>{project.location}</span>
+                                                            </div>
+                                                        </td>
+                                                        <td className="px-6 py-4 text-center hidden lg:table-cell">
+                                                            <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${project.status === "Tamamlandı"
+                                                                    ? "bg-green-100 text-green-700"
+                                                                    : "bg-yellow-100 text-yellow-700"
+                                                                }`}>
+                                                                {project.status}
+                                                            </span>
+                                                        </td>
+                                                    </motion.tr>
+                                                ))}
+                                            </tbody>
+                                        </table>
                                     </div>
-                                </motion.div>
+                                </div>
                             ))}
                         </div>
                     )}
 
-                    {filteredProjects.length === 0 && filteredDefaultProjects.length === 0 && (
-                        <div className="text-center py-20 text-text-secondary">
-                            Bu kategoride henüz proje bulunmuyor.
+                    {/* Summary Stats */}
+                    {!loading && filteredProjects.length > 0 && (
+                        <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4">
+                            <div className="bg-white p-6 rounded-lg shadow-sm text-center">
+                                <p className="text-3xl font-bold text-primary">{projects.length}</p>
+                                <p className="text-sm text-text-secondary mt-1">Toplam Proje</p>
+                            </div>
+                            <div className="bg-white p-6 rounded-lg shadow-sm text-center">
+                                <p className="text-3xl font-bold text-green-600">{projects.filter(p => p.status === "Tamamlandı").length}</p>
+                                <p className="text-sm text-text-secondary mt-1">Tamamlanan</p>
+                            </div>
+                            <div className="bg-white p-6 rounded-lg shadow-sm text-center">
+                                <p className="text-3xl font-bold text-yellow-600">{projects.filter(p => p.status === "Devam Ediyor").length}</p>
+                                <p className="text-sm text-text-secondary mt-1">Devam Eden</p>
+                            </div>
+                            <div className="bg-white p-6 rounded-lg shadow-sm text-center">
+                                <p className="text-3xl font-bold text-primary">{sortedYears.length}</p>
+                                <p className="text-sm text-text-secondary mt-1">Yıl Tecrübe</p>
+                            </div>
                         </div>
                     )}
                 </div>
             </section>
-
-            {/* Gallery Modal */}
-            <ProjectGalleryModal
-                project={selectedProject}
-                images={projectImages}
-                isOpen={isModalOpen}
-                onClose={closeModal}
-            />
         </>
     );
 }

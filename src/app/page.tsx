@@ -297,90 +297,62 @@ export default function Home() {
               href="/projeler"
               className="hidden md:inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all"
             >
-              Tümünü Gör <ArrowRight size={18} />
+              Tüm Projeleri Gör <ArrowRight size={18} />
             </Link>
           </div>
 
-          {featuredProjects.length > 0 ? (
+          {featuredProjects.filter(p => p.image_url).length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {featuredProjects.filter(p => p.image_url).map((project) => (
-                <div key={project.id} className="group bg-white border border-gray-100 overflow-hidden shadow-sm hover:shadow-xl transition-all">
-                  <div className="relative h-56 overflow-hidden">
+              {featuredProjects.filter(p => p.image_url).slice(0, 6).map((project) => (
+                <Link href="/projeler" key={project.id} className="group block bg-white border border-gray-100 overflow-hidden shadow-sm hover:shadow-xl transition-all">
+                  <div className="relative h-64 overflow-hidden">
                     <Image
                       src={project.image_url!}
                       alt={project.title}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
-                    <div className="absolute top-4 left-4">
-                      <span className="bg-primary text-white text-xs font-semibold px-3 py-1">
-                        {project.category}
-                      </span>
-                    </div>
-                    <div className="absolute top-4 right-4">
-                      <span className={`text-xs font-semibold px-3 py-1 ${project.status === "Tamamlandı" ? "bg-green-500" : "bg-yellow-500"} text-white`}>
-                        {project.status}
-                      </span>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                    <div className="absolute bottom-0 left-0 right-0 p-5">
+                      <h4 className="font-bold text-white text-lg">{project.title}</h4>
                     </div>
                   </div>
-                  <div className="p-5">
-                    <h4 className="font-bold text-foreground group-hover:text-primary transition-colors">{project.title}</h4>
-                    <p className="text-sm text-text-secondary mt-1">{project.location} • {project.year}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          ) : recentWorks.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {recentWorks.map((work) => (
-                <div key={work.id} className="group bg-white border border-gray-100 overflow-hidden shadow-sm hover:shadow-xl transition-all">
-                  <div className="relative h-56 overflow-hidden">
-                    <Image
-                      src={work.image_url || "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab"}
-                      alt={work.title}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute top-4 left-4">
-                      <span className="bg-primary text-white text-xs font-semibold px-3 py-1">
-                        {work.category}
-                      </span>
-                    </div>
-                  </div>
-                  <div className="p-5">
-                    <h4 className="font-bold text-foreground group-hover:text-primary transition-colors">{work.title}</h4>
-                  </div>
-                </div>
+                </Link>
               ))}
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
-                { title: "Merkez Hastanesi", category: "Sağlık", image: "https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?auto=format&fit=crop&q=80&w=600" },
-                { title: "Konut Projesi", category: "Konut", image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80&w=600" },
-                { title: "Yol Yapım İşi", category: "Altyapı", image: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&q=80&w=600" },
+                { title: "Van Bölge Eğitim Araştırma Hastanesi", image: "https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?auto=format&fit=crop&q=80&w=600" },
+                { title: "TOKİ Çatak 89 Konut Projesi", image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80&w=600" },
+                { title: "İpekyolu Sahil Bandı Projesi", image: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&q=80&w=600" },
               ].map((project) => (
-                <div key={project.title} className="group bg-white border border-gray-100 overflow-hidden shadow-sm hover:shadow-xl transition-all">
-                  <div className="relative h-56 overflow-hidden">
+                <Link href="/projeler" key={project.title} className="group block bg-white border border-gray-100 overflow-hidden shadow-sm hover:shadow-xl transition-all">
+                  <div className="relative h-64 overflow-hidden">
                     <Image
                       src={project.image}
                       alt={project.title}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
-                    <div className="absolute top-4 left-4">
-                      <span className="bg-primary text-white text-xs font-semibold px-3 py-1">
-                        {project.category}
-                      </span>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                    <div className="absolute bottom-0 left-0 right-0 p-5">
+                      <h4 className="font-bold text-white text-lg">{project.title}</h4>
                     </div>
                   </div>
-                  <div className="p-5">
-                    <h4 className="font-bold text-foreground group-hover:text-primary transition-colors">{project.title}</h4>
-                  </div>
-                </div>
+                </Link>
               ))}
             </div>
           )}
+
+          <div className="text-center mt-8 md:hidden">
+            <Link
+              href="/projeler"
+              className="inline-flex items-center gap-2 text-primary font-semibold"
+            >
+              Tüm Projeleri Gör <ArrowRight size={18} />
+            </Link>
+          </div>
         </div>
       </section>
 
