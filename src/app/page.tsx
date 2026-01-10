@@ -210,43 +210,105 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Hayallerimiz Hedefimizdir Section */}
+      {/* Kurumsal Yetkinlik Section */}
       <section className="py-20 bg-white">
         <div className="layout-container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-primary text-sm font-semibold uppercase tracking-wider mb-4">Hakkımızda</h2>
-              <h3 className="text-4xl md:text-5xl font-bold text-foreground mb-6">HAYALLERİMİZ<br />HEDEFİMİZDİR</h3>
-              <p className="text-text-secondary leading-relaxed mb-8">
-                Karaoğlu Universal Mühendislik faaliyetleri 2014 yılında Van'da başladı.
-                Özellikle inşaat sektöründeki yatırımlarla giderek artan bir ivme yakalayan firmamız,
-                bugün bölgede önemli bir mühendislik firması haline geldi.
+              <h2 className="text-primary text-sm font-semibold uppercase tracking-wider mb-4">Neden Biz?</h2>
+              <h3 className="text-4xl md:text-5xl font-bold text-foreground mb-6">KAMU İHALELERİNDE<br />GÜVENİLİR ÇÖZÜM ORTAĞI</h3>
+              <p className="text-text-secondary leading-relaxed mb-6">
+                <strong>2014</strong> yılından bu yana kamu kurumlarına altyapı, üstyapı ve mühendislik hizmeti sunuyoruz.
+                4734 sayılı Kamu İhale Kanunu&apos;na uygun iş yapış biçimimiz ve teknik yeterliliklerimiz ile
+                Valilik, belediye, hastane ve eğitim kurumları için <strong>64+ proje</strong> tamamladık.
               </p>
-              <Link
-                href="/hakkimizda"
-                className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 font-semibold hover:bg-primary-dark transition-colors"
-              >
-                Devamı <ArrowRight size={18} />
-              </Link>
+
+              {/* Yetkinlik Badges */}
+              <div className="grid grid-cols-2 gap-4 mb-8">
+                <div className="bg-surface-secondary p-4 border-l-4 border-primary">
+                  <p className="text-2xl font-bold text-primary">64+</p>
+                  <p className="text-sm text-text-secondary">Tamamlanan Kamu Projesi</p>
+                </div>
+                <div className="bg-surface-secondary p-4 border-l-4 border-primary">
+                  <p className="text-2xl font-bold text-primary">10+</p>
+                  <p className="text-sm text-text-secondary">Yıllık Sektör Deneyimi</p>
+                </div>
+                <div className="bg-surface-secondary p-4 border-l-4 border-primary">
+                  <p className="text-2xl font-bold text-primary">6+</p>
+                  <p className="text-sm text-text-secondary">İl Genelinde Proje</p>
+                </div>
+                <div className="bg-surface-secondary p-4 border-l-4 border-primary">
+                  <p className="text-2xl font-bold text-primary">%100</p>
+                  <p className="text-sm text-text-secondary">Zamanında Teslim</p>
+                </div>
+              </div>
+
+              <div className="flex flex-wrap gap-4">
+                <Link
+                  href="/projeler"
+                  className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 font-semibold hover:bg-primary-dark transition-colors"
+                >
+                  Tamamlanan Projeler <ArrowRight size={18} />
+                </Link>
+                <Link
+                  href="/hakkimizda"
+                  className="inline-flex items-center gap-2 border-2 border-primary text-primary px-6 py-3 font-semibold hover:bg-primary hover:text-white transition-colors"
+                >
+                  Teknik Yeterlilikler
+                </Link>
+              </div>
             </div>
-            <div className="relative h-[400px] rounded overflow-hidden shadow-xl">
-              <Image
-                src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=800"
-                alt="Mühendislik"
-                fill
-                className="object-cover"
-              />
+            <div className="space-y-6">
+              {/* Hizmet Alanları */}
+              <div className="bg-primary text-white p-6">
+                <h4 className="font-bold text-lg mb-4">HİZMET ALANLARIMIZ</h4>
+                <ul className="space-y-3 text-white/90">
+                  <li className="flex items-center gap-3">
+                    <span className="w-2 h-2 bg-white rounded-full" />
+                    Kamu Binaları (Hastane, Okul, İdari Bina)
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <span className="w-2 h-2 bg-white rounded-full" />
+                    Altyapı (Kanalizasyon, Yol, Köprü)
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <span className="w-2 h-2 bg-white rounded-full" />
+                    TOKİ ve Toplu Konut Projeleri
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <span className="w-2 h-2 bg-white rounded-full" />
+                    Elektrik ve Enerji Hatları
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <span className="w-2 h-2 bg-white rounded-full" />
+                    Çevre Düzenleme ve Peyzaj
+                  </li>
+                </ul>
+              </div>
+
+              {/* İşveren Kurumlar */}
+              <div className="bg-surface-secondary p-6">
+                <h4 className="font-bold text-lg mb-4 text-foreground">İŞVEREN KURUMLAR</h4>
+                <div className="flex flex-wrap gap-2">
+                  {["Valilik", "Belediyeler", "İl Özel İdaresi", "TOKİ", "Sağlık Bakanlığı", "MEB", "VEDAŞ"].map((kurum) => (
+                    <span key={kurum} className="bg-white px-3 py-1 text-sm text-text-secondary border border-gray-200">
+                      {kurum}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Inspiring Quote Section */}
-      <section className="py-20 bg-primary">
+      {/* Kurumsal Slogan */}
+      <section className="py-16 bg-primary">
         <div className="layout-container text-center">
-          <p className="text-2xl md:text-4xl font-bold text-white leading-relaxed max-w-4xl mx-auto">
-            "Bugünü İnşa Ediyor, Geleceğe Değer Katıyoruz."
+          <p className="text-xl md:text-3xl font-bold text-white leading-relaxed max-w-4xl mx-auto">
+            &quot;Kamu projelerinde güvenilirlik, teknik yeterlilik ve zamanında teslim garantisi.&quot;
           </p>
+          <p className="text-white/70 mt-4">— Karaoğlu Universal Mühendislik</p>
         </div>
       </section>
 
@@ -332,37 +394,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* News Section */}
-      <section className="py-20 bg-surface-secondary">
-        <div className="layout-container">
-          <div className="text-center mb-12">
-            <h2 className="text-primary text-sm font-semibold uppercase tracking-wider mb-4">Güncel</h2>
-            <h3 className="text-4xl font-bold text-foreground">HABERLER</h3>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              { title: "Yeni Proje Başladı", date: "06.01.2026", image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=600" },
-              { title: "Sosyal Sorumluluk Projemiz", date: "05.01.2026", image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=600" },
-              { title: "Kalite Belgelerimiz Yenilendi", date: "04.01.2026", image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=600" },
-            ].map((news) => (
-              <div key={news.title} className="group bg-white overflow-hidden shadow-sm hover:shadow-xl transition-all">
-                <div className="relative h-48 overflow-hidden">
-                  <Image
-                    src={news.image}
-                    alt={news.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-                <div className="p-5">
-                  <p className="text-text-secondary text-xs mb-2">{news.date}</p>
-                  <h4 className="font-bold text-foreground group-hover:text-primary transition-colors">{news.title}</h4>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+
 
       {/* CTA Section */}
       <section className="py-20 bg-primary">
