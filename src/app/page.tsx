@@ -57,19 +57,19 @@ const sectors = [
     title: "Kamu Projeleri",
     description: "Hastaneler, okullar ve kamu binaları",
     image: "https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?auto=format&fit=crop&q=80&w=600",
-    link: "/projeler?category=kamu",
+    link: "/sektorler#kamu",
   },
   {
     title: "Konut",
-    description: "Modern konut projeleri",
+    description: "TOKİ ve toplu konut projeleri",
     image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80&w=600",
-    link: "/projeler?category=konut",
+    link: "/sektorler#konut",
   },
   {
     title: "Altyapı",
     description: "Yol, köprü ve altyapı işleri",
     image: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&q=80&w=600",
-    link: "/projeler?category=altyapi",
+    link: "/sektorler#altyapi",
   },
 ];
 

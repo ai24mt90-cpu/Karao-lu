@@ -17,12 +17,14 @@ const navLinks = [
         ]
     },
     {
-        href: "/projeler",
+        href: "/sektorler",
         label: "Sektörler",
         submenu: [
-            { href: "/projeler?category=kamu", label: "Kamu Projeleri" },
-            { href: "/projeler?category=konut", label: "Konut" },
-            { href: "/projeler?category=altyapi", label: "Altyapı" },
+            { href: "/sektorler#kamu", label: "Kamu Projeleri" },
+            { href: "/sektorler#saglik", label: "Sağlık" },
+            { href: "/sektorler#egitim", label: "Eğitim" },
+            { href: "/sektorler#konut", label: "Konut" },
+            { href: "/sektorler#altyapi", label: "Altyapı" },
         ]
     },
     { href: "/projeler", label: "Projeler" },
