@@ -35,7 +35,7 @@ const heroSlides = [
   },
   {
     image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000",
-    title: "40+ Tamamlanan Proje",
+    title: "64+ Tamamlanan Proje",
     subtitle: "Hastane, okul, konut ve altyapı projelerinde kanıtlanmış başarı",
   },
   {
@@ -50,7 +50,7 @@ export default function Home() {
   const [recentWorks, setRecentWorks] = useState<Work[]>([]);
   const [featuredProjects, setFeaturedProjects] = useState<FeaturedProject[]>([]);
   const [heroImages, setHeroImages] = useState<{ image: string, title: string, subtitle: string }[]>(heroSlides);
-  const [projectCount, setProjectCount] = useState(41);
+  const [projectCount, setProjectCount] = useState(64);
 
   // Fetch featured projects from Supabase
   useEffect(() => {
