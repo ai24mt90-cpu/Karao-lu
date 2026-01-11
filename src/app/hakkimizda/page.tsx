@@ -14,9 +14,13 @@ const timeline = [
 ];
 
 const team = [
-    { name: "Yönetim Kurulu Başkanı", role: "Genel Müdür", image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400" },
-    { name: "Teknik Müdür", role: "Mühendislik", image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=400" },
-    { name: "Proje Müdürü", role: "Proje Yönetimi", image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=400" },
+    { name: "Reşat Kara", role: "Başkan Vekili" },
+    { name: "Mazlum Kara", role: "Yönetim Kurulu Üyesi" },
+    { name: "Av. Doğan Tunal", role: "Hukuk Müşaviri" },
+    { name: "Yusuf Kapan", role: "İnşaat Mühendisi, Yönetim Kurulu Üyesi" },
+    { name: "Metin Öner", role: "Mali Müşavir, Yönetim Kurulu Üyesi" },
+    { name: "Mert Miroğlu", role: "Yönetim Kurulu Üyesi" },
+    { name: "Çağrı Koç", role: "İktisatçı, Yönetim Kurulu Üyesi" },
 ];
 
 export default function AboutPage() {
@@ -246,18 +250,15 @@ export default function AboutPage() {
                                 transition={{ duration: 0.3 }}
                                 className="overflow-hidden"
                             >
-                                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-8">
+                                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 pt-8">
                                     {team.map((member) => (
-                                        <div key={member.name} className="bg-white overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
-                                            <div className="relative h-64">
-                                                <Image
-                                                    src={member.image}
-                                                    alt={member.name}
-                                                    fill
-                                                    className="object-cover"
-                                                />
-                                            </div>
+                                        <div key={member.name} className="bg-white overflow-hidden shadow-sm hover:shadow-lg transition-shadow border-l-4 border-primary">
                                             <div className="p-6 text-center">
+                                                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                                                    <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                                    </svg>
+                                                </div>
                                                 <h4 className="font-bold text-foreground mb-1">{member.name}</h4>
                                                 <p className="text-primary text-sm">{member.role}</p>
                                             </div>
