@@ -75,7 +75,7 @@ export default function Header() {
                 <div className="flex h-20 items-center">
                     {/* Logo Section - Full height black background */}
                     <Link href="/" className="flex items-center h-full bg-black px-6 gap-4 group hover:bg-gray-900 transition-colors">
-                        <Logo size={56} className="text-white" />
+                        <Logo size={72} className="text-white" />
                         <div className="flex flex-col">
                             <span className="text-xl font-bold tracking-tight text-white">KARAOĞLU</span>
                             <span className="text-[9px] font-medium uppercase tracking-[0.2em] text-white/70">Universal Mühendislik</span>
