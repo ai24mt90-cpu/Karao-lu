@@ -71,15 +71,18 @@ export default function Home() {
           .in("project_id", projectIds)
           .eq("is_cover", true);
 
-        // Merge project data with images
-        const projectsWithCover = featuredData.map(project => {
+        // Merge project data with images (images optional)
+        const projectsWithData = featuredData.map(project => {
           const coverImage = imagesData?.find(img => img.project_id === project.id);
           return { ...project, image_url: coverImage?.image_url };
-        }).filter(p => p.image_url);
+        });
 
+        // Set all featured projects for cards
+        setFeaturedProjects(projectsWithData);
+
+        // For hero slider, only use projects with images
+        const projectsWithCover = projectsWithData.filter(p => p.image_url);
         if (projectsWithCover.length > 0) {
-          setFeaturedProjects(projectsWithCover);
-          // Create dynamic hero slides from featured projects with images
           const dynamicSlides = projectsWithCover.map((project, index) => ({
             image: project.image_url!,
             title: heroSlides[index]?.title || project.title,
