@@ -73,14 +73,12 @@ export default function Header() {
             {/* Main Header */}
             <div className="bg-white border-b border-gray-200">
                 <div className="flex h-20 items-center">
-                    {/* Logo - Absolute left edge */}
-                    <Link href="/" className="flex items-center gap-4 group pl-4 md:pl-6 lg:pl-8">
-                        <div className="bg-black p-2.5 rounded-lg">
-                            <Logo size={64} className="text-white" />
-                        </div>
+                    {/* Logo Section - Full height black background */}
+                    <Link href="/" className="flex items-center h-full bg-black px-6 gap-4 group hover:bg-gray-900 transition-colors">
+                        <Logo size={56} className="text-white" />
                         <div className="flex flex-col">
-                            <span className="text-2xl font-bold tracking-tight text-foreground">KARAOĞLU</span>
-                            <span className="text-[10px] font-medium uppercase tracking-[0.15em] text-text-secondary">Universal Mühendislik</span>
+                            <span className="text-xl font-bold tracking-tight text-white">KARAOĞLU</span>
+                            <span className="text-[9px] font-medium uppercase tracking-[0.2em] text-white/70">Universal Mühendislik</span>
                         </div>
                     </Link>
 
