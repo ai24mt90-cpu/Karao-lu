@@ -65,7 +65,7 @@ export default function Home() {
       if (!error && data && data.length > 0) {
         setFeaturedProjects(data);
         // Create dynamic hero slides from projects with images
-        const dynamicSlides = data.slice(0, 3).map((project, index) => ({
+        const dynamicSlides = data.map((project, index) => ({
           image: project.image_url!,
           title: heroSlides[index]?.title || project.title,
           subtitle: heroSlides[index]?.subtitle || `${project.location} - ${project.year}`,
