@@ -55,38 +55,37 @@ export default function Home() {
   // Fetch featured projects with images from Supabase
   useEffect(() => {
     const fetchFeaturedProjects = async () => {
-      // First get projects that have cover images in project_images table
-      const { data: projectsWithImages, error: imgError } = await supabase
-        .from("project_images")
-        .select("project_id, image_url")
-        .eq("is_cover", true)
-        .limit(5);
+      // Get featured projects (starred in admin panel)
+      const { data: featuredData, error: featError } = await supabase
+        .from("projects")
+        .select("*")
+        .eq("is_featured", true)
+        .order("created_at", { ascending: false });
 
-      if (!imgError && projectsWithImages && projectsWithImages.length > 0) {
-        // Get project details for these projects
-        const projectIds = projectsWithImages.map(p => p.project_id);
-        const { data: projects, error: projError } = await supabase
-          .from("projects")
-          .select("*")
-          .in("id", projectIds);
+      if (!featError && featuredData && featuredData.length > 0) {
+        // Get cover images for these projects
+        const projectIds = featuredData.map(p => p.id);
+        const { data: imagesData } = await supabase
+          .from("project_images")
+          .select("project_id, image_url")
+          .in("project_id", projectIds)
+          .eq("is_cover", true);
 
-        if (!projError && projects) {
-          // Merge project data with images
-          const projectsWithCover = projects.map(project => {
-            const coverImage = projectsWithImages.find(img => img.project_id === project.id);
-            return { ...project, image_url: coverImage?.image_url };
-          }).filter(p => p.image_url);
+        // Merge project data with images
+        const projectsWithCover = featuredData.map(project => {
+          const coverImage = imagesData?.find(img => img.project_id === project.id);
+          return { ...project, image_url: coverImage?.image_url };
+        }).filter(p => p.image_url);
 
-          if (projectsWithCover.length > 0) {
-            setFeaturedProjects(projectsWithCover);
-            // Create dynamic hero slides from projects with images
-            const dynamicSlides = projectsWithCover.map((project, index) => ({
-              image: project.image_url!,
-              title: heroSlides[index]?.title || project.title,
-              subtitle: heroSlides[index]?.subtitle || `${project.location} - ${project.year}`,
-            }));
-            setHeroImages(dynamicSlides);
-          }
+        if (projectsWithCover.length > 0) {
+          setFeaturedProjects(projectsWithCover);
+          // Create dynamic hero slides from featured projects with images
+          const dynamicSlides = projectsWithCover.map((project, index) => ({
+            image: project.image_url!,
+            title: heroSlides[index]?.title || project.title,
+            subtitle: heroSlides[index]?.subtitle || `${project.location} - ${project.year}`,
+          }));
+          setHeroImages(dynamicSlides);
         }
       }
     };
