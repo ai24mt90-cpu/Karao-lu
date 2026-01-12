@@ -52,26 +52,41 @@ export default function Home() {
   const [heroImages, setHeroImages] = useState<{ image: string, title: string, subtitle: string }[]>(heroSlides);
   const [projectCount, setProjectCount] = useState(64);
 
-  // Fetch featured projects from Supabase
+  // Fetch featured projects with images from Supabase
   useEffect(() => {
     const fetchFeaturedProjects = async () => {
-      const { data, error } = await supabase
-        .from("projects")
-        .select("*")
-        .not("image_url", "is", null)
-        .order("created_at", { ascending: false })
+      // First get projects that have cover images in project_images table
+      const { data: projectsWithImages, error: imgError } = await supabase
+        .from("project_images")
+        .select("project_id, image_url")
+        .eq("is_cover", true)
         .limit(5);
 
-      if (!error && data && data.length > 0) {
-        setFeaturedProjects(data);
-        // Create dynamic hero slides from projects with images
-        const dynamicSlides = data.map((project, index) => ({
-          image: project.image_url!,
-          title: heroSlides[index]?.title || project.title,
-          subtitle: heroSlides[index]?.subtitle || `${project.location} - ${project.year}`,
-        }));
-        if (dynamicSlides.length > 0) {
-          setHeroImages(dynamicSlides);
+      if (!imgError && projectsWithImages && projectsWithImages.length > 0) {
+        // Get project details for these projects
+        const projectIds = projectsWithImages.map(p => p.project_id);
+        const { data: projects, error: projError } = await supabase
+          .from("projects")
+          .select("*")
+          .in("id", projectIds);
+
+        if (!projError && projects) {
+          // Merge project data with images
+          const projectsWithCover = projects.map(project => {
+            const coverImage = projectsWithImages.find(img => img.project_id === project.id);
+            return { ...project, image_url: coverImage?.image_url };
+          }).filter(p => p.image_url);
+
+          if (projectsWithCover.length > 0) {
+            setFeaturedProjects(projectsWithCover);
+            // Create dynamic hero slides from projects with images
+            const dynamicSlides = projectsWithCover.map((project, index) => ({
+              image: project.image_url!,
+              title: heroSlides[index]?.title || project.title,
+              subtitle: heroSlides[index]?.subtitle || `${project.location} - ${project.year}`,
+            }));
+            setHeroImages(dynamicSlides);
+          }
         }
       }
     };
