@@ -65,14 +65,14 @@ export default function Home() {
       if (!error && data && data.length > 0) {
         setFeaturedProjects(data);
         // Create dynamic hero slides from projects with images
-        const dynamicSlides = data.map((project, index) => ({
+        const dynamicSlides = data.slice(0, 3).map((project, index) => ({
           image: project.image_url!,
-          title: index === 0 ? "Van'ın Güvenilir Mühendislik Ortağı" : project.title,
-          subtitle: index === 0
-            ? "2014'ten bu yana Van ve çevresinde altyapı, üstyapı ve kamu projelerinde kaliteli hizmet"
-            : project.description || `${project.location} - ${project.year}`,
+          title: heroSlides[index]?.title || project.title,
+          subtitle: heroSlides[index]?.subtitle || `${project.location} - ${project.year}`,
         }));
-        setHeroImages(dynamicSlides);
+        if (dynamicSlides.length > 0) {
+          setHeroImages(dynamicSlides);
+        }
       }
     };
     fetchFeaturedProjects();
