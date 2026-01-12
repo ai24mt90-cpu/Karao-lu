@@ -47,13 +47,26 @@ function ProjectsContent() {
     useEffect(() => {
         const fetchProjects = async () => {
             setLoading(true);
-            const { data, error } = await supabase
+
+            // Fetch all projects
+            const { data: projectsData, error: projectsError } = await supabase
                 .from("projects")
                 .select("*")
                 .order("year", { ascending: false });
 
-            if (!error && data) {
-                setProjects(data);
+            // Fetch cover images from project_images
+            const { data: imagesData } = await supabase
+                .from("project_images")
+                .select("project_id, image_url")
+                .eq("is_cover", true);
+
+            if (!projectsError && projectsData) {
+                // Merge images with projects
+                const projectsWithImages = projectsData.map(project => {
+                    const coverImage = imagesData?.find(img => img.project_id === project.id);
+                    return { ...project, image_url: coverImage?.image_url };
+                });
+                setProjects(projectsWithImages);
             }
             setLoading(false);
         };
@@ -188,8 +201,21 @@ function ProjectsContent() {
                                                         className="hover:bg-gray-50 transition-colors"
                                                     >
                                                         <td className="px-6 py-4">
-                                                            <div className="flex items-center gap-3">
-                                                                <Building2 size={16} className="text-primary flex-shrink-0" />
+                                                            <div className="flex items-center gap-4">
+                                                                {project.image_url ? (
+                                                                    <div className="relative w-16 h-12 rounded overflow-hidden flex-shrink-0">
+                                                                        <Image
+                                                                            src={project.image_url}
+                                                                            alt={project.title}
+                                                                            fill
+                                                                            className="object-cover"
+                                                                        />
+                                                                    </div>
+                                                                ) : (
+                                                                    <div className="w-16 h-12 bg-gray-100 rounded flex items-center justify-center flex-shrink-0">
+                                                                        <Building2 size={20} className="text-gray-400" />
+                                                                    </div>
+                                                                )}
                                                                 <span className="font-medium text-foreground text-sm">{project.title}</span>
                                                             </div>
                                                         </td>
@@ -204,8 +230,8 @@ function ProjectsContent() {
                                                         </td>
                                                         <td className="px-6 py-4 text-center hidden lg:table-cell">
                                                             <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${project.status === "Tamamlandı"
-                                                                    ? "bg-green-100 text-green-700"
-                                                                    : "bg-yellow-100 text-yellow-700"
+                                                                ? "bg-green-100 text-green-700"
+                                                                : "bg-yellow-100 text-yellow-700"
                                                                 }`}>
                                                                 {project.status}
                                                             </span>
