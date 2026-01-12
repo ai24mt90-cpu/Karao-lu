@@ -122,7 +122,7 @@ function ProjectsContent() {
                     fill
                     className="object-cover"
                 />
-                <div className="absolute inset-0 bg-primary/80" />
+                <div className="absolute inset-0 bg-black/40" />
                 <div className="absolute inset-0 flex items-center">
                     <div className="layout-container">
                         <motion.div
