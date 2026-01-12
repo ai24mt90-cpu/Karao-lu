@@ -37,6 +37,7 @@ function ProjectsContent() {
     const [projects, setProjects] = useState<Project[]>([]);
     const [activeCategory, setActiveCategory] = useState(categoryParam || "Tümü");
     const [loading, setLoading] = useState(true);
+    const [heroImage, setHeroImage] = useState<string>("https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=2000");
 
     useEffect(() => {
         if (categoryParam) {
@@ -67,6 +68,12 @@ function ProjectsContent() {
                     return { ...project, image_url: coverImage?.image_url };
                 });
                 setProjects(projectsWithImages);
+
+                // Set first project with image as hero
+                const firstWithImage = projectsWithImages.find(p => p.image_url);
+                if (firstWithImage?.image_url) {
+                    setHeroImage(firstWithImage.image_url);
+                }
             }
             setLoading(false);
         };
@@ -110,7 +117,7 @@ function ProjectsContent() {
             {/* Hero Banner */}
             <section className="relative h-[350px]">
                 <Image
-                    src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=2000"
+                    src={heroImage}
                     alt="Projeler"
                     fill
                     className="object-cover"
