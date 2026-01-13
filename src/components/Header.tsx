@@ -75,8 +75,8 @@ export default function Header() {
                 <div className="flex h-28 items-center">
                     {/* Logo Section - Clean white on blue */}
                     <Link href="/" className="flex items-center h-full px-8 gap-6 group">
-                        <Logo size={100} className="text-white flex-shrink-0" />
-                        <div className="flex flex-col justify-center self-center">
+                        <Logo size={120} className="text-white flex-shrink-0" />
+                        <div className="flex flex-col justify-center -mt-2">
                             <span className="text-3xl font-bold tracking-tight text-white leading-tight">KARAOĞLU</span>
                             <span className="text-xs font-medium uppercase tracking-[0.2em] text-white/80">Universal Mühendislik</span>
                         </div>
