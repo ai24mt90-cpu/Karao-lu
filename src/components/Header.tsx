@@ -55,14 +55,14 @@ export default function Header() {
     return (
         <header className="sticky top-0 z-50 w-full">
             {/* Top Bar */}
-            <div className="bg-primary text-white">
+            <div className="bg-white text-foreground border-b border-gray-200">
                 <div className="layout-container flex items-center justify-between h-10 text-sm">
                     <div className="flex items-center gap-6">
-                        <a href="tel:+904322165636" className="flex items-center gap-2 text-white/80 hover:text-white transition-colors">
+                        <a href="tel:+904322165636" className="flex items-center gap-2 text-text-secondary hover:text-primary transition-colors">
                             <Phone size={14} />
                             <span>0432 216 56 36</span>
                         </a>
-                        <a href="mailto:info@karaoglumuhendislik.com.tr" className="flex items-center gap-2 text-white/80 hover:text-white transition-colors">
+                        <a href="mailto:info@karaoglumuhendislik.com.tr" className="flex items-center gap-2 text-text-secondary hover:text-primary transition-colors">
                             <Mail size={14} />
                             <span>info@karaoglumuhendislik.com.tr</span>
                         </a>
