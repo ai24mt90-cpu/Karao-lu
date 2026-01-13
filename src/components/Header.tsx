@@ -71,14 +71,14 @@ export default function Header() {
             </div>
 
             {/* Main Header */}
-            <div className="bg-white border-b border-gray-200">
-                <div className="flex h-20 items-center">
-                    {/* Logo Section - Full height black background */}
-                    <Link href="/" className="flex items-center h-full bg-black px-6 gap-4 group hover:bg-gray-900 transition-colors">
-                        <Logo size={72} className="text-white" />
+            <div className="bg-primary border-b border-primary-dark">
+                <div className="flex h-24 items-center">
+                    {/* Logo Section - Clean white on blue */}
+                    <Link href="/" className="flex items-center h-full px-8 gap-5 group">
+                        <Logo size={96} className="text-white" />
                         <div className="flex flex-col">
-                            <span className="text-xl font-bold tracking-tight text-white">KARAOĞLU</span>
-                            <span className="text-[9px] font-medium uppercase tracking-[0.2em] text-white/70">Universal Mühendislik</span>
+                            <span className="text-2xl font-bold tracking-tight text-white">KARAOĞLU</span>
+                            <span className="text-[10px] font-medium uppercase tracking-[0.2em] text-white/80">Universal Mühendislik</span>
                         </div>
                     </Link>
 
@@ -100,7 +100,7 @@ export default function Header() {
                                     {link.submenu ? (
                                         <button
                                             onClick={() => setActiveDropdown(activeDropdown === link.label ? null : link.label)}
-                                            className="flex items-center gap-1 px-4 py-6 text-sm font-medium text-foreground hover:text-primary transition-colors"
+                                            className="flex items-center gap-1 px-4 py-8 text-sm font-medium text-white hover:text-white/80 transition-colors"
                                         >
                                             {link.label}
                                             <ChevronDown size={14} className={`transition-transform ${activeDropdown === link.label ? 'rotate-180' : ''}`} />
@@ -108,7 +108,7 @@ export default function Header() {
                                     ) : (
                                         <Link
                                             href={link.href}
-                                            className="flex items-center gap-1 px-4 py-6 text-sm font-medium text-foreground hover:text-primary transition-colors"
+                                            className="flex items-center gap-1 px-4 py-8 text-sm font-medium text-white hover:text-white/80 transition-colors"
                                         >
                                             {link.label}
                                         </Link>
