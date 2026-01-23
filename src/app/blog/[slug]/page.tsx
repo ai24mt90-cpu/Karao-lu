@@ -5,9 +5,10 @@ import Link from "next/link";
 import { Calendar, User, ArrowLeft, Tag } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 
-export const revalidate = 3600; // 1 saatte bir yenile
+export const dynamic = 'force-dynamic'; // Her istekte sunucuda oluştur
+export const revalidate = 0; // Cacheleme yapma
 
-// Statik parametreleri oluştur (SSG için)
+// Statik parametreleri oluştur (SSR'da gerek yok ama dursun)
 export async function generateStaticParams() {
     const { data: posts } = await supabase
         .from("blogs")
