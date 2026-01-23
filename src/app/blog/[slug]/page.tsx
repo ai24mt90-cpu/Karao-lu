@@ -1,56 +1,69 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
-import { notFound } from "next/navigation";
+import { notFound, useParams } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { Calendar, User, ArrowLeft, Tag } from "lucide-react";
+import { Calendar, User, ArrowLeft, Tag, Loader2 } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 
-export const dynamic = 'force-dynamic'; // Her istekte sunucuda oluştur
-export const revalidate = 0; // Cacheleme yapma
+export const dynamic = 'force-dynamic';
 
-// Statik parametreleri oluştur (SSR'da gerek yok ama dursun)
-export async function generateStaticParams() {
-    const { data: posts } = await supabase
-        .from("blogs")
-        .select("slug")
-        .eq("is_published", true);
+export default function BlogPostPage() {
+    const params = useParams();
+    const slug = params?.slug as string;
 
-    return posts?.map((post) => ({
-        slug: post.slug,
-    })) || [];
-}
+    const [post, setPost] = useState<any>(null);
+    const [loading, setLoading] = useState(true);
 
-// Meta verileri oluştur
-export async function generateMetadata({ params }: { params: { slug: string } }) {
-    const { data: post } = await supabase
-        .from("blogs")
-        .select("title, excerpt, meta_title, meta_description")
-        .eq("slug", params.slug)
-        .eq("is_published", true)
-        .single();
+    useEffect(() => {
+        const fetchPost = async () => {
+            if (!slug) return;
 
-    if (!post) {
-        return {
-            title: "Blog Yazısı Bulunamadı",
+            try {
+                const { data, error } = await supabase
+                    .from("blogs")
+                    .select("*")
+                    .eq("slug", slug)
+                    .eq("is_published", true)
+                    .single();
+
+                if (error || !data) {
+                    console.error("Blog fetch error:", error);
+                    setPost(null);
+                } else {
+                    setPost(data);
+                }
+            } catch (e) {
+                console.error("Error:", e);
+                setPost(null);
+            } finally {
+                setLoading(false);
+            }
         };
+
+        fetchPost();
+    }, [slug]);
+
+    if (loading) {
+        return (
+            <div className="min-h-screen pt-40 pb-20 bg-surface-secondary flex items-center justify-center">
+                <Loader2 className="animate-spin text-primary" size={40} />
+            </div>
+        );
     }
 
-    return {
-        title: post.meta_title || post.title,
-        description: post.meta_description || post.excerpt,
-    };
-}
-
-export default async function BlogPostPage({ params }: { params: { slug: string } }) {
-    const { data: post } = await supabase
-        .from("blogs")
-        .select("*")
-        .eq("slug", params.slug)
-        .eq("is_published", true)
-        .single();
-
     if (!post) {
-        notFound();
+        return (
+            <div className="min-h-screen pt-40 pb-20 bg-surface-secondary flex flex-col items-center justify-center text-center px-4">
+                <h1 className="text-2xl font-bold text-gray-800 mb-4">Yazı Bulunamadı</h1>
+                <p className="text-gray-600 mb-8">Aradığınız blog yazısı maalesef mevcut değil veya yayından kaldırılmış.</p>
+                <Link href="/blog" className="bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary-dark transition-colors">
+                    Blog Listesine Dön
+                </Link>
+            </div>
+        );
     }
 
     return (
@@ -71,7 +84,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
                         <div className="flex items-center justify-center gap-4 text-sm text-text-secondary mb-6">
                             <span className="flex items-center gap-1.5 bg-gray-50 px-3 py-1 rounded-full">
                                 <Calendar size={14} />
-                                {new Date(post.published_at || post.created_at || new Date().toISOString()).toLocaleDateString("tr-TR", {
+                                {new Date(post.published_at || post.created_at).toLocaleDateString("tr-TR", {
                                     year: "numeric",
                                     month: "long",
                                     day: "numeric",
