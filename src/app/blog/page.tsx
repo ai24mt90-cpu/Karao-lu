@@ -18,6 +18,8 @@ interface BlogPost {
     category?: string;
     published_at: string;
     read_time?: string;
+    summary?: string; // Eski veri uyumluluğu için
+    created_at?: string; // Fallback için
 }
 
 const defaultPosts: BlogPost[] = [
