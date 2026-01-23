@@ -70,7 +70,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
                         <div className="flex items-center justify-center gap-4 text-sm text-text-secondary mb-6">
                             <span className="flex items-center gap-1.5 bg-gray-50 px-3 py-1 rounded-full">
                                 <Calendar size={14} />
-                                {new Date(post.published_at).toLocaleDateString("tr-TR", {
+                                {new Date(post.published_at || post.created_at || new Date().toISOString()).toLocaleDateString("tr-TR", {
                                     year: "numeric",
                                     month: "long",
                                     day: "numeric",
