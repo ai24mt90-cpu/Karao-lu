@@ -56,16 +56,31 @@ export default function AboutPage() {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                         <div>
                             <h2 className="text-primary text-sm font-semibold uppercase tracking-wider mb-4">Kurumsal</h2>
-                            <h3 className="text-4xl font-bold text-foreground mb-6">HAYALLERİMİZ HEDEFİMİZDİR</h3>
+                            <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-6">KAMU İHALE MEVZUATINA HAKİM,<br />TEKNİK KAPASİTESİ YÜKSEK MÜHENDİSLİK</h3>
                             <p className="text-text-secondary leading-relaxed mb-6">
-                                Karaoğlu Universal Mühendislik, 2014 yılında Van'da kurulmuştur. Mühendislikte mükemmellik ve
-                                toplumsal sorumluluk ilkeleriyle hareket eden firmamız, kamu projeleri, konut projeleri ve
-                                altyapı yatırımları alanlarında faaliyet göstermektedir.
+                                <strong>Karaoğlu Universal Mühendislik</strong> olarak, inşaat sektöründe &apos;yap-sat&apos; değil, &apos;taahhüt ve proje yönetimi&apos; odaklı çalışıyoruz.
+                                İpekyolu/Van merkezli firmamız, bugüne kadar Van Yatırım İzleme (YİKOB), Çevre ve Şehircilik Bakanlığı ve Yerel Yönetimler başta olmak üzere birçok resmi kurumun çözüm ortağı olmuştur.
                             </p>
-                            <p className="text-text-secondary leading-relaxed">
-                                Deneyimli kadromuz ve modern teknolojilerle donatılmış ekipmanlarımızla, her projede en yüksek
-                                kalite standartlarını sağlıyoruz.
-                            </p>
+
+                            {/* Farkımız Listesi */}
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
+                                <div className="bg-surface-secondary p-4 border-l-4 border-primary">
+                                    <h4 className="font-bold text-foreground text-sm mb-1">64+ Tamamlanan Kamu Projesi</h4>
+                                    <p className="text-xs text-text-secondary">Kesin kabul süreçlerini sorunsuz yönetme deneyimi.</p>
+                                </div>
+                                <div className="bg-surface-secondary p-4 border-l-4 border-primary">
+                                    <h4 className="font-bold text-foreground text-sm mb-1">Finansal Güç</h4>
+                                    <p className="text-xs text-text-secondary">Teminat ve hakediş süreçlerinde kesintisiz iş akışı.</p>
+                                </div>
+                                <div className="bg-surface-secondary p-4 border-l-4 border-primary">
+                                    <h4 className="font-bold text-foreground text-sm mb-1">Teknik Kadro</h4>
+                                    <p className="text-xs text-text-secondary">Şantiyede değil, mevzuatta da uzman mühendis ekibi.</p>
+                                </div>
+                                <div className="bg-surface-secondary p-4 border-l-4 border-primary">
+                                    <h4 className="font-bold text-foreground text-sm mb-1">Yerel Hakimiyet</h4>
+                                    <p className="text-xs text-text-secondary">Van ve bölge coğrafyasının zorlu şartlarına uygun imalat kabiliyeti.</p>
+                                </div>
+                            </div>
                         </div>
                         <div className="relative h-[400px] rounded overflow-hidden shadow-xl">
                             <Image

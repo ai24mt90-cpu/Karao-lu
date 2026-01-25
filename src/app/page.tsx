@@ -30,18 +30,18 @@ interface FeaturedProject {
 const heroSlides = [
   {
     image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=2000",
-    title: "Kamu Kurumları İçin Mühendislik Çözümleri",
-    subtitle: "4734 sayılı Kamu İhale Kanunu'na uygun altyapı, üstyapı ve teknik taahhüt hizmetleri",
+    title: "Devlet Ciddiyetiyle İnşa Ediyoruz",
+    subtitle: "Bölgenin Güçlü Altyapı ve Üstyapı Çözüm Ortağı",
   },
   {
     image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000",
     title: "64+ Tamamlanan Kamu Projesi",
-    subtitle: "Valilik, belediye, hastane ve eğitim kurumları için referanslarımız",
+    subtitle: "Van'dan Türkiye'ye; 10+ yıllık deneyim, güçlü makine parkı ve finansal yeterlilik",
   },
   {
     image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=2000",
-    title: "Teknik Yeterlilik ve Deneyim",
-    subtitle: "2014'ten bu yana Van ve çevresinde ihaleden teslime kadar tam yetkinlik",
+    title: "Resmi Kurumların Çözüm Ortağı",
+    subtitle: "İpekyolu Sahil Bandı'ndan TOKİ Konutlarına kadar imzamız var",
   },
 ];
 
@@ -235,9 +235,8 @@ export default function Home() {
               <h2 className="text-primary text-sm font-semibold uppercase tracking-wider mb-4">Neden Biz?</h2>
               <h3 className="text-4xl md:text-5xl font-bold text-foreground mb-6">KAMU İHALELERİNDE<br />GÜVENİLİR ÇÖZÜM ORTAĞI</h3>
               <p className="text-text-secondary leading-relaxed mb-6">
-                <strong>2014</strong> yılından bu yana kamu kurumlarına altyapı, üstyapı ve mühendislik hizmeti sunuyoruz.
-                4734 sayılı Kamu İhale Kanunu&apos;na uygun iş yapış biçimimiz ve teknik yeterliliklerimiz ile
-                Valilik, belediye, hastane ve eğitim kurumları için <strong>64+ proje</strong> tamamladık.
+                <strong>Karaoğlu Universal Mühendislik</strong> olarak, inşaat sektöründe &apos;yap-sat&apos; değil, &apos;taahhüt ve proje yönetimi&apos; odaklı çalışıyoruz.
+                İpekyolu/Van merkezli firmamız, bugüne kadar Van Yatırım İzleme (YİKOB), Çevre ve Şehircilik Bakanlığı ve Yerel Yönetimler başta olmak üzere birçok resmi kurumun çözüm ortağı olmuştur.
               </p>
 
               {/* Yetkinlik Badges */}

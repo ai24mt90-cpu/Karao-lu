@@ -16,10 +16,10 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://karaoglumuhendislik
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Van Mühendislik Firması – Karaoğlu Universal Mühendislik",
+    default: "Karaoğlu Universal Mühendislik | Van Kamu İnşaat ve Taahhüt Firması",
     template: "%s | Karaoğlu Universal Mühendislik",
   },
-  description: "Van'da kamu, konut ve altyapı mühendislik projelerinde uzman mühendislik hizmetleri. Karaoğlu Universal Mühendislik ile güvenilir ve sürdürülebilir çözümler.",
+  description: "Van ve bölgesinde 64+ kamu projesini başarıyla tamamlayan, 4734 sayılı kanuna hakim, altyapı ve üstyapı taahhüt firması. TOKİ, Valilik ve Belediye projelerinde güvenilir çözüm ortağınız.",
   keywords: [
     "Van mühendislik firması",
     "Van mühendislik hizmetleri",

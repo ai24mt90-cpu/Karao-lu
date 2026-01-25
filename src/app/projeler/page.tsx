@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useState, useEffect, Suspense } from "react";
-import { useSearchParams, useRouter } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 import { MapPin, Filter, Loader2, Calendar, Building2 } from "lucide-react";
 
@@ -16,6 +16,8 @@ interface Project {
     status: string;
     image_url?: string;
     description?: string;
+    client?: string; // İdare
+    scope?: string; // Kapsam
 }
 
 const categories = [
@@ -130,8 +132,8 @@ function ProjectsContent() {
                             animate={{ opacity: 1, y: 0 }}
                             key={activeCategory}
                         >
-                            <h1 className="text-5xl font-bold text-white mb-4">{pageTitle}</h1>
-                            <p className="text-white/80 text-lg">Van ve çevresinde tamamladığımız mühendislik projeleri</p>
+                            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 uppercase tracking-tight">{pageTitle}</h1>
+                            <p className="text-white/80 text-lg font-medium">Kamu Kurumları İş Bitirme ve Referans Listesi</p>
                         </motion.div>
                     </div>
                 </div>
@@ -187,14 +189,15 @@ function ProjectsContent() {
                                         <span className="text-sm text-text-secondary">({projectsByYear[year].length} proje)</span>
                                     </div>
 
-                                    <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+                                    <div className="bg-white rounded-lg shadow-sm overflow-hidden border border-gray-200">
                                         <table className="w-full">
                                             <thead className="bg-gray-50 border-b border-gray-200">
                                                 <tr>
-                                                    <th className="text-left px-6 py-4 text-sm font-semibold text-foreground">Kurum / İşveren</th>
-                                                    <th className="text-left px-6 py-4 text-sm font-semibold text-foreground">İşin Adı</th>
-                                                    <th className="text-left px-6 py-4 text-sm font-semibold text-foreground hidden md:table-cell">Lokasyon</th>
-                                                    <th className="text-center px-6 py-4 text-sm font-semibold text-foreground hidden lg:table-cell">Durum</th>
+                                                    <th className="text-left px-6 py-4 text-sm font-bold text-foreground w-1/4">İDARE</th>
+                                                    <th className="text-left px-6 py-4 text-sm font-bold text-foreground w-1/4">İŞİN ADI</th>
+                                                    <th className="text-left px-6 py-4 text-sm font-bold text-foreground w-1/3 hidden md:table-cell">KAPSAM</th>
+                                                    <th className="text-left px-6 py-4 text-sm font-bold text-foreground hidden lg:table-cell">LOKASYON</th>
+                                                    <th className="text-center px-6 py-4 text-sm font-bold text-foreground">DURUM</th>
                                                 </tr>
                                             </thead>
                                             <tbody className="divide-y divide-gray-100">
@@ -205,42 +208,32 @@ function ProjectsContent() {
                                                         whileInView={{ opacity: 1, x: 0 }}
                                                         viewport={{ once: true }}
                                                         transition={{ delay: idx * 0.02 }}
-                                                        className="hover:bg-gray-50 transition-colors"
+                                                        className="hover:bg-blue-50/50 transition-colors"
                                                     >
-                                                        <td className="px-6 py-4">
-                                                            <div className="flex items-center gap-4">
-                                                                {project.image_url ? (
-                                                                    <div className="relative w-16 h-12 rounded overflow-hidden flex-shrink-0">
-                                                                        <Image
-                                                                            src={project.image_url}
-                                                                            alt={project.title}
-                                                                            fill
-                                                                            className="object-cover"
-                                                                        />
-                                                                    </div>
-                                                                ) : (
-                                                                    <div className="w-16 h-12 bg-gray-100 rounded flex items-center justify-center flex-shrink-0">
-                                                                        <Building2 size={20} className="text-gray-400" />
-                                                                    </div>
-                                                                )}
-                                                                <span className="font-medium text-foreground text-sm">{project.title}</span>
+                                                        <td className="px-6 py-4 align-top">
+                                                            <div className="flex items-start gap-3">
+                                                                <Building2 size={16} className="text-primary mt-1 flex-shrink-0" />
+                                                                <span className="font-bold text-foreground text-sm uppercase">{project.client || "BELİRTİLMEMİŞ"}</span>
                                                             </div>
                                                         </td>
-                                                        <td className="px-6 py-4">
-                                                            <span className="text-text-secondary text-sm">{project.description || "-"}</span>
+                                                        <td className="px-6 py-4 align-top">
+                                                            <span className="font-medium text-foreground text-sm block">{project.title}</span>
                                                         </td>
-                                                        <td className="px-6 py-4 hidden md:table-cell">
+                                                        <td className="px-6 py-4 align-top hidden md:table-cell">
+                                                            <span className="text-text-secondary text-sm">{project.scope || project.description || "-"}</span>
+                                                        </td>
+                                                        <td className="px-6 py-4 align-top hidden lg:table-cell">
                                                             <div className="flex items-center gap-2 text-text-secondary text-sm">
                                                                 <MapPin size={14} />
                                                                 <span>{project.location}</span>
                                                             </div>
                                                         </td>
-                                                        <td className="px-6 py-4 text-center hidden lg:table-cell">
-                                                            <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${project.status === "Tamamlandı"
-                                                                ? "bg-green-100 text-green-700"
-                                                                : "bg-yellow-100 text-yellow-700"
+                                                        <td className="px-6 py-4 align-top text-center">
+                                                            <span className={`inline-flex items-center px-3 py-1 rounded border text-xs font-bold ${project.status === "Tamamlandı"
+                                                                ? "bg-green-50 text-green-700 border-green-200"
+                                                                : "bg-yellow-50 text-yellow-700 border-yellow-200"
                                                                 }`}>
-                                                                {project.status}
+                                                                {project.status === "Tamamlandı" ? "KABUL YAPILDI" : project.status.toUpperCase()}
                                                             </span>
                                                         </td>
                                                     </motion.tr>
