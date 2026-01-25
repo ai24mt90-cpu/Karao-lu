@@ -71,7 +71,7 @@ export default function Header() {
             </div>
 
             {/* Main Header */}
-            <div className="bg-primary border-b border-primary-dark">
+            <div className="bg-black border-b border-white/10">
                 <div className="flex h-28 items-center">
                     {/* Logo Section - Clean white on blue */}
                     <Link href="/" className="flex items-center h-full px-8 gap-6 group">
