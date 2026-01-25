@@ -114,46 +114,12 @@ export default function NewsPage() {
                             ))}
                         </div>
                     ) : (
-                        {
-                            defaultNews.map((item, idx) => (
-                                <motion.div
-                                    key={item.id}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: idx * 0.05 }}
-                                    className="bg-white overflow-hidden shadow-sm hover:shadow-xl transition-all group"
-                                >
-                                    <div className="relative h-56 overflow-hidden">
-                                        <Image
-                                            src={item.image}
-                                            alt={item.title}
-                                            fill
-                                            className="object-cover group-hover:scale-105 transition-transform duration-500"
-                                        />
-                                        <div className="absolute top-4 left-4">
-                                            <span className="bg-primary text-white text-xs font-semibold px-3 py-1">
-                                                {item.category}
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div className="p-6">
-                                        <div className="flex items-center gap-2 text-text-secondary text-sm mb-3">
-                                            <Calendar size={14} />
-                                            <span>{item.date}</span>
-                                        </div>
-                                        <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
-                                            {item.title}
-                                        </h3>
-                                        <p className="text-text-secondary text-sm">{item.summary}</p>
-                                    </div>
-                                </motion.div>
-                            ))
-                        }
+                        <div className="text-center py-20">
+                            <p className="text-text-secondary">Henüz yayınlanmış haber bulunmuyor.</p>
                         </div>
                     )}
+                </div>
+            </section>
         </div>
-            </section >
-        </div >
     );
 }
