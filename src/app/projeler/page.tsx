@@ -10,6 +10,7 @@ import { MapPin, Filter, Loader2, Calendar, Building2 } from "lucide-react";
 interface Project {
     id: string;
     title: string;
+    slug: string;
     category: string;
     location: string;
     year: string;
@@ -32,6 +33,7 @@ const categoryTitles: Record<string, string> = {
 
 function ProjectsContent() {
     const searchParams = useSearchParams();
+    const router = useRouter();
     const categoryParam = searchParams.get("category");
 
     const [projects, setProjects] = useState<Project[]>([]);
@@ -114,7 +116,7 @@ function ProjectsContent() {
 
     return (
         <>
-            {/* Hero Banner */}
+            {/* Hero Banner - Same as before */}
             <section className="relative h-[350px]">
                 <Image
                     src={heroImage}
@@ -137,7 +139,7 @@ function ProjectsContent() {
                 </div>
             </section>
 
-            {/* Filter Bar */}
+            {/* Filter Bar - Same as before */}
             <section className="py-6 bg-white border-b border-gray-200 sticky top-0 z-10">
                 <div className="layout-container">
                     <div className="flex items-center gap-4">
@@ -205,7 +207,8 @@ function ProjectsContent() {
                                                         whileInView={{ opacity: 1, x: 0 }}
                                                         viewport={{ once: true }}
                                                         transition={{ delay: idx * 0.02 }}
-                                                        className="hover:bg-gray-50 transition-colors"
+                                                        onClick={() => router.push(`/projeler/${project.slug}`)}
+                                                        className="hover:bg-gray-50 transition-colors cursor-pointer group"
                                                     >
                                                         <td className="px-6 py-4">
                                                             <div className="flex items-center gap-4">
@@ -215,15 +218,15 @@ function ProjectsContent() {
                                                                             src={project.image_url}
                                                                             alt={project.title}
                                                                             fill
-                                                                            className="object-cover"
+                                                                            className="object-cover group-hover:scale-110 transition-transform duration-500"
                                                                         />
                                                                     </div>
                                                                 ) : (
-                                                                    <div className="w-16 h-12 bg-gray-100 rounded flex items-center justify-center flex-shrink-0">
+                                                                    <div className="w-16 h-12 bg-gray-100 rounded flex items-center justify-center flex-shrink-0 group-hover:bg-gray-200 transition-colors">
                                                                         <Building2 size={20} className="text-gray-400" />
                                                                     </div>
                                                                 )}
-                                                                <span className="font-medium text-foreground text-sm">{project.title}</span>
+                                                                <span className="font-medium text-foreground text-sm group-hover:text-primary transition-colors">{project.title}</span>
                                                             </div>
                                                         </td>
                                                         <td className="px-6 py-4">
