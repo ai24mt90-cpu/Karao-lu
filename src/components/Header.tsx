@@ -73,17 +73,22 @@ export default function Header() {
 
             {/* Main Header */}
             <div className="bg-white border-b border-gray-100">
-                <div className="flex h-28 items-center">
+                <div className="flex h-24 items-center">
                     {/* Logo Section */}
-                    <Link href="/" className="flex items-center h-full px-8 gap-6 group">
+                    {/* Logo Section */}
+                    <Link href="/" className="flex items-center h-full px-8 gap-4 group">
                         <Image
                             src="/logomavi.svg"
                             alt="Karaoğlu Mühendislik Logo"
-                            width={90}
-                            height={90}
+                            width={120}
+                            height={120}
                             className="object-contain"
                             priority
                         />
+                        <div className="flex flex-col justify-center">
+                            <span className="font-bold text-2xl uppercase leading-none text-primary tracking-tight">KARAOĞLU</span>
+                            <span className="font-medium text-[10px] text-gray-500 uppercase tracking-[0.2em] leading-tight mt-0.5">UNIVERSAL MÜHENDİSLİK</span>
+                        </div>
                     </Link>
 
                     {/* Spacer */}
