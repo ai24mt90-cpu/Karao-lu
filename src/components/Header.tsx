@@ -78,7 +78,7 @@ export default function Header() {
                     {/* Logo Section */}
                     <Link href="/" className="flex items-center h-full px-8 gap-4 group">
                         <Image
-                            src="/logomavi.svg"
+                            src="/logo-header.png"
                             alt="Karaoğlu Mühendislik Logo"
                             width={120}
                             height={120}
