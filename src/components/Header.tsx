@@ -79,8 +79,8 @@ export default function Header() {
                         <Image
                             src="/logomavi.svg"
                             alt="Karaoğlu Mühendislik Logo"
-                            width={180}
-                            height={60}
+                            width={90}
+                            height={90}
                             className="object-contain"
                             priority
                         />
