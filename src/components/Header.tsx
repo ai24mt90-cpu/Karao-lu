@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import Logo from "./Logo";
+import Image from "next/image";
+
 import { useState } from "react";
 import { Menu, X, Phone, Mail, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -71,15 +72,18 @@ export default function Header() {
             </div>
 
             {/* Main Header */}
-            <div className="bg-black border-b border-white/10">
+            <div className="bg-white border-b border-gray-100">
                 <div className="flex h-28 items-center">
-                    {/* Logo Section - Clean white on blue */}
+                    {/* Logo Section */}
                     <Link href="/" className="flex items-center h-full px-8 gap-6 group">
-                        <Logo size={140} className="text-white flex-shrink-0" />
-                        <div className="flex flex-col justify-center -mt-2">
-                            <span className="text-3xl font-bold tracking-tight text-white leading-tight">KARAOĞLU</span>
-                            <span className="text-xs font-medium uppercase tracking-[0.2em] text-white/80">Universal Mühendislik</span>
-                        </div>
+                        <Image
+                            src="/logomavi.svg"
+                            alt="Karaoğlu Mühendislik Logo"
+                            width={180}
+                            height={60}
+                            className="object-contain"
+                            priority
+                        />
                     </Link>
 
                     {/* Spacer */}
@@ -100,7 +104,7 @@ export default function Header() {
                                     {link.submenu ? (
                                         <button
                                             onClick={() => setActiveDropdown(activeDropdown === link.label ? null : link.label)}
-                                            className="flex items-center gap-1 px-4 py-8 text-sm font-medium text-white hover:text-white/80 transition-colors"
+                                            className="flex items-center gap-1 px-4 py-8 text-sm font-medium text-gray-700 hover:text-primary transition-colors"
                                         >
                                             {link.label}
                                             <ChevronDown size={14} className={`transition-transform ${activeDropdown === link.label ? 'rotate-180' : ''}`} />
@@ -108,7 +112,7 @@ export default function Header() {
                                     ) : (
                                         <Link
                                             href={link.href}
-                                            className="flex items-center gap-1 px-4 py-8 text-sm font-medium text-white hover:text-white/80 transition-colors"
+                                            className="flex items-center gap-1 px-4 py-8 text-sm font-medium text-gray-700 hover:text-primary transition-colors"
                                         >
                                             {link.label}
                                         </Link>

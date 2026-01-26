@@ -1,6 +1,7 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Mail, Phone, MapPin, Instagram, Linkedin, Facebook } from "lucide-react";
-import Logo from "./Logo";
+
 
 export default function Footer() {
     return (
@@ -10,8 +11,14 @@ export default function Footer() {
                     {/* Brand Section */}
                     <div className="flex flex-col gap-6">
                         <div className="flex items-center gap-4 text-white">
-                            <div className="bg-black/80 rounded-xl p-3">
-                                <Logo size={70} className="text-white" />
+                            <div className="bg-white rounded-xl p-2">
+                                <Image
+                                    src="/logomavi.svg"
+                                    alt="Karaoğlu Logo"
+                                    width={100}
+                                    height={40}
+                                    className="object-contain"
+                                />
                             </div>
                             <div className="flex flex-col text-left">
                                 <span className="text-xl font-bold tracking-tight leading-none">Karaoğlu</span>
