@@ -13,7 +13,7 @@ export default function Footer() {
                         <div className="flex items-center gap-4 text-white">
                             <div className="bg-white rounded-xl p-2">
                                 <Image
-                                    src="/brand-icon.png"
+                                    src="/footer-logo.png"
                                     alt="Karaoğlu Logo"
                                     width={100}
                                     height={100}
