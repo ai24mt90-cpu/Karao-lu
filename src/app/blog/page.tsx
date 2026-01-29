@@ -44,7 +44,7 @@ export default function BlogPage() {
     useEffect(() => {
         const fetchPosts = async () => {
             const { data, error } = await supabase
-                .from("blogs") // Tablo adı düzeltildi
+                .from("blog_posts")
                 .select("*")
                 .eq("is_published", true)
                 .order("published_at", { ascending: false });
