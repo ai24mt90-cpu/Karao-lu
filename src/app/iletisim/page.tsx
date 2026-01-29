@@ -84,9 +84,15 @@ export default function ContactPage() {
                             </div>
                             <h3 className="font-bold text-foreground mb-2">Adres</h3>
                             <p className="text-text-secondary text-sm">
+                                <span className="font-bold text-gray-900 block mb-1">Van Merkez:</span>
                                 Hafiziye Mah. Umman 1. Sokak<br />
                                 No: 38, Kat: 3, D: 16<br />
                                 65130 İpekyolu/Van
+                                <br /><br />
+                                <span className="font-bold text-gray-900 block mb-1">Ankara Şube:</span>
+                                Next Level, Kızılırmak Mah. Dumlupınar Bulvarı<br />
+                                No: 3C1/160, Kat: 29<br />
+                                06530 Çankaya/Ankara
                             </p>
                         </div>
                         <div className="bg-surface-secondary p-8 text-center hover:shadow-lg transition-shadow">

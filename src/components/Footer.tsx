@@ -74,7 +74,17 @@ export default function Footer() {
                             </a>
                             <div className="flex items-start gap-3 text-sm text-white/70">
                                 <MapPin size={16} className="mt-0.5 flex-shrink-0" />
-                                <span>Hafiziye Mah. Umman 1. Sokak No: 38, Kat: 3, D: 16, 65130 İpekyolu/Van</span>
+                                <div>
+                                    <span className="block font-semibold text-white/90 mb-0.5">Van Merkez:</span>
+                                    <span>Hafiziye Mah. Umman 1. Sokak No: 38, Kat: 3, D: 16, 65130 İpekyolu/Van</span>
+                                </div>
+                            </div>
+                            <div className="flex items-start gap-3 text-sm text-white/70">
+                                <MapPin size={16} className="mt-0.5 flex-shrink-0" />
+                                <div>
+                                    <span className="block font-semibold text-white/90 mb-0.5">Ankara Şube:</span>
+                                    <span>Next Level, Kızılırmak Mah. Dumlupınar Bulvarı No: 3C1/160, Kat: 29, 06530 Çankaya/Ankara</span>
+                                </div>
                             </div>
                         </div>
                     </div>
