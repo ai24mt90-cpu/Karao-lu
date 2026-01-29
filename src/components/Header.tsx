@@ -80,8 +80,8 @@ export default function Header() {
                         <Image
                             src="/logo-header.png"
                             alt="Karaoğlu Mühendislik Logo"
-                            width={120}
-                            height={120}
+                            width={160}
+                            height={160}
                             className="object-contain"
                             priority
                         />
