@@ -67,6 +67,9 @@ export default async function Home() {
               </h3>
               <p className="text-text-secondary leading-relaxed mb-6">
                 <strong>Karaoğlu Universal Mühendislik</strong>, Van ve Ankara merkezli ofisleriyle Türkiye genelinde kamu taahhüt işleri yürütmektedir.
+                <br /><br />
+                Şirketimiz bugüne kadar 64 projeyi başarıyla tamamlamış olup, bu projelerin büyük bölümü kamu kurumlarına yönelik yapım ve mühendislik işlerinden oluşmaktadır.
+                <br /><br />
                 İnşaat, altyapı ve üstyapı projelerinde "devlet ciddiyeti" ile hareket ediyor; Hastane, Okul, TOKİ konutları ve Yol projelerini zamanında teslim ediyoruz.
               </p>
 
