@@ -102,7 +102,6 @@ export default async function ProjectsPage({ params }: { params: Promise<{ slug:
     };
 
     return (
-    return (
         <div className="flex flex-col bg-background min-h-screen">
             {/* Hero Section */}
             <section className="relative h-[350px]">
