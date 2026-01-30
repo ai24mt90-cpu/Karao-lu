@@ -233,10 +233,12 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-primary text-sm font-semibold uppercase tracking-wider mb-4">Neden Biz?</h2>
-              <h3 className="text-4xl md:text-5xl font-bold text-foreground mb-6">KAMU İHALELERİNDE<br />GÜVENİLİR ÇÖZÜM ORTAĞI</h3>
+              <h3 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+                VAN VE ANKARA'DA<br />KAMU PROJELERİNİN<br />GÜVENİLİR ÇÖZÜM ORTAĞI
+              </h3>
               <p className="text-text-secondary leading-relaxed mb-6">
-                <strong>Karaoğlu Universal Mühendislik</strong> olarak, inşaat sektöründe &apos;yap-sat&apos; değil, &apos;taahhüt ve proje yönetimi&apos; odaklı çalışıyoruz.
-                İpekyolu/Van merkezli firmamız, bugüne kadar Van Yatırım İzleme (YİKOB), Çevre ve Şehircilik Bakanlığı ve Yerel Yönetimler başta olmak üzere birçok resmi kurumun çözüm ortağı olmuştur.
+                <strong>Karaoğlu Universal Mühendislik</strong>, Van ve Ankara merkezli ofisleriyle Türkiye genelinde kamu taahhüt işleri yürütmektedir.
+                İnşaat, altyapı ve üstyapı projelerinde "devlet ciddiyeti" ile hareket ediyor; Hastane, Okul, TOKİ konutları ve Yol projelerini zamanında teslim ediyoruz.
               </p>
 
               {/* Yetkinlik Badges */}
@@ -281,23 +283,23 @@ export default function Home() {
                 <ul className="space-y-3 text-white/90">
                   <li className="flex items-center gap-3">
                     <span className="w-2 h-2 bg-white rounded-full" />
-                    Kamu Binaları (Hastane, Okul, İdari Bina)
+                    <strong>Kamu Binaları:</strong> Hastane, Okul, Hükümet Konağı
                   </li>
                   <li className="flex items-center gap-3">
                     <span className="w-2 h-2 bg-white rounded-full" />
-                    Altyapı (Kanalizasyon, Yol, Köprü)
+                    <strong>Altyapı Projeleri:</strong> Kanalizasyon, İsale Hattı, Yol
                   </li>
                   <li className="flex items-center gap-3">
                     <span className="w-2 h-2 bg-white rounded-full" />
-                    TOKİ ve Toplu Konut Projeleri
+                    <strong>TOKİ Konutları:</strong> Van ve Çevre İllerde Toplu Konut
                   </li>
                   <li className="flex items-center gap-3">
                     <span className="w-2 h-2 bg-white rounded-full" />
-                    Elektrik ve Enerji Hatları
+                    <strong>Güçlendirme:</strong> Deprem Güçlendirme ve Onarım
                   </li>
                   <li className="flex items-center gap-3">
                     <span className="w-2 h-2 bg-white rounded-full" />
-                    Çevre Düzenleme ve Peyzaj
+                    <strong>Çevre Düzenleme:</strong> Millet Bahçeleri ve Peyzaj
                   </li>
                 </ul>
               </div>
