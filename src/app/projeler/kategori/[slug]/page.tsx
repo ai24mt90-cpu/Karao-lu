@@ -165,7 +165,7 @@ export default async function ProjectsPage({ params }: { params: { slug: string 
                                     </div>
 
                                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                                        {projectsByYear[year].map((project) => (
+                                        {projectsByYear[year].map((project: Project) => (
                                             <div key={project.id} className="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden group">
                                                 <div className="relative h-48 bg-gray-100">
                                                     {project.image_url ? (
