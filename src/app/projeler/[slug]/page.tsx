@@ -104,7 +104,7 @@ export default function ProjectDetailPage() {
             <div className="layout-container">
                 {/* Navigation */}
                 <Link
-                    href="/projeler"
+                    href="/projeler/kategori/tum-projeler"
                     className="inline-flex items-center gap-2 text-text-secondary hover:text-primary transition-colors mb-8 group"
                 >
                     <ArrowLeft size={20} className="group-hover:-translate-x-1 transition-transform" />
