@@ -36,7 +36,7 @@ export default function HomeProjects({ projects }: HomeProjectsProps) {
                     </div>
                     <div className="hidden md:flex gap-4">
                         <Link
-                            href="/projeler/tamamlanan-kamu-projeleri"
+                            href="/projeler/kategori/tamamlanan-kamu-projeleri"
                             className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 font-semibold hover:bg-primary-dark transition-colors"
                             aria-label="Tüm projelerimizi inceleyin"
                         >
@@ -70,7 +70,7 @@ export default function HomeProjects({ projects }: HomeProjectsProps) {
 
                 <div className="text-center mt-8 md:hidden">
                     <Link
-                        href="/projeler/tamamlanan-kamu-projeleri"
+                        href="/projeler/kategori/tamamlanan-kamu-projeleri"
                         className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 font-semibold"
                     >
                         Tüm Projeleri Gör <ArrowRight size={18} />

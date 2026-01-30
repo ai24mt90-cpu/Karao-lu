@@ -132,7 +132,7 @@ export default function AnkaraPage() {
                         Van ve Ankara ofislerimizle, Türkiye'nin her noktasında nitelikli altyapı ve üstyapı projelerini hayata geçiriyoruz.
                     </p>
                     <Link
-                        href="/projeler/tamamlanan-kamu-projeleri"
+                        href="/projeler/kategori/tamamlanan-kamu-projeleri"
                         className="inline-flex items-center gap-2 bg-white text-primary px-8 py-3 font-semibold hover:bg-white/90 transition-colors"
                     >
                         Referanslarımızı İnceleyin <ChevronRight size={20} />

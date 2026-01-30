@@ -100,7 +100,7 @@ export default function HomeSlider({ featuredProjects = [] }: HomeSliderProps) {
                                 {slides[currentSlide]?.subtitle || heroSlides[0].subtitle}
                             </p>
                             <Link
-                                href="/projeler"
+                                href="/projeler/kategori/tum-projeler"
                                 className="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark px-8 py-4 text-white font-semibold transition-colors"
                             >
                                 Projelerimiz <ChevronRight size={20} />
