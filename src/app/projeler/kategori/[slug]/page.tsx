@@ -102,10 +102,18 @@ export default async function ProjectsPage({ params }: { params: Promise<{ slug:
     };
 
     return (
+    return (
         <div className="flex flex-col bg-background min-h-screen">
             {/* Hero Section */}
-            <section className="relative h-[300px] bg-primary">
-                <div className="absolute inset-0 bg-black/20" />
+            <section className="relative h-[350px]">
+                <Image
+                    src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=2000"
+                    alt="Projeler"
+                    fill
+                    className="object-cover"
+                    priority
+                />
+                <div className="absolute inset-0 bg-black/40" />
                 <div className="absolute inset-0 flex items-center">
                     <div className="layout-container">
                         <div className="mb-4">
@@ -113,35 +121,33 @@ export default async function ProjectsPage({ params }: { params: Promise<{ slug:
                                 <ArrowLeft size={16} className="mr-2" /> Ana Sayfaya Dön
                             </Link>
                         </div>
-                        <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+                        <h1 className="text-5xl font-bold text-white mb-4">
                             {pageTitleMap[slug]}
                         </h1>
-                        <p className="text-white/80 text-lg max-w-2xl">
-                            Kamu ihale mevzuatına uygun, teknik şartnamelere tam uyumlu olarak teslim ettiğimiz iş bitirmelerimiz.
-                        </p>
+                        <p className="text-white/80 text-lg">Van ve çevresinde tamamladığımız mühendislik projeleri</p>
                     </div>
                 </div>
             </section>
 
             {/* Category Filter Tabs */}
             <section className="bg-white border-b border-gray-200 sticky top-0 z-10 shadow-sm">
-                <div className="layout-container">
-                    <div className="flex overflow-x-auto py-4 gap-4 no-scrollbar">
+                <div className="layout-container py-4">
+                    <div className="flex items-center gap-4 overflow-x-auto no-scrollbar">
                         <Link
                             href="/projeler/kategori/tum-projeler"
-                            className={`px-6 py-2 rounded-full text-sm font-semibold whitespace-nowrap transition-colors ${slug === 'tum-projeler' ? 'bg-primary text-white' : 'bg-gray-100 text-text-secondary hover:bg-gray-200'}`}
+                            className={`px-5 py-2.5 rounded-lg text-sm font-medium whitespace-nowrap transition-colors ${slug === 'tum-projeler' ? 'bg-primary text-white' : 'bg-gray-100 text-text-secondary hover:bg-gray-200'}`}
                         >
-                            Tüm Projeler
+                            Tümü
                         </Link>
                         <Link
                             href="/projeler/kategori/tamamlanan-kamu-projeleri"
-                            className={`px-6 py-2 rounded-full text-sm font-semibold whitespace-nowrap transition-colors ${slug === 'tamamlanan-kamu-projeleri' ? 'bg-primary text-white' : 'bg-green-50 text-green-700 hover:bg-green-100'}`}
+                            className={`px-5 py-2.5 rounded-lg text-sm font-medium whitespace-nowrap transition-colors ${slug === 'tamamlanan-kamu-projeleri' ? 'bg-primary text-white' : 'bg-gray-100 text-text-secondary hover:bg-gray-200'}`}
                         >
                             Tamamlanan İşler
                         </Link>
                         <Link
                             href="/projeler/kategori/devam-eden-altyapi-isleri"
-                            className={`px-6 py-2 rounded-full text-sm font-semibold whitespace-nowrap transition-colors ${slug === 'devam-eden-altyapi-isleri' ? 'bg-primary text-white' : 'bg-yellow-50 text-yellow-700 hover:bg-yellow-100'}`}
+                            className={`px-5 py-2.5 rounded-lg text-sm font-medium whitespace-nowrap transition-colors ${slug === 'devam-eden-altyapi-isleri' ? 'bg-primary text-white' : 'bg-gray-100 text-text-secondary hover:bg-gray-200'}`}
                         >
                             Devam Eden İşler
                         </Link>
@@ -150,64 +156,75 @@ export default async function ProjectsPage({ params }: { params: Promise<{ slug:
             </section>
 
             {/* Content */}
-            <section className="py-12 bg-surface-secondary">
+            <section className="py-12 bg-surface-secondary min-h-[60vh]">
                 <div className="layout-container">
                     {projects.length === 0 ? (
-                        <div className="text-center py-20">
-                            <p className="text-text-secondary text-lg">Bu kategoride listelenecek proje bulunamadı.</p>
+                        <div className="text-center py-20 text-text-secondary">
+                            Bu kategoride henüz proje bulunmuyor.
                         </div>
                     ) : (
-                        <div className="space-y-12">
+                        <div className="space-y-10">
                             {sortedYears.map((year) => (
                                 <div key={year}>
-                                    <div className="flex items-center gap-3 mb-6 border-b border-gray-200 pb-2">
-                                        <Calendar size={24} className="text-primary" />
-                                        <h2 className="text-3xl font-bold text-foreground">{year}</h2>
-                                        <span className="text-sm text-text-secondary mt-2">({projectsByYear[year].length} proje)</span>
+                                    <div className="flex items-center gap-3 mb-4">
+                                        <Calendar size={20} className="text-primary" />
+                                        <h2 className="text-2xl font-bold text-foreground">{year}</h2>
+                                        <span className="text-sm text-text-secondary">({projectsByYear[year].length} proje)</span>
                                     </div>
 
-                                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                                        {projectsByYear[year].map((project: Project) => (
-                                            <div key={project.id} className="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden group">
-                                                <div className="relative h-48 bg-gray-100">
-                                                    {project.image_url ? (
-                                                        <Image
-                                                            src={project.image_url}
-                                                            alt={`${project.title} - ${project.location} İnşaatı`}
-                                                            fill
-                                                            className="object-cover group-hover:scale-105 transition-transform duration-500"
-                                                        />
-                                                    ) : (
-                                                        <div className="flex items-center justify-center h-full text-gray-300">
-                                                            <Building2 size={48} />
-                                                        </div>
-                                                    )}
-                                                    <div className="absolute top-4 right-4">
-                                                        <span className={`px-3 py-1 text-xs font-bold rounded-full shadow-sm ${project.status === 'Tamamlandı' ? 'bg-white text-green-700' : 'bg-white text-yellow-700'}`}>
-                                                            {project.status}
-                                                        </span>
-                                                    </div>
-                                                </div>
-
-                                                <div className="p-6">
-                                                    <div className="flex items-center gap-2 text-xs text-primary font-bold mb-2 uppercase tracking-wide">
-                                                        <MapPin size={12} /> {project.location}
-                                                    </div>
-                                                    <h3 className="font-bold text-foreground text-lg mb-3 line-clamp-2 md:h-14">
-                                                        {project.title}
-                                                    </h3>
-                                                    <p className="text-sm text-text-secondary line-clamp-2 mb-4 h-10">
-                                                        {project.client || project.description || "Kamu İhale Kurumu kapsamında tamamlanmıştır."}
-                                                    </p>
-
-                                                    <div className="pt-4 border-t border-gray-100 flex justify-between items-center">
-                                                        <span className="text-xs text-gray-400 font-mono">
-                                                            Ref: {project.year}-{project.id.slice(0, 4)}
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        ))}
+                                    <div className="bg-white rounded-lg shadow-sm overflow-hidden text-left">
+                                        <table className="w-full">
+                                            <thead className="bg-gray-50 border-b border-gray-200">
+                                                <tr>
+                                                    <th className="text-left px-6 py-4 text-sm font-semibold text-foreground">İşin Adı</th>
+                                                    <th className="text-left px-6 py-4 text-sm font-semibold text-foreground">Kurum / İşveren</th>
+                                                    <th className="text-left px-6 py-4 text-sm font-semibold text-foreground hidden md:table-cell">Lokasyon</th>
+                                                    <th className="text-center px-6 py-4 text-sm font-semibold text-foreground hidden lg:table-cell">Durum</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody className="divide-y divide-gray-100">
+                                                {projectsByYear[year].map((project: Project) => (
+                                                    <tr key={project.id} className="hover:bg-gray-50 transition-colors group">
+                                                        <td className="px-6 py-4">
+                                                            <Link href={`/projeler/${project.id}`} className="flex items-center gap-4 group-hover:text-primary transition-colors">
+                                                                {project.image_url ? (
+                                                                    <div className="relative w-16 h-12 rounded overflow-hidden flex-shrink-0">
+                                                                        <Image
+                                                                            src={project.image_url}
+                                                                            alt={project.title}
+                                                                            fill
+                                                                            className="object-cover"
+                                                                        />
+                                                                    </div>
+                                                                ) : (
+                                                                    <div className="w-16 h-12 bg-gray-100 rounded flex items-center justify-center flex-shrink-0">
+                                                                        <Building2 size={20} className="text-gray-400" />
+                                                                    </div>
+                                                                )}
+                                                                <span className="font-medium text-foreground text-sm">{project.title}</span>
+                                                            </Link>
+                                                        </td>
+                                                        <td className="px-6 py-4">
+                                                            <span className="text-text-secondary text-sm">{project.client || project.description?.slice(0, 50) + "..." || "-"}</span>
+                                                        </td>
+                                                        <td className="px-6 py-4 hidden md:table-cell">
+                                                            <div className="flex items-center gap-2 text-text-secondary text-sm">
+                                                                <MapPin size={14} />
+                                                                <span>{project.location}</span>
+                                                            </div>
+                                                        </td>
+                                                        <td className="px-6 py-4 text-center hidden lg:table-cell">
+                                                            <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${project.status === "Tamamlandı"
+                                                                ? "bg-green-100 text-green-700"
+                                                                : "bg-yellow-100 text-yellow-700"
+                                                                }`}>
+                                                                {project.status}
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                ))}
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
                             ))}
