@@ -21,14 +21,15 @@ interface Project {
 }
 
 // SEO Metadata Generation
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+    const { slug } = await params;
     const titleMap: Record<string, string> = {
         "tamamlanan-kamu-projeleri": "Tamamlanan Kamu Projeleri Referanslarımız",
         "devam-eden-altyapi-isleri": "Devam Eden Altyapı ve Üstyapı Projeleri",
         "tum-projeler": "Tüm Mühendislik ve Taahhüt Projelerimiz"
     };
 
-    const title = titleMap[params.slug] || "Projeler";
+    const title = titleMap[slug] || "Projeler";
 
     return {
         title: `${title} | Karaoğlu Mühendislik`,
@@ -74,14 +75,15 @@ async function getProjects(slug: string) {
     return projectsData || [];
 }
 
-export default async function ProjectsPage({ params }: { params: { slug: string } }) {
+export default async function ProjectsPage({ params }: { params: Promise<{ slug: string }> }) {
+    const { slug } = await params;
     const allowedCategories = ["tamamlanan-kamu-projeleri", "devam-eden-altyapi-isleri", "tum-projeler"];
 
-    if (!allowedCategories.includes(params.slug)) {
+    if (!allowedCategories.includes(slug)) {
         notFound();
     }
 
-    const projects = await getProjects(params.slug);
+    const projects = await getProjects(slug);
 
     // Group by year
     const projectsByYear = projects.reduce((acc, project: Project) => {
@@ -112,7 +114,7 @@ export default async function ProjectsPage({ params }: { params: { slug: string 
                             </Link>
                         </div>
                         <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-                            {pageTitleMap[params.slug]}
+                            {pageTitleMap[slug]}
                         </h1>
                         <p className="text-white/80 text-lg max-w-2xl">
                             Kamu ihale mevzuatına uygun, teknik şartnamelere tam uyumlu olarak teslim ettiğimiz iş bitirmelerimiz.
@@ -127,19 +129,19 @@ export default async function ProjectsPage({ params }: { params: { slug: string 
                     <div className="flex overflow-x-auto py-4 gap-4 no-scrollbar">
                         <Link
                             href="/projeler/kategori/tum-projeler"
-                            className={`px-6 py-2 rounded-full text-sm font-semibold whitespace-nowrap transition-colors ${params.slug === 'tum-projeler' ? 'bg-primary text-white' : 'bg-gray-100 text-text-secondary hover:bg-gray-200'}`}
+                            className={`px-6 py-2 rounded-full text-sm font-semibold whitespace-nowrap transition-colors ${slug === 'tum-projeler' ? 'bg-primary text-white' : 'bg-gray-100 text-text-secondary hover:bg-gray-200'}`}
                         >
                             Tüm Projeler
                         </Link>
                         <Link
                             href="/projeler/kategori/tamamlanan-kamu-projeleri"
-                            className={`px-6 py-2 rounded-full text-sm font-semibold whitespace-nowrap transition-colors ${params.slug === 'tamamlanan-kamu-projeleri' ? 'bg-primary text-white' : 'bg-green-50 text-green-700 hover:bg-green-100'}`}
+                            className={`px-6 py-2 rounded-full text-sm font-semibold whitespace-nowrap transition-colors ${slug === 'tamamlanan-kamu-projeleri' ? 'bg-primary text-white' : 'bg-green-50 text-green-700 hover:bg-green-100'}`}
                         >
                             Tamamlanan İşler
                         </Link>
                         <Link
                             href="/projeler/kategori/devam-eden-altyapi-isleri"
-                            className={`px-6 py-2 rounded-full text-sm font-semibold whitespace-nowrap transition-colors ${params.slug === 'devam-eden-altyapi-isleri' ? 'bg-primary text-white' : 'bg-yellow-50 text-yellow-700 hover:bg-yellow-100'}`}
+                            className={`px-6 py-2 rounded-full text-sm font-semibold whitespace-nowrap transition-colors ${slug === 'devam-eden-altyapi-isleri' ? 'bg-primary text-white' : 'bg-yellow-50 text-yellow-700 hover:bg-yellow-100'}`}
                         >
                             Devam Eden İşler
                         </Link>
