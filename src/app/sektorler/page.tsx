@@ -169,19 +169,6 @@ export default function SectorsPage() {
                                                 </li>
                                             ))}
                                         </ul>
-
-                                        <div className="flex items-center justify-between pt-4 border-t border-gray-200">
-                                            <div className="flex gap-6">
-                                                <div>
-                                                    <p className="text-xl font-bold text-primary">{sector.stats.projects}</p>
-                                                    <p className="text-xs text-text-secondary">Proje</p>
-                                                </div>
-                                                <div>
-                                                    <p className="text-xl font-bold text-primary">{sector.stats.experience}</p>
-                                                    <p className="text-xs text-text-secondary">Tecrübe</p>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </motion.div>
