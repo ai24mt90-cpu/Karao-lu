@@ -77,7 +77,7 @@ export default function HomeSlider({ featuredProjects = [] }: HomeSliderProps) {
                         className="object-cover"
                         priority
                     />
-                    <div className="absolute inset-0 bg-black/40" />
+                    <div className="absolute inset-0 bg-black/60" /> {/* Darkened for contrast */}
                 </motion.div>
             </AnimatePresence>
 
@@ -93,10 +93,10 @@ export default function HomeSlider({ featuredProjects = [] }: HomeSliderProps) {
                             transition={{ duration: 0.5 }}
                             className="max-w-2xl"
                         >
-                            <h1 className="text-5xl md:text-7xl font-bold text-white mb-4">
+                            <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 drop-shadow-md">
                                 {slides[currentSlide]?.title || heroSlides[0].title}
                             </h1>
-                            <p className="text-xl text-white/80 mb-8">
+                            <p className="text-xl text-white/95 mb-8 drop-shadow-sm font-medium">
                                 {slides[currentSlide]?.subtitle || heroSlides[0].subtitle}
                             </p>
                             <Link
