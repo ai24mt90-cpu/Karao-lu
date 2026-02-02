@@ -46,9 +46,9 @@ export default function Footer() {
                     <div className="flex flex-col gap-4">
                         <p className="text-sm font-bold text-white mb-2">Kurumsal</p>
                         <nav className="flex flex-col gap-3">
-                            <Link href="/hakkimizda" className="text-sm text-white/70 hover:text-white transition-colors">Hakkımızda</Link>
-                            <Link href="/hakkimizda#yonetim" className="text-sm text-white/70 hover:text-white transition-colors">Yönetim Kurulu</Link>
-                            <Link href="/iletisim" className="text-sm text-white/70 hover:text-white transition-colors">İletişim</Link>
+                            <Link href="/hakkimizda" className="text-sm text-gray-100 hover:text-white transition-colors">Hakkımızda</Link>
+                            <Link href="/hakkimizda#yonetim" className="text-sm text-gray-100 hover:text-white transition-colors">Yönetim Kurulu</Link>
+                            <Link href="/iletisim" className="text-sm text-gray-100 hover:text-white transition-colors">İletişim</Link>
                         </nav>
                     </div>
 
@@ -56,9 +56,9 @@ export default function Footer() {
                     <div className="flex flex-col gap-4">
                         <p className="text-sm font-bold text-white mb-2">Projeler</p>
                         <nav className="flex flex-col gap-3">
-                            <Link href="/projeler?category=tamamlandi" className="text-sm text-white/70 hover:text-white transition-colors">Tamamlanan Projeler</Link>
-                            <Link href="/projeler?category=devam" className="text-sm text-white/70 hover:text-white transition-colors">Devam Eden Projeler</Link>
-                            <Link href="/sosyal-sorumluluk" className="text-sm text-white/70 hover:text-white transition-colors">Sosyal Sorumluluk</Link>
+                            <Link href="/projeler?category=tamamlandi" className="text-sm text-gray-100 hover:text-white transition-colors">Tamamlanan Projeler</Link>
+                            <Link href="/projeler?category=devam" className="text-sm text-gray-100 hover:text-white transition-colors">Devam Eden Projeler</Link>
+                            <Link href="/sosyal-sorumluluk" className="text-sm text-gray-100 hover:text-white transition-colors">Sosyal Sorumluluk</Link>
                         </nav>
                     </div>
 
@@ -66,23 +66,23 @@ export default function Footer() {
                     <div className="flex flex-col gap-4">
                         <p className="text-sm font-bold text-white mb-2">İletişim</p>
                         <div className="flex flex-col gap-3">
-                            <a href="mailto:info@karaoglumuhendislik.com.tr" className="flex items-center gap-3 text-sm text-white/70 hover:text-white transition-colors">
+                            <a href="mailto:info@karaoglumuhendislik.com.tr" className="flex items-center gap-3 text-sm text-gray-100 hover:text-white transition-colors">
                                 <Mail size={16} /> info@karaoglumuhendislik.com.tr
                             </a>
-                            <a href="tel:+904322165636" className="flex items-center gap-3 text-sm text-white/70 hover:text-white transition-colors">
+                            <a href="tel:+904322165636" className="flex items-center gap-3 text-sm text-gray-100 hover:text-white transition-colors">
                                 <Phone size={16} /> 0432 216 56 36
                             </a>
-                            <div className="flex items-start gap-3 text-sm text-white/70">
+                            <div className="flex items-start gap-3 text-sm text-gray-100">
                                 <MapPin size={16} className="mt-0.5 flex-shrink-0" />
                                 <div>
-                                    <span className="block font-semibold text-white/90 mb-0.5">Van Merkez:</span>
+                                    <span className="block font-semibold text-white mb-0.5">Van Merkez:</span>
                                     <span>Hafiziye Mah. Umman 1. Sokak No: 38, Kat: 3, D: 16, 65130 İpekyolu/Van</span>
                                 </div>
                             </div>
-                            <div className="flex items-start gap-3 text-sm text-white/70">
+                            <div className="flex items-start gap-3 text-sm text-gray-100">
                                 <MapPin size={16} className="mt-0.5 flex-shrink-0" />
                                 <div>
-                                    <span className="block font-semibold text-white/90 mb-0.5">Ankara Şube:</span>
+                                    <span className="block font-semibold text-white mb-0.5">Ankara Şube:</span>
                                     <span>Next Level, Kızılırmak Mah. Dumlupınar Bulvarı No: 3C1/160, Kat: 29, 06530 Çankaya/Ankara</span>
                                 </div>
                             </div>
