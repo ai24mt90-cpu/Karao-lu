@@ -18,7 +18,7 @@ export default function TestDBPage() {
         const checkDB = async () => {
             try {
                 const { data, error } = await supabase
-                    .from("blogs")
+                    .from("blog_posts")
                     .select("id, title, slug")
                     .limit(5);
 
