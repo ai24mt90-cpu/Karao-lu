@@ -87,5 +87,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         priority: 0.7,
     })) || []
 
-    return [...routes, ...blogRoutes]
+    // Dinamik Projeleri Çek
+    const { data: projects } = await supabase
+        .from('projects')
+        .select('slug, created_at') // Using created_at as backup if updated_at is missing
+
+    const projectRoutes: MetadataRoute.Sitemap = projects?.map((project) => ({
+        url: `${siteUrl}/projeler/${project.slug}`,
+        lastModified: new Date(project.created_at || new Date()), // Fallback to current date
+        changeFrequency: 'weekly',
+        priority: 0.8,
+    })) || []
+
+    return [...routes, ...blogRoutes, ...projectRoutes]
 }
