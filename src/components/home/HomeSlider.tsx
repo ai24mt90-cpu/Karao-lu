@@ -1,10 +1,103 @@
-"use client";
-
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
-import { ChevronRight, ChevronLeft } from "lucide-react";
+import { m, AnimatePresence, LazyMotion, domAnimation } from "framer-motion";
+import { ChevronRight, ChevronLeft, ArrowRight, ArrowLeft } from "lucide-react";
+
+// ... (keep heroSlides array same) ...
+
+interface HomeSliderProps {
+    featuredProjects?: {
+        image: string;
+        title: string;
+        subtitle: string;
+    }[];
+}
+
+export default function HomeSlider({ featuredProjects = [] }: HomeSliderProps) {
+    const [currentSlide, setCurrentSlide] = useState(0);
+    const [slides, setSlides] = useState(heroSlides);
+
+    // ... (keep useEffects same) ...
+
+    return (
+        <section className="relative w-full h-[80vh] min-h-[500px] overflow-hidden">
+            <LazyMotion features={domAnimation}>
+                <AnimatePresence mode="wait">
+                    <m.div
+                        key={currentSlide}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.8 }}
+                        className="absolute inset-0"
+                    >
+                        <Image
+                            src={slides[currentSlide]?.image || heroSlides[0].image}
+                            alt={slides[currentSlide]?.title || heroSlides[0].title}
+                            fill
+                            className="object-cover"
+                            priority
+                            sizes="100vw"
+                        />
+                        <div className="absolute inset-0 bg-black/60" />
+                    </m.div>
+                </AnimatePresence>
+
+                {/* Slider Content */}
+                <div className="absolute inset-0 flex items-center">
+                    <div className="layout-container">
+                        <AnimatePresence mode="wait">
+                            <m.div
+                                key={currentSlide}
+                                initial={{ opacity: 0, y: 30 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -30 }}
+                                transition={{ duration: 0.5 }}
+                                className="max-w-2xl"
+                            >
+                                <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 drop-shadow-md">
+                                    {slides[currentSlide]?.title || heroSlides[0].title}
+                                </h1>
+                                <p className="text-xl text-white/95 mb-8 drop-shadow-sm font-medium">
+                                    {slides[currentSlide]?.subtitle || heroSlides[0].subtitle}
+                                </p>
+                                <Link
+                                    href="/projeler/kategori/tum-projeler"
+                                    className="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark px-8 py-4 text-white font-semibold transition-colors rounded-sm"
+                                >
+                                    Projelerimiz <ChevronRight size={20} />
+                                </Link>
+                            </m.div>
+                        </AnimatePresence>
+                    </div>
+                </div>
+            </LazyMotion>
+
+            {/* Slider Controls */}
+            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-4">
+                <button onClick={prevSlide} aria-label="Önceki Slayt" className="p-2 bg-white/20 hover:bg-white/40 text-white transition-colors rounded-full">
+                    <ChevronLeft size={24} />
+                </button>
+                <div className="flex gap-2">
+                    {slides.map((_, idx) => (
+                        <button
+                            key={idx}
+                            onClick={() => setCurrentSlide(idx)}
+                            aria-label={`Slayt ${idx + 1}`}
+                            className={`w-3 h-3 rounded-full transition-colors ${idx === currentSlide ? "bg-white" : "bg-white/40"}`}
+                        />
+                    ))}
+                </div>
+                <button onClick={nextSlide} aria-label="Sonraki Slayt" className="p-2 bg-white/20 hover:bg-white/40 text-white transition-colors rounded-full">
+                    <ChevronRight size={24} />
+                </button>
+            </div>
+
+            {/* ... (rest optional) ... */}
+        </section>
+    );
+}
 
 // Hero Slider Data
 const heroSlides = [
