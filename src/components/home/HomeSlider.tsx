@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { m, AnimatePresence, LazyMotion, domAnimation } from "framer-motion";
-import { ChevronRight, ChevronLeft, ArrowRight, ArrowLeft } from "lucide-react";
+import { ChevronRight, ChevronLeft } from "lucide-react";
 
 // ... (keep heroSlides array same) ...
 
