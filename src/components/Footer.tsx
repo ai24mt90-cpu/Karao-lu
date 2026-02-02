@@ -44,7 +44,7 @@ export default function Footer() {
 
                     {/* Quick Links */}
                     <div className="flex flex-col gap-4">
-                        <h4 className="text-sm font-bold text-white mb-2">Kurumsal</h4>
+                        <p className="text-sm font-bold text-white mb-2">Kurumsal</p>
                         <nav className="flex flex-col gap-3">
                             <Link href="/hakkimizda" className="text-sm text-white/70 hover:text-white transition-colors">Hakkımızda</Link>
                             <Link href="/hakkimizda#yonetim" className="text-sm text-white/70 hover:text-white transition-colors">Yönetim Kurulu</Link>
@@ -54,7 +54,7 @@ export default function Footer() {
 
                     {/* Projects */}
                     <div className="flex flex-col gap-4">
-                        <h4 className="text-sm font-bold text-white mb-2">Projeler</h4>
+                        <p className="text-sm font-bold text-white mb-2">Projeler</p>
                         <nav className="flex flex-col gap-3">
                             <Link href="/projeler?category=tamamlandi" className="text-sm text-white/70 hover:text-white transition-colors">Tamamlanan Projeler</Link>
                             <Link href="/projeler?category=devam" className="text-sm text-white/70 hover:text-white transition-colors">Devam Eden Projeler</Link>
@@ -64,7 +64,7 @@ export default function Footer() {
 
                     {/* Contact */}
                     <div className="flex flex-col gap-4">
-                        <h4 className="text-sm font-bold text-white mb-2">İletişim</h4>
+                        <p className="text-sm font-bold text-white mb-2">İletişim</p>
                         <div className="flex flex-col gap-3">
                             <a href="mailto:info@karaoglumuhendislik.com.tr" className="flex items-center gap-3 text-sm text-white/70 hover:text-white transition-colors">
                                 <Mail size={16} /> info@karaoglumuhendislik.com.tr
