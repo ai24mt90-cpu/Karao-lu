@@ -150,6 +150,7 @@ export default function Header() {
                         <button
                             className="lg:hidden p-2 text-foreground"
                             onClick={() => setIsOpen(!isOpen)}
+                            aria-label={isOpen ? "Menüyü Kapat" : "Menüyü Aç"}
                         >
                             {isOpen ? <X size={24} /> : <Menu size={24} />}
                         </button>
