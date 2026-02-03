@@ -44,11 +44,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  icons: {
-    icon: "/favicon-final.png",
-    apple: "/favicon-final.png",
-    shortcut: "/favicon-final.png",
-  },
+
   manifest: "/manifest.json",
   openGraph: {
     type: "website",
