@@ -73,6 +73,7 @@ export default function HomeSlider({ featuredProjects = [] }: HomeSliderProps) {
                             fill
                             className="object-cover"
                             priority={index === 0}
+                            fetchPriority={index === 0 ? "high" : "auto"}
                             sizes="100vw"
                         />
                         <div className="absolute inset-0 bg-black/60" /> {/* Darkened for contrast */}
