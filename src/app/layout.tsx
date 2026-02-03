@@ -83,12 +83,7 @@ export const metadata: Metadata = {
   // verification: {
   //   google: "YOUR_GOOGLE_VERIFICATION_CODE", // Search Console'dan alınacak
   // },
-  alternates: {
-    canonical: siteUrl,
-    languages: {
-      "tr-TR": siteUrl,
-    },
-  },
+
   category: "construction",
 };
 
