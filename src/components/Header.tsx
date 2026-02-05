@@ -42,7 +42,8 @@ const navLinks = [
         href: "/blog",
         label: "Basın Odası",
         submenu: [
-            { href: "/blog", label: "Haberler" },
+            { href: "/haberler", label: "Haberler" },
+            { href: "/blog", label: "Blog" },
         ]
     },
     { href: "/iletisim", label: "İletişim" },

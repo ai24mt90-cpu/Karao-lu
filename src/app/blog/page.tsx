@@ -10,12 +10,14 @@ import Link from "next/link";
 interface BlogPost {
     id: string;
     title: string;
-    slug?: string;
-    summary: string;  // news tablosunda summary var
+    slug: string;
+    excerpt: string;
     content: string;
     image_url?: string;
-    category: string;
-    created_at: string;
+    author: string;
+    category?: string;
+    published_at: string;
+    is_published?: boolean;
 }
 
 
@@ -26,9 +28,10 @@ export default function BlogPage() {
     useEffect(() => {
         const fetchPosts = async () => {
             const { data, error } = await supabase
-                .from("news")
+                .from("blog_posts")
                 .select("*")
-                .order("created_at", { ascending: false });
+                .eq("is_published", true)
+                .order("published_at", { ascending: false });
 
             if (!error && data) {
                 setPosts(data);
@@ -98,11 +101,11 @@ export default function BlogPage() {
                                                 {post.title}
                                             </h3>
                                             <p className="text-text-secondary text-sm mb-4 line-clamp-2 flex-grow">
-                                                {post.summary}
+                                                {post.excerpt}
                                             </p>
                                             <div className="flex items-center gap-4 text-text-secondary text-xs mt-auto pt-4 border-t border-gray-50">
                                                 <span className="flex items-center gap-1">
-                                                    <Calendar size={12} /> {new Date(post.created_at).toLocaleDateString('tr-TR')}
+                                                    <Calendar size={12} /> {new Date(post.published_at).toLocaleDateString('tr-TR')}
                                                 </span>
                                                 <span className="flex items-center gap-1 ml-auto text-primary font-medium">
                                                     Devamını Oku <ArrowRight size={12} />

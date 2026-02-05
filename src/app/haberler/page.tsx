@@ -10,13 +10,11 @@ import Link from "next/link";
 interface News {
     id: string;
     title: string;
-    slug: string;
     summary: string;
     content: string;
     image_url?: string;
     created_at: string;
-    category?: string;
-    published_at?: string;
+    category: string;
 }
 
 export default function NewsPage() {
@@ -27,8 +25,7 @@ export default function NewsPage() {
             const { data, error } = await supabase
                 .from("news")
                 .select("*")
-                .eq("is_published", true)
-                .order("published_at", { ascending: false });
+                .order("created_at", { ascending: false });
 
             if (!error && data) {
                 setNews(data);
@@ -67,7 +64,7 @@ export default function NewsPage() {
                     {news.length > 0 ? (
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {news.map((item) => (
-                                <Link href={`/haberler/${item.slug}`} key={item.id} className="block group">
+                                <Link href={`/haberler/${item.id}`} key={item.id} className="block group">
                                     <motion.article
                                         initial={{ opacity: 0, y: 20 }}
                                         whileInView={{ opacity: 1, y: 0 }}
@@ -98,7 +95,7 @@ export default function NewsPage() {
                                         <div className="p-6 flex-1 flex flex-col">
                                             <div className="flex items-center gap-2 text-text-secondary text-sm mb-3">
                                                 <Calendar size={14} />
-                                                <span>{new Date(item.published_at || item.created_at).toLocaleDateString('tr-TR')}</span>
+                                                <span>{new Date(item.created_at).toLocaleDateString('tr-TR')}</span>
                                             </div>
                                             <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
                                                 {item.title}
