@@ -39,11 +39,10 @@ const navLinks = [
     },
     { href: "/sosyal-sorumluluk", label: "Sosyal Sorumluluk" },
     {
-        href: "/haberler",
+        href: "/blog",
         label: "Basın Odası",
         submenu: [
-            { href: "/haberler", label: "Haberler" },
-            { href: "/blog", label: "Blog" },
+            { href: "/blog", label: "Haberler" },
         ]
     },
     { href: "/iletisim", label: "İletişim" },
