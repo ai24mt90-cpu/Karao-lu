@@ -109,8 +109,8 @@ export default function ContactPage() {
                                 <Mail size={32} />
                             </div>
                             <h3 className="font-bold text-foreground mb-2">E-posta</h3>
-                            <a href="mailto:info@karaoglumuhendislik.com.tr" className="text-text-secondary text-sm hover:text-primary transition-colors">
-                                info@karaoglumuhendislik.com.tr
+                            <a href="mailto:karaogluuniversal@gmail.com" className="text-text-secondary text-sm hover:text-primary transition-colors">
+                                karaogluuniversal@gmail.com
                             </a>
                         </div>
                         <div className="bg-surface-secondary p-8 text-center hover:shadow-lg transition-shadow">

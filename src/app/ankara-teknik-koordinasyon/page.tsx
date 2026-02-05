@@ -103,7 +103,7 @@ export default function AnkaraPage() {
                                     <Mail className="text-primary" size={20} />
                                     <div>
                                         <span className="block font-semibold text-foreground mb-1">E-Posta</span>
-                                        <p className="text-text-secondary text-sm">info@karaoglumuhendislik.com.tr</p>
+                                        <p className="text-text-secondary text-sm">karaogluuniversal@gmail.com</p>
                                     </div>
                                 </div>
                             </div>

@@ -113,7 +113,7 @@ const jsonLd = {
     areaServed: "TR",
     availableLanguage: ["Turkish"],
   },
-  email: "info@karaoglumuhendislik.com.tr",
+  email: "karaogluuniversal@gmail.com",
   sameAs: [
     "https://www.linkedin.com/company/karaoglu-muhendislik",
     "https://www.instagram.com/karaoglumuhendislik",

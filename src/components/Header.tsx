@@ -63,9 +63,9 @@ export default function Header() {
                             <Phone size={14} />
                             <span>0432 216 56 36</span>
                         </a>
-                        <a href="mailto:info@karaoglumuhendislik.com.tr" className="flex items-center gap-2 text-text-secondary hover:text-primary transition-colors">
+                        <a href="mailto:karaogluuniversal@gmail.com" className="flex items-center gap-2 text-text-secondary hover:text-primary transition-colors">
                             <Mail size={14} />
-                            <span>info@karaoglumuhendislik.com.tr</span>
+                            <span>karaogluuniversal@gmail.com</span>
                         </a>
                     </div>
                 </div>

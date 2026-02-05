@@ -29,7 +29,7 @@ export default function KVKKPage() {
                         </p>
                         <p className="text-text-secondary mb-6">
                             <strong>Adres:</strong> Hafiziye Mah. Umman 1. Sokak No: 38, Kat: 3, D: 16, 65130 İpekyolu/Van<br />
-                            <strong>E-posta:</strong> info@karaoglumuhendislik.com.tr<br />
+                            <strong>E-posta:</strong> karaogluuniversal@gmail.com<br />
                             <strong>Telefon:</strong> 0432 216 56 36
                         </p>
 
@@ -73,7 +73,7 @@ export default function KVKKPage() {
 
                         <h2 className="text-2xl font-bold text-foreground mb-6 mt-10">7. Başvuru Yöntemi</h2>
                         <p className="text-text-secondary mb-6">
-                            KVKK kapsamındaki haklarınızı kullanmak için info@karaoglumuhendislik.com.tr adresine e-posta gönderebilir veya yukarıda belirtilen adrese yazılı başvuru yapabilirsiniz.
+                            KVKK kapsamındaki haklarınızı kullanmak için karaogluuniversal@gmail.com adresine e-posta gönderebilir veya yukarıda belirtilen adrese yazılı başvuru yapabilirsiniz.
                         </p>
 
                         <div className="mt-10 p-6 bg-surface-secondary rounded-lg">

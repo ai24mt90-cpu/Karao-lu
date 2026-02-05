@@ -63,7 +63,7 @@ export default function GizlilikPage() {
                         <h2 className="text-2xl font-bold text-foreground mb-6 mt-10">İletişim</h2>
                         <p className="text-text-secondary mb-6">
                             Gizlilik politikamız hakkında sorularınız için bizimle iletişime geçebilirsiniz:<br /><br />
-                            <strong>E-posta:</strong> info@karaoglumuhendislik.com.tr<br />
+                            <strong>E-posta:</strong> karaogluuniversal@gmail.com<br />
                             <strong>Telefon:</strong> 0432 216 56 36
                         </p>
 
