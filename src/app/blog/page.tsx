@@ -18,21 +18,7 @@ interface BlogPost {
     created_at: string;
 }
 
-const defaultPosts: BlogPost[] = [
-    {
-        id: "1",
-        title: "Kamu Müteahhitliğinde Kalite Standartları",
-        slug: "kamu-muteahhitliginde-kalite",
-        excerpt: "Kamu projelerinde kalite yönetiminin önemi ve uygulanan standartlar hakkında bilgiler.",
-        content: "",
-        author: "Mühendislik Ekibi",
-        image_url: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=600",
-        published_at: "2026-01-05",
-        category: "Mühendislik",
-        read_time: "5 dk"
-    },
-    // ... diğer varsayılanlar (slug eklenerek)
-];
+
 
 export default function BlogPage() {
     const [posts, setPosts] = useState<BlogPost[]>([]);
