@@ -20,7 +20,7 @@ export default function SocialResponsibilityPage() {
     useEffect(() => {
         const fetchProjects = async () => {
             const { data, error } = await supabase
-                .from("social_projects")
+                .from("social_responsibilities")
                 .select("*")
                 .order("created_at", { ascending: false });
 

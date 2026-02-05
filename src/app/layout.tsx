@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingHomeButton from "@/components/FloatingHomeButton";
+import WhatsAppWidget from "@/components/WhatsAppWidget";
 
 const roboto = Roboto({
   variable: "--font-roboto",
@@ -233,6 +234,7 @@ export default function RootLayout({
           {children}
         </main>
         <FloatingHomeButton />
+        <WhatsAppWidget />
         <Footer />
       </body>
     </html>
