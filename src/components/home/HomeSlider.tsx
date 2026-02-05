@@ -9,7 +9,7 @@ import { ChevronRight, ChevronLeft } from "lucide-react";
 const heroSlides = [
     {
         image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop",
-        title: "Devlet Ciddiyetiyle İnşa Ediyoruz",
+        title: "Devlet yatırımlarını ciddiyetle inşa ediyoruz",
         subtitle: "Bölgenin Güçlü Altyapı ve Üstyapı Çözüm Ortağı",
     },
     {
