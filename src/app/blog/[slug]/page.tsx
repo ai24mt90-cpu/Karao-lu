@@ -23,10 +23,9 @@ export default function BlogPostPage() {
 
             try {
                 const { data, error } = await supabase
-                    .from("blog_posts")
+                    .from("news")
                     .select("*")
-                    .eq("slug", slug)
-                    .eq("is_published", true)
+                    .eq("id", slug)
                     .single();
 
                 if (error || !data) {
