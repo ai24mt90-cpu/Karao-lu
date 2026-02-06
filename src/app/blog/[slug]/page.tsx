@@ -22,24 +22,15 @@ export default function BlogPostPage() {
             if (!slug) return;
 
             try {
-                // Try to fetch by slug first, then by ID
-                const { data: slugData } = await supabase
-                    .from("blog_posts")
-                    .select("*")
-                    .eq("slug", slug)
-                    .limit(1);
-
-                const { data: idData } = await supabase
+                // Fetch by ID only
+                const { data } = await supabase
                     .from("blog_posts")
                     .select("*")
                     .eq("id", slug)
                     .limit(1);
 
-                const data = (slugData && slugData.length > 0) ? slugData[0] :
-                    (idData && idData.length > 0) ? idData[0] : null;
-
-                if (data) {
-                    setPost(data);
+                if (data && data.length > 0) {
+                    setPost(data[0]);
                 } else {
                     setPost(null);
                 }
