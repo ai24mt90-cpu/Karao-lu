@@ -22,12 +22,25 @@ export default function BlogPostPage() {
             if (!slug) return;
 
             try {
-                const { data, error } = await supabase
+                // Try to fetch by slug first
+                let { data, error } = await supabase
                     .from("blog_posts")
                     .select("*")
                     .eq("slug", slug)
                     .eq("is_published", true)
-                    .single();
+                    .maybeSingle();
+
+                // If not found by slug, try by ID
+                if (!data && slug) {
+                    const result = await supabase
+                        .from("blog_posts")
+                        .select("*")
+                        .eq("id", slug)
+                        .eq("is_published", true)
+                        .maybeSingle();
+                    data = result.data;
+                    error = result.error;
+                }
 
                 if (error || !data) {
                     console.error("Blog fetch error:", error);
