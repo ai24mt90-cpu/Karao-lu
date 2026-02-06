@@ -30,7 +30,6 @@ export default function BlogPage() {
             const { data, error } = await supabase
                 .from("blog_posts")
                 .select("*")
-                .eq("is_published", true)
                 .order("published_at", { ascending: false });
 
             if (!error && data) {

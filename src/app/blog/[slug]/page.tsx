@@ -27,14 +27,12 @@ export default function BlogPostPage() {
                     .from("blog_posts")
                     .select("*")
                     .eq("slug", slug)
-                    .eq("is_published", true)
                     .limit(1);
 
                 const { data: idData } = await supabase
                     .from("blog_posts")
                     .select("*")
                     .eq("id", slug)
-                    .eq("is_published", true)
                     .limit(1);
 
                 const data = (slugData && slugData.length > 0) ? slugData[0] :
