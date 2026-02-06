@@ -22,31 +22,28 @@ export default function BlogPostPage() {
             if (!slug) return;
 
             try {
-                // Try to fetch by slug first
-                let { data, error } = await supabase
+                // Try to fetch by slug first, then by ID
+                const { data: slugData } = await supabase
                     .from("blog_posts")
                     .select("*")
                     .eq("slug", slug)
                     .eq("is_published", true)
-                    .maybeSingle();
+                    .limit(1);
 
-                // If not found by slug, try by ID
-                if (!data && slug) {
-                    const result = await supabase
-                        .from("blog_posts")
-                        .select("*")
-                        .eq("id", slug)
-                        .eq("is_published", true)
-                        .maybeSingle();
-                    data = result.data;
-                    error = result.error;
-                }
+                const { data: idData } = await supabase
+                    .from("blog_posts")
+                    .select("*")
+                    .eq("id", slug)
+                    .eq("is_published", true)
+                    .limit(1);
 
-                if (error || !data) {
-                    console.error("Blog fetch error:", error);
-                    setPost(null);
-                } else {
+                const data = (slugData && slugData.length > 0) ? slugData[0] :
+                    (idData && idData.length > 0) ? idData[0] : null;
+
+                if (data) {
                     setPost(data);
+                } else {
+                    setPost(null);
                 }
             } catch (e) {
                 console.error("Error:", e);
