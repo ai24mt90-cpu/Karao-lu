@@ -82,9 +82,15 @@ export default function HomeSlider({ featuredProjects = [] }: HomeSliderProps) {
                     <div className="absolute inset-0 flex items-center">
                         <div className="layout-container">
                             <div className="max-w-2xl">
-                                <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 drop-shadow-md">
-                                    {slide.title}
-                                </h1>
+                                {index === 0 ? (
+                                    <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 drop-shadow-md">
+                                        {slide.title}
+                                    </h1>
+                                ) : (
+                                    <h2 className="text-5xl md:text-7xl font-bold text-white mb-4 drop-shadow-md">
+                                        {slide.title}
+                                    </h2>
+                                )}
                                 <p className="text-xl text-white/95 mb-8 drop-shadow-sm font-medium">
                                     {slide.subtitle}
                                 </p>
