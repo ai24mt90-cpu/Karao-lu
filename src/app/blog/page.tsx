@@ -68,7 +68,7 @@ export default function BlogPage() {
                     {posts.length > 0 ? (
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                             {posts.map((post) => (
-                                <Link href={`/blog/${post.slug || post.id}`} key={post.id} className="block group">
+                                <Link href={`/blog/${post.id}`} key={post.id} className="block group">
                                     <motion.article
                                         initial={{ opacity: 0, y: 20 }}
                                         whileInView={{ opacity: 1, y: 0 }}
