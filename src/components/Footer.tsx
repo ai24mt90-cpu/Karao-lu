@@ -30,7 +30,7 @@ export default function Footer() {
                         </p>
                         {/* Social Media Links */}
                         <div className="flex items-center gap-4">
-                            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors" aria-label="Instagram">
+                            <a href="https://www.instagram.com/karaogluuniversalmuhendislik/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors" aria-label="Instagram">
                                 <Instagram size={18} />
                             </a>
                             <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors" aria-label="LinkedIn">

@@ -116,7 +116,7 @@ const jsonLd = {
   email: "karaogluuniversal@gmail.com",
   sameAs: [
     "https://www.linkedin.com/company/karaoglu-muhendislik",
-    "https://www.instagram.com/karaoglumuhendislik",
+    "https://www.instagram.com/karaogluuniversalmuhendislik/",
   ],
   areaServed: {
     "@type": "Country",
