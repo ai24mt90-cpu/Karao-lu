@@ -72,17 +72,40 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             changeFrequency: 'yearly',
             priority: 0.3,
         },
+        {
+            url: `${siteUrl}/projeler/kategori/tamamlandi`,
+            lastModified: new Date(),
+            changeFrequency: 'weekly',
+            priority: 0.8,
+        },
+        {
+            url: `${siteUrl}/projeler/kategori/devam-eden`,
+            lastModified: new Date(),
+            changeFrequency: 'weekly',
+            priority: 0.8,
+        },
+        {
+            url: `${siteUrl}/projeler/kategori/tum-projeler`,
+            lastModified: new Date(),
+            changeFrequency: 'weekly',
+            priority: 0.8,
+        },
+        {
+            url: `${siteUrl}/ankara-teknik-koordinasyon`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
     ]
 
     // Dinamik Blog Yazılarını Çek
     const { data: blogs } = await supabase
-        .from('blogs')
-        .select('slug, updated_at')
-        .eq('is_published', true)
+        .from('blog_posts')
+        .select('id, slug, created_at')
 
     const blogRoutes: MetadataRoute.Sitemap = blogs?.map((blog) => ({
-        url: `${siteUrl}/blog/${blog.slug}`,
-        lastModified: new Date(blog.updated_at),
+        url: `${siteUrl}/blog/${blog.slug || blog.id}`,
+        lastModified: new Date(blog.created_at),
         changeFrequency: 'weekly',
         priority: 0.7,
     })) || []
