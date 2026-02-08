@@ -66,16 +66,17 @@ export default function BlogPage() {
             <section className="py-20 bg-surface-secondary">
                 <div className="layout-container">
                     {posts.length > 0 ? (
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                             {posts.map((post) => (
                                 <Link href={`/blog/${post.id}`} key={post.id} className="block group">
                                     <motion.article
                                         initial={{ opacity: 0, y: 20 }}
                                         whileInView={{ opacity: 1, y: 0 }}
                                         viewport={{ once: true }}
-                                        className="bg-white overflow-hidden shadow-sm hover:shadow-xl transition-all flex flex-col md:flex-row h-full"
+                                        className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all h-full flex flex-col"
                                     >
-                                        <div className="relative w-full md:w-1/3 h-56 md:h-auto overflow-hidden">
+                                        {/* Image on top */}
+                                        <div className="relative h-48 overflow-hidden">
                                             {post.image_url ? (
                                                 <Image
                                                     src={post.image_url}
@@ -89,24 +90,27 @@ export default function BlogPage() {
                                                 </div>
                                             )}
                                         </div>
+
+                                        {/* Content below */}
                                         <div className="p-6 flex-1 flex flex-col">
                                             {post.category && (
                                                 <span className="text-primary text-xs font-semibold uppercase tracking-wider">
                                                     {post.category}
                                                 </span>
                                             )}
-                                            <h3 className="text-xl font-bold text-foreground mt-2 mb-3 group-hover:text-primary transition-colors">
+                                            <h3 className="text-lg font-bold text-foreground mt-2 mb-2 group-hover:text-primary transition-colors line-clamp-2">
                                                 {post.title}
                                             </h3>
-                                            <p className="text-text-secondary text-sm mb-4 line-clamp-2 flex-grow">
+                                            <p className="text-text-secondary text-sm mb-4 line-clamp-3 flex-grow">
                                                 {post.excerpt}
                                             </p>
-                                            <div className="flex items-center gap-4 text-text-secondary text-xs mt-auto pt-4 border-t border-gray-50">
-                                                <span className="flex items-center gap-1">
+
+                                            <div className="flex items-center justify-between mt-auto pt-4 border-t border-gray-100">
+                                                <span className="flex items-center gap-1 text-text-secondary text-xs">
                                                     <Calendar size={12} /> {new Date(post.created_at).toLocaleDateString('tr-TR')}
                                                 </span>
-                                                <span className="flex items-center gap-1 ml-auto text-primary font-medium">
-                                                    Devamını Oku <ArrowRight size={12} />
+                                                <span className="flex items-center gap-1 text-primary text-sm font-medium">
+                                                    Oku <ArrowRight size={14} />
                                                 </span>
                                             </div>
                                         </div>
