@@ -26,7 +26,7 @@ export default function Footer() {
                             </div>
                         </div>
                         <p className="text-white/70 text-sm leading-relaxed">
-                            Van merkezli mühendislik firması. 2014&apos;ten beri altyapı, üstyapı ve kamu projelerinde güvenilir çözüm ortağınız.
+                            Ankara merkezli mühendislik firması. 2014'ten beri altyapı, üstyapı ve kamu projelerinde güvenilir çözüm ortağınız.
                         </p>
                         {/* Social Media Links */}
                         <div className="flex items-center gap-4">
@@ -75,15 +75,15 @@ export default function Footer() {
                             <div className="flex items-start gap-3 text-sm text-gray-100">
                                 <MapPin size={16} className="mt-0.5 flex-shrink-0" />
                                 <div>
-                                    <span className="block font-semibold text-white mb-0.5">Van Merkez:</span>
-                                    <span>Hafiziye Mah. Umman 1. Sokak No: 38, Kat: 3, D: 16, 65130 İpekyolu/Van</span>
+                                    <span className="block font-semibold text-white mb-0.5">Ankara Merkez:</span>
+                                    <span>Next Level, Kızılırmak Mah. Dumlupınar Bulvarı No: 3C1/160, Kat: 29, 06530 Çankaya/Ankara</span>
                                 </div>
                             </div>
                             <div className="flex items-start gap-3 text-sm text-gray-100">
                                 <MapPin size={16} className="mt-0.5 flex-shrink-0" />
                                 <div>
-                                    <span className="block font-semibold text-white mb-0.5">Ankara Şube:</span>
-                                    <span>Next Level, Kızılırmak Mah. Dumlupınar Bulvarı No: 3C1/160, Kat: 29, 06530 Çankaya/Ankara</span>
+                                    <span className="block font-semibold text-white mb-0.5">Van Şube:</span>
+                                    <span>Hafiziye Mah. Umman 1. Sokak No: 38, Kat: 3, D: 16, 65130 İpekyolu/Van</span>
                                 </div>
                             </div>
                         </div>
@@ -98,7 +98,7 @@ export default function Footer() {
                         <Link href="/iletisim" className="text-sm text-white/60 hover:text-white transition-colors">İletişim</Link>
                     </div>
                     <p className="text-white/70 text-sm text-center mb-2">
-                        <strong>Van Mühendislik Firması</strong> – Hafiziye Mah. Umman 1. Sokak No: 38, Kat: 3, D: 16, 65130 İpekyolu/Van
+                        <strong>Ankara Mühendislik Firması</strong> – Next Level, Kızılırmak Mah. Dumlupınar Bulvarı No: 3C1/160, Kat: 29, 06530 Çankaya/Ankara
                     </p>
                     <p className="text-white/50 text-sm text-center">
                         © {new Date().getFullYear()} Karaoğlu Universal Mühendislik Ltd. Şti. Tüm hakları saklıdır.

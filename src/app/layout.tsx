@@ -17,24 +17,24 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://karaoglumuhendislik
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Karaoğlu Universal Mühendislik | Van Kamu İnşaat ve Taahhüt Firması",
+    default: "Karaoğlu Universal Mühendislik | Ankara Kamu İnşaat ve Taahhüt Firması",
     template: "%s | Karaoğlu Universal Mühendislik",
   },
-  description: "Van ve Ankara merkezli kamu müteahhidi. Altyapı, üstyapı, konut ve mühendislik projelerinde 64+ referans. Devlet ciddiyetiyle zamanında teslimat.",
+  description: "Ankara ve Van merkezli kamu müteahhidi. Altyapı, üstyapı, konut ve mühendislik projelerinde 64+ referans. Devlet ciddiyetiyle zamanında teslimat.",
   keywords: [
-    "Van kamu müteahhidi",
+    "Ankara kamu müteahhidi",
     "Ankara inşaat firması",
-    "Van mühendislik hizmetleri",
+    "Ankara mühendislik hizmetleri",
     "Ankara kamu projeleri",
-    "Van altyapı firmaları",
-    "Van konut projeleri",
+    "Ankara altyapı firmaları",
+    "Van kamu müteahhidi",
     "4734 sayılı kanun uzmanı",
     "kamu ihale danışmanlığı",
-    "Van inşaat taahhüt",
+    "Ankara inşaat taahhüt",
     "Ankara mühendislik çözümleri",
     "Karaoğlu Mühendislik referanslar",
-    "depreme dayanıklı yapı Van",
-    "zemin etüdü Van",
+    "depreme dayanıklı yapı Ankara",
+    "zemin etüdü Ankara",
     "devlet ihaleleri müteahhit",
   ],
   authors: [{ name: "Karaoğlu Universal Mühendislik", url: siteUrl }],
@@ -52,8 +52,8 @@ export const metadata: Metadata = {
     locale: "tr_TR",
     url: siteUrl,
     siteName: "Karaoğlu Universal Mühendislik",
-    title: "Van Mühendislik Firması – Karaoğlu Universal Mühendislik",
-    description: "Van'da kamu, konut ve altyapı mühendislik projelerinde uzman mühendislik hizmetleri. Güvenilir ve sürdürülebilir çözümler.",
+    title: "Ankara Mühendislik Firması – Karaoğlu Universal Mühendislik",
+    description: "Ankara'da kamu, konut ve altyapı mühendislik projelerinde uzman mühendislik hizmetleri. Güvenilir ve sürdürülebilir çözümler.",
     images: [
       {
         url: "/og-image.jpg",
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Karaoğlu Universal Mühendislik | Kamu Müteahhitliği & İnşaat",
-    description: "Van merkezli kamu müteahhidi. 2014'ten bu yana altyapı, üstyapı ve mühendislik projelerinde güvenilir çözüm ortağınız.",
+    description: "Ankara merkezli kamu müteahhidi. 2014'ten bu yana altyapı, üstyapı ve mühendislik projelerinde güvenilir çözüm ortağınız.",
     images: ["/og-image.jpg"],
     creator: "@karaoglumuhendislik",
   },
@@ -96,14 +96,14 @@ const jsonLd = {
   alternateName: "Karaoğlu Mühendislik",
   url: siteUrl,
   logo: `${siteUrl}/logo.png`,
-  description: "Van merkezli kamu müteahhidi. 2014'ten bu yana altyapı, üstyapı ve mühendislik projelerinde güvenilir çözüm ortağınız.",
+  description: "Ankara merkezli kamu müteahhidi. 2014'ten bu yana altyapı, üstyapı ve mühendislik projelerinde güvenilir çözüm ortağınız.",
   foundingDate: "2014",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Hafiziye Mahallesi, Umman 1. Sokak No: 38, Kat: 3, Daire: 16",
-    addressLocality: "İpekyolu",
-    addressRegion: "Van",
-    postalCode: "65130",
+    streetAddress: "Next Level, Kızılırmak Mah. Dumlupınar Bulvarı No: 3C1/160, Kat: 29",
+    addressLocality: "Çankaya",
+    addressRegion: "Ankara",
+    postalCode: "06530",
     addressCountry: "TR",
   },
   contactPoint: {
@@ -137,13 +137,42 @@ const localBusinessJsonLd = {
   "@graph": [
     {
       "@type": "GeneralContractor",
-      "@id": `${siteUrl}/#van-office`,
-      name: "Karaoğlu Universal Mühendislik - Van Merkez",
+      "@id": `${siteUrl}/#ankara-office`,
+      name: "Karaoğlu Universal Mühendislik - Ankara Merkez",
       image: `${siteUrl}/brand-icon-large.png`,
       url: siteUrl,
-      telephone: "+90-534-032-6569", // Update with correct Van phone if different
+      telephone: "+90-534-032-6569",
       priceRange: "₺₺₺₺",
-      description: "Van merkezli kamu müteahhidi. Altyapı, üstyapı ve mühendislik projelerinde güvenilir çözüm ortağınız.",
+      description: "Ankara merkezli kamu müteahhidi. Altyapı, üstyapı ve mühendislik projelerinde güvenilir çözüm ortağınız.",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Next Level, Kızılırmak Mah. Dumlupınar Bulvarı No: 3C1/160, Kat: 29",
+        addressLocality: "Çankaya",
+        addressRegion: "Ankara",
+        postalCode: "06530",
+        addressCountry: "TR",
+      },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: 39.9334,
+        longitude: 32.8597,
+      },
+      openingHoursSpecification: {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        opens: "08:00",
+        closes: "17:00",
+      },
+    },
+    {
+      "@type": "GeneralContractor",
+      "@id": `${siteUrl}/#van-office`,
+      name: "Karaoğlu Universal Mühendislik - Van Şube",
+      image: `${siteUrl}/brand-icon-large.png`,
+      url: siteUrl,
+      telephone: "+90-432-216-5636",
+      priceRange: "₺₺₺₺",
+      description: "Van ve çevresinde kamu projeleri ve mühendislik çözümleri sunan şubemiz.",
       address: {
         "@type": "PostalAddress",
         streetAddress: "Hafiziye Mahallesi, Umman 1. Sokak No: 38, Kat: 3, Daire: 16",
@@ -164,35 +193,6 @@ const localBusinessJsonLd = {
         closes: "17:00",
       },
     },
-    {
-      "@type": "GeneralContractor",
-      "@id": `${siteUrl}/#ankara-office`,
-      name: "Karaoğlu Universal Mühendislik - Ankara Şube",
-      image: `${siteUrl}/brand-icon-large.png`,
-      url: siteUrl,
-      telephone: "+90-534-032-6569", // Update with Ankara phone if exists
-      priceRange: "₺₺₺₺",
-      description: "Ankara ve çevresinde kamu projeleri ve mühendislik çözümleri sunan şubemiz.",
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: "Next Level, Kızılırmak Mah. Dumlupınar Bulvarı No: 3C1/160, Kat: 29",
-        addressLocality: "Çankaya",
-        addressRegion: "Ankara",
-        postalCode: "06530",
-        addressCountry: "TR",
-      },
-      geo: {
-        "@type": "GeoCoordinates",
-        latitude: 39.9080, // Approximate coords for Next Level
-        longitude: 32.8100,
-      },
-      openingHoursSpecification: {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        opens: "08:00",
-        closes: "18:00",
-      },
-    }
   ]
 };
 

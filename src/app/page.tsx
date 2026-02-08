@@ -66,7 +66,7 @@ export default async function Home() {
                 VAN VE ANKARA'DA<br />KAMU PROJELERİNİN<br />GÜVENİLİR ÇÖZÜM ORTAĞI
               </h3>
               <p className="text-text-secondary leading-relaxed mb-6">
-                <strong>Karaoğlu Universal Mühendislik</strong>, Van ve Ankara merkezli ofisleriyle Türkiye genelinde kamu taahhüt işleri yürütmektedir.
+                <strong>Karaoğlu Universal Mühendislik</strong>, Ankara ve Van merkezli ofisleriyle Türkiye genelinde kamu taahhüt işleri yürütmektedir.
                 <br /><br />
                 Şirketimiz bugüne kadar 64 projeyi başarıyla tamamlamış olup, bu projelerin büyük bölümü kamu kurumlarına yönelik yapım ve mühendislik işlerinden oluşmaktadır.
                 <br /><br />
