@@ -129,7 +129,28 @@ export default function BlogPostPage() {
                         prose-code:bg-gray-100 prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-code:text-sm
                         prose-pre:bg-gray-900 prose-pre:text-gray-100 prose-pre:p-4 prose-pre:rounded-lg
                         prose-img:rounded-lg prose-img:shadow-md">
-                        <ReactMarkdown>{post.content}</ReactMarkdown>
+                        <ReactMarkdown
+                            components={{
+                                // Custom paragraph renderer to handle plain text better
+                                p: ({ children }) => {
+                                    const text = String(children);
+                                    // Split by bullet points or numbered lists
+                                    if (text.includes('•') || /^\d+\./.test(text)) {
+                                        const items = text.split(/•|\n/).filter(item => item.trim());
+                                        return (
+                                            <ul className="list-disc pl-6 space-y-2">
+                                                {items.map((item, i) => (
+                                                    <li key={i}>{item.trim()}</li>
+                                                ))}
+                                            </ul>
+                                        );
+                                    }
+                                    return <p className="mb-4">{children}</p>;
+                                }
+                            }}
+                        >
+                            {post.content}
+                        </ReactMarkdown>
                     </div>
                 </article>
             </div>
