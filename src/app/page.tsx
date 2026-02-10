@@ -155,6 +155,31 @@ export default async function Home() {
       {/* Projects Section - Client Component */}
       <HomeProjects projects={featuredProjects} />
 
+      {/* Quick Links Section - For Better Internal Linking */}
+      <section className="py-16 bg-gray-50">
+        <div className="layout-container">
+          <h2 className="text-3xl font-bold text-center mb-12">Hızlı Erişim</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <Link href="/blog" className="group p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-all text-center">
+              <h3 className="font-semibold text-lg mb-2 group-hover:text-primary transition-colors">Blog</h3>
+              <p className="text-sm text-gray-600">Mühendislik yazıları</p>
+            </Link>
+            <Link href="/haberler" className="group p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-all text-center">
+              <h3 className="font-semibold text-lg mb-2 group-hover:text-primary transition-colors">Haberler</h3>
+              <p className="text-sm text-gray-600">Güncel haberler</p>
+            </Link>
+            <Link href="/projeler" className="group p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-all text-center">
+              <h3 className="font-semibold text-lg mb-2 group-hover:text-primary transition-colors">Projeler</h3>
+              <p className="text-sm text-gray-600">Tamamlanan işler</p>
+            </Link>
+            <Link href="/sss" className="group p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-all text-center">
+              <h3 className="font-semibold text-lg mb-2 group-hover:text-primary transition-colors">SSS</h3>
+              <p className="text-sm text-gray-600">Sıkça sorulan sorular</p>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 bg-primary">
         <div className="layout-container text-center">

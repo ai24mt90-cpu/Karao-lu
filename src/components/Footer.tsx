@@ -47,17 +47,19 @@ export default function Footer() {
                         <p className="text-sm font-bold text-white mb-2">Kurumsal</p>
                         <nav className="flex flex-col gap-3">
                             <Link href="/hakkimizda" className="text-sm text-gray-100 hover:text-white transition-colors">Hakkımızda</Link>
-                            <Link href="/hakkimizda#yonetim" className="text-sm text-gray-100 hover:text-white transition-colors">Yönetim Kurulu</Link>
+                            <Link href="/sektorler" className="text-sm text-gray-100 hover:text-white transition-colors">Sektörler</Link>
                             <Link href="/iletisim" className="text-sm text-gray-100 hover:text-white transition-colors">İletişim</Link>
+                            <Link href="/ankara-teknik-koordinasyon" className="text-sm text-gray-100 hover:text-white transition-colors">Ankara Koordinasyon</Link>
                         </nav>
                     </div>
 
                     {/* Projects */}
                     <div className="flex flex-col gap-4">
-                        <p className="text-sm font-bold text-white mb-2">Projeler</p>
+                        <p className="text-sm font-bold text-white mb-2">İçerik</p>
                         <nav className="flex flex-col gap-3">
-                            <Link href="/projeler?category=tamamlandi" className="text-sm text-gray-100 hover:text-white transition-colors">Tamamlanan Projeler</Link>
-                            <Link href="/projeler?category=devam" className="text-sm text-gray-100 hover:text-white transition-colors">Devam Eden Projeler</Link>
+                            <Link href="/blog" className="text-sm text-gray-100 hover:text-white transition-colors">Blog</Link>
+                            <Link href="/haberler" className="text-sm text-gray-100 hover:text-white transition-colors">Haberler</Link>
+                            <Link href="/sss" className="text-sm text-gray-100 hover:text-white transition-colors">SSS</Link>
                             <Link href="/sosyal-sorumluluk" className="text-sm text-gray-100 hover:text-white transition-colors">Sosyal Sorumluluk</Link>
                         </nav>
                     </div>
