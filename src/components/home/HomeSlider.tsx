@@ -59,7 +59,7 @@ export default function HomeSlider({ featuredProjects = [] }: HomeSliderProps) {
     const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
 
     return (
-        <section className="relative w-full h-[80vh] min-h-[500px] overflow-hidden bg-black group">
+        <section className="relative w-full h-[80vh] min-h-[500px] overflow-hidden bg-gray-900 group">
             {/* Slides */}
             {slides.map((slide, index) => (
                 <div
