@@ -4,23 +4,24 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ChevronRight, ChevronLeft } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
-// Hero Slider Data
-const heroSlides = [
+// Hero Slider Data Keys
+const heroSlidesKeys = [
     {
         image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop",
-        title: "Devlet yatırımlarını ciddiyetle inşa ediyoruz",
-        subtitle: "Bölgenin Güçlü Altyapı ve Üstyapı Çözüm Ortağı",
+        titleKey: "home.slider.title",
+        subtitleKey: "home.slider.subtitle",
     },
     {
         image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop",
-        title: "64+ Tamamlanan Kamu Projesi",
-        subtitle: "Ankara'dan Türkiye'ye; 10+ yıllık deneyim, güçlü makine parkı ve finansal yeterlilik",
+        titleKey: "home.slider.slide2_title",
+        subtitleKey: "home.slider.slide2_subtitle",
     },
     {
         image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop",
-        title: "Resmi Kurumların Çözüm Ortağı",
-        subtitle: "İpekyolu Sahil Bandı'ndan TOKİ Konutlarına kadar imzamız var",
+        titleKey: "home.slider.slide3_title",
+        subtitleKey: "home.slider.slide3_subtitle",
     },
 ];
 
@@ -33,19 +34,30 @@ interface HomeSliderProps {
 }
 
 export default function HomeSlider({ featuredProjects = [] }: HomeSliderProps) {
+    const { t } = useTranslation();
     const [currentSlide, setCurrentSlide] = useState(0);
-    const [slides, setSlides] = useState(heroSlides);
 
+    const translatedSlides = heroSlidesKeys.map(slide => ({
+        image: slide.image,
+        title: t(slide.titleKey, { defaultValue: slide.titleKey }),
+        subtitle: t(slide.subtitleKey, { defaultValue: slide.subtitleKey })
+    }));
+
+    const [slides, setSlides] = useState(translatedSlides);
+
+    // Update slides when translation changes or fetched projects arrive
     useEffect(() => {
         if (featuredProjects.length > 0) {
             const dynamicSlides = featuredProjects.map((project, index) => ({
                 image: project.image,
-                title: heroSlides[index]?.title || project.title,
-                subtitle: heroSlides[index]?.subtitle || project.subtitle,
+                title: translatedSlides[index]?.title || project.title,
+                subtitle: translatedSlides[index]?.subtitle || project.subtitle,
             }));
             setSlides(dynamicSlides);
+        } else {
+            setSlides(translatedSlides);
         }
-    }, [featuredProjects]);
+    }, [featuredProjects, t]);
 
     // Auto-slide
     useEffect(() => {
@@ -98,7 +110,7 @@ export default function HomeSlider({ featuredProjects = [] }: HomeSliderProps) {
                                     href="/projeler/kategori/tum-projeler"
                                     className="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark px-8 py-4 text-white font-semibold rounded-sm transition-colors"
                                 >
-                                    Projelerimiz <ChevronRight size={20} />
+                                    {t("home.slider.explore")} <ChevronRight size={20} />
                                 </Link>
                             </div>
                         </div>

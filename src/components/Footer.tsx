@@ -1,9 +1,13 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { Mail, Phone, MapPin, Instagram, Linkedin, Facebook } from "lucide-react";
-
+import { useTranslation } from "react-i18next";
 
 export default function Footer() {
+    const { t } = useTranslation();
+
     return (
         <footer className="w-full bg-primary pt-16 pb-8 text-white">
             <div className="layout-container">
@@ -26,7 +30,7 @@ export default function Footer() {
                             </div>
                         </div>
                         <p className="text-white/70 text-sm leading-relaxed">
-                            Ankara merkezli mühendislik firması. 2014'ten beri altyapı, üstyapı ve kamu projelerinde güvenilir çözüm ortağınız.
+                            {t("footer.aboutText")}
                         </p>
                         {/* Social Media Links */}
                         <div className="flex items-center gap-4">
@@ -44,11 +48,11 @@ export default function Footer() {
 
                     {/* Quick Links */}
                     <div className="flex flex-col gap-4">
-                        <p className="text-sm font-bold text-white mb-2">Kurumsal</p>
+                        <p className="text-sm font-bold text-white mb-2">{t("footer.quickLinks")}</p>
                         <nav className="flex flex-col gap-3">
-                            <Link href="/hakkimizda" className="text-sm text-gray-100 hover:text-white transition-colors">Hakkımızda</Link>
-                            <Link href="/sektorler" className="text-sm text-gray-100 hover:text-white transition-colors">Sektörler</Link>
-                            <Link href="/iletisim" className="text-sm text-gray-100 hover:text-white transition-colors">İletişim</Link>
+                            <Link href="/hakkimizda" className="text-sm text-gray-100 hover:text-white transition-colors">{t("nav.about")}</Link>
+                            <Link href="/sektorler" className="text-sm text-gray-100 hover:text-white transition-colors">{t("nav.services")}</Link>
+                            <Link href="/iletisim" className="text-sm text-gray-100 hover:text-white transition-colors">{t("nav.contact")}</Link>
                             <Link href="/ankara-teknik-koordinasyon" className="text-sm text-gray-100 hover:text-white transition-colors">Ankara Koordinasyon</Link>
                         </nav>
                     </div>
@@ -66,7 +70,7 @@ export default function Footer() {
 
                     {/* Contact */}
                     <div className="flex flex-col gap-4">
-                        <p className="text-sm font-bold text-white mb-2">İletişim</p>
+                        <p className="text-sm font-bold text-white mb-2">{t("footer.contact")}</p>
                         <div className="flex flex-col gap-3">
                             <a href="mailto:karaogluuniversal@gmail.com" className="flex items-center gap-3 text-sm text-gray-100 hover:text-white transition-colors">
                                 <Mail size={16} /> karaogluuniversal@gmail.com
@@ -96,14 +100,14 @@ export default function Footer() {
                 <div className="border-t border-white/20 pt-8">
                     <div className="flex flex-wrap justify-center gap-6 mb-4">
                         <Link href="/kvkk" className="text-sm text-white/60 hover:text-white transition-colors">KVKK Aydınlatma Metni</Link>
-                        <Link href="/gizlilik" className="text-sm text-white/60 hover:text-white transition-colors">Gizlilik Politikası</Link>
-                        <Link href="/iletisim" className="text-sm text-white/60 hover:text-white transition-colors">İletişim</Link>
+                        <Link href="/gizlilik" className="text-sm text-white/60 hover:text-white transition-colors">{t("footer.privacy")}</Link>
+                        <Link href="/iletisim" className="text-sm text-white/60 hover:text-white transition-colors">{t("nav.contact")}</Link>
                     </div>
                     <p className="text-white/70 text-sm text-center mb-2">
                         <strong>Ankara Mühendislik Firması</strong> – Next Level, Kızılırmak Mah. Dumlupınar Bulvarı No: 3C1/160, Kat: 29, 06530 Çankaya/Ankara
                     </p>
                     <p className="text-white/50 text-sm text-center">
-                        © {new Date().getFullYear()} Karaoğlu Universal Mühendislik Ltd. Şti. Tüm hakları saklıdır.
+                        © {new Date().getFullYear()} Karaoğlu Universal Mühendislik Ltd. Şti. {t("footer.rights")}
                     </p>
                 </div>
             </div>

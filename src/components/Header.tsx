@@ -3,14 +3,16 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X, Phone, Mail, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslation } from "react-i18next";
+import LanguageSwitcher from "./LanguageSwitcher";
 
-const navLinks = [
+const getNavLinks = (t: any) => [
     {
         href: "/hakkimizda",
-        label: "Hakkımızda",
+        label: t("nav.about"),
         submenu: [
             { href: "/hakkimizda", label: "Kurumsal" },
             { href: "/hakkimizda#baskanin-mesaji", label: "Başkanın Mesajı" },
@@ -30,7 +32,7 @@ const navLinks = [
     },
     {
         href: "/projeler",
-        label: "Projeler",
+        label: t("nav.projects"),
         submenu: [
             { href: "/projeler", label: "Tüm Projeler" },
             { href: "/projeler?category=tamamlandi", label: "Tamamlanan Projeler" },
@@ -40,18 +42,30 @@ const navLinks = [
     { href: "/sosyal-sorumluluk", label: "Sosyal Sorumluluk" },
     {
         href: "/blog",
-        label: "Basın Odası",
+        label: t("nav.blog"),
         submenu: [
             { href: "/haberler", label: "Haberler" },
             { href: "/blog", label: "Blog" },
         ]
     },
-    { href: "/iletisim", label: "İletişim" },
+    { href: "/iletisim", label: t("nav.contact") },
 ];
 
 export default function Header() {
+    const { t } = useTranslation();
     const [isOpen, setIsOpen] = useState(false);
     const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
+    const navLinks = getNavLinks(t);
+
+    if (!mounted) {
+        return <header className="sticky top-0 z-50 w-full h-24 bg-white border-b border-gray-100"></header>;
+    }
 
     return (
         <header className="sticky top-0 z-50 w-full">
@@ -144,6 +158,7 @@ export default function Header() {
                                     )}
                                 </div>
                             ))}
+                            <LanguageSwitcher />
                         </nav>
 
                         {/* Mobile Menu Button */}
@@ -174,7 +189,7 @@ export default function Header() {
                                 onClick={() => setIsOpen(false)}
                                 className="py-3 text-sm font-bold text-primary border-b border-gray-100"
                             >
-                                Ana Sayfa
+                                {t("nav.home")}
                             </Link>
                             {navLinks.map((link) => (
                                 <Link

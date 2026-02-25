@@ -5,7 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingHomeButton from "@/components/FloatingHomeButton";
 import WhatsAppWidget from "@/components/WhatsAppWidget";
-import RamadanBanner from "@/components/RamadanBanner";
+import I18nProvider from "@/components/I18nProvider";
 
 const roboto = Roboto({
   variable: "--font-roboto",
@@ -230,14 +230,15 @@ export default function RootLayout({
       <body
         className={`${roboto.variable} font-sans antialiased selection:bg-primary/30`}
       >
-        <RamadanBanner />
-        <Header />
-        <main className="min-h-screen">
-          {children}
-        </main>
-        <FloatingHomeButton />
-        <WhatsAppWidget />
-        <Footer />
+        <I18nProvider>
+          <Header />
+          <main className="min-h-screen">
+            {children}
+          </main>
+          <FloatingHomeButton />
+          <WhatsAppWidget />
+          <Footer />
+        </I18nProvider>
       </body>
     </html>
   );

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { ArrowRight, MapPin } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 interface FeaturedProject {
     id: string;
@@ -19,6 +20,8 @@ interface HomeProjectsProps {
 }
 
 export default function HomeProjects({ projects }: HomeProjectsProps) {
+    const { t } = useTranslation();
+
     // Fallback if no projects in DB
     const displayProjects = projects.length > 0 ? projects.slice(0, 6) : [
         { id: "1", title: "VAN BEDESTEN ÇARŞISI VE ÇEVRE DÜZENLEME", year: "2024", status: "Tamamlandı", location: "VAN", description: "VAN YATIRIM İZLEME VE KOORDİNASYON BAŞKANLIĞI", category: "Kamu" },
@@ -31,16 +34,16 @@ export default function HomeProjects({ projects }: HomeProjectsProps) {
             <div className="layout-container">
                 <div className="flex items-center justify-between mb-12">
                     <div>
-                        <h2 className="text-primary text-sm font-semibold uppercase tracking-wider mb-4">Kamu Referansları</h2>
-                        <h3 className="text-4xl font-bold text-foreground">TAMAMLANAN PROJELER</h3>
+                        <h2 className="text-primary text-sm font-semibold uppercase tracking-wider mb-4">{t("home.projects.subtitle")}</h2>
+                        <h3 className="text-4xl font-bold text-foreground">{t("home.projects.title")}</h3>
                     </div>
                     <div className="hidden md:flex gap-4">
                         <Link
                             href="/projeler/kategori/tamamlanan-kamu-projeleri"
                             className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 font-semibold hover:bg-primary-dark transition-colors"
-                            aria-label="Tüm projelerimizi inceleyin"
+                            aria-label={t("home.projects.viewAll")}
                         >
-                            Tüm Projeler <ArrowRight size={18} />
+                            {t("home.projects.viewAll")} <ArrowRight size={18} />
                         </Link>
                     </div>
                 </div>
@@ -54,7 +57,7 @@ export default function HomeProjects({ projects }: HomeProjectsProps) {
                                     ? 'bg-green-100 text-green-700'
                                     : 'bg-yellow-100 text-yellow-700'
                                     }`}>
-                                    {project.status}
+                                    {project.status === 'Tamamlandı' ? t("home.projects.status.completed") : t("home.projects.status.ongoing")}
                                 </span>
                                 <span className="text-sm font-bold text-primary">{project.year}</span>
                             </div>
@@ -73,7 +76,7 @@ export default function HomeProjects({ projects }: HomeProjectsProps) {
                         href="/projeler/kategori/tamamlanan-kamu-projeleri"
                         className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 font-semibold"
                     >
-                        Tüm Projeleri Gör <ArrowRight size={18} />
+                        {t("home.projects.viewAllMobile")} <ArrowRight size={18} />
                     </Link>
                 </div>
             </div>

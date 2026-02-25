@@ -1,0 +1,93 @@
+{
+  "nav": {
+    "home": "Ana Sayfa",
+    "about": "Hakkımızda",
+    "services": "Hizmetler",
+    "projects": "Projeler",
+    "blog": "Blog",
+    "contact": "İletişim"
+  },
+  "footer": {
+    "about": "Hakkımızda",
+    "aboutText": "Karaoğlu Universal Mühendislik, inşaat, mühendislik ve mekanik sistemler alanında çeyrek asırlık tecrübesiyle sektörde öncü projelere imza atmaktadır.",
+    "quickLinks": "Hızlı Bağlantılar",
+    "contact": "İletişim",
+    "rights": "Tüm Hakları Saklıdır.",
+    "privacy": "Gizlilik Politikası",
+    "terms": "Kullanım Şartları"
+  },
+  "home": {
+    "slider": {
+      "explore": "Projeyi İncele",
+      "subtitle": "Bölgenin Güçlü Altyapı ve Üstyapı Çözüm Ortağı",
+      "title": "Devlet yatırımlarını ciddiyetle inşa ediyoruz",
+      "slide2_title": "64+ Tamamlanan Kamu Projesi",
+      "slide2_subtitle": "Ankara'dan Türkiye'ye; 10+ yıllık deneyim, güçlü makine parkı ve finansal yeterlilik",
+      "slide3_title": "Resmi Kurumların Çözüm Ortağı",
+      "slide3_subtitle": "İpekyolu Sahil Bandı'ndan TOKİ Konutlarına kadar imzamız var"
+    },
+    "projects": {
+      "subtitle": "Kamu Referansları",
+      "title": "TAMAMLANAN PROJELER",
+      "viewAll": "Tüm Projeler",
+      "viewAllMobile": "Tüm Projeleri Gör",
+      "status": {
+        "completed": "Tamamlandı",
+        "ongoing": "Devam Ediyor"
+      }
+    },
+    "about": {
+      "subtitle": "Neden Biz?",
+      "title": "VAN VE ANKARA'DA<br />KAMU PROJELERİNİN<br />GÜVENİLİR ÇÖZÜM ORTAĞI",
+      "desc1": "<strong>Karaoğlu Universal Mühendislik</strong>, Ankara ve Van merkezli ofisleriyle Türkiye genelinde kamu taahhüt işleri yürütmektedir.",
+      "desc2": "Şirketimiz bugüne kadar 64 projeyi başarıyla tamamlamış olup, bu projelerin büyük bölümü kamu kurumlarına yönelik yapım ve mühendislik işlerinden oluşmaktadır.",
+      "desc3": "İnşaat, altyapı ve üstyapı projelerinde \"devlet ciddiyeti\" ile hareket ediyor; Hastane, Okul, TOKİ konutları ve Yol projelerini zamanında teslim ediyoruz.",
+      "badges": {
+        "projects": "Tamamlanan Kamu Projesi",
+        "experience": "Yıllık Sektör Deneyimi",
+        "cities": "İl Genelinde Proje",
+        "delivery": "Zamanında Teslim"
+      },
+      "buttons": {
+        "completed": "Tamamlanan Projeler",
+        "qualifications": "Teknik Yeterlilikler"
+      }
+    },
+    "servicesTitle": "HİZMET ALANLARIMIZ",
+    "services": {
+      "public": "<strong>Kamu Binaları:</strong> Hastane, Okul, Hükümet Konağı",
+      "infra": "<strong>Altyapı Projeleri:</strong> Kanalizasyon, İsale Hattı, Yol",
+      "housing": "<strong>TOKİ Konutları:</strong> Van ve Çevre İllerde Toplu Konut",
+      "reinforcement": "<strong>Güçlendirme:</strong> Deprem Güçlendirme ve Onarım",
+      "landscaping": "<strong>Çevre Düzenleme:</strong> Millet Bahçeleri ve Peyzaj"
+    },
+    "slogan": {
+      "text": "\"Kamu projelerinde güvenilirlik, teknik yeterlilik ve zamanında teslim garantisi.\"",
+      "author": "— Karaoğlu Universal Mühendislik"
+    },
+    "quickLinks": {
+      "title": "Hızlı Erişim",
+      "blog": {
+        "title": "Blog",
+        "desc": "Mühendislik yazıları"
+      },
+      "news": {
+        "title": "Haberler",
+        "desc": "Güncel haberler"
+      },
+      "projects": {
+        "title": "Projeler",
+        "desc": "Tamamlanan işler"
+      },
+      "faq": {
+        "title": "SSS",
+        "desc": "Sıkça sorulan sorular"
+      }
+    },
+    "cta": {
+      "title": "İLETİŞİM",
+      "desc": "Kamu projeleri ve teknik müşavirlik hizmetleri için Ankara veya Van ofisimizle iletişime geçebilirsiniz.",
+      "button": "Bize Ulaşın"
+    }
+  }
+}

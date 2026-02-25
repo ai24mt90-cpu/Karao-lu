@@ -1,0 +1,93 @@
+{
+    "nav": {
+        "home": "Home",
+        "about": "About Us",
+        "services": "Services",
+        "projects": "Projects",
+        "blog": "Blog",
+        "contact": "Contact"
+    },
+    "footer": {
+        "about": "About Us",
+        "aboutText": "Karaoğlu Universal Mühendislik has been undertaking pioneering projects in the construction, engineering, and mechanical systems sectors with its quarter-century of experience.",
+        "quickLinks": "Quick Links",
+        "contact": "Contact",
+        "rights": "All Rights Reserved.",
+        "privacy": "Privacy Policy",
+        "terms": "Terms of Use"
+    },
+    "home": {
+        "slider": {
+            "explore": "Explore Project",
+            "subtitle": "The Region's Strong Infrastructure and Superstructure Solution Partner",
+            "title": "We Build Government Investments with Diligence",
+            "slide2_title": "64+ Completed Public Projects",
+            "slide2_subtitle": "From Ankara to Turkey; 10+ years of experience, strong machinery park and financial adequacy",
+            "slide3_title": "Solution Partner of Official Institutions",
+            "slide3_subtitle": "We have our signature on projects from the Silk Road Coastal Band to TOKİ Housing"
+        },
+        "projects": {
+            "subtitle": "Public References",
+            "title": "COMPLETED PROJECTS",
+            "viewAll": "All Projects",
+            "viewAllMobile": "View All Projects",
+            "status": {
+                "completed": "Completed",
+                "ongoing": "Ongoing"
+            }
+        }
+    },
+    "about": {
+        "subtitle": "Why Us?",
+        "title": "THE RELIABLE SOLUTION PARTNER FOR<br />PUBLIC PROJECTS IN<br />VAN AND ANKARA",
+        "desc1": "<strong>Karaoğlu Universal Mühendislik</strong> carries out public contracting works throughout Turkey with its offices based in Ankara and Van.",
+        "desc2": "Our company has successfully completed 64 projects to date, most of which consist of construction and engineering works for public institutions.",
+        "desc3": "We act with 'state seriousness' in construction, infrastructure and superstructure projects; delivering Hospital, School, TOKİ housing and Road projects on time.",
+        "badges": {
+            "projects": "Completed Public Projects",
+            "experience": "Years Sector Experience",
+            "cities": "Projects Province-wide",
+            "delivery": "On Time Delivery"
+        },
+        "buttons": {
+            "completed": "Completed Projects",
+            "qualifications": "Technical Qualifications"
+        }
+    },
+    "servicesTitle": "OUR SERVICE AREAS",
+    "services": {
+        "public": "<strong>Public Buildings:</strong> Hospital, School, Government House",
+        "infra": "<strong>Infrastructure Projects:</strong> Sewerage, Transmission Line, Road",
+        "housing": "<strong>TOKİ Housing:</strong> Mass Housing in Van and Surrounding Provinces",
+        "reinforcement": "<strong>Reinforcement:</strong> Earthquake Reinforcement and Repair",
+        "landscaping": "<strong>Landscaping:</strong> National Gardens and Landscaping"
+    },
+    "slogan": {
+        "text": "\"Reliability, technical competence and on-time delivery guarantee in public projects.\"",
+        "author": "— Karaoğlu Universal Mühendislik"
+    },
+    "quickLinks": {
+        "title": "Quick Links",
+        "blog": {
+            "title": "Blog",
+            "desc": "Engineering articles"
+        },
+        "news": {
+            "title": "News",
+            "desc": "Current news"
+        },
+        "projects": {
+            "title": "Projects",
+            "desc": "Completed works"
+        },
+        "faq": {
+            "title": "FAQ",
+            "desc": "Frequently asked questions"
+        }
+    },
+    "cta": {
+        "title": "CONTACT",
+        "desc": "You can contact our Ankara or Van office for public projects and technical consultancy services.",
+        "button": "Contact Us"
+    }
+}
