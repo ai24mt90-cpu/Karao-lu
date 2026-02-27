@@ -9,7 +9,7 @@ import { useTranslation } from "react-i18next";
 // Hero Slider Data Keys
 const heroSlidesKeys = [
     {
-        image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop",
+        image: "/tusba-kaymakamligi.svg",
         titleKey: "home.slider.title",
         subtitleKey: "home.slider.subtitle",
     },
