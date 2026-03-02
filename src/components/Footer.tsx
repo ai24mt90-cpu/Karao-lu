@@ -26,7 +26,7 @@ export default function Footer() {
                             </div>
                             <div className="flex flex-col text-left">
                                 <span className="text-xl font-bold tracking-tight leading-none">Karaoğlu</span>
-                                <span className="text-[10px] font-medium uppercase tracking-[0.15em] text-white/70">Universal Mühendislik</span>
+                                <span className="text-[10px] font-medium uppercase tracking-[0.15em] text-white/70">{t("footer.companySub")}</span>
                             </div>
                         </div>
                         <p className="text-white/70 text-sm leading-relaxed">
@@ -59,7 +59,7 @@ export default function Footer() {
 
                     {/* Projects */}
                     <div className="flex flex-col gap-4">
-                        <p className="text-sm font-bold text-white mb-2">İçerik</p>
+                        <p className="text-sm font-bold text-white mb-2">{t("footer.contentLabel")}</p>
                         <nav className="flex flex-col gap-3">
                             <Link href="/blog" className="text-sm text-gray-100 hover:text-white transition-colors">Blog</Link>
                             <Link href="/haberler" className="text-sm text-gray-100 hover:text-white transition-colors">Haberler</Link>
@@ -81,14 +81,14 @@ export default function Footer() {
                             <div className="flex items-start gap-3 text-sm text-gray-100">
                                 <MapPin size={16} className="mt-0.5 flex-shrink-0" />
                                 <div>
-                                    <span className="block font-semibold text-white mb-0.5">Ankara Merkez:</span>
+                                    <span className="block font-semibold text-white mb-0.5">{t("footer.ankaraHQ")}</span>
                                     <span>Next Level, Kızılırmak Mah. Dumlupınar Bulvarı No: 3C1/160, Kat: 29, 06530 Çankaya/Ankara</span>
                                 </div>
                             </div>
                             <div className="flex items-start gap-3 text-sm text-gray-100">
                                 <MapPin size={16} className="mt-0.5 flex-shrink-0" />
                                 <div>
-                                    <span className="block font-semibold text-white mb-0.5">Van Şube:</span>
+                                    <span className="block font-semibold text-white mb-0.5">{t("footer.vanBranch")}</span>
                                     <span>Hafiziye Mah. Umman 1. Sokak No: 38, Kat: 3, D: 16, 65130 İpekyolu/Van</span>
                                 </div>
                             </div>
@@ -99,12 +99,12 @@ export default function Footer() {
                 {/* Legal Links */}
                 <div className="border-t border-white/20 pt-8">
                     <div className="flex flex-wrap justify-center gap-6 mb-4">
-                        <Link href="/kvkk" className="text-sm text-white/60 hover:text-white transition-colors">KVKK Aydınlatma Metni</Link>
+                        <Link href="/kvkk" className="text-sm text-white/60 hover:text-white transition-colors">{t("footer.kvkkLabel")}</Link>
                         <Link href="/gizlilik" className="text-sm text-white/60 hover:text-white transition-colors">{t("footer.privacy")}</Link>
                         <Link href="/iletisim" className="text-sm text-white/60 hover:text-white transition-colors">{t("nav.contact")}</Link>
                     </div>
                     <p className="text-white/70 text-sm text-center mb-2">
-                        <strong>Ankara Mühendislik Firması</strong> – Next Level, Kızılırmak Mah. Dumlupınar Bulvarı No: 3C1/160, Kat: 29, 06530 Çankaya/Ankara
+                        <strong>{t("footer.engineeringFirm")}</strong> – Next Level, Kızılırmak Mah. Dumlupınar Bulvarı No: 3C1/160, Kat: 29, 06530 Çankaya/Ankara
                     </p>
                     <p className="text-white/50 text-sm text-center">
                         © {new Date().getFullYear()} Karaoğlu Universal Mühendislik Ltd. Şti. {t("footer.rights")}

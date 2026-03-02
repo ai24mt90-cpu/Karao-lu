@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import { useState, useEffect } from "react";
 
 export default function LanguageSwitcher() {
-    const { i18n } = useTranslation();
+    const { t, i18n } = useTranslation();
     const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
@@ -35,13 +35,13 @@ export default function LanguageSwitcher() {
                         onClick={() => changeLanguage("tr")}
                         className={`w-full px-4 py-2 text-sm text-left hover:bg-gray-50 transition-colors ${currentLng === 'tr' ? 'font-bold text-primary' : 'text-gray-700'}`}
                     >
-                        Türkçe
+                        {t("language.TR", "Türkçe")}
                     </button>
                     <button
                         onClick={() => changeLanguage("en")}
                         className={`w-full px-4 py-2 text-sm text-left hover:bg-gray-50 transition-colors ${currentLng === 'en' ? 'font-bold text-primary' : 'text-gray-700'}`}
                     >
-                        English
+                        {t("language.EN", "English")}
                     </button>
                 </div>
             </div>

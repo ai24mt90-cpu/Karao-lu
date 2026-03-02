@@ -1,8 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 export default function GizlilikPage() {
+    const { t } = useTranslation();
     return (
         <div className="flex flex-col bg-background">
             {/* Hero Banner */}
@@ -13,9 +15,9 @@ export default function GizlilikPage() {
                         animate={{ opacity: 1, y: 0 }}
                         className="text-4xl md:text-5xl font-bold"
                     >
-                        Gizlilik Politikası
+                        {t("privacyPage.heroTitle")}
                     </motion.h1>
-                    <p className="mt-4 text-white/80">Veri güvenliğiniz bizim için önemlidir</p>
+                    <p className="mt-4 text-white/80">{t("privacyPage.heroSubtitle")}</p>
                 </div>
             </section>
 
@@ -23,54 +25,54 @@ export default function GizlilikPage() {
             <section className="py-16">
                 <div className="layout-container max-w-4xl">
                     <div className="prose prose-lg max-w-none">
-                        <h2 className="text-2xl font-bold text-foreground mb-6">Giriş</h2>
+                        <h2 className="text-2xl font-bold text-foreground mb-6">{t("privacyPage.introTitle")}</h2>
                         <p className="text-text-secondary mb-6">
-                            Karaoğlu Universal Mühendislik Ltd. Şti. olarak, web sitemizi ziyaret eden kullanıcılarımızın gizliliğine saygı duyuyor ve kişisel bilgilerinizi korumayı taahhüt ediyoruz. Bu Gizlilik Politikası, hangi bilgileri topladığımızı, nasıl kullandığımızı ve koruduğumuzu açıklamaktadır.
+                            {t("privacyPage.introText")}
                         </p>
 
-                        <h2 className="text-2xl font-bold text-foreground mb-6 mt-10">Toplanan Bilgiler</h2>
-                        <p className="text-text-secondary mb-4">Web sitemiz üzerinden aşağıdaki bilgileri toplayabiliriz:</p>
+                        <h2 className="text-2xl font-bold text-foreground mb-6 mt-10">{t("privacyPage.collectedDataTitle")}</h2>
+                        <p className="text-text-secondary mb-4">{t("privacyPage.collectedDataIntro")}</p>
                         <ul className="list-disc pl-6 text-text-secondary mb-6">
-                            <li>İletişim formları aracılığıyla gönderilen ad, e-posta ve telefon bilgileri</li>
-                            <li>Web sitesi kullanım verileri (çerezler aracılığıyla)</li>
-                            <li>IP adresi ve tarayıcı bilgileri</li>
+                            <li>{t("privacyPage.collectedDataList.i1")}</li>
+                            <li>{t("privacyPage.collectedDataList.i2")}</li>
+                            <li>{t("privacyPage.collectedDataList.i3")}</li>
                         </ul>
 
-                        <h2 className="text-2xl font-bold text-foreground mb-6 mt-10">Bilgilerin Kullanımı</h2>
-                        <p className="text-text-secondary mb-4">Topladığımız bilgiler aşağıdaki amaçlarla kullanılmaktadır:</p>
+                        <h2 className="text-2xl font-bold text-foreground mb-6 mt-10">{t("privacyPage.dataUsageTitle")}</h2>
+                        <p className="text-text-secondary mb-4">{t("privacyPage.dataUsageIntro")}</p>
                         <ul className="list-disc pl-6 text-text-secondary mb-6">
-                            <li>İletişim taleplerinize yanıt vermek</li>
-                            <li>Hizmetlerimiz hakkında bilgi sağlamak</li>
-                            <li>Web sitemizi geliştirmek</li>
-                            <li>Yasal yükümlülüklerimizi yerine getirmek</li>
+                            <li>{t("privacyPage.dataUsageList.i1")}</li>
+                            <li>{t("privacyPage.dataUsageList.i2")}</li>
+                            <li>{t("privacyPage.dataUsageList.i3")}</li>
+                            <li>{t("privacyPage.dataUsageList.i4")}</li>
                         </ul>
 
-                        <h2 className="text-2xl font-bold text-foreground mb-6 mt-10">Çerez Kullanımı</h2>
+                        <h2 className="text-2xl font-bold text-foreground mb-6 mt-10">{t("privacyPage.cookiesTitle")}</h2>
                         <p className="text-text-secondary mb-6">
-                            Web sitemiz, kullanıcı deneyimini iyileştirmek amacıyla çerezler kullanmaktadır. Çerezler, tarayıcınız tarafından cihazınıza kaydedilen küçük metin dosyalarıdır. Tarayıcı ayarlarınızdan çerezleri devre dışı bırakabilirsiniz.
+                            {t("privacyPage.cookiesText")}
                         </p>
 
-                        <h2 className="text-2xl font-bold text-foreground mb-6 mt-10">Veri Güvenliği</h2>
+                        <h2 className="text-2xl font-bold text-foreground mb-6 mt-10">{t("privacyPage.securityTitle")}</h2>
                         <p className="text-text-secondary mb-6">
-                            Kişisel bilgilerinizi korumak için teknik ve idari güvenlik önlemleri uygulamaktayız. Verileriniz yetkisiz erişime karşı korunmaktadır.
+                            {t("privacyPage.securityText")}
                         </p>
 
-                        <h2 className="text-2xl font-bold text-foreground mb-6 mt-10">Üçüncü Taraflarla Paylaşım</h2>
+                        <h2 className="text-2xl font-bold text-foreground mb-6 mt-10">{t("privacyPage.sharingTitle")}</h2>
                         <p className="text-text-secondary mb-6">
-                            Kişisel bilgileriniz, yasal zorunluluklar dışında üçüncü taraflarla paylaşılmamaktadır. Verileriniz satılmaz veya kiralanmaz.
+                            {t("privacyPage.sharingText")}
                         </p>
 
-                        <h2 className="text-2xl font-bold text-foreground mb-6 mt-10">İletişim</h2>
+                        <h2 className="text-2xl font-bold text-foreground mb-6 mt-10">{t("privacyPage.contactTitle")}</h2>
                         <p className="text-text-secondary mb-6">
-                            Gizlilik politikamız hakkında sorularınız için bizimle iletişime geçebilirsiniz:<br /><br />
-                            <strong>E-posta:</strong> karaogluuniversal@gmail.com<br />
-                            <strong>Telefon:</strong> 0432 216 56 36
+                            {t("privacyPage.contactText")}<br /><br />
+                            <strong>{t("privacyPage.email")}</strong> karaogluuniversal@gmail.com<br />
+                            <strong>{t("privacyPage.phone")}</strong> 0432 216 56 36
                         </p>
 
                         <div className="mt-10 p-6 bg-surface-secondary rounded-lg">
                             <p className="text-sm text-text-secondary">
-                                <strong>Son Güncelleme:</strong> Ocak 2026<br />
-                                Bu gizlilik politikası gerektiğinde güncellenebilir.
+                                <strong>{t("privacyPage.lastUpdateLabel")}</strong> {t("privacyPage.lastUpdateDate")}<br />
+                                {t("privacyPage.updateNote")}
                             </p>
                         </div>
                     </div>

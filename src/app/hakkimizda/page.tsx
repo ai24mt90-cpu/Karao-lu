@@ -5,26 +5,30 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 
-const timeline = [
-    { year: "2014", title: "Kuruluş", description: "Van'da küçük bir ofiste temellerimiz atıldı." },
-    { year: "2016", title: "İlk Büyük Proje", description: "Kamu sektöründe ilk büyük projeyi tamamladık." },
-    { year: "2018", title: "Büyüme", description: "Ekibimizi ve proje portföyümüzü genişlettik." },
-    { year: "2020", title: "Sosyal Sorumluluk", description: "Eğitim ve spor alanlarında sosyal sorumluluk projelerine başladık." },
-    { year: "2024", title: "Liderlik", description: "Bölgede lider mühendislik firması konumuna ulaştık." },
-];
-
-const team = [
-    { name: "Reşat Kara", role: "Başkan Vekili" },
-    { name: "Mazlum Kara", role: "Yönetim Kurulu Üyesi" },
-    { name: "Av. Doğan Tunal", role: "Hukuk Müşaviri" },
-    { name: "Yusuf Kapan", role: "İnşaat Mühendisi, Yönetim Kurulu Üyesi" },
-    { name: "Metin Öner", role: "Mali Müşavir, Yönetim Kurulu Üyesi" },
-    { name: "Mert Miroğlu", role: "Yönetim Kurulu Üyesi" },
-    { name: "Çağrı Koç", role: "İktisatçı, Yönetim Kurulu Üyesi" },
-];
+import Link from "next/link";
+import { useTranslation } from "react-i18next";
 
 export default function AboutPage() {
+    const { t } = useTranslation();
     const [showTeam, setShowTeam] = useState(false);
+
+    const timeline = [
+        { year: "2014", title: t("aboutPage.timeline.2014.title", "Kuruluş"), description: t("aboutPage.timeline.2014.desc", "Van'da küçük bir ofiste temellerimiz atıldı.") },
+        { year: "2016", title: t("aboutPage.timeline.2016.title", "İlk Büyük Proje"), description: t("aboutPage.timeline.2016.desc", "Kamu sektöründe ilk büyük projeyi tamamladık.") },
+        { year: "2018", title: t("aboutPage.timeline.2018.title", "Büyüme"), description: t("aboutPage.timeline.2018.desc", "Ekibimizi ve proje portföyümüzü genişlettik.") },
+        { year: "2020", title: t("aboutPage.timeline.2020.title", "Sosyal Sorumluluk"), description: t("aboutPage.timeline.2020.desc", "Eğitim ve spor alanlarında sosyal sorumluluk projelerine başladık.") },
+        { year: "2024", title: t("aboutPage.timeline.2024.title", "Liderlik"), description: t("aboutPage.timeline.2024.desc", "Bölgede lider mühendislik firması konumuna ulaştık.") },
+    ];
+
+    const team = [
+        { name: "Reşat Kara", role: t("aboutPage.team.roles.v_president", "Başkan Vekili") },
+        { name: "Mazlum Kara", role: t("aboutPage.team.roles.member", "Yönetim Kurulu Üyesi") },
+        { name: "Av. Doğan Tunal", role: t("aboutPage.team.roles.legal", "Hukuk Müşaviri") },
+        { name: "Yusuf Kapan", role: t("aboutPage.team.roles.engineer", "İnşaat Mühendisi, Yönetim Kurulu Üyesi") },
+        { name: "Metin Öner", role: t("aboutPage.team.roles.financial", "Mali Müşavir, Yönetim Kurulu Üyesi") },
+        { name: "Mert Miroğlu", role: t("aboutPage.team.roles.member", "Yönetim Kurulu Üyesi") },
+        { name: "Çağrı Koç", role: t("aboutPage.team.roles.economist", "İktisatçı, Yönetim Kurulu Üyesi") },
+    ];
 
     return (
         <div className="flex flex-col bg-background">
@@ -39,13 +43,14 @@ export default function AboutPage() {
                 <div className="absolute inset-0 bg-primary/80" />
                 <div className="absolute inset-0 flex items-center">
                     <div className="layout-container">
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                        >
-                            <h1 className="text-5xl font-bold text-white mb-4">HAKKIMIZDA</h1>
-                            <p className="text-white/80 text-lg">Karaoğlu Universal Mühendislik</p>
-                        </motion.div>
+                        <div className="text-center text-white">
+                            <h1 className="text-4xl md:text-5xl font-bold mb-4">{t("aboutPage.heroTitle")}</h1>
+                            <div className="flex items-center justify-center gap-2 text-sm text-white/80">
+                                <Link href="/" className="hover:text-white transition-colors">{t("aboutPage.breadcrumbHome")}</Link>
+                                <span>/</span>
+                                <span className="text-white">{t("aboutPage.breadcrumbAbout")}</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -55,30 +60,30 @@ export default function AboutPage() {
                 <div className="layout-container">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                         <div>
-                            <h2 className="text-primary text-sm font-semibold uppercase tracking-wider mb-4">Kurumsal</h2>
-                            <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-6">KAMU İHALE MEVZUATINA HAKİM,<br />TEKNİK KAPASİTESİ YÜKSEK MÜHENDİSLİK</h3>
+                            <h2 className="text-primary text-sm font-semibold uppercase tracking-wider mb-4">{t("aboutPage.heroSubtitle")}</h2>
+                            <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-6" dangerouslySetInnerHTML={{ __html: t("aboutPage.title") }}></h3>
                             <p className="text-text-secondary leading-relaxed mb-6">
-                                <strong>Karaoğlu Universal Mühendislik</strong> olarak, inşaat sektöründe &apos;yap-sat&apos; değil, &apos;taahhüt ve proje yönetimi&apos; odaklı çalışıyoruz.
-                                İpekyolu/Van merkezli firmamız, bugüne kadar Van Yatırım İzleme (YİKOB), Çevre ve Şehircilik Bakanlığı ve Yerel Yönetimler başta olmak üzere birçok resmi kurumun çözüm ortağı olmuştur.
+                                <span dangerouslySetInnerHTML={{ __html: t("aboutPage.desc1") }}></span><br />
+                                <span>{t("aboutPage.desc2")}</span>
                             </p>
 
                             {/* Farkımız Listesi */}
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
                                 <div className="bg-surface-secondary p-4 border-l-4 border-primary">
-                                    <h4 className="font-bold text-foreground text-sm mb-1">64+ Tamamlanan Kamu Projesi</h4>
-                                    <p className="text-xs text-text-secondary">Kesin kabul süreçlerini sorunsuz yönetme deneyimi.</p>
+                                    <h4 className="font-bold text-foreground text-sm mb-1">{t("aboutPage.differences.legal.title")}</h4>
+                                    <p className="text-xs text-text-secondary">{t("aboutPage.differences.legal.desc")}</p>
                                 </div>
                                 <div className="bg-surface-secondary p-4 border-l-4 border-primary">
-                                    <h4 className="font-bold text-foreground text-sm mb-1">Finansal Güç</h4>
-                                    <p className="text-xs text-text-secondary">Teminat ve hakediş süreçlerinde kesintisiz iş akışı.</p>
+                                    <h4 className="font-bold text-foreground text-sm mb-1">{t("aboutPage.differences.financial.title")}</h4>
+                                    <p className="text-xs text-text-secondary">{t("aboutPage.differences.financial.desc")}</p>
                                 </div>
                                 <div className="bg-surface-secondary p-4 border-l-4 border-primary">
-                                    <h4 className="font-bold text-foreground text-sm mb-1">Teknik Kadro</h4>
-                                    <p className="text-xs text-text-secondary">Şantiyede değil, mevzuatta da uzman mühendis ekibi.</p>
+                                    <h4 className="font-bold text-foreground text-sm mb-1">{t("aboutPage.differences.technical.title")}</h4>
+                                    <p className="text-xs text-text-secondary">{t("aboutPage.differences.technical.desc")}</p>
                                 </div>
                                 <div className="bg-surface-secondary p-4 border-l-4 border-primary">
-                                    <h4 className="font-bold text-foreground text-sm mb-1">Yerel Hakimiyet</h4>
-                                    <p className="text-xs text-text-secondary">Van ve bölge coğrafyasının zorlu şartlarına uygun imalat kabiliyeti.</p>
+                                    <h4 className="font-bold text-foreground text-sm mb-1">{t("aboutPage.differences.machinery.title")}</h4>
+                                    <p className="text-xs text-text-secondary">{t("aboutPage.differences.machinery.desc")}</p>
                                 </div>
                             </div>
                         </div>
@@ -160,48 +165,22 @@ export default function AboutPage() {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
                         {/* Misyon */}
                         <div className="bg-white p-10 shadow-lg">
-                            <h3 className="text-3xl font-bold text-foreground mb-6">MİSYONUMUZ</h3>
+                            <h3 className="text-3xl font-bold text-foreground mb-6">{t("aboutPage.missionTitle")}</h3>
                             <div className="space-y-4 text-text-secondary leading-relaxed">
-                                <p>
-                                    Karaoğlu Universal Mühendislik olarak, 2014 yılından bu yana kamu müteahhidi kimliğimizle;
-                                    kamu kurum ve kuruluşları için yürüttüğümüz altyapı, üstyapı ve mühendislik projelerinde,
-                                    mevzuata tam uyumlu, kaliteli ve sürdürülebilir yapılar inşa etmek temel misyonumuzdur.
-                                </p>
-                                <p>
-                                    Kamu ihale mevzuatı, teknik şartnameler ve sözleşme hükümleri doğrultusunda; planlama,
-                                    uygulama ve teslim süreçlerinin tamamında şeffaflık, hesap verebilirlik ve kamu yararını
-                                    esas alarak hareket ederiz.
-                                </p>
-                                <p>
-                                    Zamanında ve eksiksiz iş teslimi anlayışıyla, kamu kaynaklarının etkin ve verimli
-                                    kullanılmasını öncelikli sorumluluğumuz olarak görürüz.
-                                </p>
-                                <p>
-                                    Alanında uzman teknik kadromuz, deneyimli saha ekiplerimiz ve güçlü organizasyon yapımızla;
-                                    kamu projelerinde güvenilir bir çözüm ortağı olmayı, ülkemizin altyapı ve üstyapı gelişimine
-                                    kalıcı değerler kazandırmayı hedefleriz.
-                                </p>
+                                <p>{t("aboutPage.missionDesc1")}</p>
+                                <p>{t("aboutPage.missionDesc2")}</p>
+                                <p>{t("aboutPage.missionDesc3")}</p>
+                                <p>{t("aboutPage.missionDesc4")}</p>
                             </div>
                         </div>
 
                         {/* Vizyon */}
                         <div className="bg-white p-10 shadow-lg">
-                            <h3 className="text-3xl font-bold text-foreground mb-6">VİZYONUMUZ</h3>
+                            <h3 className="text-3xl font-bold text-foreground mb-6">{t("aboutPage.visionTitle")}</h3>
                             <div className="space-y-4 text-text-secondary leading-relaxed">
-                                <p>
-                                    Ulusal ölçekte kamu müteahhitliği alanında; güvenilirliği, teknik yeterliliği ve iş
-                                    disiplinine bağlılığıyla öne çıkan, kamu kurumları tarafından tercih edilen ve referans
-                                    gösterilen bir mühendislik ve taahhüt firması olmak.
-                                </p>
-                                <p>
-                                    Gelişen mühendislik teknolojilerini, güncel mevzuatı ve kalite standartlarını yakından
-                                    takip ederek; çevreye duyarlı, uzun ömürlü ve yüksek teknik standartlara sahip projeler üretmek.
-                                </p>
-                                <p>
-                                    Kurumsal yapısını sürekli geliştiren, insan kaynağına ve kalite yönetim sistemlerine
-                                    yatırım yapan bir anlayışla; geleceğin kamu projelerinde sürdürülebilir ve istikrarlı
-                                    bir şekilde büyümek.
-                                </p>
+                                <p>{t("aboutPage.visionDesc1")}</p>
+                                <p>{t("aboutPage.visionDesc2")}</p>
+                                <p>{t("aboutPage.visionDesc3")}</p>
                             </div>
                         </div>
                     </div>
@@ -212,8 +191,8 @@ export default function AboutPage() {
             <section className="py-20 bg-white">
                 <div className="layout-container">
                     <div className="text-center mb-12">
-                        <h2 className="text-primary text-sm font-semibold uppercase tracking-wider mb-4">Tarihçe</h2>
-                        <h3 className="text-4xl font-bold text-foreground">GELİŞİM SÜRECİMİZ</h3>
+                        <h2 className="text-primary text-sm font-semibold uppercase tracking-wider mb-4">{t("aboutPage.timelineSubtitle")}</h2>
+                        <h3 className="text-4xl font-bold text-foreground">{t("aboutPage.timelineTitle")}</h3>
                     </div>
                     <div className="max-w-3xl mx-auto">
                         {timeline.map((item, idx) => (
@@ -245,15 +224,15 @@ export default function AboutPage() {
                         onClick={() => setShowTeam(!showTeam)}
                         className="w-full text-center mb-8 cursor-pointer group"
                     >
-                        <h2 className="text-primary text-sm font-semibold uppercase tracking-wider mb-4">Ekibimiz</h2>
+                        <h2 className="text-primary text-sm font-semibold uppercase tracking-wider mb-4">{t("aboutPage.teamSubtitle")}</h2>
                         <div className="flex items-center justify-center gap-4">
-                            <h3 className="text-4xl font-bold text-foreground group-hover:text-primary transition-colors">YÖNETİM KURULU</h3>
+                            <h3 className="text-4xl font-bold text-foreground group-hover:text-primary transition-colors">{t("aboutPage.teamTitle")}</h3>
                             <ChevronDown
                                 size={32}
                                 className={`text-primary transition-transform duration-300 ${showTeam ? "rotate-180" : ""}`}
                             />
                         </div>
-                        <p className="text-text-secondary mt-4">Görüntülemek için tıklayın</p>
+                        <p className="text-text-secondary mt-4">{t("aboutPage.teamClickToView")}</p>
                     </button>
 
                     <AnimatePresence>

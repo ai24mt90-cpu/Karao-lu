@@ -7,10 +7,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { Calendar, User, ArrowLeft, Tag, Loader2 } from "lucide-react";
 import ReactMarkdown from "react-markdown";
+import { useTranslation } from "react-i18next";
 
 export const dynamic = 'force-dynamic';
 
 export default function BlogPostPage() {
+    const { t } = useTranslation();
     const params = useParams();
     const slug = params?.slug as string;
 
@@ -56,10 +58,10 @@ export default function BlogPostPage() {
     if (!post) {
         return (
             <div className="min-h-screen pt-40 pb-20 bg-surface-secondary flex flex-col items-center justify-center text-center px-4">
-                <h1 className="text-2xl font-bold text-gray-800 mb-4">Yazı Bulunamadı</h1>
-                <p className="text-gray-600 mb-8">Aradığınız blog yazısı maalesef mevcut değil veya yayından kaldırılmış.</p>
+                <h1 className="text-2xl font-bold text-gray-800 mb-4">{t("blogDetail.notFound")}</h1>
+                <p className="text-gray-600 mb-8">{t("blogDetail.notFoundDesc")}</p>
                 <Link href="/blog" className="bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary-dark transition-colors">
-                    Blog Listesine Dön
+                    {t("blogDetail.backToList")}
                 </Link>
             </div>
         );
@@ -74,7 +76,7 @@ export default function BlogPostPage() {
                     className="inline-flex items-center gap-2 text-text-secondary hover:text-primary transition-colors mb-8 group"
                 >
                     <ArrowLeft size={20} className="group-hover:-translate-x-1 transition-transform" />
-                    <span>Blog'a Dön</span>
+                    <span>{t("blogDetail.backToBlog")}</span>
                 </Link>
 
                 <article className="bg-white rounded-2xl shadow-sm overflow-hidden border border-gray-100 p-8 md:p-12">
@@ -91,7 +93,7 @@ export default function BlogPostPage() {
                             </span>
                             <span className="flex items-center gap-1.5 bg-blue-50 text-primary px-3 py-1 rounded-full font-medium">
                                 <Tag size={14} />
-                                {post.category || "Genel"}
+                                {post.category || t("blogDetail.categoryGeneral")}
                             </span>
                         </div>
 

@@ -14,38 +14,38 @@ const getNavLinks = (t: any) => [
         href: "/hakkimizda",
         label: t("nav.about"),
         submenu: [
-            { href: "/hakkimizda", label: "Kurumsal" },
-            { href: "/hakkimizda#baskanin-mesaji", label: "Başkanın Mesajı" },
-            { href: "/hakkimizda#yonetim", label: "Yönetim Kurulu" },
+            { href: "/hakkimizda", label: t("nav.aboutUsCorp") },
+            { href: "/hakkimizda#baskanin-mesaji", label: t("nav.aboutUsPresident") },
+            { href: "/hakkimizda#yonetim", label: t("nav.aboutUsBoard") },
         ]
     },
     {
         href: "/sektorler",
-        label: "Sektörler",
+        label: t("nav.sectors"),
         submenu: [
-            { href: "/sektorler#kamu", label: "Kamu Projeleri" },
-            { href: "/sektorler#saglik", label: "Sağlık" },
-            { href: "/sektorler#egitim", label: "Eğitim" },
-            { href: "/sektorler#konut", label: "Konut" },
-            { href: "/sektorler#altyapi", label: "Altyapı" },
+            { href: "/sektorler#kamu", label: t("nav.sectorPublic") },
+            { href: "/sektorler#saglik", label: t("nav.sectorHealth") },
+            { href: "/sektorler#egitim", label: t("nav.sectorEdu") },
+            { href: "/sektorler#konut", label: t("nav.sectorHousing") },
+            { href: "/sektorler#altyapi", label: t("nav.sectorInfra") },
         ]
     },
     {
         href: "/projeler",
         label: t("nav.projects"),
         submenu: [
-            { href: "/projeler", label: "Tüm Projeler" },
-            { href: "/projeler?category=tamamlandi", label: "Tamamlanan Projeler" },
-            { href: "/projeler?category=devam", label: "Devam Eden Projeler" },
+            { href: "/projeler", label: t("nav.projectsAll") },
+            { href: "/projeler?category=tamamlandi", label: t("nav.projectsCompleted") },
+            { href: "/projeler?category=devam", label: t("nav.projectsOngoing") },
         ]
     },
-    { href: "/sosyal-sorumluluk", label: "Sosyal Sorumluluk" },
+    { href: "/sosyal-sorumluluk", label: t("nav.socialResp") },
     {
         href: "/blog",
         label: t("nav.blog"),
         submenu: [
-            { href: "/haberler", label: "Haberler" },
-            { href: "/blog", label: "Blog" },
+            { href: "/haberler", label: t("nav.blogNews") },
+            { href: "/blog", label: t("nav.blogPosts") },
         ]
     },
     { href: "/iletisim", label: t("nav.contact") },
@@ -165,7 +165,7 @@ export default function Header() {
                         <button
                             className="lg:hidden p-2 text-foreground"
                             onClick={() => setIsOpen(!isOpen)}
-                            aria-label={isOpen ? "Menüyü Kapat" : "Menüyü Aç"}
+                            aria-label={isOpen ? t("nav.menuClose") : t("nav.menuOpen")}
                         >
                             {isOpen ? <X size={24} /> : <Menu size={24} />}
                         </button>

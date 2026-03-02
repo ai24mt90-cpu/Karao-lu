@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight, MapPin, Calendar, ImageIcon } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 interface ProjectImage {
     id: string;
@@ -30,6 +31,7 @@ interface ProjectGalleryModalProps {
 }
 
 export default function ProjectGalleryModal({ project, images, isOpen, onClose }: ProjectGalleryModalProps) {
+    const { t } = useTranslation();
     const [currentIndex, setCurrentIndex] = useState(0);
 
     // All images including cover
@@ -101,7 +103,7 @@ export default function ProjectGalleryModal({ project, images, isOpen, onClose }
                                     <>
                                         <Image
                                             src={allImages[currentIndex]?.image_url || ""}
-                                            alt={`${project.title} - Fotoğraf ${currentIndex + 1}`}
+                                            alt={`${project.title} - ${t("projectGallery.photoLabel")} ${currentIndex + 1}`}
                                             fill
                                             className="object-contain"
                                         />
@@ -140,7 +142,7 @@ export default function ProjectGalleryModal({ project, images, isOpen, onClose }
                             <div className="w-full lg:w-80 p-6 bg-white">
                                 <div className="mb-4">
                                     <span className={`inline-block text-xs font-semibold px-3 py-1 ${project.status === "Tamamlandı" ? "bg-green-500" : "bg-yellow-500"} text-white`}>
-                                        {project.status}
+                                        {project.status === "Tamamlandı" ? t("projectGallery.statusCompleted") : t("projectGallery.statusOngoing")}
                                     </span>
                                 </div>
 
@@ -165,10 +167,9 @@ export default function ProjectGalleryModal({ project, images, isOpen, onClose }
                                     </p>
                                 )}
 
-                                {/* Thumbnail Grid */}
                                 {allImages.length > 1 && (
                                     <div className="mt-6 pt-6 border-t border-gray-200">
-                                        <p className="text-sm font-medium text-foreground mb-3">Fotoğraflar</p>
+                                        <p className="text-sm font-medium text-foreground mb-3">{t("projectGallery.photos")}</p>
                                         <div className="grid grid-cols-4 gap-2">
                                             {allImages.map((img, idx) => (
                                                 <button

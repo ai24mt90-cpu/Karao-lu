@@ -5,7 +5,24 @@
         "services": "Services",
         "projects": "Projects",
         "blog": "Blog",
-        "contact": "Contact"
+        "contact": "Contact",
+        "aboutUsCorp": "Corporate",
+        "aboutUsPresident": "President's Message",
+        "aboutUsBoard": "Board of Directors",
+        "sectors": "Sectors",
+        "sectorPublic": "Public Projects",
+        "sectorHealth": "Health",
+        "sectorEdu": "Education",
+        "sectorHousing": "Housing",
+        "sectorInfra": "Infrastructure",
+        "projectsAll": "All Projects",
+        "projectsCompleted": "Completed Projects",
+        "projectsOngoing": "Ongoing Projects",
+        "socialResp": "Social Responsibility",
+        "blogNews": "News",
+        "blogPosts": "Blog",
+        "menuClose": "Close Menu",
+        "menuOpen": "Open Menu"
     },
     "footer": {
         "about": "About Us",
@@ -14,7 +31,13 @@
         "contact": "Contact",
         "rights": "All Rights Reserved.",
         "privacy": "Privacy Policy",
-        "terms": "Terms of Use"
+        "terms": "Terms of Use",
+        "companySub": "Universal Engineering",
+        "contentLabel": "Content",
+        "vanBranch": "Van Branch:",
+        "ankaraHQ": "Ankara Headquarters:",
+        "kvkkLabel": "CLPD Clarification Text",
+        "engineeringFirm": "Ankara Engineering Firm"
     },
     "home": {
         "slider": {
@@ -27,10 +50,6 @@
             "slide3_subtitle": "We have our signature on projects from the Silk Road Coastal Band to TOKİ Housing"
         },
         "projects": {
-            "subtitle": "Public References",
-            "title": "COMPLETED PROJECTS",
-            "viewAll": "All Projects",
-            "viewAllMobile": "View All Projects",
             "status": {
                 "completed": "Completed",
                 "ongoing": "Ongoing"
@@ -89,5 +108,203 @@
         "title": "CONTACT",
         "desc": "You can contact our Ankara or Van office for public projects and technical consultancy services.",
         "button": "Contact Us"
+    },
+    "aboutPage": {
+        "heroTitle": "ABOUT US",
+        "heroSubtitle": "ABOUT US INFORMATION",
+        "breadcrumbHome": "Home",
+        "breadcrumbAbout": "About Us",
+        "title": "ENGINEERING WITH HIGH TECHNICAL CAPACITY<br />MASTERING PUBLIC PROCUREMENT LEGISLATION",
+        "desc1": "As <strong>Karaoğlu Universal Engineering</strong>, we focus on 'contracting and project management' rather than 'build-and-sell' in the construction sector.",
+        "desc2": "Our firm, based in İpekyolu/Van, has been the solution partner of many official institutions, especially Van Investment Monitoring (YİKOB), Ministry of Environment and Urbanization, and Local Governments.",
+        "differences": {
+            "legal": {
+                "title": "Legislative Mastery",
+                "desc": "Full mastery of the Public Procurement Law No. 4734 and related regulations."
+            },
+            "technical": {
+                "title": "Technical Capacity",
+                "desc": "Experience in smoothly managing final acceptance processes."
+            },
+            "financial": {
+                "title": "Financial Strength",
+                "desc": "Ability to re-finance large-scale public projects with own equity."
+            },
+            "machinery": {
+                "title": "Machinery Park",
+                "desc": "Constantly renewed machinery park that increases the speed and quality of projects."
+            }
+        },
+        "missionTitle": "OUR MISSION",
+        "missionDesc1": "As Karaoğlu Universal Engineering, with our public contractor identity since 2014; our main mission is to build high-quality and sustainable structures that are fully compliant with the legislation in the infrastructure, superstructure and engineering projects we carry out for public institutions and organizations.",
+        "missionDesc2": "In line with public procurement legislation, technical specifications and contract provisions; we act based on transparency, accountability and public interest in all planning, implementation and delivery processes.",
+        "missionDesc3": "With the understanding of timely and complete delivery of work, we consider the effective and efficient use of public resources as our primary responsibility.",
+        "missionDesc4": "With our expert technical staff, experienced field teams and strong organizational structure; we aim to be a reliable solution partner in public projects and to add permanent values to the infrastructure and superstructure development of our country.",
+        "visionTitle": "OUR VISION",
+        "visionDesc1": "To be an engineering and contracting company that stands out with its reliability, technical competence and adherence to work discipline in the field of public contracting on a national scale, and is preferred and referred to by public institutions.",
+        "visionDesc2": "By closely following developing engineering technologies, current legislation and quality standards; to produce projects that are environmentally friendly, long-lasting and have high technical standards.",
+        "visionDesc3": "With an understanding that constantly improves its corporate structure and invests in human resources and quality management systems; to grow sustainably and steadily in the public projects of the future.",
+        "timelineTitle": "OUR DEVELOPMENT PROCESS",
+        "timelineSubtitle": "History",
+        "teamTitle": "BOARD OF DIRECTORS",
+        "teamSubtitle": "Our Team",
+        "teamClickToView": "Click to view"
+    },
+    "faqPage": {
+        "heroTitle": "FREQUENTLY ASKED QUESTIONS",
+        "heroSubtitle": "Answering what you wonder",
+        "searchPlaceholder": "Search for a question...",
+        "noResults": "No results found for your search.",
+        "ctaTitle": "Do you have other questions?",
+        "ctaDesc": "Our team will be happy to assist you.",
+        "ctaButton": "Contact Us",
+        "defaults": {
+            "q1": "In which regions are your projects carried out?",
+            "a1": "Our projects are mostly carried out in Van and surrounding provinces. We are actively working on public, housing and infrastructure projects.",
+            "q2": "How can I apply to get an offer?",
+            "a2": "You can contact us by filling out the form on our contact page or directly from our phone number.",
+            "q3": "How much experience does your company have?",
+            "a3": "We have been operating in the construction and engineering sector since 2014. During this time, dozens of projects have been successfully completed.",
+            "q4": "Do you have quality certificates?",
+            "a4": "Yes, we have ISO 9001 quality certificate and sectoral certificates.",
+            "q5": "What are your social responsibility projects?",
+            "a5": "We carry out various projects in education, sports and social fields. School donations, scholarship programs and sports facilities are the leading ones."
+        }
+    },
+    "contactPage": {
+        "heroTitle": "CONTACT",
+        "heroSubtitle": "Get in touch with us",
+        "addressTitle": "Address",
+        "vanHQ": "Van Headquarters:",
+        "ankaraBranch": "Ankara Branch:",
+        "phoneTitle": "Phone",
+        "emailTitle": "Email",
+        "hoursTitle": "Working Hours",
+        "hoursText": "Monday - Friday<br />08:00 - 17:00",
+        "formSubtitle": "Contact Form",
+        "formTitle": "WRITE TO US",
+        "successTitle": "Message Sent!",
+        "successDesc": "We will get back to you as soon as possible.",
+        "newMsgBtn": "Send New Message",
+        "errorMsg": "An error occurred while sending the message. Please try again.",
+        "nameLabel": "Full Name *",
+        "emailLabel": "Email *",
+        "phoneLabel": "Phone",
+        "subjectLabel": "Subject *",
+        "options": {
+            "project": "Project Information Request",
+            "collab": "Collaboration Offer",
+            "career": "Career",
+            "other": "Other"
+        },
+        "messageLabel": "Your Message *",
+        "sendBtn": "Send",
+        "sendingBtn": "Sending..."
+    },
+    "maintenance": {
+        "title": "Under Maintenance",
+        "message": "Our website is currently being updated. Please try again later."
+    },
+    "kvkk": {
+        "heroTitle": "CLPD CLARIFICATION TEXT",
+        "heroSubtitle": "Protection of Personal Data",
+        "title": "Clarification Text on the Protection and Processing of Personal Data",
+        "intro": "As Karaoğlu Universal Engineering Ltd. Co. (\"Company\" or \"Data Controller\"), in accordance with the Personal Data Protection Law No. 6698 (\"KVKK\"), we would like to inform you about the processing and protection of your personal data within the scope of the services we offer you and your rights.",
+        "dataCollectionTitle": "1. Collection, Processing of Personal Data and Purposes of Processing",
+        "dataCollectionText": "Your collected personal data may be processed in accordance with the conditions specified in Articles 5 and 6 of the KVKK for the purposes of benefiting from the services offered by our Company, ensuring the legal and commercial security of our Company, and determining our commercial and business strategies.",
+        "dataTransferTitle": "2. To Whom and For What Purpose the Processed Personal Data Can Be Transferred",
+        "dataTransferText": "Your personal data may be transferred to legally authorized public institutions and private persons within the framework of the personal data transfer conditions specified in Articles 8 and 9 of the KVKK, in line with the realization of the purposes stated above.",
+        "dataMethodTitle": "3. Method and Legal Reason for Collecting Personal Data",
+        "dataMethodText": "Your personal data is collected in accordance with the legal legislation through various methods, including every kind of oral, written or electronic environment, our website, communication forms and e-mail notifications.",
+        "rightsTitle": "4. Rights of the Data Subject within the Scope of KVKK",
+        "rightsText": "In accordance with Article 11 of the KVKK, data subjects have the right to; learn whether their personal data has been processed, request information regarding this if it has been processed, learn the purpose of processing and whether it is used in accordance with its purpose, and request correction if it is processed incompletely or incorrectly."
+    },
+    "privacyPage": {
+        "heroTitle": "Privacy Policy",
+        "heroSubtitle": "Your data security is important to us",
+        "introTitle": "Introduction",
+        "introText": "As Karaoğlu Universal Engineering Ltd. Co., we respect the privacy of the users visiting our website and are committed to protecting your personal information. This Privacy Policy explains what information we collect, how we use it, and how we protect it.",
+        "collectedDataTitle": "Collected Information",
+        "collectedDataIntro": "We may collect the following information through our website:",
+        "collectedDataList": {
+            "i1": "Name, email, and phone information sent via contact forms",
+            "i2": "Website usage data (via cookies)",
+            "i3": "IP address and browser information"
+        },
+        "dataUsageTitle": "Use of Information",
+        "dataUsageIntro": "The information we collect is used for the following purposes:",
+        "dataUsageList": {
+            "i1": "To respond to your contact requests",
+            "i2": "To provide information about our services",
+            "i3": "To improve our website",
+            "i4": "To fulfill our legal obligations"
+        },
+        "cookiesTitle": "Use of Cookies",
+        "cookiesText": "Our website uses cookies to improve the user experience. Cookies are small text files saved on your device by your browser. You can disable cookies from your browser settings.",
+        "securityTitle": "Data Security",
+        "securityText": "We implement technical and administrative security measures to protect your personal information. Your data is protected against unauthorized access.",
+        "sharingTitle": "Sharing with Third Parties",
+        "sharingText": "Your personal information is not shared with third parties except for legal obligations. Your data is not sold or rented.",
+        "contactTitle": "Contact",
+        "contactText": "You can contact us for your questions about our privacy policy:",
+        "email": "Email:",
+        "phone": "Phone:",
+        "lastUpdateLabel": "Last Update:",
+        "lastUpdateDate": "January 2026",
+        "updateNote": "This privacy policy may be updated as necessary."
+    },
+    "projectDetail": {
+        "notFound": "Project Not Found",
+        "notFoundDesc": "The project you are looking for does not exist or may have been removed.",
+        "backToList": "Back to Projects List",
+        "allProjects": "All Projects",
+        "detailsSoon": "Project details will be added soon.",
+        "projectImages": "Project Images",
+        "imageAlt": "Image",
+        "projectInfo": "Project Information",
+        "client": "Client / Institution",
+        "area": "Total Area",
+        "year": "Project Year",
+        "location": "Location",
+        "contactUsTitle": "Contact Us",
+        "contactUsDesc": "You can contact us to get more information about this project.",
+        "contactBtn": "Contact Us",
+        "statusCompleted": "Completed",
+        "statusOngoing": "Ongoing"
+    },
+    "blogDetail": {
+        "notFound": "Post Not Found",
+        "notFoundDesc": "The blog post you are looking for unfortunately does not exist or has been removed.",
+        "backToList": "Back to Blog List",
+        "backToBlog": "Back to Blog",
+        "categoryGeneral": "General"
+    },
+    "widgets": {
+        "whatsapp": {
+            "message": "Hello, I am reaching out from your website. I want to get information.",
+            "ariaLabel": "Contact via WhatsApp",
+            "buttonText": "Message via WhatsApp"
+        },
+        "floatingHome": {
+            "ariaLabel": "Go to Top"
+        }
+    },
+    "projectGallery": {
+        "photos": "Photos",
+        "photoLabel": "Photo",
+        "statusCompleted": "Completed",
+        "statusOngoing": "Ongoing"
+    },
+    "ramadan": {
+        "greeting": "Ramadan Kareem ✦ Mubarak",
+        "titleLine1": "Have a Blessed",
+        "titleLine2": "Ramadan",
+        "subtextLine1": "As the Karaoğlu Universal Engineering family",
+        "subtextLine2": "we share the blessings of this holy month.",
+        "continueBtn": "Continue →"
+    },
+    "language": {
+        "TR": "Turkish",
+        "EN": "English"
     }
 }

@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import { supabase } from "@/lib/supabase";
 import { ChevronDown, Search, HelpCircle } from "lucide-react";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
 
 interface FAQ {
     id: string;
@@ -15,6 +16,7 @@ interface FAQ {
 }
 
 export default function FAQPage() {
+    const { t } = useTranslation();
     const [faqs, setFaqs] = useState<FAQ[]>([]);
     const [openIndex, setOpenIndex] = useState<number | null>(null);
     const [searchQuery, setSearchQuery] = useState("");
@@ -39,11 +41,11 @@ export default function FAQPage() {
     );
 
     const defaultFaqs = [
-        { id: "1", question: "Projeleriniz hangi bölgelerde gerçekleştiriliyor?", answer: "Projelerimiz ağırlıklı olarak Van ve çevre illerde gerçekleştirilmektedir. Kamu, konut ve altyapı projelerinde aktif olarak çalışmaktayız." },
-        { id: "2", question: "Teklif almak için nasıl başvurabilirim?", answer: "İletişim sayfamızdaki formu doldurarak veya doğrudan telefon numaramızdan bizimle iletişime geçebilirsiniz." },
-        { id: "3", question: "Şirketinizin tecrübesi ne kadar?", answer: "2014 yılından bu yana inşaat ve mühendislik sektöründe faaliyet göstermekteyiz. Bu süre zarfında onlarca proje başarıyla tamamlanmıştır." },
-        { id: "4", question: "Kalite belgeleriniz var mı?", answer: "Evet, ISO 9001 kalite belgesi ve sektörel sertifikalarımız mevcuttur." },
-        { id: "5", question: "Sosyal sorumluluk projeleriniz neler?", answer: "Eğitim, spor ve toplumsal alanlarda çeşitli projeler yürütmekteyiz. Okul bağışları, burs programları ve spor tesisleri bunların başında gelmektedir." },
+        { id: "1", question: t("faqPage.defaults.q1"), answer: t("faqPage.defaults.a1") },
+        { id: "2", question: t("faqPage.defaults.q2"), answer: t("faqPage.defaults.a2") },
+        { id: "3", question: t("faqPage.defaults.q3"), answer: t("faqPage.defaults.a3") },
+        { id: "4", question: t("faqPage.defaults.q4"), answer: t("faqPage.defaults.a4") },
+        { id: "5", question: t("faqPage.defaults.q5"), answer: t("faqPage.defaults.a5") },
     ];
 
     const displayFaqs = faqs.length > 0 ? filteredFaqs : defaultFaqs;
@@ -65,8 +67,8 @@ export default function FAQPage() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                         >
-                            <h1 className="text-5xl font-bold text-white mb-4">SIKÇA SORULAN SORULAR</h1>
-                            <p className="text-white/80 text-lg">Merak ettiklerinizi yanıtlıyoruz</p>
+                            <h1 className="text-5xl font-bold text-white mb-4">{t("faqPage.heroTitle")}</h1>
+                            <p className="text-white/80 text-lg">{t("faqPage.heroSubtitle")}</p>
                         </motion.div>
                     </div>
                 </div>
@@ -79,7 +81,7 @@ export default function FAQPage() {
                         <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-text-secondary" size={20} />
                         <input
                             type="text"
-                            placeholder="Soru ara..."
+                            placeholder={t("faqPage.searchPlaceholder", "Soru ara...")}
                             value={searchQuery}
                             onChange={(e) => setSearchQuery(e.target.value)}
                             className="w-full h-12 pl-12 pr-4 border border-gray-200 rounded focus:border-primary focus:outline-none transition-colors"
@@ -128,7 +130,7 @@ export default function FAQPage() {
                         ) : (
                             <div className="text-center py-12 bg-white border border-gray-200">
                                 <HelpCircle className="mx-auto mb-4 text-text-secondary" size={48} />
-                                <p className="text-text-secondary">Aradığınız sonuç bulunamadı.</p>
+                                <p className="text-text-secondary">{t("faqPage.noResults")}</p>
                             </div>
                         )}
                     </div>
@@ -138,13 +140,13 @@ export default function FAQPage() {
             {/* Contact CTA */}
             <section className="py-16 bg-white">
                 <div className="layout-container text-center">
-                    <h2 className="text-3xl font-bold text-foreground mb-4">Başka Sorularınız mı Var?</h2>
-                    <p className="text-text-secondary mb-8">Ekibimiz size yardımcı olmaktan memnuniyet duyar.</p>
+                    <h2 className="text-3xl font-bold text-foreground mb-4">{t("faqPage.ctaTitle")}</h2>
+                    <p className="text-text-secondary mb-8">{t("faqPage.ctaDesc")}</p>
                     <Link
                         href="/iletisim"
                         className="inline-flex items-center gap-2 bg-primary text-white px-8 py-4 font-semibold hover:bg-primary-dark transition-colors"
                     >
-                        İletişime Geç
+                        {t("faqPage.ctaButton")}
                     </Link>
                 </div>
             </section>

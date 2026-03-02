@@ -1,93 +1,310 @@
 {
-  "nav": {
-    "home": "Ana Sayfa",
-    "about": "Hakkımızda",
-    "services": "Hizmetler",
-    "projects": "Projeler",
-    "blog": "Blog",
-    "contact": "İletişim"
-  },
-  "footer": {
-    "about": "Hakkımızda",
-    "aboutText": "Karaoğlu Universal Mühendislik, inşaat, mühendislik ve mekanik sistemler alanında çeyrek asırlık tecrübesiyle sektörde öncü projelere imza atmaktadır.",
-    "quickLinks": "Hızlı Bağlantılar",
-    "contact": "İletişim",
-    "rights": "Tüm Hakları Saklıdır.",
-    "privacy": "Gizlilik Politikası",
-    "terms": "Kullanım Şartları"
-  },
-  "home": {
-    "slider": {
-      "explore": "Projeyi İncele",
-      "subtitle": "Bölgenin Güçlü Altyapı ve Üstyapı Çözüm Ortağı",
-      "title": "Devlet yatırımlarını ciddiyetle inşa ediyoruz",
-      "slide2_title": "64+ Tamamlanan Kamu Projesi",
-      "slide2_subtitle": "Ankara'dan Türkiye'ye; 10+ yıllık deneyim, güçlü makine parkı ve finansal yeterlilik",
-      "slide3_title": "Resmi Kurumların Çözüm Ortağı",
-      "slide3_subtitle": "İpekyolu Sahil Bandı'ndan TOKİ Konutlarına kadar imzamız var"
+    "nav": {
+        "home": "Ana Sayfa",
+        "about": "Hakkımızda",
+        "services": "Hizmetler",
+        "projects": "Projeler",
+        "blog": "Blog",
+        "contact": "İletişim",
+        "aboutUsCorp": "Kurumsal",
+        "aboutUsPresident": "Başkanın Mesajı",
+        "aboutUsBoard": "Yönetim Kurulu",
+        "sectors": "Sektörler",
+        "sectorPublic": "Kamu Projeleri",
+        "sectorHealth": "Sağlık",
+        "sectorEdu": "Eğitim",
+        "sectorHousing": "Konut",
+        "sectorInfra": "Altyapı",
+        "projectsAll": "Tüm Projeler",
+        "projectsCompleted": "Tamamlanan Projeler",
+        "projectsOngoing": "Devam Eden Projeler",
+        "socialResp": "Sosyal Sorumluluk",
+        "blogNews": "Haberler",
+        "blogPosts": "Blog",
+        "menuClose": "Menüyü Kapat",
+        "menuOpen": "Menüyü Aç"
     },
-    "projects": {
-      "subtitle": "Kamu Referansları",
-      "title": "TAMAMLANAN PROJELER",
-      "viewAll": "Tüm Projeler",
-      "viewAllMobile": "Tüm Projeleri Gör",
-      "status": {
-        "completed": "Tamamlandı",
-        "ongoing": "Devam Ediyor"
-      }
+    "footer": {
+        "about": "Hakkımızda",
+        "aboutText": "Karaoğlu Universal Mühendislik, inşaat, mühendislik ve mekanik sistemler alanında çeyrek asırlık tecrübesiyle sektörde öncü projelere imza atmaktadır.",
+        "quickLinks": "Hızlı Bağlantılar",
+        "contact": "İletişim",
+        "rights": "Tüm Hakları Saklıdır.",
+        "privacy": "Gizlilik Politikası",
+        "terms": "Kullanım Şartları",
+        "companySub": "Universal Mühendislik",
+        "contentLabel": "İçerik",
+        "vanBranch": "Van Şube:",
+        "ankaraHQ": "Ankara Merkez:",
+        "kvkkLabel": "KVKK Aydınlatma Metni",
+        "engineeringFirm": "Ankara Mühendislik Firması"
     },
-    "about": {
-      "subtitle": "Neden Biz?",
-      "title": "VAN VE ANKARA'DA<br />KAMU PROJELERİNİN<br />GÜVENİLİR ÇÖZÜM ORTAĞI",
-      "desc1": "<strong>Karaoğlu Universal Mühendislik</strong>, Ankara ve Van merkezli ofisleriyle Türkiye genelinde kamu taahhüt işleri yürütmektedir.",
-      "desc2": "Şirketimiz bugüne kadar 64 projeyi başarıyla tamamlamış olup, bu projelerin büyük bölümü kamu kurumlarına yönelik yapım ve mühendislik işlerinden oluşmaktadır.",
-      "desc3": "İnşaat, altyapı ve üstyapı projelerinde \"devlet ciddiyeti\" ile hareket ediyor; Hastane, Okul, TOKİ konutları ve Yol projelerini zamanında teslim ediyoruz.",
-      "badges": {
-        "projects": "Tamamlanan Kamu Projesi",
-        "experience": "Yıllık Sektör Deneyimi",
-        "cities": "İl Genelinde Proje",
-        "delivery": "Zamanında Teslim"
-      },
-      "buttons": {
-        "completed": "Tamamlanan Projeler",
-        "qualifications": "Teknik Yeterlilikler"
-      }
+    "home": {
+        "slider": {
+            "explore": "Projeyi İncele",
+            "subtitle": "Bölgenin Güçlü Altyapı ve Üstyapı Çözüm Ortağı",
+            "title": "Devlet yatırımlarını ciddiyetle inşa ediyoruz",
+            "slide2_title": "64+ Tamamlanan Kamu Projesi",
+            "slide2_subtitle": "Ankara'dan Türkiye'ye; 10+ yıllık deneyim, güçlü makine parkı ve finansal yeterlilik",
+            "slide3_title": "Resmi Kurumların Çözüm Ortağı",
+            "slide3_subtitle": "İpekyolu Sahil Bandı'ndan TOKİ Konutlarına kadar imzamız var"
+        },
+        "projects": {
+            "status": {
+                "completed": "Tamamlandı",
+                "ongoing": "Devam Ediyor"
+            }
+        },
+        "about": {
+            "subtitle": "Neden Biz?",
+            "title": "VAN VE ANKARA'DA<br />KAMU PROJELERİNİN<br />GÜVENİLİR ÇÖZÜM ORTAĞI",
+            "desc1": "<strong>Karaoğlu Universal Mühendislik</strong>, Ankara ve Van merkezli ofisleriyle Türkiye genelinde kamu taahhüt işleri yürütmektedir.",
+            "desc2": "Şirketimiz bugüne kadar 64 projeyi başarıyla tamamlamış olup, bu projelerin büyük bölümü kamu kurumlarına yönelik yapım ve mühendislik işlerinden oluşmaktadır.",
+            "desc3": "İnşaat, altyapı ve üstyapı projelerinde \"devlet ciddiyeti\" ile hareket ediyor; Hastane, Okul, TOKİ konutları ve Yol projelerini zamanında teslim ediyoruz.",
+            "badges": {
+                "projects": "Tamamlanan Kamu Projesi",
+                "experience": "Yıllık Sektör Deneyimi",
+                "cities": "İl Genelinde Proje",
+                "delivery": "Zamanında Teslim"
+            },
+            "buttons": {
+                "completed": "Tamamlanan Projeler",
+                "qualifications": "Teknik Yeterlilikler"
+            }
+        },
+        "servicesTitle": "HİZMET ALANLARIMIZ",
+        "services": {
+            "public": "<strong>Kamu Binaları:</strong> Hastane, Okul, Hükümet Konağı",
+            "infra": "<strong>Altyapı Projeleri:</strong> Kanalizasyon, İsale Hattı, Yol",
+            "housing": "<strong>TOKİ Konutları:</strong> Van ve Çevre İllerde Toplu Konut",
+            "reinforcement": "<strong>Güçlendirme:</strong> Deprem Güçlendirme ve Onarım",
+            "landscaping": "<strong>Çevre Düzenleme:</strong> Millet Bahçeleri ve Peyzaj"
+        },
+        "slogan": {
+            "text": "\"Kamu projelerinde güvenilirlik, teknik yeterlilik ve zamanında teslim garantisi.\"",
+            "author": "— Karaoğlu Universal Mühendislik"
+        },
+        "quickLinks": {
+            "title": "Hızlı Erişim",
+            "blog": {
+                "title": "Blog",
+                "desc": "Mühendislik yazıları"
+            },
+            "news": {
+                "title": "Haberler",
+                "desc": "Güncel haberler"
+            },
+            "projects": {
+                "title": "Projeler",
+                "desc": "Tamamlanan işler"
+            },
+            "faq": {
+                "title": "SSS",
+                "desc": "Sıkça sorulan sorular"
+            }
+        },
+        "cta": {
+            "title": "İLETİŞİM",
+            "desc": "Kamu projeleri ve teknik müşavirlik hizmetleri için Ankara veya Van ofisimizle iletişime geçebilirsiniz.",
+            "button": "Bize Ulaşın"
+        }
     },
-    "servicesTitle": "HİZMET ALANLARIMIZ",
-    "services": {
-      "public": "<strong>Kamu Binaları:</strong> Hastane, Okul, Hükümet Konağı",
-      "infra": "<strong>Altyapı Projeleri:</strong> Kanalizasyon, İsale Hattı, Yol",
-      "housing": "<strong>TOKİ Konutları:</strong> Van ve Çevre İllerde Toplu Konut",
-      "reinforcement": "<strong>Güçlendirme:</strong> Deprem Güçlendirme ve Onarım",
-      "landscaping": "<strong>Çevre Düzenleme:</strong> Millet Bahçeleri ve Peyzaj"
+    "aboutPage": {
+        "heroTitle": "HAKKIMIZDA",
+        "heroSubtitle": "HAKKIMIZDA BİLGİLER",
+        "breadcrumbHome": "Ana Sayfa",
+        "breadcrumbAbout": "Hakkımızda",
+        "title": "KAMU İHALE MEVZUATINA HAKİM,<br />TEKNİK KAPASİTESİ YÜKSEK MÜHENDİSLİK",
+        "desc1": "<strong>Karaoğlu Universal Mühendislik</strong> olarak, inşaat sektöründe 'yap-sat' değil, 'taahhüt ve proje yönetimi' odaklı çalışıyoruz.",
+        "desc2": "İpekyolu/Van merkezli firmamız, bugüne kadar Van Yatırım İzleme (YİKOB), Çevre ve Şehircilik Bakanlığı ve Yerel Yönetimler başta olmak üzere birçok resmi kurumun çözüm ortağı olmuştur.",
+        "differences": {
+            "legal": {
+                "title": "Mevzuat Hakimiyeti",
+                "desc": "4734 sayılı Kamu İhale Kanunu ve ilgili yönetmeliklere tam hakimiyet."
+            },
+            "technical": {
+                "title": "Teknik Kapasite",
+                "desc": "Kesin kabul süreçlerini sorunsuz yönetme deneyimi."
+            },
+            "financial": {
+                "title": "Finansal Güç",
+                "desc": "Büyük ölçekli kamu projelerini kendi öz sermayesiyle re-finanse edebilme yeteneği."
+            },
+            "machinery": {
+                "title": "Makine Parkı",
+                "desc": "Projelerin hızını ve kalitesini artıran, sürekli yenilenen makine parkı."
+            }
+        },
+        "missionTitle": "MİSYONUMUZ",
+        "missionDesc1": "Karaoğlu Universal Mühendislik olarak, 2014 yılından bu yana kamu müteahhidi kimliğimizle; kamu kurum ve kuruluşları için yürüttüğümüz altyapı, üstyapı ve mühendislik projelerinde, mevzuata tam uyumlu, kaliteli ve sürdürülebilir yapılar inşa etmek temel misyonumuzdur.",
+        "missionDesc2": "Kamu ihale mevzuatı, teknik şartnameler ve sözleşme hükümleri doğrultusunda; planlama, uygulama ve teslim süreçlerinin tamamında şeffaflık, hesap verebilirlik ve kamu yararını esas alarak hareket ederiz.",
+        "missionDesc3": "Zamanında ve eksiksiz iş teslimi anlayışıyla, kamu kaynaklarının etkin ve verimli kullanılmasını öncelikli sorumluluğumuz olarak görürüz.",
+        "missionDesc4": "Alanında uzman teknik kadromuz, deneyimli saha ekiplerimiz ve güçlü organizasyon yapımızla; kamu projelerinde güvenilir bir çözüm ortağı olmayı, ülkemizin altyapı ve üstyapı gelişimine kalıcı değerler kazandırmayı hedefleriz.",
+        "visionTitle": "VİZYONUMUZ",
+        "visionDesc1": "Ulusal ölçekte kamu müteahhitliği alanında; güvenilirliği, teknik yeterliliği ve iş disiplinine bağlılığıyla öne çıkan, kamu kurumları tarafından tercih edilen ve referans gösterilen bir mühendislik ve taahhüt firması olmak.",
+        "visionDesc2": "Gelişen mühendislik teknolojilerini, güncel mevzuatı ve kalite standartlarını yakından takip ederek; çevreye duyarlı, uzun ömürlü ve yüksek teknik standartlara sahip projeler üretmek.",
+        "visionDesc3": "Kurumsal yapısını sürekli geliştiren, insan kaynağına ve kalite yönetim sistemlerine yatırım yapan bir anlayışla; geleceğin kamu projelerinde sürdürülebilir ve istikrarlı bir şekilde büyümek.",
+        "timelineTitle": "GELİŞİM SÜRECİMİZ",
+        "timelineSubtitle": "Tarihçe",
+        "teamTitle": "YÖNETİM KURULU",
+        "teamSubtitle": "Ekibimiz",
+        "teamClickToView": "Görüntülemek için tıklayın"
     },
-    "slogan": {
-      "text": "\"Kamu projelerinde güvenilirlik, teknik yeterlilik ve zamanında teslim garantisi.\"",
-      "author": "— Karaoğlu Universal Mühendislik"
+    "faqPage": {
+        "heroTitle": "SIKÇA SORULAN SORULAR",
+        "heroSubtitle": "Merak ettiklerinizi yanıtlıyoruz",
+        "searchPlaceholder": "Soru ara...",
+        "noResults": "Aradığınız sonuç bulunamadı.",
+        "ctaTitle": "Başka Sorularınız mı Var?",
+        "ctaDesc": "Ekibimiz size yardımcı olmaktan memnuniyet duyar.",
+        "ctaButton": "İletişime Geç",
+        "defaults": {
+            "q1": "Projeleriniz hangi bölgelerde gerçekleştiriliyor?",
+            "a1": "Projelerimiz ağırlıklı olarak Van ve çevre illerde gerçekleştirilmektedir. Kamu, konut ve altyapı projelerinde aktif olarak çalışmaktayız.",
+            "q2": "Teklif almak için nasıl başvurabilirim?",
+            "a2": "İletişim sayfamızdaki formu doldurarak veya doğrudan telefon numaramızdan bizimle iletişime geçebilirsiniz.",
+            "q3": "Şirketinizin tecrübesi ne kadar?",
+            "a3": "2014 yılından bu yana inşaat ve mühendislik sektöründe faaliyet göstermekteyiz. Bu süre zarfında onlarca proje başarıyla tamamlanmıştır.",
+            "q4": "Kalite belgeleriniz var mı?",
+            "a4": "Evet, ISO 9001 kalite belgesi ve sektörel sertifikalarımız mevcuttur.",
+            "q5": "Sosyal sorumluluk projeleriniz neler?",
+            "a5": "Eğitim, spor ve toplumsal alanlarda çeşitli projeler yürütmekteyiz. Okul bağışları, burs programları ve spor tesisleri bunların başında gelmektedir."
+        }
     },
-    "quickLinks": {
-      "title": "Hızlı Erişim",
-      "blog": {
-        "title": "Blog",
-        "desc": "Mühendislik yazıları"
-      },
-      "news": {
-        "title": "Haberler",
-        "desc": "Güncel haberler"
-      },
-      "projects": {
-        "title": "Projeler",
-        "desc": "Tamamlanan işler"
-      },
-      "faq": {
-        "title": "SSS",
-        "desc": "Sıkça sorulan sorular"
-      }
+    "contactPage": {
+        "heroTitle": "İLETİŞİM",
+        "heroSubtitle": "Bizimle iletişime geçin",
+        "addressTitle": "Adres",
+        "vanHQ": "Van Merkez:",
+        "ankaraBranch": "Ankara Şube:",
+        "phoneTitle": "Telefon",
+        "emailTitle": "E-posta",
+        "hoursTitle": "Çalışma Saatleri",
+        "hoursText": "Pazartesi - Cuma<br />08:00 - 17:00",
+        "formSubtitle": "İletişim Formu",
+        "formTitle": "BİZE YAZIN",
+        "successTitle": "Mesajınız Gönderildi!",
+        "successDesc": "En kısa sürede size dönüş yapacağız.",
+        "newMsgBtn": "Yeni Mesaj Gönder",
+        "errorMsg": "Mesaj gönderilirken bir hata oluştu. Lütfen tekrar deneyin.",
+        "nameLabel": "Ad Soyad *",
+        "emailLabel": "E-posta *",
+        "phoneLabel": "Telefon",
+        "subjectLabel": "Konu *",
+        "options": {
+            "project": "Proje Bilgi Talebi",
+            "collab": "İş Birliği Teklifi",
+            "career": "Kariyer",
+            "other": "Diğer"
+        },
+        "messageLabel": "Mesajınız *",
+        "sendBtn": "Gönder",
+        "sendingBtn": "Gönderiliyor..."
     },
-    "cta": {
-      "title": "İLETİŞİM",
-      "desc": "Kamu projeleri ve teknik müşavirlik hizmetleri için Ankara veya Van ofisimizle iletişime geçebilirsiniz.",
-      "button": "Bize Ulaşın"
+    "maintenance": {
+        "title": "Bakımda",
+        "message": "Sitemiz şu anda güncellenmektedir. Lütfen daha sonra tekrar deneyiniz."
+    },
+    "kvkk": {
+        "heroTitle": "KVKK AYDINLATMA METNİ",
+        "heroSubtitle": "Kişisel Verilerin Korunması",
+        "title": "Kişisel Verilerin Korunması ve İşlenmesi Hakkında Aydınlatma Metni",
+        "intro": "Karaoğlu Universal Mühendislik Ltd. Şti. (\"Şirket\" veya \"Veri Sorumlusu\") olarak, 6698 sayılı Kişisel Verilerin Korunması Kanunu (\"KVKK\") uyarınca, sizlere sunduğumuz hizmetler kapsamında kişisel verilerinizin işlenmesi, korunması ve haklarınız konusunda sizleri bilgilendirmek isteriz.",
+        "dataCollectionTitle": "1. Kişisel Verilerin Toplanması, İşlenmesi ve İşleme Amaçları",
+        "dataCollectionText": "Toplanan kişisel verileriniz, Şirketimiz tarafından sunulan hizmetlerden yararlanmanız, Şirketimizin hukuki ve ticari güvenliğinin temini, ticari ve iş stratejilerimizin belirlenmesi amaçlarıyla KVKK'nın 5. ve 6. maddelerinde belirtilen şartlara uygun olarak işlenebilecektir.",
+        "dataTransferTitle": "2. İşlenen Kişisel Verilerin Kimlere ve Hangi Amaçla Aktarılabileceği",
+        "dataTransferText": "Kişisel verileriniz, yukarıda belirtilen amaçların gerçekleştirilmesi doğrultusunda, yasal olarak yetkili kamu kurumları ve özel kişilere KVKK'nın 8. ve 9. maddelerinde belirtilen kişisel veri aktarımı şartları çerçevesinde aktarılabilecektir.",
+        "dataMethodTitle": "3. Kişisel Veri Toplamanın Yöntemi ve Hukuki Sebebi",
+        "dataMethodText": "Kişisel verileriniz, her türlü sözlü, yazılı veya elektronik ortamda, web sitemiz, iletişim formlarımız ve e-posta bildirimleri dahil olmak üzere çeşitli yöntemlerle yasal mevzuata uygun olarak toplanmaktadır.",
+        "rightsTitle": "4. KVKK Kapsamında Veri Sahibinin Hakları",
+        "rightsText": "KVKK'nın 11. maddesi uyarınca veri sahipleri; kişisel verilerinin işlenip işlenmediğini öğrenme, işlenmişse buna ilişkin bilgi talep etme, işlenme amacını ve amacına uygun kullanılıp kullanılmadığını öğrenme, eksik veya yanlış işlenmişse düzeltilmesini isteme haklarına sahiptir."
+    },
+    "privacyPage": {
+        "heroTitle": "Gizlilik Politikası",
+        "heroSubtitle": "Veri güvenliğiniz bizim için önemlidir",
+        "introTitle": "Giriş",
+        "introText": "Karaoğlu Universal Mühendislik Ltd. Şti. olarak, web sitemizi ziyaret eden kullanıcılarımızın gizliliğine saygı duyuyor ve kişisel bilgilerinizi korumayı taahhüt ediyoruz. Bu Gizlilik Politikası, hangi bilgileri topladığımızı, nasıl kullandığımızı ve koruduğumuzu açıklamaktadır.",
+        "collectedDataTitle": "Toplanan Bilgiler",
+        "collectedDataIntro": "Web sitemiz üzerinden aşağıdaki bilgileri toplayabiliriz:",
+        "collectedDataList": {
+            "i1": "İletişim formları aracılığıyla gönderilen ad, e-posta ve telefon bilgileri",
+            "i2": "Web sitesi kullanım verileri (çerezler aracılığıyla)",
+            "i3": "IP adresi ve tarayıcı bilgileri"
+        },
+        "dataUsageTitle": "Bilgilerin Kullanımı",
+        "dataUsageIntro": "Topladığımız bilgiler aşağıdaki amaçlarla kullanılmaktadır:",
+        "dataUsageList": {
+            "i1": "İletişim taleplerinize yanıt vermek",
+            "i2": "Hizmetlerimiz hakkında bilgi sağlamak",
+            "i3": "Web sitemizi geliştirmek",
+            "i4": "Yasal yükümlülüklerimizi yerine getirmek"
+        },
+        "cookiesTitle": "Çerez Kullanımı",
+        "cookiesText": "Web sitemiz, kullanıcı deneyimini iyileştirmek amacıyla çerezler kullanmaktadır. Çerezler, tarayıcınız tarafından cihazınıza kaydedilen küçük metin dosyalarıdır. Tarayıcı ayarlarınızdan çerezleri devre dışı bırakabilirsiniz.",
+        "securityTitle": "Veri Güvenliği",
+        "securityText": "Kişisel bilgilerinizi korumak için teknik ve idari güvenlik önlemleri uygulamaktayız. Verileriniz yetkisiz erişime karşı korunmaktadır.",
+        "sharingTitle": "Üçüncü Taraflarla Paylaşım",
+        "sharingText": "Kişisel bilgileriniz, yasal zorunluluklar dışında üçüncü taraflarla paylaşılmamaktadır. Verileriniz satılmaz veya kiralanmaz.",
+        "contactTitle": "İletişim",
+        "contactText": "Gizlilik politikamız hakkında sorularınız için bizimle iletişime geçebilirsiniz:",
+        "email": "E-posta:",
+        "phone": "Telefon:",
+        "lastUpdateLabel": "Son Güncelleme:",
+        "lastUpdateDate": "Ocak 2026",
+        "updateNote": "Bu gizlilik politikası gerektiğinde güncellenebilir."
+    },
+    "projectDetail": {
+        "notFound": "Proje Bulunamadı",
+        "notFoundDesc": "Aradığınız proje mevcut değil veya kaldırılmış olabilir.",
+        "backToList": "Projeler Listesine Dön",
+        "allProjects": "Tüm Projeler",
+        "detailsSoon": "Proje detayları yakında eklenecektir.",
+        "projectImages": "Proje Görselleri",
+        "imageAlt": "Görsel",
+        "projectInfo": "Proje Bilgileri",
+        "client": "İşveren / Kurum",
+        "area": "Toplam Alan",
+        "year": "Proje Yılı",
+        "location": "Lokasyon",
+        "contactUsTitle": "Bize Ulaşın",
+        "contactUsDesc": "Bu proje hakkında daha fazla bilgi almak için bizimle iletişime geçebilirsiniz.",
+        "contactBtn": "İletişime Geç",
+        "statusCompleted": "Tamamlandı",
+        "statusOngoing": "Devam Ediyor"
+    },
+    "blogDetail": {
+        "notFound": "Yazı Bulunamadı",
+        "notFoundDesc": "Aradığınız blog yazısı maalesef mevcut değil veya yayından kaldırılmış.",
+        "backToList": "Blog Listesine Dön",
+        "backToBlog": "Blog'a Dön",
+        "categoryGeneral": "Genel"
+    },
+    "widgets": {
+        "whatsapp": {
+            "message": "Merhaba, web sitenizden ulaşıyorum. Bilgi almak istiyorum.",
+            "ariaLabel": "WhatsApp ile iletişime geç",
+            "buttonText": "WhatsApp ile yazın"
+        },
+        "floatingHome": {
+            "ariaLabel": "Yukarı Git"
+        }
+    },
+    "projectGallery": {
+        "photos": "Fotoğraflar",
+        "photoLabel": "Fotoğraf",
+        "statusCompleted": "Tamamlandı",
+        "statusOngoing": "Devam Ediyor"
+    },
+    "ramadan": {
+        "greeting": "رمضان كريم ✦ مبارك",
+        "titleLine1": "Ramazan Ayınız",
+        "titleLine2": "Mübarek Olsun",
+        "subtextLine1": "Karaoğlu Universal Mühendislik ailesi olarak",
+        "subtextLine2": "bu mübarek ayın bereketini paylaşıyoruz.",
+        "continueBtn": "Devam Et →"
+    },
+    "language": {
+        "TR": "Türkçe",
+        "EN": "İngilizce"
     }
-  }
 }

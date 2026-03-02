@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 interface Particle {
     x: number;
@@ -17,6 +18,7 @@ interface Particle {
 }
 
 export default function RamadanBanner() {
+    const { t } = useTranslation();
     const [visible, setVisible] = useState(false);
     const [closing, setClosing] = useState(false);
     const [textPhase, setTextPhase] = useState(0);
@@ -323,7 +325,7 @@ export default function RamadanBanner() {
                             fontSize: "1.1rem", color: "#FFD700", letterSpacing: "0.15em",
                             marginBottom: "0.5rem", fontStyle: "italic",
                         }}>
-                            رمضان كريم ✦ مبارك
+                            {t("ramadan.greeting")}
                         </div>
                     )}
 
@@ -342,7 +344,7 @@ export default function RamadanBanner() {
                             textShadow: "none",
                             letterSpacing: "-0.02em",
                         }}>
-                            Ramazan Ayınız<br />Mübarek Olsun
+                            {t("ramadan.titleLine1")}<br />{t("ramadan.titleLine2")}
                         </h1>
                     )}
 
@@ -355,8 +357,8 @@ export default function RamadanBanner() {
                             letterSpacing: "0.08em",
                             marginBottom: "1.8rem",
                         }}>
-                            Karaoğlu Universal Mühendislik ailesi olarak<br />
-                            bu mübarek ayın bereketini paylaşıyoruz.
+                            {t("ramadan.subtextLine1")}<br />
+                            {t("ramadan.subtextLine2")}
                         </p>
                     )}
 
@@ -389,7 +391,7 @@ export default function RamadanBanner() {
                                 (e.target as HTMLButtonElement).style.boxShadow = "0 4px 20px rgba(255,165,0,0.4)";
                             }}
                         >
-                            Devam Et →
+                            {t("ramadan.continueBtn")}
                         </button>
                     )}
 

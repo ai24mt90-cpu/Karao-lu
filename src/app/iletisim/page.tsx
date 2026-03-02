@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { Mail, Phone, MapPin, Clock, Send, Loader2 } from "lucide-react";
 import { supabase } from "@/lib/supabase";
+import { useTranslation } from "react-i18next";
 
 interface FormData {
     name: string;
@@ -15,12 +16,14 @@ interface FormData {
 }
 
 export default function ContactPage() {
+    const { t } = useTranslation();
+    const defaultSubject = t("contactPage.options.project", "Proje Bilgi Talebi");
     const [formState, setFormState] = useState<"idle" | "submitting" | "success" | "error">("idle");
     const [formData, setFormData] = useState<FormData>({
         name: "",
         email: "",
         phone: "",
-        subject: "Proje Bilgi Talebi",
+        subject: defaultSubject,
         message: ""
     });
 
@@ -43,7 +46,7 @@ export default function ContactPage() {
             if (error) throw error;
 
             setFormState("success");
-            setFormData({ name: "", email: "", phone: "", subject: "Proje Bilgi Talebi", message: "" });
+            setFormData({ name: "", email: "", phone: "", subject: defaultSubject, message: "" });
         } catch (err) {
             console.error("Form submission error:", err);
             setFormState("error");
@@ -67,8 +70,8 @@ export default function ContactPage() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                         >
-                            <h1 className="text-5xl font-bold text-white mb-4">İLETİŞİM</h1>
-                            <p className="text-white/80 text-lg">Bizimle iletişime geçin</p>
+                            <h1 className="text-5xl font-bold text-white mb-4">{t("contactPage.heroTitle")}</h1>
+                            <p className="text-white/80 text-lg">{t("contactPage.heroSubtitle")}</p>
                         </motion.div>
                     </div>
                 </div>
@@ -82,14 +85,14 @@ export default function ContactPage() {
                             <div className="text-primary mb-4 flex justify-center">
                                 <MapPin size={32} />
                             </div>
-                            <h3 className="font-bold text-foreground mb-2">Adres</h3>
+                            <h3 className="font-bold text-foreground mb-2">{t("contactPage.addressTitle")}</h3>
                             <p className="text-text-secondary text-sm">
-                                <span className="font-bold text-gray-900 block mb-1">Van Merkez:</span>
+                                <span className="font-bold text-gray-900 block mb-1">{t("contactPage.vanHQ")}</span>
                                 Hafiziye Mah. Umman 1. Sokak<br />
                                 No: 38, Kat: 3, D: 16<br />
                                 65130 İpekyolu/Van
                                 <br /><br />
-                                <span className="font-bold text-gray-900 block mb-1">Ankara Şube:</span>
+                                <span className="font-bold text-gray-900 block mb-1">{t("contactPage.ankaraBranch")}</span>
                                 Next Level, Kızılırmak Mah. Dumlupınar Bulvarı<br />
                                 No: 3C1/160, Kat: 29<br />
                                 06530 Çankaya/Ankara
@@ -99,7 +102,7 @@ export default function ContactPage() {
                             <div className="text-primary mb-4 flex justify-center">
                                 <Phone size={32} />
                             </div>
-                            <h3 className="font-bold text-foreground mb-2">Telefon</h3>
+                            <h3 className="font-bold text-foreground mb-2">{t("contactPage.phoneTitle")}</h3>
                             <a href="tel:+904322165636" className="text-text-secondary text-sm hover:text-primary transition-colors">
                                 0432 216 56 36
                             </a>
@@ -108,7 +111,7 @@ export default function ContactPage() {
                             <div className="text-primary mb-4 flex justify-center">
                                 <Mail size={32} />
                             </div>
-                            <h3 className="font-bold text-foreground mb-2">E-posta</h3>
+                            <h3 className="font-bold text-foreground mb-2">{t("contactPage.emailTitle")}</h3>
                             <a href="mailto:karaogluuniversal@gmail.com" className="text-text-secondary text-sm hover:text-primary transition-colors">
                                 karaogluuniversal@gmail.com
                             </a>
@@ -117,11 +120,8 @@ export default function ContactPage() {
                             <div className="text-primary mb-4 flex justify-center">
                                 <Clock size={32} />
                             </div>
-                            <h3 className="font-bold text-foreground mb-2">Çalışma Saatleri</h3>
-                            <p className="text-text-secondary text-sm">
-                                Pazartesi - Cuma<br />
-                                08:00 - 17:00
-                            </p>
+                            <h3 className="font-bold text-foreground mb-2">{t("contactPage.hoursTitle")}</h3>
+                            <p className="text-text-secondary text-sm" dangerouslySetInnerHTML={{ __html: t("contactPage.hoursText") }} />
                         </div>
                     </div>
                 </div>
@@ -132,8 +132,8 @@ export default function ContactPage() {
                 <div className="layout-container">
                     <div className="max-w-2xl mx-auto">
                         <div className="text-center mb-12">
-                            <h2 className="text-primary text-sm font-semibold uppercase tracking-wider mb-4">İletişim Formu</h2>
-                            <h3 className="text-4xl font-bold text-foreground">BİZE YAZIN</h3>
+                            <h2 className="text-primary text-sm font-semibold uppercase tracking-wider mb-4">{t("contactPage.formSubtitle")}</h2>
+                            <h3 className="text-4xl font-bold text-foreground">{t("contactPage.formTitle")}</h3>
                         </div>
 
                         {formState === "success" ? (
@@ -145,25 +145,25 @@ export default function ContactPage() {
                                 <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
                                     <Send className="text-green-600" size={32} />
                                 </div>
-                                <h3 className="text-2xl font-bold text-foreground mb-4">Mesajınız Gönderildi!</h3>
-                                <p className="text-text-secondary mb-8">En kısa sürede size dönüş yapacağız.</p>
+                                <h3 className="text-2xl font-bold text-foreground mb-4">{t("contactPage.successTitle")}</h3>
+                                <p className="text-text-secondary mb-8">{t("contactPage.successDesc")}</p>
                                 <button
                                     onClick={() => setFormState("idle")}
                                     className="text-primary font-semibold hover:underline"
                                 >
-                                    Yeni Mesaj Gönder
+                                    {t("contactPage.newMsgBtn")}
                                 </button>
                             </motion.div>
                         ) : (
                             <form onSubmit={handleSubmit} className="bg-white p-8 shadow-lg">
                                 {formState === "error" && (
                                     <div className="bg-red-50 text-red-600 p-4 mb-6 text-sm">
-                                        Mesaj gönderilirken bir hata oluştu. Lütfen tekrar deneyin.
+                                        {t("contactPage.errorMsg")}
                                     </div>
                                 )}
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                                     <div>
-                                        <label className="block text-sm font-medium text-foreground mb-2">Ad Soyad *</label>
+                                        <label className="block text-sm font-medium text-foreground mb-2">{t("contactPage.nameLabel")}</label>
                                         <input
                                             required
                                             type="text"
@@ -174,7 +174,7 @@ export default function ContactPage() {
                                         />
                                     </div>
                                     <div>
-                                        <label className="block text-sm font-medium text-foreground mb-2">E-posta *</label>
+                                        <label className="block text-sm font-medium text-foreground mb-2">{t("contactPage.emailLabel")}</label>
                                         <input
                                             required
                                             type="email"
@@ -186,7 +186,7 @@ export default function ContactPage() {
                                     </div>
                                 </div>
                                 <div className="mb-6">
-                                    <label className="block text-sm font-medium text-foreground mb-2">Telefon</label>
+                                    <label className="block text-sm font-medium text-foreground mb-2">{t("contactPage.phoneLabel")}</label>
                                     <input
                                         type="tel"
                                         name="phone"
@@ -196,21 +196,21 @@ export default function ContactPage() {
                                     />
                                 </div>
                                 <div className="mb-6">
-                                    <label className="block text-sm font-medium text-foreground mb-2">Konu *</label>
+                                    <label className="block text-sm font-medium text-foreground mb-2">{t("contactPage.subjectLabel")}</label>
                                     <select
                                         name="subject"
                                         value={formData.subject}
                                         onChange={handleChange}
                                         className="w-full h-12 px-4 border border-gray-200 focus:border-primary focus:outline-none transition-colors bg-white"
                                     >
-                                        <option>Proje Bilgi Talebi</option>
-                                        <option>İş Birliği Teklifi</option>
-                                        <option>Kariyer</option>
-                                        <option>Diğer</option>
+                                        <option>{t("contactPage.options.project")}</option>
+                                        <option>{t("contactPage.options.collab")}</option>
+                                        <option>{t("contactPage.options.career")}</option>
+                                        <option>{t("contactPage.options.other")}</option>
                                     </select>
                                 </div>
                                 <div className="mb-6">
-                                    <label className="block text-sm font-medium text-foreground mb-2">Mesajınız *</label>
+                                    <label className="block text-sm font-medium text-foreground mb-2">{t("contactPage.messageLabel")}</label>
                                     <textarea
                                         required
                                         name="message"
@@ -228,10 +228,10 @@ export default function ContactPage() {
                                     {formState === "submitting" ? (
                                         <>
                                             <Loader2 className="animate-spin" size={20} />
-                                            Gönderiliyor...
+                                            {t("contactPage.sendingBtn")}
                                         </>
                                     ) : (
-                                        "Gönder"
+                                        t("contactPage.sendBtn")
                                     )}
                                 </button>
                             </form>

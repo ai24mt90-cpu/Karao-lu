@@ -5,8 +5,10 @@ import { useState, useEffect } from "react";
 import { Home, ArrowUp } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
+import { useTranslation } from "react-i18next";
 
 export default function FloatingHomeButton() {
+    const { t } = useTranslation();
     const [isVisible, setIsVisible] = useState(false);
     const pathname = usePathname();
 
@@ -40,7 +42,7 @@ export default function FloatingHomeButton() {
                     <button
                         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                         className="w-12 h-12 bg-white text-primary rounded-full shadow-lg flex items-center justify-center hover:bg-gray-50 transition-colors border border-gray-200"
-                        aria-label="Yukarı Git"
+                        aria-label={t("widgets.floatingHome.ariaLabel")}
                     >
                         <ArrowUp size={20} />
                     </button>
@@ -49,7 +51,7 @@ export default function FloatingHomeButton() {
                     <Link
                         href="/"
                         className="w-12 h-12 bg-primary text-white rounded-full shadow-lg flex items-center justify-center hover:bg-primary-dark transition-colors"
-                        aria-label="Ana Sayfa"
+                        aria-label={t("nav.home", "Ana Sayfa")}
                     >
                         <Home size={20} />
                     </Link>

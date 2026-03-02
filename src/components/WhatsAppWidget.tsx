@@ -1,10 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 export default function WhatsAppWidget() {
+    const { t } = useTranslation();
     const phoneNumber = "905326736556"; // +90 532 673 65 56 (without + and spaces)
-    const message = "Merhaba, web sitenizden ulaşıyorum. Bilgi almak istiyorum.";
+    const message = t("widgets.whatsapp.message");
 
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
@@ -19,7 +21,7 @@ export default function WhatsAppWidget() {
             transition={{ delay: 0.5, duration: 0.3 }}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
-            aria-label="WhatsApp ile iletişime geç"
+            aria-label={t("widgets.whatsapp.ariaLabel")}
         >
             {/* Official WhatsApp Logo */}
             <svg
@@ -36,7 +38,7 @@ export default function WhatsAppWidget() {
 
             {/* Tooltip */}
             <span className="absolute right-full mr-3 px-3 py-2 bg-gray-900 text-white text-sm rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                WhatsApp ile yazın
+                {t("widgets.whatsapp.buttonText")}
             </span>
         </motion.a>
     );
