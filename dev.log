@@ -1,0 +1,39 @@
+
+> website@0.1.0 dev
+> next dev
+
+▲ Next.js 16.1.1 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://172.29.19.217:3000
+- Environments: .env.local
+
+✓ Starting...
+⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+✓ Ready in 277ms
+🌐 i18next is maintained with support from Locize — consider powering your project with managed localization (AI, CDN, integrations): https://locize.com 💙
+ GET / 200 in 1317ms (compile: 476ms, proxy.ts: 34ms, render: 807ms)
+ GET /sektorler 200 in 471ms (compile: 455ms, proxy.ts: 6ms, render: 9ms)
+ GET /projeler 200 in 230ms (compile: 216ms, proxy.ts: 5ms, render: 9ms)
+ GET /projeler/kategori/tum-projeler 200 in 1355ms (compile: 395ms, proxy.ts: 4ms, render: 956ms)
+ GET /projeler/kategori/tum-projeler 200 in 944ms (compile: 3ms, proxy.ts: 939µs, render: 940ms)
+ GET /sosyal-sorumluluk 200 in 188ms (compile: 177ms, proxy.ts: 4ms, render: 7ms)
+ GET /haberler 200 in 193ms (compile: 180ms, proxy.ts: 5ms, render: 7ms)
+ GET /blog 200 in 199ms (compile: 188ms, proxy.ts: 4ms, render: 7ms)
+ GET /iletisim 200 in 179ms (compile: 167ms, proxy.ts: 5ms, render: 8ms)
+✓ Compiled in 21ms
+✓ Compiled in 13ms
+✓ Compiled in 11ms
+✓ Compiled in 11ms
+✓ Compiled in 20ms
+✓ Compiled in 11ms
+✓ Compiled in 11ms
+✓ Compiled in 14ms
+✓ Compiled in 13ms
+✓ Compiled in 10ms
+✓ Compiled in 11ms
+✓ Compiled in 31ms
+✓ Compiled in 26ms
+✓ Compiled in 17ms
+✓ Compiled in 14ms
+ GET /iletisim 200 in 213ms (compile: 67ms, proxy.ts: 4ms, render: 142ms)
+ GET / 200 in 1119ms (compile: 52ms, proxy.ts: 2ms, render: 1065ms)

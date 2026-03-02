@@ -122,7 +122,7 @@ export default function HomeSlider({ featuredProjects = [] }: HomeSliderProps) {
             <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-4 z-20">
                 <button
                     onClick={prevSlide}
-                    aria-label="Önceki Slayt"
+                    aria-label={t("home.slider.prev_slide", "Önceki Slayt")}
                     className="p-3 bg-white/20 hover:bg-white/40 text-white rounded-full transition-colors backdrop-blur-sm"
                 >
                     <ChevronLeft size={24} />
@@ -132,14 +132,14 @@ export default function HomeSlider({ featuredProjects = [] }: HomeSliderProps) {
                         <button
                             key={idx}
                             onClick={() => setCurrentSlide(idx)}
-                            aria-label={`Slayt ${idx + 1}`}
+                            aria-label={t("home.slider.slide_num", "Slayt {{num}}", { num: idx + 1 })}
                             className={`w-4 h-4 rounded-full transition-all flex items-center justify-center ${idx === currentSlide ? "bg-white ring-4 ring-white/30 scale-110" : "bg-white/40 hover:bg-white/60"}`}
                         />
                     ))}
                 </div>
                 <button
                     onClick={nextSlide}
-                    aria-label="Sonraki Slayt"
+                    aria-label={t("home.slider.next_slide", "Sonraki Slayt")}
                     className="p-3 bg-white/20 hover:bg-white/40 text-white rounded-full transition-colors backdrop-blur-sm"
                 >
                     <ChevronRight size={24} />

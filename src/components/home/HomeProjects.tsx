@@ -24,9 +24,9 @@ export default function HomeProjects({ projects }: HomeProjectsProps) {
 
     // Fallback if no projects in DB
     const displayProjects = projects.length > 0 ? projects.slice(0, 6) : [
-        { id: "1", title: "VAN BEDESTEN ÇARŞISI VE ÇEVRE DÜZENLEME", year: "2024", status: "Tamamlandı", location: "VAN", description: "VAN YATIRIM İZLEME VE KOORDİNASYON BAŞKANLIĞI", category: "Kamu" },
-        { id: "2", title: "ÇATAK 89 ADET KONUT İNŞAATI VE ALTYAPI", year: "2022", status: "Tamamlandı", location: "VAN", description: "T.C. ÇEVRE VE ŞEHİRCİLİK BAKANLIĞI TOKİ", category: "Konut" },
-        { id: "3", title: "SAHİL BANDI 1. ETAP YAPIM", year: "2022", status: "Tamamlandı", location: "VAN", description: "İPEKYOLU BELEDİYESİ", category: "Altyapı" },
+        { id: "1", title: t("home.projects.p1.title", "VAN BEDESTEN ÇARŞISI VE ÇEVRE DÜZENLEME"), year: "2024", status: "Tamamlandı", location: "VAN", description: t("home.projects.p1.desc", "VAN YATIRIM İZLEME VE KOORDİNASYON BAŞKANLIĞI"), category: t("home.projects.p1.cat", "Kamu") },
+        { id: "2", title: t("home.projects.p2.title", "ÇATAK 89 ADET KONUT İNŞAATI VE ALTYAPI"), year: "2022", status: "Tamamlandı", location: "VAN", description: t("home.projects.p2.desc", "T.C. ÇEVRE VE ŞEHİRCİLİK BAKANLIĞI TOKİ"), category: t("home.projects.p2.cat", "Konut") },
+        { id: "3", title: t("home.projects.p3.title", "SAHİL BANDI 1. ETAP YAPIM"), year: "2022", status: "Tamamlandı", location: "VAN", description: t("home.projects.p3.desc", "İPEKYOLU BELEDİYESİ"), category: t("home.projects.p3.cat", "Altyapı") },
     ];
 
     return (

@@ -53,61 +53,80 @@
             "status": {
                 "completed": "Completed",
                 "ongoing": "Ongoing"
+            },
+            "subtitle": "CORPORATE PROJECTS",
+            "title": "Our Projects",
+            "viewAll": "View All",
+            "viewAllMobile": "View All Projects",
+            "p1": {
+                "title": "VAN BEDESTEN BAZAAR AND LANDSCAPING",
+                "desc": "VAN INVESTMENT MONITORING AND COORDINATION DIRECTORATE",
+                "cat": "Public"
+            },
+            "p2": {
+                "title": "ÇATAK 89 RESIDENTIAL CONSTRUCTION AND INFRASTRUCTURE",
+                "desc": "REPUBLIC OF TURKEY MINISTRY OF ENVIRONMENT AND URBANIZATION TOKİ",
+                "cat": "Housing"
+            },
+            "p3": {
+                "title": "COASTAL BAND 1ST STAGE CONSTRUCTION",
+                "desc": "İPEKYOLU MUNICIPALITY",
+                "cat": "Infrastructure"
             }
+        },
+        "about": {
+            "subtitle": "Why Us?",
+            "title": "THE RELIABLE SOLUTION PARTNER FOR<br />PUBLIC PROJECTS IN<br />VAN AND ANKARA",
+            "desc1": "<strong>Karaoğlu Universal Mühendislik</strong> carries out public contracting works throughout Turkey with its offices based in Ankara and Van.",
+            "desc2": "Our company has successfully completed 64 projects to date, most of which consist of construction and engineering works for public institutions.",
+            "desc3": "We act with 'state seriousness' in construction, infrastructure and superstructure projects; delivering Hospital, School, TOKİ housing and Road projects on time.",
+            "badges": {
+                "projects": "Completed Public Projects",
+                "experience": "Years Sector Experience",
+                "cities": "Projects Province-wide",
+                "delivery": "On Time Delivery"
+            },
+            "buttons": {
+                "completed": "Completed Projects",
+                "qualifications": "Technical Qualifications"
+            }
+        },
+        "servicesTitle": "OUR SERVICE AREAS",
+        "services": {
+            "public": "<strong>Public Buildings:</strong> Hospital, School, Government House",
+            "infra": "<strong>Infrastructure Projects:</strong> Sewerage, Transmission Line, Road",
+            "housing": "<strong>TOKİ Housing:</strong> Mass Housing in Van and Surrounding Provinces",
+            "reinforcement": "<strong>Reinforcement:</strong> Earthquake Reinforcement and Repair",
+            "landscaping": "<strong>Landscaping:</strong> National Gardens and Landscaping"
+        },
+        "slogan": {
+            "text": "\"Reliability, technical competence and on-time delivery guarantee in public projects.\"",
+            "author": "— Karaoğlu Universal Mühendislik"
+        },
+        "quickLinks": {
+            "title": "Quick Links",
+            "blog": {
+                "title": "Blog",
+                "desc": "Engineering articles"
+            },
+            "news": {
+                "title": "News",
+                "desc": "Current news"
+            },
+            "projects": {
+                "title": "Projects",
+                "desc": "Completed works"
+            },
+            "faq": {
+                "title": "FAQ",
+                "desc": "Frequently asked questions"
+            }
+        },
+        "cta": {
+            "title": "CONTACT",
+            "desc": "You can contact our Ankara or Van office for public projects and technical consultancy services.",
+            "button": "Contact Us"
         }
-    },
-    "about": {
-        "subtitle": "Why Us?",
-        "title": "THE RELIABLE SOLUTION PARTNER FOR<br />PUBLIC PROJECTS IN<br />VAN AND ANKARA",
-        "desc1": "<strong>Karaoğlu Universal Mühendislik</strong> carries out public contracting works throughout Turkey with its offices based in Ankara and Van.",
-        "desc2": "Our company has successfully completed 64 projects to date, most of which consist of construction and engineering works for public institutions.",
-        "desc3": "We act with 'state seriousness' in construction, infrastructure and superstructure projects; delivering Hospital, School, TOKİ housing and Road projects on time.",
-        "badges": {
-            "projects": "Completed Public Projects",
-            "experience": "Years Sector Experience",
-            "cities": "Projects Province-wide",
-            "delivery": "On Time Delivery"
-        },
-        "buttons": {
-            "completed": "Completed Projects",
-            "qualifications": "Technical Qualifications"
-        }
-    },
-    "servicesTitle": "OUR SERVICE AREAS",
-    "services": {
-        "public": "<strong>Public Buildings:</strong> Hospital, School, Government House",
-        "infra": "<strong>Infrastructure Projects:</strong> Sewerage, Transmission Line, Road",
-        "housing": "<strong>TOKİ Housing:</strong> Mass Housing in Van and Surrounding Provinces",
-        "reinforcement": "<strong>Reinforcement:</strong> Earthquake Reinforcement and Repair",
-        "landscaping": "<strong>Landscaping:</strong> National Gardens and Landscaping"
-    },
-    "slogan": {
-        "text": "\"Reliability, technical competence and on-time delivery guarantee in public projects.\"",
-        "author": "— Karaoğlu Universal Mühendislik"
-    },
-    "quickLinks": {
-        "title": "Quick Links",
-        "blog": {
-            "title": "Blog",
-            "desc": "Engineering articles"
-        },
-        "news": {
-            "title": "News",
-            "desc": "Current news"
-        },
-        "projects": {
-            "title": "Projects",
-            "desc": "Completed works"
-        },
-        "faq": {
-            "title": "FAQ",
-            "desc": "Frequently asked questions"
-        }
-    },
-    "cta": {
-        "title": "CONTACT",
-        "desc": "You can contact our Ankara or Van office for public projects and technical consultancy services.",
-        "button": "Contact Us"
     },
     "aboutPage": {
         "heroTitle": "ABOUT US",
@@ -306,5 +325,80 @@
     "language": {
         "TR": "Turkish",
         "EN": "English"
+    },
+    "sectorsPage": {
+        "heroTitle": "SECTORS",
+        "heroDesc": "Get detailed information about the sectors we operate in Van and its surroundings. We are at your service with our expert team and experience in every sector.",
+        "ctaTitle": "Get a Quote for Your Project",
+        "ctaDesc": "Regardless of the sector, we are ready to offer the most suitable solution for your project.",
+        "ctaBtn": "Contact Us",
+        "list": [
+            {
+                "title": "Public Projects",
+                "description": "We offer construction and engineering services for government institutions, municipalities, and public administrations.",
+                "details": [
+                    "Governorship and district governorship buildings",
+                    "Municipality service buildings",
+                    "Gendarmerie and police branch facilities",
+                    "Courthouse and public offices",
+                    "Culture and congress centers"
+                ]
+            },
+            {
+                "title": "Health Projects",
+                "description": "We serve with our team specialized in modern health facilities and hospital infrastructure projects.",
+                "details": [
+                    "State hospitals",
+                    "Health centers and polyclinics",
+                    "Emergency service units",
+                    "Laboratory and diagnostic centers",
+                    "Hospital annex building and renovations"
+                ]
+            },
+            {
+                "title": "Education Projects",
+                "description": "We offer comprehensive construction solutions for schools, university campuses and educational facilities.",
+                "details": [
+                    "Primary and secondary school buildings",
+                    "High schools and vocational high schools",
+                    "University campus buildings",
+                    "Sports halls and conference halls",
+                    "Dormitory and social facility buildings"
+                ]
+            },
+            {
+                "title": "Housing Projects",
+                "description": "We provide reliable and high-quality construction services in TOKİ projects and mass housing areas.",
+                "details": [
+                    "TOKİ mass housing projects",
+                    "Urban transformation projects",
+                    "Social housing projects",
+                    "Lodging and personnel housing",
+                    "Landscaping and infrastructure"
+                ]
+            },
+            {
+                "title": "Infrastructure Projects",
+                "description": "We provide services in Road, bridge, sewerage and city infrastructure projects in Van and its surroundings.",
+                "details": [
+                    "Asphalt and cobblestone paving",
+                    "Sewerage and rainwater lines",
+                    "Drinking water networks",
+                    "Bridge and culvert construction",
+                    "In-city transportation projects"
+                ]
+            },
+            {
+                "title": "Electricity & Energy",
+                "description": "We are experts in electrical power transmission lines, transformer centers and energy infrastructure projects.",
+                "details": [
+                    "Energy transmission lines (ENH)",
+                    "Transformer stations and posts",
+                    "Village electricity networks",
+                    "Lighting systems",
+                    "Generator and uninterruptible power systems"
+                ]
+            }
+        ]
     }
 }

@@ -53,7 +53,7 @@ export default function Footer() {
                             <Link href="/hakkimizda" className="text-sm text-gray-100 hover:text-white transition-colors">{t("nav.about")}</Link>
                             <Link href="/sektorler" className="text-sm text-gray-100 hover:text-white transition-colors">{t("nav.services")}</Link>
                             <Link href="/iletisim" className="text-sm text-gray-100 hover:text-white transition-colors">{t("nav.contact")}</Link>
-                            <Link href="/ankara-teknik-koordinasyon" className="text-sm text-gray-100 hover:text-white transition-colors">Ankara Koordinasyon</Link>
+                            <Link href="/ankara-teknik-koordinasyon" className="text-sm text-gray-100 hover:text-white transition-colors">{t("nav.ankara", "Ankara Koordinasyon")}</Link>
                         </nav>
                     </div>
 
@@ -61,10 +61,10 @@ export default function Footer() {
                     <div className="flex flex-col gap-4">
                         <p className="text-sm font-bold text-white mb-2">{t("footer.contentLabel")}</p>
                         <nav className="flex flex-col gap-3">
-                            <Link href="/blog" className="text-sm text-gray-100 hover:text-white transition-colors">Blog</Link>
-                            <Link href="/haberler" className="text-sm text-gray-100 hover:text-white transition-colors">Haberler</Link>
-                            <Link href="/sss" className="text-sm text-gray-100 hover:text-white transition-colors">SSS</Link>
-                            <Link href="/sosyal-sorumluluk" className="text-sm text-gray-100 hover:text-white transition-colors">Sosyal Sorumluluk</Link>
+                            <Link href="/blog" className="text-sm text-gray-100 hover:text-white transition-colors">{t("nav.blogPosts")}</Link>
+                            <Link href="/haberler" className="text-sm text-gray-100 hover:text-white transition-colors">{t("nav.blogNews")}</Link>
+                            <Link href="/sss" className="text-sm text-gray-100 hover:text-white transition-colors">{t("home.quickLinks.faq.title")}</Link>
+                            <Link href="/sosyal-sorumluluk" className="text-sm text-gray-100 hover:text-white transition-colors">{t("nav.socialResp")}</Link>
                         </nav>
                     </div>
 
