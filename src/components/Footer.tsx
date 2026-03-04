@@ -81,15 +81,15 @@ export default function Footer() {
                             <div className="flex items-start gap-3 text-sm text-gray-100">
                                 <MapPin size={16} className="mt-0.5 flex-shrink-0" />
                                 <div>
-                                    <span className="block font-semibold text-white mb-0.5">{t("footer.ankaraHQ")}</span>
-                                    <span>Next Level, Kızılırmak Mah. Dumlupınar Bulvarı No: 3C1/160, Kat: 29, 06530 Çankaya/Ankara</span>
+                                    <span className="block font-semibold text-white mb-0.5">{t("footer.vanBranch")}</span>
+                                    <span>Güzeloba Mah. Çağlayangil Caddesi 3 B Muratpaşa/Antalya</span>
                                 </div>
                             </div>
                             <div className="flex items-start gap-3 text-sm text-gray-100">
                                 <MapPin size={16} className="mt-0.5 flex-shrink-0" />
                                 <div>
-                                    <span className="block font-semibold text-white mb-0.5">{t("footer.vanBranch")}</span>
-                                    <span>Hafiziye Mah. Umman 1. Sokak No: 38, Kat: 3, D: 16, 65130 İpekyolu/Van</span>
+                                    <span className="block font-semibold text-white mb-0.5">{t("footer.ankaraHQ")}</span>
+                                    <span>Next Level, Kızılırmak Mah. Dumlupınar Bulvarı No: 3C1/160, Kat: 29, 06530 Çankaya/Ankara</span>
                                 </div>
                             </div>
                         </div>

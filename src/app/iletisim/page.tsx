@@ -88,9 +88,8 @@ export default function ContactPage() {
                             <h3 className="font-bold text-foreground mb-2">{t("contactPage.addressTitle")}</h3>
                             <p className="text-text-secondary text-sm">
                                 <span className="font-bold text-gray-900 block mb-1">{t("contactPage.vanHQ")}</span>
-                                Hafiziye Mah. Umman 1. Sokak<br />
-                                No: 38, Kat: 3, D: 16<br />
-                                65130 İpekyolu/Van
+                                Güzeloba Mah. Cağlayangil Caddesi 3 B<br />
+                                Muratpaşa/Antalya
                                 <br /><br />
                                 <span className="font-bold text-gray-900 block mb-1">{t("contactPage.ankaraBranch")}</span>
                                 Next Level, Kızılırmak Mah. Dumlupınar Bulvarı<br />

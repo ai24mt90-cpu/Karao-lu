@@ -34,8 +34,8 @@
         "terms": "Terms of Use",
         "companySub": "Universal Engineering",
         "contentLabel": "Content",
-        "vanBranch": "Van Branch:",
-        "ankaraHQ": "Ankara Headquarters:",
+        "vanBranch": "Antalya Headquarters:",
+        "ankaraHQ": "Ankara Branch:",
         "kvkkLabel": "CLPD Clarification Text",
         "engineeringFirm": "Ankara Engineering Firm"
     },
@@ -76,8 +76,8 @@
         },
         "about": {
             "subtitle": "Why Us?",
-            "title": "THE RELIABLE SOLUTION PARTNER FOR<br />PUBLIC PROJECTS IN<br />VAN AND ANKARA",
-            "desc1": "<strong>Karaoğlu Universal Mühendislik</strong> carries out public contracting works throughout Turkey with its offices based in Ankara and Van.",
+            "title": "THE RELIABLE SOLUTION PARTNER FOR<br />PUBLIC PROJECTS IN<br />ANTALYA AND ANKARA",
+            "desc1": "<strong>Karaoğlu Universal Mühendislik</strong> carries out public contracting works throughout Turkey with its offices based in Antalya and Ankara.",
             "desc2": "Our company has successfully completed 64 projects to date, most of which consist of construction and engineering works for public institutions.",
             "desc3": "We act with 'state seriousness' in construction, infrastructure and superstructure projects; delivering Hospital, School, TOKİ housing and Road projects on time.",
             "badges": {
@@ -124,7 +124,7 @@
         },
         "cta": {
             "title": "CONTACT",
-            "desc": "You can contact our Ankara or Van office for public projects and technical consultancy services.",
+            "desc": "You can contact our Antalya or Ankara office for public projects and technical consultancy services.",
             "button": "Contact Us"
         }
     },
@@ -135,7 +135,7 @@
         "breadcrumbAbout": "About Us",
         "title": "ENGINEERING WITH HIGH TECHNICAL CAPACITY<br />MASTERING PUBLIC PROCUREMENT LEGISLATION",
         "desc1": "As <strong>Karaoğlu Universal Engineering</strong>, we focus on 'contracting and project management' rather than 'build-and-sell' in the construction sector.",
-        "desc2": "Our firm, based in İpekyolu/Van, has been the solution partner of many official institutions, especially Van Investment Monitoring (YİKOB), Ministry of Environment and Urbanization, and Local Governments.",
+        "desc2": "Our firm, based in Antalya, has been the solution partner of many official institutions, especially Van Investment Monitoring (YİKOB), Ministry of Environment and Urbanization, and Local Governments.",
         "differences": {
             "legal": {
                 "title": "Legislative Mastery",
@@ -179,7 +179,7 @@
         "ctaButton": "Contact Us",
         "defaults": {
             "q1": "In which regions are your projects carried out?",
-            "a1": "Our projects are mostly carried out in Van and surrounding provinces. We are actively working on public, housing and infrastructure projects.",
+            "a1": "Our projects are mostly carried out in Antalya, Ankara, Van and surrounding provinces. We are actively working on public, housing and infrastructure projects.",
             "q2": "How can I apply to get an offer?",
             "a2": "You can contact us by filling out the form on our contact page or directly from our phone number.",
             "q3": "How much experience does your company have?",
@@ -194,7 +194,7 @@
         "heroTitle": "CONTACT",
         "heroSubtitle": "Get in touch with us",
         "addressTitle": "Address",
-        "vanHQ": "Van Headquarters:",
+        "vanHQ": "Antalya Headquarters:",
         "ankaraBranch": "Ankara Branch:",
         "phoneTitle": "Phone",
         "emailTitle": "Email",
@@ -328,7 +328,7 @@
     },
     "sectorsPage": {
         "heroTitle": "SECTORS",
-        "heroDesc": "Get detailed information about the sectors we operate in Van and its surroundings. We are at your service with our expert team and experience in every sector.",
+        "heroDesc": "Get detailed information about the sectors we operate across Turkey. We are at your service with our expert team and experience in every sector.",
         "ctaTitle": "Get a Quote for Your Project",
         "ctaDesc": "Regardless of the sector, we are ready to offer the most suitable solution for your project.",
         "ctaBtn": "Contact Us",
@@ -379,7 +379,7 @@
             },
             {
                 "title": "Infrastructure Projects",
-                "description": "We provide services in Road, bridge, sewerage and city infrastructure projects in Van and its surroundings.",
+                "description": "We provide services in Road, bridge, sewerage and city infrastructure projects across Turkey.",
                 "details": [
                     "Asphalt and cobblestone paving",
                     "Sewerage and rainwater lines",

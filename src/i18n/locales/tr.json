@@ -34,8 +34,8 @@
         "terms": "Kullanım Şartları",
         "companySub": "Universal Mühendislik",
         "contentLabel": "İçerik",
-        "vanBranch": "Van Şube:",
-        "ankaraHQ": "Ankara Merkez:",
+        "vanBranch": "Antalya Merkez:",
+        "ankaraHQ": "Ankara Şube:",
         "kvkkLabel": "KVKK Aydınlatma Metni",
         "engineeringFirm": "Ankara Mühendislik Firması"
     },
@@ -76,8 +76,8 @@
         },
         "about": {
             "subtitle": "Neden Biz?",
-            "title": "VAN VE ANKARA'DA<br />KAMU PROJELERİNİN<br />GÜVENİLİR ÇÖZÜM ORTAĞI",
-            "desc1": "<strong>Karaoğlu Universal Mühendislik</strong>, Ankara ve Van merkezli ofisleriyle Türkiye genelinde kamu taahhüt işleri yürütmektedir.",
+            "title": "ANTALYA VE ANKARA'DA<br />KAMU PROJELERİNİN<br />GÜVENİLİR ÇÖZÜM ORTAĞI",
+            "desc1": "<strong>Karaoğlu Universal Mühendislik</strong>, Antalya ve Ankara ofisleriyle Türkiye genelinde kamu taahhüt işleri yürütmektedir.",
             "desc2": "Şirketimiz bugüne kadar 64 projeyi başarıyla tamamlamış olup, bu projelerin büyük bölümü kamu kurumlarına yönelik yapım ve mühendislik işlerinden oluşmaktadır.",
             "desc3": "İnşaat, altyapı ve üstyapı projelerinde \"devlet ciddiyeti\" ile hareket ediyor; Hastane, Okul, TOKİ konutları ve Yol projelerini zamanında teslim ediyoruz.",
             "badges": {
@@ -124,7 +124,7 @@
         },
         "cta": {
             "title": "İLETİŞİM",
-            "desc": "Kamu projeleri ve teknik müşavirlik hizmetleri için Ankara veya Van ofisimizle iletişime geçebilirsiniz.",
+            "desc": "Kamu projeleri ve teknik müşavirlik hizmetleri için Antalya veya Ankara ofisimizle iletişime geçebilirsiniz.",
             "button": "Bize Ulaşın"
         }
     },
@@ -135,7 +135,7 @@
         "breadcrumbAbout": "Hakkımızda",
         "title": "KAMU İHALE MEVZUATINA HAKİM,<br />TEKNİK KAPASİTESİ YÜKSEK MÜHENDİSLİK",
         "desc1": "<strong>Karaoğlu Universal Mühendislik</strong> olarak, inşaat sektöründe 'yap-sat' değil, 'taahhüt ve proje yönetimi' odaklı çalışıyoruz.",
-        "desc2": "İpekyolu/Van merkezli firmamız, bugüne kadar Van Yatırım İzleme (YİKOB), Çevre ve Şehircilik Bakanlığı ve Yerel Yönetimler başta olmak üzere birçok resmi kurumun çözüm ortağı olmuştur.",
+        "desc2": "Antalya merkezli firmamız, bugüne kadar Van Yatırım İzleme (YİKOB), Çevre ve Şehircilik Bakanlığı ve Yerel Yönetimler başta olmak üzere birçok resmi kurumun çözüm ortağı olmuştur.",
         "differences": {
             "legal": {
                 "title": "Mevzuat Hakimiyeti",
@@ -179,7 +179,7 @@
         "ctaButton": "İletişime Geç",
         "defaults": {
             "q1": "Projeleriniz hangi bölgelerde gerçekleştiriliyor?",
-            "a1": "Projelerimiz ağırlıklı olarak Van ve çevre illerde gerçekleştirilmektedir. Kamu, konut ve altyapı projelerinde aktif olarak çalışmaktayız.",
+            "a1": "Projelerimiz ağırlıklı olarak Antalya, Ankara, Van ve çevre illerde gerçekleştirilmektedir. Kamu, konut ve altyapı projelerinde aktif olarak çalışmaktayız.",
             "q2": "Teklif almak için nasıl başvurabilirim?",
             "a2": "İletişim sayfamızdaki formu doldurarak veya doğrudan telefon numaramızdan bizimle iletişime geçebilirsiniz.",
             "q3": "Şirketinizin tecrübesi ne kadar?",
@@ -194,7 +194,7 @@
         "heroTitle": "İLETİŞİM",
         "heroSubtitle": "Bizimle iletişime geçin",
         "addressTitle": "Adres",
-        "vanHQ": "Van Merkez:",
+        "vanHQ": "Antalya Merkez:",
         "ankaraBranch": "Ankara Şube:",
         "phoneTitle": "Telefon",
         "emailTitle": "E-posta",
@@ -328,7 +328,7 @@
     },
     "sectorsPage": {
         "heroTitle": "SEKTÖRLER",
-        "heroDesc": "Van ve çevresinde faaliyet gösterdiğimiz sektörler hakkında detaylı bilgi edinin. Her sektörde uzman kadromuz ve deneyimimizle hizmetinizdeyiz.",
+        "heroDesc": "Türkiye genelinde faaliyet gösterdiğimiz sektörler hakkında detaylı bilgi edinin. Her sektörde uzman kadromuz ve deneyimimizle hizmetinizdeyiz.",
         "ctaTitle": "Projeniz İçin Teklif Alın",
         "ctaDesc": "Hangi sektörde olursa olsun, projeniz için size en uygun çözümü sunmak için hazırız.",
         "ctaBtn": "İletişime Geçin",
@@ -379,7 +379,7 @@
             },
             {
                 "title": "Altyapı Projeleri",
-                "description": "Yol, köprü, kanalizasyon ve şehir altyapısı projelerinde Van ve çevresinde hizmet sunuyoruz.",
+                "description": "Yol, köprü, kanalizasyon ve şehir altyapısı projelerinde Türkiye genelinde hizmet sunuyoruz.",
                 "details": [
                     "Asfalt ve parke taşı döşeme",
                     "Kanalizasyon ve yağmur suyu hatları",

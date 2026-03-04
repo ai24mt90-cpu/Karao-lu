@@ -1,11 +1,11 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Van Mühendislik Sektörleri – Kamu, Sağlık, Eğitim, Altyapı",
-    description: "Van'da kamu, sağlık, eğitim, konut, altyapı ve enerji sektörlerinde mühendislik hizmetleri. Karaoğlu Universal Mühendislik uzmanlık alanları.",
+    title: "Antalya Mühendislik Sektörleri – Kamu, Sağlık, Eğitim, Altyapı",
+    description: "Türkiye genelinde kamu, sağlık, eğitim, konut, altyapı ve enerji sektörlerinde mühendislik hizmetleri. Karaoğlu Universal Mühendislik uzmanlık alanları.",
     openGraph: {
         title: "Sektörler – Karaoğlu Universal Mühendislik",
-        description: "Van'da faaliyet gösterdiğimiz sektörler ve uzmanlık alanlarımız.",
+        description: "Türkiye genelinde faaliyet gösterdiğimiz sektörler ve uzmanlık alanlarımız.",
     },
 };
 

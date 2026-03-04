@@ -127,9 +127,9 @@ export default function AnkaraPage() {
             {/* CTA Section */}
             <section className="py-16 bg-primary text-white">
                 <div className="layout-container text-center">
-                    <h2 className="text-3xl font-bold mb-4">Kamu Projeleriniz İçin Doğru Çözüm Ortağı</h2>
+                    <h2 className="text-3xl font-bold text-white mb-4">Türkiye'nin Her Noktasında Yanınızdayız</h2>
                     <p className="text-white/80 mb-8 max-w-2xl mx-auto">
-                        Van ve Ankara ofislerimizle, Türkiye'nin her noktasında nitelikli altyapı ve üstyapı projelerini hayata geçiriyoruz.
+                        Antalya ve Ankara ofislerimizle, Türkiye'nin her noktasında nitelikli altyapı ve üstyapı projelerini hayata geçiriyoruz.
                     </p>
                     <Link
                         href="/projeler/kategori/tamamlanan-kamu-projeleri"

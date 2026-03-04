@@ -13,7 +13,7 @@ export default function AboutPage() {
     const [showTeam, setShowTeam] = useState(false);
 
     const timeline = [
-        { year: "2014", title: t("aboutPage.timeline.2014.title", "Kuruluş"), description: t("aboutPage.timeline.2014.desc", "Van'da küçük bir ofiste temellerimiz atıldı.") },
+        { year: "2014", title: t("aboutPage.timeline.2014.title", "Kuruluş"), description: t("aboutPage.timeline.2014.desc", "Antalya'da küçük bir ofiste temellerimiz atıldı.") },
         { year: "2016", title: t("aboutPage.timeline.2016.title", "İlk Büyük Proje"), description: t("aboutPage.timeline.2016.desc", "Kamu sektöründe ilk büyük projeyi tamamladık.") },
         { year: "2018", title: t("aboutPage.timeline.2018.title", "Büyüme"), description: t("aboutPage.timeline.2018.desc", "Ekibimizi ve proje portföyümüzü genişlettik.") },
         { year: "2020", title: t("aboutPage.timeline.2020.title", "Sosyal Sorumluluk"), description: t("aboutPage.timeline.2020.desc", "Eğitim ve spor alanlarında sosyal sorumluluk projelerine başladık.") },
