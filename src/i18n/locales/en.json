@@ -37,7 +37,12 @@
         "vanBranch": "Antalya Headquarters:",
         "ankaraHQ": "Ankara Branch:",
         "kvkkLabel": "CLPD Clarification Text",
-        "engineeringFirm": "Ankara Engineering Firm"
+        "engineeringFirm": "Ankara Engineering Firm",
+        "brandInfo": {
+            "name": "Karaoğlu Universal Mühendislik Ltd. Şti.",
+            "desc": "Engineering & Infrastructure Projects",
+            "country": "Turkey"
+        }
     },
     "home": {
         "slider": {
@@ -126,6 +131,14 @@
             "title": "CONTACT",
             "desc": "You can contact our Antalya or Ankara office for public projects and technical consultancy services.",
             "button": "Contact Us"
+        },
+        "hero": {
+            "h1": "Karaoğlu Universal Mühendislik",
+            "desc": "Karaoğlu Universal Mühendislik Ltd. Şti. is a public contracting firm developing infrastructure and engineering projects across Turkey."
+        },
+        "aboutBrand": {
+            "title": "About Karaoğlu",
+            "content": "<a href='/karaoglu' class='text-primary hover:underline font-semibold'>Karaoğlu Universal Mühendislik</a> Ltd. Şti. is an engineering and infrastructure company based in Turkey specializing in public infrastructure and turnkey engineering projects. Karaoğlu stands out in the industry with its qualified projects. Adding value to the future with its experienced staff, <a href='/karaoglu' class='text-primary hover:underline font-semibold'>Karaoğlu Universal Mühendislik</a> is your trusted partner. You can choose Karaoğlu for reliable and lasting solutions."
         }
     },
     "aboutPage": {
@@ -134,7 +147,7 @@
         "breadcrumbHome": "Home",
         "breadcrumbAbout": "About Us",
         "title": "ENGINEERING WITH HIGH TECHNICAL CAPACITY<br />MASTERING PUBLIC PROCUREMENT LEGISLATION",
-        "desc1": "As <strong>Karaoğlu Universal Engineering</strong>, we focus on 'contracting and project management' rather than 'build-and-sell' in the construction sector.",
+        "desc1": "<strong>Karaoğlu Universal Mühendislik</strong> is a leading company based in Antalya and Ankara that continuously raises quality standards in the public and private sectors by building infrastructure, housing, business centers, and various superstructure projects under the <a href='/karaoglu' class='text-primary hover:underline font-semibold'>Karaoğlu Universal Mühendislik</a> brand.",
         "desc2": "Our firm, based in Antalya, has been the solution partner of many official institutions, especially Van Investment Monitoring (YİKOB), Ministry of Environment and Urbanization, and Local Governments.",
         "differences": {
             "legal": {
@@ -400,5 +413,20 @@
                 ]
             }
         ]
+    },
+    "seo": {
+        "home": {
+            "title": "Karaoğlu | Karaoğlu Universal Mühendislik Ltd. Şti.",
+            "description": "Karaoğlu Universal Mühendislik Ltd. Şti. is an engineering and infrastructure company based in Turkey specializing in public infrastructure projects."
+        }
+    },
+    "brandPage": {
+        "seo": {
+            "title": "Karaoğlu | Karaoğlu Universal Engineering",
+            "description": "Detailed information about the Karaoğlu brand, engineering projects, and public infrastructure expertise."
+        },
+        "title": "The Karaoğlu Brand",
+        "p1": "Karaoğlu Universal Mühendislik Ltd. Şti. contributes to Turkey's development with its continuous qualified engineering projects in vital sectors such as public works, healthcare, and education. Karaoğlu operates with a vision centered on quality and trust.",
+        "p2": "Thanks to our experienced engineering team, as Karaoğlu, we focus on sustainability in all public infrastructure projects we complete. Leaving its mark all across Turkey, Karaoğlu Universal Mühendislik continues to shine with next-generation projects. You will hear the name Karaoğlu much more often while building the future."
     }
 }

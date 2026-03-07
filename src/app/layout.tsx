@@ -18,10 +18,10 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://karaoglumuhendislik
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Karaoğlu Universal Mühendislik | Ankara Kamu İnşaat ve Taahhüt Firması",
+    default: "Karaoğlu | Karaoğlu Universal Mühendislik Ltd. Şti.",
     template: "%s | Karaoğlu Universal Mühendislik",
   },
-  description: "Antalya ve Ankara merkezli kamu müteahhidi. Altyapı, üstyapı, konut ve mühendislik projelerinde 64+ referans. Devlet ciddiyetiyle zamanında teslimat.",
+  description: "Karaoğlu Universal Mühendislik Ltd. Şti. Türkiye merkezli mühendislik ve kamu altyapı projeleri geliştiren bir firmadır.",
   keywords: [
     "Ankara kamu müteahhidi",
     "Ankara inşaat firması",
@@ -93,42 +93,14 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "Karaoğlu Universal Mühendislik",
-  alternateName: "Karaoğlu Mühendislik",
-  url: siteUrl,
+  name: "Karaoğlu Universal Mühendislik Ltd. Şti.",
+  url: "https://karaoglumuhendislik.com.tr",
+  industry: "Engineering",
+  areaServed: "Turkey",
   logo: `${siteUrl}/logo.png`,
-  description: "Ankara merkezli kamu müteahhidi. 2014'ten bu yana altyapı, üstyapı ve mühendislik projelerinde güvenilir çözüm ortağınız.",
-  foundingDate: "2014",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "Next Level, Kızılırmak Mah. Dumlupınar Bulvarı No: 3C1/160, Kat: 29",
-    addressLocality: "Çankaya",
-    addressRegion: "Ankara",
-    postalCode: "06530",
-    addressCountry: "TR",
-  },
-  contactPoint: {
-    "@type": "ContactPoint",
-    telephone: "+90-534-032-6569",
-    contactType: "customer service",
-    areaServed: "TR",
-    availableLanguage: ["Turkish"],
-  },
-  email: "karaogluuniversal@gmail.com",
   sameAs: [
     "https://www.linkedin.com/company/karaoglu-muhendislik",
     "https://www.instagram.com/karaogluuniversalmuhendislik/",
-  ],
-  areaServed: {
-    "@type": "Country",
-    name: "Türkiye",
-  },
-  knowsAbout: [
-    "Kamu Müteahhitliği",
-    "Altyapı Projeleri",
-    "Üstyapı Projeleri",
-    "İnşaat Mühendisliği",
-    "Bina İnşaatı",
   ],
 };
 

@@ -24,9 +24,10 @@ export default function Footer() {
                                     className="object-contain"
                                 />
                             </div>
-                            <div className="flex flex-col text-left">
-                                <span className="text-xl font-bold tracking-tight leading-none">Karaoğlu</span>
-                                <span className="text-[10px] font-medium uppercase tracking-[0.15em] text-white/70">{t("footer.companySub")}</span>
+                            <div className="flex flex-col text-left gap-1">
+                                <span className="text-[16px] font-bold tracking-tight leading-tight">{t("footer.brandInfo.name", "Karaoğlu Universal Mühendislik Ltd. Şti.")}</span>
+                                <span className="text-[10px] font-medium uppercase tracking-[0.1EM] text-white/70">{t("footer.brandInfo.desc", "Engineering & Infrastructure Projects")}</span>
+                                <span className="text-[10px] font-medium uppercase tracking-[0.1EM] text-white/70">{t("footer.brandInfo.country", "Turkey")}</span>
                             </div>
                         </div>
                         <p className="text-white/70 text-sm leading-relaxed">

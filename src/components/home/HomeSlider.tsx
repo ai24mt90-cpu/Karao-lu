@@ -10,8 +10,8 @@ import { useTranslation } from "react-i18next";
 const heroSlidesKeys = [
     {
         image: "/tusba-kaymakamligi.svg",
-        titleKey: "home.slider.title",
-        subtitleKey: "home.slider.subtitle",
+        titleKey: "home.hero.h1",
+        subtitleKey: "home.hero.desc",
     },
     {
         image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop",

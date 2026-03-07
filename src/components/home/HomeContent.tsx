@@ -10,6 +10,17 @@ export default function HomeContent({ featuredProjects }: { featuredProjects: an
 
     return (
         <>
+            {/* Brand Section */}
+            <section className="py-16 bg-surface-secondary">
+                <div className="layout-container text-center max-w-4xl mx-auto">
+                    <h2 className="text-3xl font-bold text-primary mb-6">{t("home.aboutBrand.title")}</h2>
+                    <p
+                        className="text-lg text-text-secondary leading-relaxed"
+                        dangerouslySetInnerHTML={{ __html: t("home.aboutBrand.content") }}
+                    />
+                </div>
+            </section>
+
             <section className="py-20 bg-white">
                 <div className="layout-container">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
