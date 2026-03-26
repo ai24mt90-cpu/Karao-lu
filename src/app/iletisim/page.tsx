@@ -102,8 +102,8 @@ export default function ContactPage() {
                                 <Phone size={32} />
                             </div>
                             <h3 className="font-bold text-foreground mb-2">{t("contactPage.phoneTitle")}</h3>
-                            <a href="tel:+904322165636" className="text-text-secondary text-sm hover:text-primary transition-colors">
-                                0432 216 56 36
+                            <a href="tel:+905326736556" className="text-text-secondary text-sm hover:text-primary transition-colors">
+                                0532 673 65 56
                             </a>
                         </div>
                         <div className="bg-surface-secondary p-8 text-center hover:shadow-lg transition-shadow">

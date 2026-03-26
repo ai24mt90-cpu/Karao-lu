@@ -96,7 +96,7 @@ export default function AnkaraPage() {
                                     <Phone className="text-primary" size={20} />
                                     <div>
                                         <span className="block font-semibold text-foreground mb-1">Telefon</span>
-                                        <p className="text-text-secondary text-sm">0534 032 65 69</p>
+                                        <p className="text-text-secondary text-sm">0532 673 65 56</p>
                                     </div>
                                 </div>
                                 <div className="flex items-center gap-4">

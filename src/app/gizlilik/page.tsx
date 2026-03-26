@@ -66,7 +66,7 @@ export default function GizlilikPage() {
                         <p className="text-text-secondary mb-6">
                             {t("privacyPage.contactText")}<br /><br />
                             <strong>{t("privacyPage.email")}</strong> karaogluuniversal@gmail.com<br />
-                            <strong>{t("privacyPage.phone")}</strong> 0432 216 56 36
+                            <strong>{t("privacyPage.phone")}</strong> 0532 673 65 56
                         </p>
 
                         <div className="mt-10 p-6 bg-surface-secondary rounded-lg">

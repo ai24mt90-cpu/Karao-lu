@@ -31,7 +31,7 @@ export default function KVKKPage() {
                             <strong>Veri Sorumlusu:</strong> Karaoğlu Universal Mühendislik Ltd. Şti.<br />
                             <strong>Adres:</strong> Güzeloba Mah. Çağlayangil Caddesi 3 B Muratpaşa/Antalya<br />
                             <strong>E-posta:</strong> karaogluuniversal@gmail.com<br />
-                            <strong>Telefon:</strong> 0432 216 56 36
+                            <strong>Telefon:</strong> 0532 673 65 56
                         </div>
 
                         <h2 className="text-2xl font-bold text-foreground mb-6 mt-10">2. İşlenen Kişisel Veriler</h2>

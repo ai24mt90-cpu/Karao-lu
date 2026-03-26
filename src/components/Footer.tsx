@@ -76,8 +76,8 @@ export default function Footer() {
                             <a href="mailto:karaogluuniversal@gmail.com" className="flex items-center gap-3 text-sm text-gray-100 hover:text-white transition-colors">
                                 <Mail size={16} /> karaogluuniversal@gmail.com
                             </a>
-                            <a href="tel:+904322165636" className="flex items-center gap-3 text-sm text-gray-100 hover:text-white transition-colors">
-                                <Phone size={16} /> 0432 216 56 36
+                            <a href="tel:+905326736556" className="flex items-center gap-3 text-sm text-gray-100 hover:text-white transition-colors">
+                                <Phone size={16} /> 0532 673 65 56
                             </a>
                             <div className="flex items-start gap-3 text-sm text-gray-100">
                                 <MapPin size={16} className="mt-0.5 flex-shrink-0" />

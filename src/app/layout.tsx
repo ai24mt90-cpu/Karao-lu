@@ -114,7 +114,7 @@ const localBusinessJsonLd = {
       name: "Karaoğlu Universal Mühendislik - Ankara Merkez",
       image: `${siteUrl}/brand-icon-large.png`,
       url: siteUrl,
-      telephone: "+90-534-032-6569",
+      telephone: "+90-532-673-6556",
       priceRange: "₺₺₺₺",
       description: "Ankara merkezli kamu müteahhidi. Altyapı, üstyapı ve mühendislik projelerinde güvenilir çözüm ortağınız.",
       address: {
@@ -143,7 +143,7 @@ const localBusinessJsonLd = {
       name: "Karaoğlu Universal Mühendislik - Antalya Merkez",
       image: `${siteUrl}/brand-icon-large.png`,
       url: siteUrl,
-      telephone: "+90-432-216-5636",
+      telephone: "+90-532-673-6556",
       priceRange: "₺₺₺₺",
       description: "Antalya ve çevresinde kamu projeleri ve mühendislik çözümleri sunan şubemiz.",
       address: {

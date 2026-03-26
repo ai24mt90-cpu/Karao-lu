@@ -73,9 +73,9 @@ export default function Header() {
             <div className="bg-white text-foreground border-b border-gray-200">
                 <div className="layout-container flex items-center justify-between h-10 text-sm">
                     <div className="flex items-center gap-6">
-                        <a href="tel:+904322165636" className="flex items-center gap-2 text-text-secondary hover:text-primary transition-colors">
+                        <a href="tel:+905326736556" className="flex items-center gap-2 text-text-secondary hover:text-primary transition-colors">
                             <Phone size={14} />
-                            <span>0432 216 56 36</span>
+                            <span>0532 673 65 56</span>
                         </a>
                         <a href="mailto:karaogluuniversal@gmail.com" className="flex items-center gap-2 text-text-secondary hover:text-primary transition-colors">
                             <Mail size={14} />
