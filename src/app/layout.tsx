@@ -13,7 +13,7 @@ const roboto = Roboto({
   weight: ["400", "500", "700", "900"],
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://karaoglumuhendislik.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://karaoglumuhendislik.com.tr";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
