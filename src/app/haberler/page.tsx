@@ -9,6 +9,7 @@ import Link from "next/link";
 
 interface News {
     id: string;
+    slug?: string | null;
     title: string;
     summary: string;
     content: string;
@@ -25,6 +26,7 @@ export default function NewsPage() {
             const { data, error } = await supabase
                 .from("news")
                 .select("*")
+                .eq("is_published", true)
                 .order("created_at", { ascending: false });
 
             if (!error && data) {
@@ -64,7 +66,7 @@ export default function NewsPage() {
                     {news.length > 0 ? (
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {news.map((item) => (
-                                <Link href={`/haberler/${item.id}`} key={item.id} className="block group">
+                                <Link href={`/haberler/${item.slug || item.id}`} key={item.id} className="block group">
                                     <motion.article
                                         initial={{ opacity: 0, y: 20 }}
                                         whileInView={{ opacity: 1, y: 0 }}

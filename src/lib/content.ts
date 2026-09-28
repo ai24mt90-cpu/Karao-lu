@@ -28,15 +28,28 @@ export interface Project {
     content?: string;
 }
 
+export interface NewsItem {
+    id: string;
+    slug?: string | null;
+    title: string;
+    summary?: string | null;
+    content?: string | null;
+    category?: string | null;
+    image_url?: string | null;
+    created_at: string;
+    published_at?: string | null;
+}
+
 export interface ProjectImage {
     image_url: string;
     is_cover: boolean;
 }
 
 // Eski linkler UUID, yenileri slug kullanıyor — ikisini de kabul et
-async function findByIdOrSlug<T>(table: string, param: string): Promise<T | null> {
+async function findByIdOrSlug<T>(table: string, param: string, publishedOnly = false): Promise<T | null> {
     const key = decodeURIComponent(param);
-    const query = supabase.from(table).select("*").limit(1);
+    let query = supabase.from(table).select("*").limit(1);
+    if (publishedOnly) query = query.eq("is_published", true);
     const { data, error } = UUID_RE.test(key)
         ? await query.or(`id.eq.${key},slug.eq.${key}`)
         : await query.eq("slug", key);
@@ -49,6 +62,8 @@ async function findByIdOrSlug<T>(table: string, param: string): Promise<T | null
 }
 
 export const getBlogPost = cache((param: string) => findByIdOrSlug<BlogPost>("blog_posts", param));
+
+export const getNewsItem = cache((param: string) => findByIdOrSlug<NewsItem>("news", param, true));
 
 export const getProject = cache(async (param: string) => {
     const project = await findByIdOrSlug<Project>("projects", param);
