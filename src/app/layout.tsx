@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import FloatingHomeButton from "@/components/FloatingHomeButton";
 import WhatsAppWidget from "@/components/WhatsAppWidget";
 import ContactClickTracker from "@/components/ContactClickTracker";
+import { GOOGLE_PROFILE } from "@/lib/offices";
 import I18nProvider from "@/components/I18nProvider";
 
 const roboto = Roboto({
@@ -103,6 +104,8 @@ const jsonLd = {
   sameAs: [
     "https://www.linkedin.com/company/karaoglu-muhendislik",
     "https://www.instagram.com/karaogluuniversalmuhendislik/",
+    GOOGLE_PROFILE.antalya,
+    GOOGLE_PROFILE.ankara,
   ],
 };
 
@@ -113,6 +116,7 @@ const localBusinessJsonLd = {
     {
       "@type": "GeneralContractor",
       "@id": `${siteUrl}/#ankara-office`,
+      hasMap: GOOGLE_PROFILE.ankara,
       name: "Karaoğlu Universal Mühendislik - Ankara Şube",
       image: `${siteUrl}/brand-icon-large.png`,
       url: siteUrl,
@@ -142,6 +146,7 @@ const localBusinessJsonLd = {
     {
       "@type": "GeneralContractor",
       "@id": `${siteUrl}/#antalya-office`,
+      hasMap: GOOGLE_PROFILE.antalya,
       name: "Karaoğlu Universal Mühendislik - Antalya Merkez",
       image: `${siteUrl}/brand-icon-large.png`,
       url: siteUrl,

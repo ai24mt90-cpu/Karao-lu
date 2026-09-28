@@ -6,6 +6,7 @@ import { useState } from "react";
 import { Mail, Phone, MapPin, Clock, Send, Loader2 } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 import { useTranslation } from "react-i18next";
+import { GOOGLE_PROFILE } from "@/lib/offices";
 
 interface FormData {
     name: string;
@@ -89,12 +90,18 @@ export default function ContactPage() {
                             <p className="text-text-secondary text-sm">
                                 <span className="font-bold text-gray-900 block mb-1">{t("contactPage.vanHQ")}</span>
                                 Güzeloba Mah. Çağlayangil Caddesi 3 B<br />
-                                Muratpaşa/Antalya
+                                Muratpaşa/Antalya<br />
+                                <a href={GOOGLE_PROFILE.antalya} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 mt-2 text-primary font-medium hover:underline">
+                                    <MapPin size={14} /> {t("contactPage.mapsLink", "Haritada gör ve yorum yap")}
+                                </a>
                                 <br /><br />
                                 <span className="font-bold text-gray-900 block mb-1">{t("contactPage.ankaraBranch")}</span>
                                 Next Level, Kızılırmak Mah. Dumlupınar Bulvarı<br />
                                 No: 3C1/160, Kat: 29<br />
-                                06530 Çankaya/Ankara
+                                06530 Çankaya/Ankara<br />
+                                <a href={GOOGLE_PROFILE.ankara} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 mt-2 text-primary font-medium hover:underline">
+                                    <MapPin size={14} /> {t("contactPage.mapsLink", "Haritada gör ve yorum yap")}
+                                </a>
                             </p>
                         </div>
                         <div className="bg-surface-secondary p-8 text-center hover:shadow-lg transition-shadow">
