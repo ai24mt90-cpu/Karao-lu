@@ -122,5 +122,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         priority: 0.8,
     })) || []
 
-    return [...routes, ...blogRoutes, ...projectRoutes]
+    // Dinamik Haberleri Çek (sadece yayında olanlar)
+    const { data: news } = await supabase
+        .from('news')
+        .select('id, slug, created_at')
+        .eq('is_published', true)
+
+    const newsRoutes: MetadataRoute.Sitemap = news?.map((item) => ({
+        url: `${siteUrl}/haberler/${item.slug || item.id}`,
+        lastModified: new Date(item.created_at),
+        changeFrequency: 'monthly',
+        priority: 0.6,
+    })) || []
+
+    return [...routes, ...blogRoutes, ...projectRoutes, ...newsRoutes]
 }
