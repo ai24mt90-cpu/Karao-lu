@@ -8,12 +8,13 @@ declare global {
     }
 }
 
-// Telefon, WhatsApp ve e-posta tıklamalarını GA4'e olay olarak gönderir.
+// Telefon, WhatsApp, e-posta ve harita tıklamalarını GA4'e olay olarak gönderir.
 // GA4 > Yönetici > Etkinlikler'de bu olayları "Önemli etkinlik" olarak işaretleyin.
 function eventNameFor(href: string): string | null {
     if (href.startsWith("tel:")) return "phone_click";
     if (href.startsWith("mailto:")) return "email_click";
     if (/^https?:\/\/(wa\.me|api\.whatsapp\.com|web\.whatsapp\.com)\//.test(href)) return "whatsapp_click";
+    if (/^https?:\/\/(share\.google|maps\.app\.goo\.gl|(www\.)?google\.[a-z.]+\/maps)\//.test(href)) return "map_click";
     return null;
 }
 
