@@ -11,6 +11,7 @@ export const dynamic = "force-dynamic";
 interface Project {
     id: string;
     title: string;
+    slug?: string | null;
     category: string;
     location: string;
     year: string;
@@ -185,7 +186,7 @@ export default async function ProjectsPage({ params }: { params: Promise<{ slug:
                                                 {projectsByYear[year].map((project: Project) => (
                                                     <tr key={project.id} className="hover:bg-gray-50 transition-colors group">
                                                         <td className="px-6 py-4">
-                                                            <Link href={`/projeler/${project.id}`} className="flex items-center gap-4 group-hover:text-primary transition-colors">
+                                                            <Link href={`/projeler/${project.slug || project.id}`} className="flex items-center gap-4 group-hover:text-primary transition-colors">
                                                                 {project.image_url ? (
                                                                     <div className="relative w-16 h-12 rounded overflow-hidden flex-shrink-0">
                                                                         <Image

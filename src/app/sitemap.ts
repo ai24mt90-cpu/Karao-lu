@@ -73,13 +73,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             priority: 0.3,
         },
         {
-            url: `${siteUrl}/projeler/kategori/tamamlandi`,
+            url: `${siteUrl}/projeler/kategori/tamamlanan-kamu-projeleri`,
             lastModified: new Date(),
             changeFrequency: 'weekly',
             priority: 0.8,
         },
         {
-            url: `${siteUrl}/projeler/kategori/devam-eden`,
+            url: `${siteUrl}/projeler/kategori/devam-eden-altyapi-isleri`,
             lastModified: new Date(),
             changeFrequency: 'weekly',
             priority: 0.8,
@@ -113,10 +113,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // Dinamik Projeleri Çek
     const { data: projects } = await supabase
         .from('projects')
-        .select('slug, created_at') // Using created_at as backup if updated_at is missing
+        .select('id, slug, created_at') // Using created_at as backup if updated_at is missing
 
     const projectRoutes: MetadataRoute.Sitemap = projects?.map((project) => ({
-        url: `${siteUrl}/projeler/${project.slug}`,
+        url: `${siteUrl}/projeler/${project.slug || project.id}`,
         lastModified: new Date(project.created_at || new Date()), // Fallback to current date
         changeFrequency: 'weekly',
         priority: 0.8,

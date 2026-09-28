@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingHomeButton from "@/components/FloatingHomeButton";
 import WhatsAppWidget from "@/components/WhatsAppWidget";
+import ContactClickTracker from "@/components/ContactClickTracker";
 import I18nProvider from "@/components/I18nProvider";
 
 const roboto = Roboto({
@@ -210,6 +211,7 @@ export default function RootLayout({
           </main>
           <FloatingHomeButton />
           <WhatsAppWidget />
+          <ContactClickTracker />
           <Footer />
         </I18nProvider>
       </body>
