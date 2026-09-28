@@ -100,7 +100,7 @@
         "services": {
             "public": "<strong>Kamu Binaları:</strong> Hastane, Okul, Hükümet Konağı",
             "infra": "<strong>Altyapı Projeleri:</strong> Kanalizasyon, İsale Hattı, Yol",
-            "housing": "<strong>TOKİ Konutları:</strong> Van ve Çevre İllerde Toplu Konut",
+            "housing": "<strong>TOKİ Konutları:</strong> Türkiye Genelinde Toplu Konut",
             "reinforcement": "<strong>Güçlendirme:</strong> Deprem Güçlendirme ve Onarım",
             "landscaping": "<strong>Çevre Düzenleme:</strong> Millet Bahçeleri ve Peyzaj"
         },
@@ -192,7 +192,7 @@
         "ctaButton": "İletişime Geç",
         "defaults": {
             "q1": "Projeleriniz hangi bölgelerde gerçekleştiriliyor?",
-            "a1": "Projelerimiz ağırlıklı olarak Antalya, Ankara, Van ve çevre illerde gerçekleştirilmektedir. Kamu, konut ve altyapı projelerinde aktif olarak çalışmaktayız.",
+            "a1": "Projelerimiz ağırlıklı olarak Antalya ve Ankara başta olmak üzere Türkiye genelinde gerçekleştirilmektedir. Kamu, konut ve altyapı projelerinde aktif olarak çalışmaktayız.",
             "q2": "Teklif almak için nasıl başvurabilirim?",
             "a2": "İletişim sayfamızdaki formu doldurarak veya doğrudan telefon numaramızdan bizimle iletişime geçebilirsiniz.",
             "q3": "Şirketinizin tecrübesi ne kadar?",

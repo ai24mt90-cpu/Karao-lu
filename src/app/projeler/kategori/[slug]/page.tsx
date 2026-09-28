@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
     return {
         title: `${title} | Karaoğlu Mühendislik`,
-        description: `Van ve çevre illerde ${title.toLowerCase()}. Hastane, okul, TOKİ ve altyapı iş bitirmelerimiz.`,
+        description: `Antalya merkezli firmamızın Türkiye genelindeki ${title.toLowerCase()}. Hastane, okul, TOKİ ve altyapı iş bitirmelerimiz.`,
     };
 }
 
@@ -124,7 +124,7 @@ export default async function ProjectsPage({ params }: { params: Promise<{ slug:
                         <h1 className="text-5xl font-bold text-white mb-4">
                             {pageTitleMap[slug]}
                         </h1>
-                        <p className="text-white/80 text-lg">Van ve çevresinde tamamladığımız mühendislik projeleri</p>
+                        <p className="text-white/80 text-lg">Türkiye genelinde yürüttüğümüz mühendislik projeleri</p>
                     </div>
                 </div>
             </section>
