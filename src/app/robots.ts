@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next'
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://karaoglumuhendislik.com.tr'
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://karaoglumuhendislik.com'
 
 export default function robots(): MetadataRoute.Robots {
     return {
@@ -8,15 +8,7 @@ export default function robots(): MetadataRoute.Robots {
             {
                 userAgent: '*',
                 allow: '/',
-                disallow: ['/api/', '/admin/', '/_next/'],
-            },
-            {
-                userAgent: 'Googlebot',
-                allow: '/',
-            },
-            {
-                userAgent: 'Bingbot',
-                allow: '/',
+                disallow: ['/api/', '/admin/', '/admin-setup', '/test-db', '/maintenance'],
             },
         ],
         sitemap: `${siteUrl}/sitemap.xml`,

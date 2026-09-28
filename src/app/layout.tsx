@@ -13,7 +13,7 @@ const roboto = Roboto({
   weight: ["400", "500", "700", "900"],
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://karaoglumuhendislik.com.tr";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://karaoglumuhendislik.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -21,21 +21,22 @@ export const metadata: Metadata = {
     default: "Karaoğlu | Karaoğlu Universal Mühendislik Ltd. Şti.",
     template: "%s | Karaoğlu Universal Mühendislik",
   },
-  description: "Karaoğlu Universal Mühendislik Ltd. Şti. Türkiye merkezli mühendislik ve kamu altyapı projeleri geliştiren bir firmadır.",
+  description: "Karaoğlu Universal Mühendislik Ltd. Şti. Antalya merkezli, Ankara şubeli; Türkiye genelinde kamu altyapı ve mühendislik projeleri geliştiren bir firmadır.",
   keywords: [
-    "Ankara kamu müteahhidi",
-    "Ankara inşaat firması",
-    "Ankara mühendislik hizmetleri",
-    "Ankara kamu projeleri",
-    "Ankara altyapı firmaları",
     "Antalya kamu müteahhidi",
+    "Antalya inşaat firması",
+    "Antalya mühendislik firması",
+    "Antalya mühendislik hizmetleri",
+    "Antalya altyapı firmaları",
+    "Ankara kamu müteahhidi",
+    "Ankara mühendislik hizmetleri",
     "4734 sayılı kanun uzmanı",
     "kamu ihale danışmanlığı",
+    "Antalya inşaat taahhüt",
     "Ankara inşaat taahhüt",
-    "Ankara mühendislik çözümleri",
     "Karaoğlu Mühendislik referanslar",
-    "depreme dayanıklı yapı Ankara",
-    "zemin etüdü Ankara",
+    "depreme dayanıklı yapı Antalya",
+    "zemin etüdü Antalya",
     "devlet ihaleleri müteahhit",
   ],
   authors: [{ name: "Karaoğlu Universal Mühendislik", url: siteUrl }],
@@ -53,8 +54,8 @@ export const metadata: Metadata = {
     locale: "tr_TR",
     url: siteUrl,
     siteName: "Karaoğlu Universal Mühendislik",
-    title: "Ankara Mühendislik Firması – Karaoğlu Universal Mühendislik",
-    description: "Ankara'da kamu, konut ve altyapı mühendislik projelerinde uzman mühendislik hizmetleri. Güvenilir ve sürdürülebilir çözümler.",
+    title: "Antalya Mühendislik Firması – Karaoğlu Universal Mühendislik",
+    description: "Antalya merkezli, Ankara şubeli; kamu, konut ve altyapı projelerinde uzman mühendislik hizmetleri. Güvenilir ve sürdürülebilir çözümler.",
     images: [
       {
         url: "/og-image.jpg",
@@ -67,7 +68,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Karaoğlu Universal Mühendislik | Kamu Müteahhitliği & İnşaat",
-    description: "Ankara merkezli kamu müteahhidi. 2014'ten bu yana altyapı, üstyapı ve mühendislik projelerinde güvenilir çözüm ortağınız.",
+    description: "Antalya merkezli kamu müteahhidi. 2014'ten bu yana altyapı, üstyapı ve mühendislik projelerinde güvenilir çözüm ortağınız.",
     images: ["/og-image.jpg"],
     creator: "@karaoglumuhendislik",
   },
@@ -94,7 +95,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Karaoğlu Universal Mühendislik Ltd. Şti.",
-  url: "https://karaoglumuhendislik.com.tr",
+  url: siteUrl,
   industry: "Engineering",
   areaServed: "Turkey",
   logo: `${siteUrl}/logo.png`,
@@ -111,12 +112,12 @@ const localBusinessJsonLd = {
     {
       "@type": "GeneralContractor",
       "@id": `${siteUrl}/#ankara-office`,
-      name: "Karaoğlu Universal Mühendislik - Ankara Merkez",
+      name: "Karaoğlu Universal Mühendislik - Ankara Şube",
       image: `${siteUrl}/brand-icon-large.png`,
       url: siteUrl,
       telephone: "+90-532-673-6556",
       priceRange: "₺₺₺₺",
-      description: "Ankara merkezli kamu müteahhidi. Altyapı, üstyapı ve mühendislik projelerinde güvenilir çözüm ortağınız.",
+      description: "Ankara şubemiz: kamu altyapı, üstyapı ve mühendislik projelerinde teknik koordinasyon.",
       address: {
         "@type": "PostalAddress",
         streetAddress: "Next Level, Kızılırmak Mah. Dumlupınar Bulvarı No: 3C1/160, Kat: 29",
@@ -139,25 +140,25 @@ const localBusinessJsonLd = {
     },
     {
       "@type": "GeneralContractor",
-      "@id": `${siteUrl}/#van-office`,
+      "@id": `${siteUrl}/#antalya-office`,
       name: "Karaoğlu Universal Mühendislik - Antalya Merkez",
       image: `${siteUrl}/brand-icon-large.png`,
       url: siteUrl,
       telephone: "+90-532-673-6556",
       priceRange: "₺₺₺₺",
-      description: "Antalya ve çevresinde kamu projeleri ve mühendislik çözümleri sunan şubemiz.",
+      description: "Antalya merkezli kamu müteahhidi. Altyapı, üstyapı ve mühendislik projelerinde güvenilir çözüm ortağınız.",
       address: {
         "@type": "PostalAddress",
-        streetAddress: "Hafiziye Mahallesi, Umman 1. Sokak No: 38, Kat: 3, Daire: 16",
-        addressLocality: "İpekyolu",
+        streetAddress: "Güzeloba Mah. Çağlayangil Caddesi No: 3B",
+        addressLocality: "Muratpaşa",
         addressRegion: "Antalya",
-        postalCode: "65130",
+        postalCode: "07230",
         addressCountry: "TR",
       },
       geo: {
         "@type": "GeoCoordinates",
-        latitude: 38.4925,
-        longitude: 43.3642,
+        latitude: 36.8633,
+        longitude: 30.7645,
       },
       openingHoursSpecification: {
         "@type": "OpeningHoursSpecification",

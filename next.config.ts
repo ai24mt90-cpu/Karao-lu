@@ -25,6 +25,23 @@ const nextConfig: NextConfig = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     minimumCacheTTL: 60,
   },
+  // Ana domain karaoglumuhendislik.com — .com.tr ve www trafiğini 301 ile buraya topla
+  async redirects() {
+    return [
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: '(www\\.)?karaoglumuhendislik\\.com\\.tr' }],
+        destination: 'https://karaoglumuhendislik.com/:path*',
+        permanent: true,
+      },
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'www\\.karaoglumuhendislik\\.com' }],
+        destination: 'https://karaoglumuhendislik.com/:path*',
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {
