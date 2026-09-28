@@ -11,6 +11,7 @@ export const dynamic = "force-dynamic";
 interface Project {
     id: string;
     title: string;
+    slug?: string | null;
     category: string;
     location: string;
     year: string;
@@ -33,7 +34,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
     return {
         title: `${title} | Karaoğlu Mühendislik`,
-        description: `Van ve çevre illerde ${title.toLowerCase()}. Hastane, okul, TOKİ ve altyapı iş bitirmelerimiz.`,
+        description: `Antalya merkezli firmamızın Türkiye genelindeki ${title.toLowerCase()}. Hastane, okul, TOKİ ve altyapı iş bitirmelerimiz.`,
     };
 }
 
@@ -123,7 +124,7 @@ export default async function ProjectsPage({ params }: { params: Promise<{ slug:
                         <h1 className="text-5xl font-bold text-white mb-4">
                             {pageTitleMap[slug]}
                         </h1>
-                        <p className="text-white/80 text-lg">Van ve çevresinde tamamladığımız mühendislik projeleri</p>
+                        <p className="text-white/80 text-lg">Türkiye genelinde yürüttüğümüz mühendislik projeleri</p>
                     </div>
                 </div>
             </section>
@@ -185,7 +186,7 @@ export default async function ProjectsPage({ params }: { params: Promise<{ slug:
                                                 {projectsByYear[year].map((project: Project) => (
                                                     <tr key={project.id} className="hover:bg-gray-50 transition-colors group">
                                                         <td className="px-6 py-4">
-                                                            <Link href={`/projeler/${project.id}`} className="flex items-center gap-4 group-hover:text-primary transition-colors">
+                                                            <Link href={`/projeler/${project.slug || project.id}`} className="flex items-center gap-4 group-hover:text-primary transition-colors">
                                                                 {project.image_url ? (
                                                                     <div className="relative w-16 h-12 rounded overflow-hidden flex-shrink-0">
                                                                         <Image

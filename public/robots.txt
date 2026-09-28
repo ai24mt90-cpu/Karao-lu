@@ -1,9 +1,0 @@
-User-agent: *
-Allow: /
-
-# Block low-value pages to save crawl budget
-Disallow: /admin-setup
-Disallow: /test-db
-Disallow: /maintenance
-
-Sitemap: https://karaoglumuhendislik.com.tr/sitemap.xml

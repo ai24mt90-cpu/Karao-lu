@@ -105,7 +105,7 @@ export default function Footer() {
                         <Link href="/iletisim" className="text-sm text-white/60 hover:text-white transition-colors">{t("nav.contact")}</Link>
                     </div>
                     <p className="text-white/70 text-sm text-center mb-2">
-                        <strong>{t("footer.engineeringFirm")}</strong> – Next Level, Kızılırmak Mah. Dumlupınar Bulvarı No: 3C1/160, Kat: 29, 06530 Çankaya/Ankara
+                        <strong>{t("footer.engineeringFirm")}</strong> – Güzeloba Mah. Çağlayangil Caddesi 3 B Muratpaşa/Antalya
                     </p>
                     <p className="text-white/50 text-sm text-center">
                         © {new Date().getFullYear()} Karaoğlu Universal Mühendislik Ltd. Şti. {t("footer.rights")}
