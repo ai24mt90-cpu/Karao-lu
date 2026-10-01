@@ -19,6 +19,8 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://karaoglumuhendislik
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
+  // Her sayfa kendi adresini canonical olarak bildirir (alt sayfalar override edebilir)
+  alternates: { canonical: "./" },
   title: {
     default: "Karaoğlu | Karaoğlu Universal Mühendislik Ltd. Şti.",
     template: "%s | Karaoğlu Universal Mühendislik",
