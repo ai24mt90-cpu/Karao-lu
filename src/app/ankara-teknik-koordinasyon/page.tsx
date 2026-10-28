@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { Building2, Briefcase, FileText, ChevronRight, MapPin, Phone, Mail } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'Ankara Teknik Koordinasyon ve İhale Yönetim Merkezi | Karaoğlu Mühendislik',
+    title: { absolute: 'Ankara Teknik Koordinasyon ve İhale Yönetimi | Karaoğlu Mühendislik' },
     description: 'Karaoğlu Universal Mühendislik Ankara Şubesi; Bakanlık nezdinde teknik takip, ihale hazırlık süreçleri ve mühendislik koordinasyon hizmetleri sunmaktadır.',
     keywords: ['Ankara mühendislik firması', 'kamu ihale danışmanlığı Ankara', 'teknik koordinasyon merkezi', 'inşaat taahhüt Ankara ofisi'],
 };

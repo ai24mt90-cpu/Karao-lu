@@ -7,6 +7,21 @@ export const dynamic = "force-dynamic";
 
 type Props = { params: Promise<{ slug: string }> };
 
+const BRAND = " | Karaoğlu Mühendislik";
+
+// Admin panelde başlıklar BÜYÜK HARFLE giriliyor; Google'da okunur ve 60 karakter civarında kalsın
+function projectTitle(title: string, location?: string) {
+    const lower = title.toLocaleLowerCase("tr-TR");
+    let text = lower
+        .replace(/(^|[\s(\/-])(\p{L})/gu, (_, sep: string, ch: string) => sep + ch.toLocaleUpperCase("tr-TR"))
+        .replace(/ (Ve|İle|Veya|De|Da|Ki) /g, (w) => w.toLocaleLowerCase("tr-TR"));
+    if (location && !lower.includes(location.toLocaleLowerCase("tr-TR"))) {
+        text += ` – ${location.charAt(0).toLocaleUpperCase("tr-TR")}${location.slice(1).toLocaleLowerCase("tr-TR")}`;
+    }
+    if (text.length + BRAND.length <= 65) return text + BRAND;
+    return text.length > 65 ? `${text.slice(0, 62).trimEnd()}…` : text;
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { slug } = await params;
     const result = await getProject(slug);
@@ -20,13 +35,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         [project.title, project.location, project.year, project.category].filter(Boolean).join(" · ");
 
     return {
-        // projeler/layout.tsx başlık şablonunu sıfırladığı için site adını burada ekle
-        title: `${project.title}${project.location ? ` – ${project.location}` : ""} | Karaoğlu Universal Mühendislik`,
+        title: { absolute: projectTitle(project.title, project.location) },
         description,
         alternates: { canonical: path },
         openGraph: {
             url: path,
-            title: project.title,
+            title: projectTitle(project.title, project.location),
             description,
             images: cover ? [{ url: cover, alt: project.title }] : undefined,
         },
