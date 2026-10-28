@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "KVKK Aydınlatma Metni – Kişisel Verilerin Korunması",
+    title: "KVKK Aydınlatma Metni",
     description: "Karaoğlu Universal Mühendislik KVKK Aydınlatma Metni. Kişisel verilerinizin nasıl işlendiğini ve haklarınızı öğrenin.",
     openGraph: {
         title: "KVKK Aydınlatma Metni – Karaoğlu Universal Mühendislik",

@@ -31,12 +31,12 @@ const getNavLinks = (t: any) => [
         ]
     },
     {
-        href: "/projeler",
+        href: "/projeler/kategori/tum-projeler",
         label: t("nav.projects"),
         submenu: [
-            { href: "/projeler", label: t("nav.projectsAll") },
-            { href: "/projeler?category=tamamlandi", label: t("nav.projectsCompleted") },
-            { href: "/projeler?category=devam", label: t("nav.projectsOngoing") },
+            { href: "/projeler/kategori/tum-projeler", label: t("nav.projectsAll") },
+            { href: "/projeler/kategori/tamamlanan-kamu-projeleri", label: t("nav.projectsCompleted") },
+            { href: "/projeler/kategori/devam-eden-altyapi-isleri", label: t("nav.projectsOngoing") },
         ]
     },
     { href: "/sosyal-sorumluluk", label: t("nav.socialResp") },

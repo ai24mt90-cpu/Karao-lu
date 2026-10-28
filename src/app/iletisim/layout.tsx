@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Antalya Mühendislik Firması İletişim – Karaoğlu Universal",
+    title: { absolute: "İletişim – Karaoğlu Universal Mühendislik | Antalya & Ankara" },
     description: "Antalya Muratpaşa'da faaliyet gösteren mühendislik firması ile hemen iletişime geçin. Proje desteği ve ücretsiz teklif alın.",
     openGraph: {
         title: "Antalya Mühendislik Firması İletişim – Karaoğlu Universal",

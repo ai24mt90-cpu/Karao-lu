@@ -130,7 +130,7 @@ export default function HomeContent({ featuredProjects }: { featuredProjects: an
                             <h3 className="font-semibold text-lg mb-2 group-hover:text-primary transition-colors">{t("home.quickLinks.news.title")}</h3>
                             <p className="text-sm text-gray-600">{t("home.quickLinks.news.desc")}</p>
                         </Link>
-                        <Link href="/projeler" className="group p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-all text-center">
+                        <Link href="/projeler/kategori/tum-projeler" className="group p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-all text-center">
                             <h3 className="font-semibold text-lg mb-2 group-hover:text-primary transition-colors">{t("home.quickLinks.projects.title")}</h3>
                             <p className="text-sm text-gray-600">{t("home.quickLinks.projects.desc")}</p>
                         </Link>
