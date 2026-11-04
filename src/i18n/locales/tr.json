@@ -22,14 +22,15 @@
         "blogNews": "Haberler",
         "blogPosts": "Blog",
         "menuClose": "Menüyü Kapat",
-        "menuOpen": "Menüyü Aç"
+        "menuOpen": "Menüyü Aç",
+        "ankara": "Ankara Teknik Koordinasyon"
     },
     "footer": {
         "about": "Hakkımızda",
-        "aboutText": "Karaoğlu Universal Mühendislik, inşaat, mühendislik ve mekanik sistemler alanında çeyrek asırlık tecrübesiyle sektörde öncü projelere imza atmaktadır.",
+        "aboutText": "Karaoğlu Universal Mühendislik, 2014'ten bu yana Antalya ve Ankara ofisleriyle kamu yapıları, altyapı ve konut projelerinde güvenilir çözümler üretmektedir.",
         "quickLinks": "Hızlı Bağlantılar",
         "contact": "İletişim",
-        "rights": "Tüm Hakları Saklıdır.",
+        "rights": "Tüm hakları saklıdır.",
         "privacy": "Gizlilik Politikası",
         "terms": "Kullanım Şartları",
         "companySub": "Universal Mühendislik",
@@ -42,7 +43,9 @@
             "name": "Karaoğlu Universal Mühendislik Ltd. Şti.",
             "desc": "Mühendislik & Altyapı Projeleri",
             "country": "Türkiye"
-        }
+        },
+        "officesTitle": "Ofislerimiz",
+        "projectsTitle": "Projeler"
     },
     "home": {
         "slider": {
@@ -139,6 +142,106 @@
         "aboutBrand": {
             "title": "Karaoğlu Hakkında",
             "content": "<a href='/karaoglu' class='text-primary hover:underline font-semibold'>Karaoğlu Universal Mühendislik</a> Ltd. Şti., Türkiye merkezli mühendislik ve altyapı projeleri geliştiren öncü bir firmadır. Karaoğlu, özellikle kamu altyapısı ve anahtar teslim mühendislik projelerinde uzmanlaşmıştır. Nitelikli projeleriyle sektörde adından söz ettiren <a href='/karaoglu' class='text-primary hover:underline font-semibold'>Karaoğlu Universal Mühendislik</a>, deneyimli kadrosuyla geleceğe değer katar. Güvenilir ve kalıcı çözümler için Karaoğlu'nu tercih edebilirsiniz."
+        },
+        "hero2": {
+            "eyebrow": "Kamu Müteahhitliği · Antalya & Ankara",
+            "title": "Devlet yatırımlarını ciddiyetle inşa ediyoruz",
+            "desc": "Hastane, okul, konut ve altyapı projelerinde 2014'ten bu yana kamu kurumlarının güvenilir çözüm ortağıyız.",
+            "ctaProjects": "Projelerimizi İnceleyin",
+            "ctaContact": "Bize Ulaşın",
+            "featured": "Öne çıkan proje"
+        },
+        "partners": {
+            "title": "Çözüm ortağı olduğumuz kurumlardan bazıları",
+            "items": [
+                "Çevre, Şehircilik ve İklim Değişikliği Bakanlığı",
+                "TOKİ",
+                "Van Yatırım İzleme ve Koordinasyon Başkanlığı",
+                "Emniyet Genel Müdürlüğü",
+                "Jandarma Genel Komutanlığı",
+                "Sağlık Bakanlığı",
+                "Milli Eğitim Bakanlığı",
+                "İpekyolu Belediyesi"
+            ]
+        },
+        "aboutV2": {
+            "title": "Antalya ve Ankara'da kamu projelerinin güvenilir çözüm ortağı",
+            "since": "2014'ten beri",
+            "checks": [
+                "4734 sayılı Kamu İhale Kanunu'na tam uyum",
+                "Güçlü makine parkı ve finansal yeterlilik",
+                "Deneyimli mühendis ve teknik kadro",
+                "Zamanında ve şartnameye uygun teslim"
+            ],
+            "founded": "Kuruluş yılı"
+        },
+        "servicesV2": {
+            "eyebrow": "Hizmet Alanlarımız",
+            "title": "Uçtan uca yapım ve mühendislik",
+            "desc": "İhale aşamasından anahtar teslime kadar her adımı kendi teknik kadromuzla yönetiyoruz.",
+            "items": [
+                {
+                    "title": "Kamu Binaları",
+                    "desc": "Hastane, okul, hükümet konağı ve hizmet binaları"
+                },
+                {
+                    "title": "Altyapı Projeleri",
+                    "desc": "Kanalizasyon, isale hattı, yol ve enerji iletim hatları"
+                },
+                {
+                    "title": "Toplu Konut",
+                    "desc": "TOKİ ve kamu konut projelerinde anahtar teslim yapım"
+                },
+                {
+                    "title": "Güçlendirme ve Onarım",
+                    "desc": "Deprem güçlendirme, restorasyon ve büyük onarım işleri"
+                },
+                {
+                    "title": "Çevre Düzenleme",
+                    "desc": "Millet bahçeleri, sahil bandı ve peyzaj uygulamaları"
+                },
+                {
+                    "title": "Teknik Koordinasyon",
+                    "desc": "Ankara ofisimizle ihale yönetimi ve kurum koordinasyonu"
+                }
+            ]
+        },
+        "projectsV2": {
+            "eyebrow": "Referanslarımız",
+            "title": "Öne çıkan projeler",
+            "desc": "Kamu kurumları için tamamladığımız ve sürdürdüğümüz işlerden bir seçki.",
+            "detail": "Detayları gör",
+            "all": "Tüm projeler"
+        },
+        "process": {
+            "eyebrow": "Çalışma Şeklimiz",
+            "title": "İhaleden teslime şeffaf bir süreç",
+            "steps": [
+                {
+                    "title": "İhale ve Teklif",
+                    "desc": "Şartname analizi, metraj ve rekabetçi teklif hazırlığı"
+                },
+                {
+                    "title": "Planlama",
+                    "desc": "İş programı, kaynak planı ve mühendislik çözümleri"
+                },
+                {
+                    "title": "Uygulama",
+                    "desc": "Saha yönetimi, kalite kontrol ve iş güvenliği"
+                },
+                {
+                    "title": "Teslim",
+                    "desc": "Kabul işlemleri, dokümantasyon ve garanti desteği"
+                }
+            ]
+        },
+        "ctaV2": {
+            "eyebrow": "İletişim",
+            "title": "Projeniz için görüşelim",
+            "desc": "Kamu projeleri ve teknik müşavirlik hizmetleri için Antalya veya Ankara ofisimizle iletişime geçin.",
+            "call": "Hemen Arayın",
+            "whatsapp": "WhatsApp",
+            "form": "İletişim Formu"
         }
     },
     "aboutPage": {
@@ -429,5 +532,9 @@
         "title": "Karaoğlu Markası",
         "p1": "Karaoğlu Universal Mühendislik Ltd. Şti., kamu, sağlık ve eğitim gibi hayati sektörlerde üstlendiği nitelikli mühendislik projeleriyle Türkiye'nin gelişimine katkıda bulunur. Karaoğlu, kalite ve güveni vizyon edinmiştir.",
         "p2": "Deneyimli mühendis ekibimiz sayesinde Karaoğlu olarak tamamladığımız tüm kamu altyapısı projelerinde sürdürülebilirlik odaklıyız. Türkiye'nin dört bir yanında iz bırakan Karaoğlu Universal Mühendislik, yeni nesil projeleriyle parlamaya devam ediyor. Geleceği inşa ederken Karaoğlu adını daha sık duyacaksınız."
+    },
+    "header": {
+        "cta": "Teklif İsteyin",
+        "offices": "Antalya Merkez · Ankara Şube"
     }
 }

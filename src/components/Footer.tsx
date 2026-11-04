@@ -2,114 +2,139 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Mail, Phone, MapPin, Instagram, Linkedin, Facebook } from "lucide-react";
+import { Mail, Phone, MapPin, Instagram, Linkedin, ArrowUpRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { GOOGLE_PROFILE } from "@/lib/offices";
 
 export default function Footer() {
     const { t } = useTranslation();
 
+    const columns = [
+        {
+            title: t("footer.quickLinks"),
+            links: [
+                { href: "/hakkimizda", label: t("nav.about") },
+                { href: "/karaoglu", label: t("brandPage.title", "Karaoğlu Kimdir?") },
+                { href: "/sektorler", label: t("nav.sectors") },
+                { href: "/sosyal-sorumluluk", label: t("nav.socialResp") },
+                { href: "/ankara-teknik-koordinasyon", label: t("nav.ankara", "Ankara Koordinasyon") },
+            ],
+        },
+        {
+            title: t("footer.projectsTitle", "Projeler"),
+            links: [
+                { href: "/projeler/kategori/tum-projeler", label: t("nav.projectsAll") },
+                { href: "/projeler/kategori/tamamlanan-kamu-projeleri", label: t("nav.projectsCompleted") },
+                { href: "/projeler/kategori/devam-eden-altyapi-isleri", label: t("nav.projectsOngoing") },
+                { href: "/blog", label: t("nav.blogPosts") },
+                { href: "/haberler", label: t("nav.blogNews") },
+                { href: "/sss", label: t("home.quickLinks.faq.title") },
+            ],
+        },
+    ];
+
+    const offices = [
+        {
+            label: t("footer.vanBranch"),
+            address: "Güzeloba Mah. Çağlayangil Caddesi 3 B, Muratpaşa/Antalya",
+            map: GOOGLE_PROFILE.antalya,
+        },
+        {
+            label: t("footer.ankaraHQ"),
+            address: "Next Level, Kızılırmak Mah. Dumlupınar Bulvarı No: 3C1/160, Kat: 29, 06530 Çankaya/Ankara",
+            map: GOOGLE_PROFILE.ankara,
+        },
+    ];
+
     return (
-        <footer className="w-full bg-primary pt-16 pb-8 text-white">
-            <div className="layout-container">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-                    {/* Brand Section */}
-                    <div className="flex flex-col gap-6">
-                        <div className="flex items-center gap-4 text-white">
-                            <div className="bg-white rounded-xl p-2">
-                                <Image
-                                    src="/footer-logo.png"
-                                    alt="Karaoğlu Logo"
-                                    width={100}
-                                    height={100}
-                                    className="object-contain"
-                                />
-                            </div>
-                            <div className="flex flex-col text-left gap-1">
-                                <span className="text-[16px] font-bold tracking-tight leading-tight">{t("footer.brandInfo.name", "Karaoğlu Universal Mühendislik Ltd. Şti.")}</span>
-                                <span className="text-[10px] font-medium uppercase tracking-[0.1EM] text-white/70">{t("footer.brandInfo.desc", "Engineering & Infrastructure Projects")}</span>
-                                <span className="text-[10px] font-medium uppercase tracking-[0.1EM] text-white/70">{t("footer.brandInfo.country", "Turkey")}</span>
-                            </div>
-                        </div>
-                        <p className="text-white/70 text-sm leading-relaxed">
-                            {t("footer.aboutText")}
-                        </p>
-                        {/* Social Media Links */}
-                        <div className="flex items-center gap-4">
-                            <a href="https://www.instagram.com/karaogluuniversalmuhendislik/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors" aria-label="Instagram">
-                                <Instagram size={18} />
+        <footer className="w-full bg-navy-950 text-white">
+            <div className="h-1 bg-gradient-to-r from-gold via-gold-light to-gold" />
+            <div className="layout-container pt-16 pb-10">
+                <div className="grid gap-12 lg:grid-cols-12 mb-14">
+                    {/* Marka */}
+                    <div className="lg:col-span-4">
+                        <Link href="/" className="inline-flex" aria-label="Karaoğlu Universal Mühendislik ana sayfa">
+                            <Image src="/logo-yatay-beyaz.svg" alt="Karaoğlu Universal Mühendislik" width={982} height={300} className="h-14 w-auto" unoptimized />
+                        </Link>
+                        <p className="mt-6 text-white/60 text-sm leading-relaxed max-w-sm">{t("footer.aboutText")}</p>
+                        <div className="mt-6 flex items-center gap-3">
+                            <a
+                                href="https://www.instagram.com/karaogluuniversalmuhendislik/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="w-10 h-10 border border-white/15 hover:border-gold hover:text-gold-light flex items-center justify-center transition-colors"
+                                aria-label="Instagram"
+                            >
+                                <Instagram size={17} />
                             </a>
-                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors" aria-label="LinkedIn">
-                                <Linkedin size={18} />
-                            </a>
-                            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors" aria-label="Facebook">
-                                <Facebook size={18} />
+                            <a
+                                href="https://www.linkedin.com/company/karaoglu-muhendislik"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="w-10 h-10 border border-white/15 hover:border-gold hover:text-gold-light flex items-center justify-center transition-colors"
+                                aria-label="LinkedIn"
+                            >
+                                <Linkedin size={17} />
                             </a>
                         </div>
                     </div>
 
-                    {/* Quick Links */}
-                    <div className="flex flex-col gap-4">
-                        <p className="text-sm font-bold text-white mb-2">{t("footer.quickLinks")}</p>
-                        <nav className="flex flex-col gap-3">
-                            <Link href="/hakkimizda" className="text-sm text-gray-100 hover:text-white transition-colors">{t("nav.about")}</Link>
-                            <Link href="/sektorler" className="text-sm text-gray-100 hover:text-white transition-colors">{t("nav.services")}</Link>
-                            <Link href="/iletisim" className="text-sm text-gray-100 hover:text-white transition-colors">{t("nav.contact")}</Link>
-                            <Link href="/ankara-teknik-koordinasyon" className="text-sm text-gray-100 hover:text-white transition-colors">{t("nav.ankara", "Ankara Koordinasyon")}</Link>
+                    {/* Link sütunları */}
+                    {columns.map((col) => (
+                        <nav key={col.title} className="lg:col-span-2" aria-label={col.title}>
+                            <p className="font-display text-sm font-bold uppercase tracking-wider mb-5">{col.title}</p>
+                            <ul className="space-y-3">
+                                {col.links.map((l) => (
+                                    <li key={l.href}>
+                                        <Link href={l.href} className="text-sm text-white/60 hover:text-white transition-colors">
+                                            {l.label}
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
                         </nav>
-                    </div>
+                    ))}
 
-                    {/* Projects */}
-                    <div className="flex flex-col gap-4">
-                        <p className="text-sm font-bold text-white mb-2">{t("footer.contentLabel")}</p>
-                        <nav className="flex flex-col gap-3">
-                            <Link href="/blog" className="text-sm text-gray-100 hover:text-white transition-colors">{t("nav.blogPosts")}</Link>
-                            <Link href="/haberler" className="text-sm text-gray-100 hover:text-white transition-colors">{t("nav.blogNews")}</Link>
-                            <Link href="/sss" className="text-sm text-gray-100 hover:text-white transition-colors">{t("home.quickLinks.faq.title")}</Link>
-                            <Link href="/sosyal-sorumluluk" className="text-sm text-gray-100 hover:text-white transition-colors">{t("nav.socialResp")}</Link>
-                        </nav>
-                    </div>
-
-                    {/* Contact */}
-                    <div className="flex flex-col gap-4">
-                        <p className="text-sm font-bold text-white mb-2">{t("footer.contact")}</p>
-                        <div className="flex flex-col gap-3">
-                            <a href="mailto:karaogluuniversal@gmail.com" className="flex items-center gap-3 text-sm text-gray-100 hover:text-white transition-colors">
-                                <Mail size={16} /> karaogluuniversal@gmail.com
-                            </a>
-                            <a href="tel:+905326736556" className="flex items-center gap-3 text-sm text-gray-100 hover:text-white transition-colors">
-                                <Phone size={16} /> 0532 673 65 56
-                            </a>
-                            <div className="flex items-start gap-3 text-sm text-gray-100">
-                                <MapPin size={16} className="mt-0.5 flex-shrink-0" />
-                                <div>
-                                    <span className="block font-semibold text-white mb-0.5">{t("footer.vanBranch")}</span>
-                                    <span>Güzeloba Mah. Çağlayangil Caddesi 3 B Muratpaşa/Antalya</span>
+                    {/* İletişim ve ofisler */}
+                    <div className="lg:col-span-4">
+                        <p className="font-display text-sm font-bold uppercase tracking-wider mb-5">{t("footer.officesTitle", "Ofislerimiz")}</p>
+                        <div className="space-y-5">
+                            {offices.map((o) => (
+                                <div key={o.label} className="flex gap-3">
+                                    <MapPin size={17} className="text-gold mt-0.5 shrink-0" />
+                                    <div className="text-sm">
+                                        <p className="font-semibold">{o.label}</p>
+                                        <p className="text-white/60 mt-0.5">{o.address}</p>
+                                        <a
+                                            href={o.map}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="mt-1.5 inline-flex items-center gap-1 text-gold-light hover:text-white text-[13px] transition-colors"
+                                        >
+                                            {t("contactPage.mapsLink", "Haritada gör ve yorum yap")} <ArrowUpRight size={13} />
+                                        </a>
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="flex items-start gap-3 text-sm text-gray-100">
-                                <MapPin size={16} className="mt-0.5 flex-shrink-0" />
-                                <div>
-                                    <span className="block font-semibold text-white mb-0.5">{t("footer.ankaraHQ")}</span>
-                                    <span>Next Level, Kızılırmak Mah. Dumlupınar Bulvarı No: 3C1/160, Kat: 29, 06530 Çankaya/Ankara</span>
-                                </div>
-                            </div>
+                            ))}
+                            <a href="tel:+905326736556" className="flex items-center gap-3 text-sm hover:text-gold-light transition-colors">
+                                <Phone size={17} className="text-gold" /> 0532 673 65 56
+                            </a>
+                            <a href="mailto:karaogluuniversal@gmail.com" className="flex items-center gap-3 text-sm hover:text-gold-light transition-colors">
+                                <Mail size={17} className="text-gold" /> karaogluuniversal@gmail.com
+                            </a>
                         </div>
                     </div>
                 </div>
 
-                {/* Legal Links */}
-                <div className="border-t border-white/20 pt-8">
-                    <div className="flex flex-wrap justify-center gap-6 mb-4">
-                        <Link href="/kvkk" className="text-sm text-white/60 hover:text-white transition-colors">{t("footer.kvkkLabel")}</Link>
-                        <Link href="/gizlilik" className="text-sm text-white/60 hover:text-white transition-colors">{t("footer.privacy")}</Link>
-                        <Link href="/iletisim" className="text-sm text-white/60 hover:text-white transition-colors">{t("nav.contact")}</Link>
-                    </div>
-                    <p className="text-white/70 text-sm text-center mb-2">
-                        <strong>{t("footer.engineeringFirm")}</strong> – Güzeloba Mah. Çağlayangil Caddesi 3 B Muratpaşa/Antalya
-                    </p>
-                    <p className="text-white/50 text-sm text-center">
+                <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row gap-4 md:items-center justify-between text-[13px] text-white/50">
+                    <p>
                         © {new Date().getFullYear()} Karaoğlu Universal Mühendislik Ltd. Şti. {t("footer.rights")}
                     </p>
+                    <div className="flex flex-wrap gap-6">
+                        <Link href="/kvkk" className="hover:text-white transition-colors">{t("footer.kvkkLabel")}</Link>
+                        <Link href="/gizlilik" className="hover:text-white transition-colors">{t("footer.privacy")}</Link>
+                        <Link href="/iletisim" className="hover:text-white transition-colors">{t("nav.contact")}</Link>
+                    </div>
                 </div>
             </div>
         </footer>

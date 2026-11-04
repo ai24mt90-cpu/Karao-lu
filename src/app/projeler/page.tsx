@@ -1,5 +1,5 @@
-import { redirect } from "next/navigation";
+import { permanentRedirect } from "next/navigation";
 
 export default function ProjectsIndex() {
-    redirect("/projeler/kategori/tum-projeler");
+    permanentRedirect("/projeler/kategori/tum-projeler");
 }

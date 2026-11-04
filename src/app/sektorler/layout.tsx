@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Antalya Mühendislik Sektörleri – Kamu, Sağlık, Eğitim, Altyapı",
+    title: { absolute: "Sektörler – Kamu, Sağlık, Eğitim, Altyapı | Karaoğlu Mühendislik" },
     description: "Türkiye genelinde kamu, sağlık, eğitim, konut, altyapı ve enerji sektörlerinde mühendislik hizmetleri. Karaoğlu Universal Mühendislik uzmanlık alanları.",
     openGraph: {
         title: "Sektörler – Karaoğlu Universal Mühendislik",

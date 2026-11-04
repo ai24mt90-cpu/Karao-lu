@@ -1,17 +1,22 @@
 @import "tailwindcss";
 
 :root {
-  /* Turkerler-style Corporate Navy Theme */
+  /* Kurumsal lacivert tema */
   --background: #ffffff;
-  --foreground: #333333;
-  --primary: #1F3960;
+  --foreground: #0f1b2d;
+  --primary: #1f3960;
   --primary-dark: #142640;
   --primary-light: #2a4d7c;
+  --navy-950: #0a1424;
+  --navy-900: #0f1e33;
+  --navy-800: #172a45;
+  --gold: #c8a24a;
+  --gold-light: #e2c983;
   --surface: #ffffff;
-  --surface-secondary: #f5f7fa;
-  --border: #e5e7eb;
-  --text-secondary: #666666;
-  --accent: #1F3960;
+  --surface-secondary: #f4f6f9;
+  --border: #e3e7ee;
+  --text-secondary: #5b6576;
+  --accent: #1f3960;
 }
 
 @theme inline {
@@ -20,20 +25,55 @@
   --color-primary: var(--primary);
   --color-primary-dark: var(--primary-dark);
   --color-primary-light: var(--primary-light);
+  --color-navy-950: var(--navy-950);
+  --color-navy-900: var(--navy-900);
+  --color-navy-800: var(--navy-800);
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
   --color-surface: var(--surface);
   --color-surface-secondary: var(--surface-secondary);
   --color-border-brand: var(--border);
   --color-text-secondary: var(--text-secondary);
   --color-accent: var(--accent);
-  --font-sans: 'Roboto', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-jakarta), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: 'Roboto', ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-sans);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  letter-spacing: -0.015em;
 }
 
 .layout-container {
   @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/* Bölüm üst etiketi: altın çizgi + küçük büyük harf */
+.eyebrow {
+  @apply inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.18em] text-primary;
+}
+.eyebrow::before {
+  content: "";
+  @apply block h-px w-8 bg-gold;
+}
+.eyebrow-light {
+  @apply text-gold-light;
+}
+
+@keyframes hero-zoom {
+  from { transform: scale(1.06); }
+  to { transform: scale(1); }
+}
+.hero-zoom {
+  animation: hero-zoom 7s ease-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-zoom { animation: none; }
 }

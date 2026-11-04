@@ -1,6 +1,7 @@
 import { supabase } from "@/lib/supabase";
 import HomeSlider from "@/components/home/HomeSlider";
 import HomeContent from "@/components/home/HomeContent";
+import { toTitleCaseTR } from "@/lib/format";
 
 // Force dynamic rendering since we are fetching data
 export const dynamic = "force-dynamic";
@@ -45,8 +46,9 @@ export default async function Home() {
     .filter(p => p.image_url)
     .map(p => ({
       image: p.image_url,
-      title: p.title,
-      subtitle: `${p.location} - ${p.year}`
+      title: toTitleCaseTR(p.title),
+      subtitle: [p.location && toTitleCaseTR(p.location), p.year].filter(Boolean).join(" · "),
+      href: `/projeler/${p.slug || p.id}`,
     }));
 
   return (
