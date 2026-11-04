@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
+import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -9,10 +9,17 @@ import ContactClickTracker from "@/components/ContactClickTracker";
 import { GOOGLE_PROFILE } from "@/lib/offices";
 import I18nProvider from "@/components/I18nProvider";
 
-const roboto = Roboto({
-  variable: "--font-roboto",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin", "latin-ext"],
-  weight: ["400", "500", "700", "900"],
+  display: "swap",
+});
+
+const jakarta = Plus_Jakarta_Sans({
+  variable: "--font-jakarta",
+  subsets: ["latin", "latin-ext"],
+  weight: ["500", "600", "700", "800"],
+  display: "swap",
 });
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://karaoglumuhendislik.com.tr";
@@ -211,7 +218,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${roboto.variable} font-sans antialiased selection:bg-primary/30`}
+        className={`${inter.variable} ${jakarta.variable} font-sans antialiased selection:bg-primary/30`}
       >
         <I18nProvider>
           <Header />

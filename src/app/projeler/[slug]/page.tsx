@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound, permanentRedirect } from "next/navigation";
 import { getProject, toDescription } from "@/lib/content";
+import { toTitleCaseTR } from "@/lib/format";
 import ProjectDetailView from "./ProjectDetailView";
 
 export const dynamic = "force-dynamic";
@@ -12,9 +13,7 @@ const BRAND = " | Karaoğlu Mühendislik";
 // Admin panelde başlıklar BÜYÜK HARFLE giriliyor; Google'da okunur ve 60 karakter civarında kalsın
 function projectTitle(title: string, location?: string) {
     const lower = title.toLocaleLowerCase("tr-TR");
-    let text = lower
-        .replace(/(^|[\s(\/-])(\p{L})/gu, (_, sep: string, ch: string) => sep + ch.toLocaleUpperCase("tr-TR"))
-        .replace(/ (Ve|İle|Veya|De|Da|Ki) /g, (w) => w.toLocaleLowerCase("tr-TR"));
+    let text = toTitleCaseTR(title);
     if (location && !lower.includes(location.toLocaleLowerCase("tr-TR"))) {
         text += ` – ${location.charAt(0).toLocaleUpperCase("tr-TR")}${location.slice(1).toLocaleLowerCase("tr-TR")}`;
     }

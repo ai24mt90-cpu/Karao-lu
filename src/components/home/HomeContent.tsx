@@ -1,161 +1,218 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, ChevronRight } from "lucide-react";
-import HomeProjects from "./HomeProjects";
+import Image from "next/image";
+import {
+    ArrowRight,
+    Building2,
+    CheckCircle2,
+    HardHat,
+    Home as HomeIcon,
+    Landmark,
+    MessageCircle,
+    Phone,
+    Route,
+    ShieldCheck,
+    Trees,
+} from "lucide-react";
+import HomeProjects, { type FeaturedProject } from "./HomeProjects";
 import { useTranslation } from "react-i18next";
 
-export default function HomeContent({ featuredProjects }: { featuredProjects: any[] }) {
+const SERVICE_ICONS = [Building2, Route, HomeIcon, ShieldCheck, Trees, Landmark];
+
+type Item = { title: string; desc: string };
+
+export default function HomeContent({ featuredProjects }: { featuredProjects: FeaturedProject[] }) {
     const { t } = useTranslation();
+
+    const stats = [
+        { value: "64+", label: t("home.about.badges.projects") },
+        { value: "10+", label: t("home.about.badges.experience") },
+        { value: "6+", label: t("home.about.badges.cities") },
+        { value: "%100", label: t("home.about.badges.delivery") },
+    ];
+    const partners = t("home.partners.items", { returnObjects: true }) as string[];
+    const checks = t("home.aboutV2.checks", { returnObjects: true }) as string[];
+    const services = t("home.servicesV2.items", { returnObjects: true }) as Item[];
+    const steps = t("home.process.steps", { returnObjects: true }) as Item[];
+    const aboutImage = featuredProjects.find((p) => p.image_url)?.image_url;
 
     return (
         <>
-            {/* Brand Section */}
-            <section className="py-16 bg-surface-secondary">
-                <div className="layout-container text-center max-w-4xl mx-auto">
-                    <h2 className="text-3xl font-bold text-primary mb-6">{t("home.aboutBrand.title")}</h2>
-                    <p
-                        className="text-lg text-text-secondary leading-relaxed"
-                        dangerouslySetInnerHTML={{ __html: t("home.aboutBrand.content") }}
-                    />
+            {/* Rakamlar: hero'nun altına taşan şerit */}
+            <section className="relative z-10 -mt-14">
+                <div className="layout-container">
+                    <dl className="grid grid-cols-2 lg:grid-cols-4 bg-white shadow-[0_20px_50px_-20px_rgba(10,20,36,0.35)]">
+                        {stats.map((s, i) => (
+                            <div
+                                key={s.label}
+                                className={`px-6 py-7 sm:px-8 ${i > 0 ? "lg:border-l" : ""} ${i % 2 === 1 ? "border-l lg:border-l" : ""} ${i > 1 ? "border-t lg:border-t-0" : ""} border-gray-100`}
+                            >
+                                <dt className="sr-only">{s.label}</dt>
+                                <dd className="font-display text-3xl sm:text-4xl font-extrabold text-primary">{s.value}</dd>
+                                <dd className="mt-1 text-sm text-text-secondary">{s.label}</dd>
+                            </div>
+                        ))}
+                    </dl>
                 </div>
             </section>
 
-            <section className="py-20 bg-white">
+            {/* Kurumlar */}
+            <section className="py-14 border-b border-gray-100">
                 <div className="layout-container">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                        <div>
-                            <h2 className="text-primary text-sm font-semibold uppercase tracking-wider mb-4">{t("home.about.subtitle")}</h2>
-                            <h3 className="text-4xl md:text-5xl font-bold text-foreground mb-6" dangerouslySetInnerHTML={{ __html: t("home.about.title") }} />
-                            <p className="text-text-secondary leading-relaxed mb-6">
-                                <span dangerouslySetInnerHTML={{ __html: t("home.about.desc1") }} />
-                                <br /><br />
-                                {t("home.about.desc2")}
-                                <br /><br />
-                                {t("home.about.desc3")}
-                            </p>
+                    <p className="text-center text-xs font-semibold uppercase tracking-[0.18em] text-text-secondary mb-7">
+                        {t("home.partners.title")}
+                    </p>
+                    <ul className="flex flex-wrap justify-center gap-x-8 gap-y-4">
+                        {partners.map((name) => (
+                            <li key={name} className="flex items-center gap-2 text-sm font-semibold text-primary/80">
+                                <Landmark size={16} className="text-gold shrink-0" />
+                                {name}
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            </section>
 
-                            {/* Yetkinlik Badges */}
-                            <div className="grid grid-cols-2 gap-4 mb-8">
-                                <div className="bg-surface-secondary p-4 border-l-4 border-primary">
-                                    <p className="text-2xl font-bold text-primary">64+</p>
-                                    <p className="text-sm text-text-secondary">{t("home.about.badges.projects")}</p>
+            {/* Hakkımızda */}
+            <section className="py-24">
+                <div className="layout-container grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+                    <div className="relative">
+                        <div className="relative aspect-[4/3] lg:aspect-[4/5] overflow-hidden bg-navy-900">
+                            {aboutImage ? (
+                                <Image src={aboutImage} alt={t("home.aboutV2.title")} fill className="object-cover" sizes="(min-width: 1024px) 50vw, 100vw" />
+                            ) : (
+                                <div className="absolute inset-0 flex items-center justify-center">
+                                    <HardHat size={96} className="text-white/20" />
                                 </div>
-                                <div className="bg-surface-secondary p-4 border-l-4 border-primary">
-                                    <p className="text-2xl font-bold text-primary">10+</p>
-                                    <p className="text-sm text-text-secondary">{t("home.about.badges.experience")}</p>
-                                </div>
-                                <div className="bg-surface-secondary p-4 border-l-4 border-primary">
-                                    <p className="text-2xl font-bold text-primary">6+</p>
-                                    <p className="text-sm text-text-secondary">{t("home.about.badges.cities")}</p>
-                                </div>
-                                <div className="bg-surface-secondary p-4 border-l-4 border-primary">
-                                    <p className="text-2xl font-bold text-primary">%100</p>
-                                    <p className="text-sm text-text-secondary">{t("home.about.badges.delivery")}</p>
-                                </div>
-                            </div>
-
-                            <div className="flex flex-wrap gap-4">
-                                <Link
-                                    href="/projeler/kategori/tamamlanan-kamu-projeleri"
-                                    className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 font-semibold hover:bg-primary-dark transition-colors"
-                                    aria-label="Tamamlanan kamu projelerimizi inceleyin"
-                                >
-                                    {t("home.about.buttons.completed")} <ArrowRight size={18} />
-                                </Link>
-                                <Link
-                                    href="/hakkimizda"
-                                    className="inline-flex items-center gap-2 border-2 border-primary text-primary px-6 py-3 font-semibold hover:bg-primary hover:text-white transition-colors"
-                                    aria-label="Teknik yeterlilik belgelerimiz"
-                                >
-                                    {t("home.about.buttons.qualifications")}
-                                </Link>
-                            </div>
+                            )}
                         </div>
-                        <div className="space-y-6">
-                            {/* Hizmet Alanları */}
-                            <div className="bg-primary text-white p-6">
-                                <h4 className="font-bold text-lg mb-4">{t("home.servicesTitle")}</h4>
-                                <ul className="space-y-3 text-white/90">
-                                    <li className="flex items-center gap-3">
-                                        <span className="w-2 h-2 bg-white rounded-full flex-shrink-0" />
-                                        <span dangerouslySetInnerHTML={{ __html: t("home.services.public") }} />
-                                    </li>
-                                    <li className="flex items-center gap-3">
-                                        <span className="w-2 h-2 bg-white rounded-full flex-shrink-0" />
-                                        <span dangerouslySetInnerHTML={{ __html: t("home.services.infra") }} />
-                                    </li>
-                                    <li className="flex items-center gap-3">
-                                        <span className="w-2 h-2 bg-white rounded-full flex-shrink-0" />
-                                        <span dangerouslySetInnerHTML={{ __html: t("home.services.housing") }} />
-                                    </li>
-                                    <li className="flex items-center gap-3">
-                                        <span className="w-2 h-2 bg-white rounded-full flex-shrink-0" />
-                                        <span dangerouslySetInnerHTML={{ __html: t("home.services.reinforcement") }} />
-                                    </li>
-                                    <li className="flex items-center gap-3">
-                                        <span className="w-2 h-2 bg-white rounded-full flex-shrink-0" />
-                                        <span dangerouslySetInnerHTML={{ __html: t("home.services.landscaping") }} />
-                                    </li>
-                                </ul>
-                            </div>
+                        <div className="absolute -bottom-8 right-6 sm:-right-6 bg-primary text-white px-8 py-6 shadow-xl">
+                            <p className="font-display text-4xl font-extrabold text-gold-light">2014</p>
+                            <p className="text-sm text-white/80">{t("home.aboutV2.founded", "Kuruluş yılı")}</p>
+                        </div>
+                        <div className="hidden sm:block absolute -top-4 -left-4 h-24 w-24 border-l-2 border-t-2 border-gold" />
+                    </div>
+
+                    <div>
+                        <p className="eyebrow mb-5">{t("home.about.subtitle")}</p>
+                        <h2 className="font-display text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-foreground leading-tight mb-6">
+                            {t("home.aboutV2.title")}
+                        </h2>
+                        <div className="space-y-4 text-text-secondary leading-relaxed">
+                            <p dangerouslySetInnerHTML={{ __html: t("home.about.desc1") }} />
+                            <p>{t("home.about.desc2")}</p>
+                            <p dangerouslySetInnerHTML={{ __html: t("home.aboutBrand.content") }} className="text-sm" />
+                        </div>
+                        <ul className="mt-8 grid sm:grid-cols-2 gap-x-6 gap-y-3">
+                            {checks.map((c) => (
+                                <li key={c} className="flex items-start gap-2.5 text-[15px] text-foreground">
+                                    <CheckCircle2 size={18} className="text-gold mt-0.5 shrink-0" />
+                                    {c}
+                                </li>
+                            ))}
+                        </ul>
+                        <div className="mt-10 flex flex-wrap gap-4">
+                            <Link
+                                href="/hakkimizda"
+                                className="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-6 py-3.5 font-semibold transition-colors"
+                            >
+                                {t("nav.aboutUsCorp")} <ArrowRight size={18} />
+                            </Link>
+                            <Link
+                                href="/projeler/kategori/tamamlanan-kamu-projeleri"
+                                className="inline-flex items-center gap-2 border border-primary text-primary hover:bg-primary hover:text-white px-6 py-3.5 font-semibold transition-colors"
+                            >
+                                {t("home.about.buttons.completed")}
+                            </Link>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* Kurumsal Slogan */}
-            <section className="py-16 bg-primary">
-                <div className="layout-container text-center">
-                    <p className="text-xl md:text-3xl font-bold text-white leading-relaxed max-w-4xl mx-auto">
-                        {t("home.slogan.text")}
-                    </p>
-                    <p className="text-white/70 mt-4">{t("home.slogan.author")}</p>
+            {/* Hizmetler */}
+            <section className="py-24 bg-surface-secondary">
+                <div className="layout-container">
+                    <div className="max-w-2xl mb-14">
+                        <p className="eyebrow mb-5">{t("home.servicesV2.eyebrow")}</p>
+                        <h2 className="font-display text-3xl sm:text-4xl font-extrabold text-foreground mb-4">{t("home.servicesV2.title")}</h2>
+                        <p className="text-text-secondary text-lg">{t("home.servicesV2.desc")}</p>
+                    </div>
+                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-gray-200 border border-gray-200">
+                        {services.map((s, i) => {
+                            const Icon = SERVICE_ICONS[i % SERVICE_ICONS.length];
+                            return (
+                                <Link
+                                    key={s.title}
+                                    href={i === 5 ? "/ankara-teknik-koordinasyon" : "/sektorler"}
+                                    className="group relative bg-white p-8 lg:p-10 hover:bg-navy-900 transition-colors"
+                                >
+                                    <span className="absolute top-0 left-0 h-0.5 w-0 bg-gold group-hover:w-full transition-all duration-300" />
+                                    <Icon size={34} strokeWidth={1.5} className="text-primary group-hover:text-gold-light transition-colors mb-6" />
+                                    <h3 className="font-display text-xl font-bold text-foreground group-hover:text-white mb-2 transition-colors">{s.title}</h3>
+                                    <p className="text-text-secondary group-hover:text-white/70 transition-colors">{s.desc}</p>
+                                    <ArrowRight size={18} className="mt-6 text-primary group-hover:text-gold-light group-hover:translate-x-1 transition-all" />
+                                </Link>
+                            );
+                        })}
+                    </div>
                 </div>
             </section>
 
-            {/* Projects Section - Client Component */}
+            {/* Projeler */}
             <HomeProjects projects={featuredProjects} />
 
-            {/* Quick Links Section - For Better Internal Linking */}
-            <section className="py-16 bg-gray-50">
+            {/* Süreç */}
+            <section className="py-24 bg-navy-950 text-white">
                 <div className="layout-container">
-                    <h2 className="text-3xl font-bold text-center mb-12">{t("home.quickLinks.title")}</h2>
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                        <Link href="/blog" className="group p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-all text-center">
-                            <h3 className="font-semibold text-lg mb-2 group-hover:text-primary transition-colors">{t("home.quickLinks.blog.title")}</h3>
-                            <p className="text-sm text-gray-600">{t("home.quickLinks.blog.desc")}</p>
-                        </Link>
-                        <Link href="/haberler" className="group p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-all text-center">
-                            <h3 className="font-semibold text-lg mb-2 group-hover:text-primary transition-colors">{t("home.quickLinks.news.title")}</h3>
-                            <p className="text-sm text-gray-600">{t("home.quickLinks.news.desc")}</p>
-                        </Link>
-                        <Link href="/projeler/kategori/tum-projeler" className="group p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-all text-center">
-                            <h3 className="font-semibold text-lg mb-2 group-hover:text-primary transition-colors">{t("home.quickLinks.projects.title")}</h3>
-                            <p className="text-sm text-gray-600">{t("home.quickLinks.projects.desc")}</p>
-                        </Link>
-                        <Link href="/sss" className="group p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-all text-center">
-                            <h3 className="font-semibold text-lg mb-2 group-hover:text-primary transition-colors">{t("home.quickLinks.faq.title")}</h3>
-                            <p className="text-sm text-gray-600">{t("home.quickLinks.faq.desc")}</p>
-                        </Link>
+                    <div className="max-w-2xl mb-14">
+                        <p className="eyebrow eyebrow-light mb-5">{t("home.process.eyebrow")}</p>
+                        <h2 className="font-display text-3xl sm:text-4xl font-extrabold">{t("home.process.title")}</h2>
                     </div>
+                    <ol className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
+                        {steps.map((s, i) => (
+                            <li key={s.title} className="relative border-t border-white/15 pt-8">
+                                <span className="absolute -top-px left-0 h-0.5 w-12 bg-gold" />
+                                <span className="font-display text-sm font-bold text-gold-light">{String(i + 1).padStart(2, "0")}</span>
+                                <h3 className="font-display text-xl font-bold mt-3 mb-2">{s.title}</h3>
+                                <p className="text-white/65 text-[15px] leading-relaxed">{s.desc}</p>
+                            </li>
+                        ))}
+                    </ol>
+                    <blockquote className="mt-20 pt-12 border-t border-white/10 max-w-3xl">
+                        <p className="font-display text-2xl sm:text-3xl font-semibold leading-snug text-white/90">{t("home.slogan.text")}</p>
+                        <footer className="mt-4 text-sm text-gold-light">{t("home.slogan.author")}</footer>
+                    </blockquote>
                 </div>
             </section>
 
-            {/* CTA Section */}
-            <section className="py-20 bg-primary">
-                <div className="layout-container text-center">
-                    <h2 className="text-4xl font-bold text-white mb-6">{t("home.cta.title")}</h2>
-                    <p className="text-white/80 max-w-2xl mx-auto mb-8">
-                        {t("home.cta.desc")}
-                    </p>
-                    <Link
-                        href="/iletisim"
-                        className="inline-flex items-center gap-2 bg-white text-primary px-8 py-4 font-semibold hover:bg-white/90 transition-colors"
-                        aria-label="İletişim sayfasına git"
-                    >
-                        {t("home.cta.button")} <ChevronRight size={20} />
-                    </Link>
+            {/* İletişim çağrısı */}
+            <section className="py-20">
+                <div className="layout-container">
+                    <div className="relative overflow-hidden bg-primary text-white px-8 py-14 sm:px-14 lg:flex lg:items-center lg:justify-between gap-10">
+                        <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full border-[40px] border-white/5" />
+                        <div className="relative max-w-xl">
+                            <p className="eyebrow eyebrow-light mb-4">{t("home.ctaV2.eyebrow")}</p>
+                            <h2 className="font-display text-3xl sm:text-4xl font-extrabold mb-4">{t("home.ctaV2.title")}</h2>
+                            <p className="text-white/75">{t("home.ctaV2.desc")}</p>
+                        </div>
+                        <div className="relative mt-8 lg:mt-0 flex flex-col sm:flex-row gap-3 shrink-0">
+                            <a href="tel:+905326736556" className="inline-flex items-center justify-center gap-2 bg-gold hover:bg-gold-light text-navy-950 px-6 py-4 font-semibold transition-colors">
+                                <Phone size={18} /> {t("home.ctaV2.call")}
+                            </a>
+                            <a
+                                href="https://wa.me/905326736556"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 px-6 py-4 font-semibold transition-colors"
+                            >
+                                <MessageCircle size={18} /> {t("home.ctaV2.whatsapp")}
+                            </a>
+                            <Link href="/iletisim" className="inline-flex items-center justify-center gap-2 border border-white/40 hover:border-white px-6 py-4 font-semibold transition-colors">
+                                {t("home.ctaV2.form")} <ArrowRight size={18} />
+                            </Link>
+                        </div>
+                    </div>
                 </div>
             </section>
         </>

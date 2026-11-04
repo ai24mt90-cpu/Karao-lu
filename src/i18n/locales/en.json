@@ -22,14 +22,15 @@
         "blogNews": "News",
         "blogPosts": "Blog",
         "menuClose": "Close Menu",
-        "menuOpen": "Open Menu"
+        "menuOpen": "Open Menu",
+        "ankara": "Ankara Technical Coordination"
     },
     "footer": {
         "about": "About Us",
-        "aboutText": "Karaoğlu Universal Mühendislik has been undertaking pioneering projects in the construction, engineering, and mechanical systems sectors with its quarter-century of experience.",
+        "aboutText": "Since 2014, Karaoğlu Universal Mühendislik has delivered reliable public building, infrastructure and housing projects from its Antalya and Ankara offices.",
         "quickLinks": "Quick Links",
         "contact": "Contact",
-        "rights": "All Rights Reserved.",
+        "rights": "All rights reserved.",
         "privacy": "Privacy Policy",
         "terms": "Terms of Use",
         "companySub": "Universal Engineering",
@@ -42,7 +43,9 @@
             "name": "Karaoğlu Universal Mühendislik Ltd. Şti.",
             "desc": "Engineering & Infrastructure Projects",
             "country": "Turkey"
-        }
+        },
+        "officesTitle": "Our Offices",
+        "projectsTitle": "Projects"
     },
     "home": {
         "slider": {
@@ -139,6 +142,106 @@
         "aboutBrand": {
             "title": "About Karaoğlu",
             "content": "<a href='/karaoglu' class='text-primary hover:underline font-semibold'>Karaoğlu Universal Mühendislik</a> Ltd. Şti. is an engineering and infrastructure company based in Turkey specializing in public infrastructure and turnkey engineering projects. Karaoğlu stands out in the industry with its qualified projects. Adding value to the future with its experienced staff, <a href='/karaoglu' class='text-primary hover:underline font-semibold'>Karaoğlu Universal Mühendislik</a> is your trusted partner. You can choose Karaoğlu for reliable and lasting solutions."
+        },
+        "hero2": {
+            "eyebrow": "Public Contracting · Antalya & Ankara",
+            "title": "Building public investments with commitment",
+            "desc": "Since 2014 we have been the trusted partner of public institutions in hospital, school, housing and infrastructure projects.",
+            "ctaProjects": "Explore Our Projects",
+            "ctaContact": "Contact Us",
+            "featured": "Featured project"
+        },
+        "partners": {
+            "title": "Some of the institutions we work with",
+            "items": [
+                "Ministry of Environment, Urbanisation and Climate Change",
+                "TOKİ",
+                "Van Investment Monitoring and Coordination Directorate",
+                "General Directorate of Security",
+                "Gendarmerie General Command",
+                "Ministry of Health",
+                "Ministry of National Education",
+                "İpekyolu Municipality"
+            ]
+        },
+        "aboutV2": {
+            "title": "The trusted partner for public projects in Antalya and Ankara",
+            "since": "Since 2014",
+            "checks": [
+                "Full compliance with Public Procurement Law No. 4734",
+                "Strong machinery park and financial capacity",
+                "Experienced engineering and technical staff",
+                "On-time delivery to specification"
+            ],
+            "founded": "Founded"
+        },
+        "servicesV2": {
+            "eyebrow": "Our Services",
+            "title": "End-to-end construction and engineering",
+            "desc": "From tender to turnkey delivery, every step is managed by our own technical team.",
+            "items": [
+                {
+                    "title": "Public Buildings",
+                    "desc": "Hospitals, schools, government and service buildings"
+                },
+                {
+                    "title": "Infrastructure",
+                    "desc": "Sewerage, water mains, roads and power lines"
+                },
+                {
+                    "title": "Mass Housing",
+                    "desc": "Turnkey construction for TOKİ and public housing"
+                },
+                {
+                    "title": "Reinforcement & Repair",
+                    "desc": "Seismic retrofitting, restoration and major repairs"
+                },
+                {
+                    "title": "Landscaping",
+                    "desc": "Public gardens, coastal promenades and landscaping"
+                },
+                {
+                    "title": "Technical Coordination",
+                    "desc": "Tender management and coordination from our Ankara office"
+                }
+            ]
+        },
+        "projectsV2": {
+            "eyebrow": "References",
+            "title": "Featured projects",
+            "desc": "A selection of completed and ongoing work for public institutions.",
+            "detail": "View details",
+            "all": "All projects"
+        },
+        "process": {
+            "eyebrow": "How We Work",
+            "title": "A transparent process from tender to delivery",
+            "steps": [
+                {
+                    "title": "Tender & Bid",
+                    "desc": "Specification analysis, quantity take-off and competitive bidding"
+                },
+                {
+                    "title": "Planning",
+                    "desc": "Work schedule, resource plan and engineering solutions"
+                },
+                {
+                    "title": "Execution",
+                    "desc": "Site management, quality control and occupational safety"
+                },
+                {
+                    "title": "Handover",
+                    "desc": "Acceptance, documentation and warranty support"
+                }
+            ]
+        },
+        "ctaV2": {
+            "eyebrow": "Contact",
+            "title": "Let's talk about your project",
+            "desc": "Contact our Antalya or Ankara office for public projects and technical consultancy services.",
+            "call": "Call Now",
+            "whatsapp": "WhatsApp",
+            "form": "Contact Form"
         }
     },
     "aboutPage": {
@@ -429,5 +532,9 @@
         "title": "The Karaoğlu Brand",
         "p1": "Karaoğlu Universal Mühendislik Ltd. Şti. contributes to Turkey's development with its continuous qualified engineering projects in vital sectors such as public works, healthcare, and education. Karaoğlu operates with a vision centered on quality and trust.",
         "p2": "Thanks to our experienced engineering team, as Karaoğlu, we focus on sustainability in all public infrastructure projects we complete. Leaving its mark all across Turkey, Karaoğlu Universal Mühendislik continues to shine with next-generation projects. You will hear the name Karaoğlu much more often while building the future."
+    },
+    "header": {
+        "cta": "Request a Quote",
+        "offices": "Antalya HQ · Ankara Branch"
     }
 }
