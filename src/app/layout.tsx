@@ -108,7 +108,7 @@ const jsonLd = {
   name: "Karaoğlu Universal Mühendislik Ltd. Şti.",
   url: siteUrl,
   areaServed: "TR",
-  logo: `${siteUrl}/logo-header.png`,
+  logo: `${siteUrl}/logo.png`,
   image: `${siteUrl}/og-image.jpg`,
   telephone: "+90-532-673-6556",
   email: "karaogluuniversal@gmail.com",

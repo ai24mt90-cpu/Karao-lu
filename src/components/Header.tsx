@@ -107,19 +107,16 @@ export default function Header() {
                 className={`bg-white/95 backdrop-blur border-b transition-shadow ${scrolled ? "border-transparent shadow-[0_6px_24px_-12px_rgba(10,20,36,0.25)]" : "border-gray-100"}`}
             >
                 <div className="layout-container flex h-20 items-center gap-6">
-                    <Link href="/" className="flex items-center gap-3 shrink-0" aria-label="Karaoğlu Universal Mühendislik">
+                    <Link href="/" className="flex items-center shrink-0" aria-label="Karaoğlu Universal Mühendislik ana sayfa">
                         <Image
-                            src="/logo-header.png"
-                            alt="Karaoğlu Mühendislik Logo"
-                            width={56}
-                            height={56}
-                            className="object-contain scale-[1.6]"
+                            src="/logo-yatay.svg"
+                            alt="Karaoğlu Universal Mühendislik"
+                            width={982}
+                            height={300}
+                            className="h-12 lg:h-14 w-auto"
                             priority
+                            unoptimized
                         />
-                        <span className="flex flex-col">
-                            <span className="font-display font-extrabold text-[22px] leading-none text-primary tracking-tight">KARAOĞLU</span>
-                            <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-[0.24em] mt-1">Universal Mühendislik</span>
-                        </span>
                     </Link>
 
                     <nav className="hidden lg:flex items-center ml-auto" aria-label="Ana menü">

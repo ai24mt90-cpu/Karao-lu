@@ -53,14 +53,8 @@ export default function Footer() {
                 <div className="grid gap-12 lg:grid-cols-12 mb-14">
                     {/* Marka */}
                     <div className="lg:col-span-4">
-                        <Link href="/" className="inline-flex items-center gap-3">
-                            <span className="bg-white p-1.5">
-                                <Image src="/logo-header.png" alt="Karaoğlu Logo" width={52} height={52} className="object-contain scale-[1.6]" />
-                            </span>
-                            <span className="flex flex-col">
-                                <span className="font-display font-extrabold text-xl leading-none">KARAOĞLU</span>
-                                <span className="text-[10px] font-semibold uppercase tracking-[0.24em] text-white/60 mt-1">Universal Mühendislik</span>
-                            </span>
+                        <Link href="/" className="inline-flex" aria-label="Karaoğlu Universal Mühendislik ana sayfa">
+                            <Image src="/logo-yatay-beyaz.svg" alt="Karaoğlu Universal Mühendislik" width={982} height={300} className="h-14 w-auto" unoptimized />
                         </Link>
                         <p className="mt-6 text-white/60 text-sm leading-relaxed max-w-sm">{t("footer.aboutText")}</p>
                         <div className="mt-6 flex items-center gap-3">
