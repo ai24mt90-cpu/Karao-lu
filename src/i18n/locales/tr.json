@@ -232,7 +232,13 @@
         },
         "messageLabel": "Mesajınız *",
         "sendBtn": "Gönder",
-        "sendingBtn": "Gönderiliyor..."
+        "sendingBtn": "Gönderiliyor...",
+        "kvkkNoticePre": "Formu göndererek paylaştığınız kişisel veriler, talebinizi yanıtlamak amacıyla",
+        "kvkkNoticeLink": "KVKK Aydınlatma Metni",
+        "kvkkNoticePost": "kapsamında işlenir.",
+        "mapTitle": "Antalya merkez ofis konumu",
+        "mapConsent": "Harita Google Maps üzerinden yüklenir; yüklendiğinde Google ile veri paylaşılır.",
+        "mapLoad": "Haritayı göster"
     },
     "maintenance": {
         "title": "Bakımda",
@@ -429,5 +435,13 @@
         "title": "Karaoğlu Markası",
         "p1": "Karaoğlu Universal Mühendislik Ltd. Şti., kamu, sağlık ve eğitim gibi hayati sektörlerde üstlendiği nitelikli mühendislik projeleriyle Türkiye'nin gelişimine katkıda bulunur. Karaoğlu, kalite ve güveni vizyon edinmiştir.",
         "p2": "Deneyimli mühendis ekibimiz sayesinde Karaoğlu olarak tamamladığımız tüm kamu altyapısı projelerinde sürdürülebilirlik odaklıyız. Türkiye'nin dört bir yanında iz bırakan Karaoğlu Universal Mühendislik, yeni nesil projeleriyle parlamaya devam ediyor. Geleceği inşa ederken Karaoğlu adını daha sık duyacaksınız."
+    },
+    "cookie": {
+        "title": "Çerez tercihleri",
+        "text": "Sitemizi geliştirmek için ziyaretçi istatistiklerini (Google Analytics) yalnızca onay verirseniz kullanıyoruz. Zorunlu olmayan çerezleri reddedebilirsiniz.",
+        "policyLink": "Gizlilik Politikası",
+        "accept": "Kabul et",
+        "reject": "Reddet",
+        "preferences": "Çerez Tercihleri"
     }
 }

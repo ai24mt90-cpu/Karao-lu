@@ -232,7 +232,13 @@
         },
         "messageLabel": "Your Message *",
         "sendBtn": "Send",
-        "sendingBtn": "Sending..."
+        "sendingBtn": "Sending...",
+        "kvkkNoticePre": "Personal data you share by submitting this form is processed to respond to your request, as described in our",
+        "kvkkNoticeLink": "KVKK Privacy Notice",
+        "kvkkNoticePost": ".",
+        "mapTitle": "Antalya head office location",
+        "mapConsent": "The map is loaded from Google Maps; loading it shares data with Google.",
+        "mapLoad": "Show map"
     },
     "maintenance": {
         "title": "Under Maintenance",
@@ -429,5 +435,13 @@
         "title": "The Karaoğlu Brand",
         "p1": "Karaoğlu Universal Mühendislik Ltd. Şti. contributes to Turkey's development with its continuous qualified engineering projects in vital sectors such as public works, healthcare, and education. Karaoğlu operates with a vision centered on quality and trust.",
         "p2": "Thanks to our experienced engineering team, as Karaoğlu, we focus on sustainability in all public infrastructure projects we complete. Leaving its mark all across Turkey, Karaoğlu Universal Mühendislik continues to shine with next-generation projects. You will hear the name Karaoğlu much more often while building the future."
+    },
+    "cookie": {
+        "title": "Cookie preferences",
+        "text": "We use visitor statistics (Google Analytics) to improve our site only if you consent. You can reject non-essential cookies.",
+        "policyLink": "Privacy Policy",
+        "accept": "Accept",
+        "reject": "Reject",
+        "preferences": "Cookie Preferences"
     }
 }

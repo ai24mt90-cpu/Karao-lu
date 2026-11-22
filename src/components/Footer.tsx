@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Mail, Phone, MapPin, Instagram, Linkedin, Facebook } from "lucide-react";
+import { OPEN_CONSENT_EVENT } from "@/components/CookieConsent";
 import { useTranslation } from "react-i18next";
 
 export default function Footer() {
@@ -103,6 +104,7 @@ export default function Footer() {
                         <Link href="/kvkk" className="text-sm text-white/60 hover:text-white transition-colors">{t("footer.kvkkLabel")}</Link>
                         <Link href="/gizlilik" className="text-sm text-white/60 hover:text-white transition-colors">{t("footer.privacy")}</Link>
                         <Link href="/iletisim" className="text-sm text-white/60 hover:text-white transition-colors">{t("nav.contact")}</Link>
+                        <button type="button" onClick={() => window.dispatchEvent(new Event(OPEN_CONSENT_EVENT))} className="text-sm text-white/60 hover:text-white transition-colors">{t("cookie.preferences")}</button>
                     </div>
                     <p className="text-white/70 text-sm text-center mb-2">
                         <strong>{t("footer.engineeringFirm")}</strong> – Güzeloba Mah. Çağlayangil Caddesi 3 B Muratpaşa/Antalya

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import Link from "next/link";
 import { Mail, Phone, MapPin, Clock, Send, Loader2 } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 import { useTranslation } from "react-i18next";
@@ -19,6 +20,7 @@ interface FormData {
 export default function ContactPage() {
     const { t } = useTranslation();
     const defaultSubject = t("contactPage.options.project", "Proje Bilgi Talebi");
+    const [showMap, setShowMap] = useState(false);
     const [formState, setFormState] = useState<"idle" | "submitting" | "success" | "error">("idle");
     const [formData, setFormData] = useState<FormData>({
         name: "",
@@ -226,6 +228,13 @@ export default function ContactPage() {
                                         className="w-full px-4 py-3 border border-gray-200 focus:border-primary focus:outline-none transition-colors resize-none"
                                     />
                                 </div>
+                                <p className="text-xs text-text-secondary mb-4">
+                                    {t("contactPage.kvkkNoticePre")}{" "}
+                                    <Link href="/kvkk" target="_blank" className="text-primary underline">
+                                        {t("contactPage.kvkkNoticeLink")}
+                                    </Link>{" "}
+                                    {t("contactPage.kvkkNoticePost")}
+                                </p>
                                 <button
                                     type="submit"
                                     disabled={formState === "submitting"}
@@ -246,17 +255,32 @@ export default function ContactPage() {
                 </div>
             </section>
 
-            {/* Map Section */}
+            {/* Map Section: harita yalnızca ziyaretçi tıklayınca Google'dan yüklenir */}
             <section className="h-[400px] bg-gray-200">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1542.5!2d43.3642!3d38.4925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzjCsDI5JzMzLjAiTiA0M8KwMjEnNTEuMSJF!5e0!3m2!1str!2str!4v1704628542000!5m2!1str!2str"
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    allowFullScreen
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                />
+                {showMap ? (
+                    <iframe
+                        src="https://www.google.com/maps?q=G%C3%BCzeloba+Mah.+%C3%87a%C4%9Flayangil+Caddesi+3B+Muratpa%C5%9Fa+Antalya&output=embed"
+                        title={t("contactPage.mapTitle")}
+                        width="100%"
+                        height="100%"
+                        style={{ border: 0 }}
+                        allowFullScreen
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                    />
+                ) : (
+                    <div className="h-full flex flex-col items-center justify-center gap-4 text-center px-4">
+                        <MapPin size={40} className="text-primary" />
+                        <p className="text-sm text-text-secondary max-w-md">{t("contactPage.mapConsent")}</p>
+                        <button
+                            type="button"
+                            onClick={() => setShowMap(true)}
+                            className="h-11 px-6 bg-primary text-white font-semibold hover:bg-primary-dark transition-colors"
+                        >
+                            {t("contactPage.mapLoad")}
+                        </button>
+                    </div>
+                )}
             </section>
         </div>
     );

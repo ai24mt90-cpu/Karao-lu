@@ -8,6 +8,7 @@ import WhatsAppWidget from "@/components/WhatsAppWidget";
 import ContactClickTracker from "@/components/ContactClickTracker";
 import { GOOGLE_PROFILE } from "@/lib/offices";
 import I18nProvider from "@/components/I18nProvider";
+import CookieConsent from "@/components/CookieConsent";
 
 const roboto = Roboto({
   variable: "--font-roboto",
@@ -186,19 +187,6 @@ export default function RootLayout({
   return (
     <html lang="tr" className="scroll-smooth">
       <head>
-        {/* Google Analytics - Deferred for performance */}
-        <script defer src="https://www.googletagmanager.com/gtag/js?id=G-EW7GQW0R23" />
-        <script
-          defer
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-EW7GQW0R23');
-            `,
-          }}
-        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -220,6 +208,7 @@ export default function RootLayout({
           <WhatsAppWidget />
           <ContactClickTracker />
           <Footer />
+          <CookieConsent />
         </I18nProvider>
       </body>
     </html>
