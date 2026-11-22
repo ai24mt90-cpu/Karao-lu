@@ -104,7 +104,7 @@ const jsonLd = {
   areaServed: "Turkey",
   logo: `${siteUrl}/logo.png`,
   sameAs: [
-    "https://www.linkedin.com/company/karaoglu-muhendislik",
+    "https://www.linkedin.com/company/karaoglu-universal-muhendislik/",
     "https://www.instagram.com/karaogluuniversalmuhendislik/",
     GOOGLE_PROFILE.antalya,
     GOOGLE_PROFILE.ankara,
