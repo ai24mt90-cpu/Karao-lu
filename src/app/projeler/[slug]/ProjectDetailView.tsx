@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Calendar, ArrowLeft, MapPin, Building2, User, Ruler } from "lucide-react";
+import { Calendar, ArrowLeft, MapPin, Building2, User, Ruler, Banknote } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import { useTranslation } from "react-i18next";
 import type { Project, ProjectImage } from "@/lib/content";
@@ -106,6 +106,16 @@ export default function ProjectDetailView({ project, images }: { project: Projec
                                     </div>
                                     <p className="font-medium text-foreground">{project.area || "-"}</p>
                                 </div>
+
+                                {project.contract_value && (
+                                    <div>
+                                        <div className="flex items-center gap-2 text-text-secondary text-sm mb-1">
+                                            <Banknote size={16} />
+                                            <span>{t("projectDetail.contractValue")}</span>
+                                        </div>
+                                        <p className="font-medium text-foreground">{project.contract_value}</p>
+                                    </div>
+                                )}
 
                                 <div>
                                     <div className="flex items-center gap-2 text-text-secondary text-sm mb-1">

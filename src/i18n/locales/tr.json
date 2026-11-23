@@ -309,7 +309,8 @@
         "contactUsDesc": "Bu proje hakkında daha fazla bilgi almak için bizimle iletişime geçebilirsiniz.",
         "contactBtn": "İletişime Geç",
         "statusCompleted": "Tamamlandı",
-        "statusOngoing": "Devam Ediyor"
+        "statusOngoing": "Devam Ediyor",
+        "contractValue": "Sözleşme Bedeli"
     },
     "blogDetail": {
         "notFound": "Yazı Bulunamadı",

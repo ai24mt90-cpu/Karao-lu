@@ -25,6 +25,7 @@ export interface Project {
     status: string;
     client?: string;
     area?: string;
+    contract_value?: string | null;
     content?: string;
 }
 

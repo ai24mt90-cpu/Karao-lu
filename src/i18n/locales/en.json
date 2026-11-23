@@ -309,7 +309,8 @@
         "contactUsDesc": "You can contact us to get more information about this project.",
         "contactBtn": "Contact Us",
         "statusCompleted": "Completed",
-        "statusOngoing": "Ongoing"
+        "statusOngoing": "Ongoing",
+        "contractValue": "Contract Value"
     },
     "blogDetail": {
         "notFound": "Post Not Found",
