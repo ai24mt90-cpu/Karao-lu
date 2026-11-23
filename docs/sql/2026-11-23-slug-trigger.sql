@@ -29,3 +29,11 @@ create or replace trigger set_slug before insert or update of slug on public.pro
   for each row execute function public.set_slug();
 create or replace trigger set_slug before insert or update of slug on public.blog_posts
   for each row execute function public.set_slug();
+
+-- news tablosunda kodun beklediği slug ve is_published sütunları yoktu;
+-- bu yüzden haber listesi ve haber sayfaları boş/404 dönüyordu.
+alter table public.news add column if not exists slug text;
+alter table public.news add column if not exists is_published boolean not null default true;
+create or replace trigger set_slug before insert or update of slug on public.news
+  for each row execute function public.set_slug();
+update public.news set slug = null where slug is null; -- mevcut haberlere slug üretir
