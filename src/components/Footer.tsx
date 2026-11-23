@@ -39,7 +39,7 @@ export default function Footer() {
                             <a href="https://www.instagram.com/karaogluuniversalmuhendislik/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors" aria-label="Instagram">
                                 <Instagram size={18} />
                             </a>
-                            <a href="https://www.linkedin.com/company/karaoglu-universal-muhendislik/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors" aria-label="LinkedIn">
+                            <a href="https://www.linkedin.com/company/145487770/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors" aria-label="LinkedIn">
                                 <Linkedin size={18} />
                             </a>
                             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors" aria-label="Facebook">
