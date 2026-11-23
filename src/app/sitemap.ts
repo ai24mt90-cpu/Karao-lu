@@ -3,6 +3,9 @@ import { supabase } from '@/lib/supabase'
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://karaoglumuhendislik.com.tr'
 
+// Supabase'e eklenen proje/blog/haberler deploy beklemeden sitemap'e girsin
+export const revalidate = 3600
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // Statik rotalar
     const routes: MetadataRoute.Sitemap = [
@@ -22,12 +25,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             url: `${siteUrl}/hakkimizda`,
             lastModified: new Date(),
             changeFrequency: 'monthly',
-            priority: 0.9,
-        },
-        {
-            url: `${siteUrl}/projeler`,
-            lastModified: new Date(),
-            changeFrequency: 'weekly',
             priority: 0.9,
         },
         {
