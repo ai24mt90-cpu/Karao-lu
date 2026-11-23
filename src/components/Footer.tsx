@@ -101,6 +101,7 @@ export default function Footer() {
                 {/* Legal Links */}
                 <div className="border-t border-white/20 pt-8">
                     <div className="flex flex-wrap justify-center gap-6 mb-4">
+                        <Link href="/karaoglu" className="text-sm text-white/60 hover:text-white transition-colors">Karaoğlu Kimdir?</Link>
                         <Link href="/kvkk" className="text-sm text-white/60 hover:text-white transition-colors">{t("footer.kvkkLabel")}</Link>
                         <Link href="/gizlilik" className="text-sm text-white/60 hover:text-white transition-colors">{t("footer.privacy")}</Link>
                         <Link href="/iletisim" className="text-sm text-white/60 hover:text-white transition-colors">{t("nav.contact")}</Link>

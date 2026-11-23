@@ -100,6 +100,8 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Karaoğlu Universal Mühendislik Ltd. Şti.",
+  alternateName: ["Karaoğlu", "Karaoğlu Mühendislik", "Karaoglu Muhendislik", "Karaoğlu Universal"],
+  foundingDate: "2014",
   url: siteUrl,
   industry: "Engineering",
   areaServed: "Turkey",
